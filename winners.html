@@ -88,6 +88,8 @@
 
         .search-box {
             margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
         }
 
         .search-box input {
@@ -126,6 +128,12 @@
             background-color: #ddd;
         }
 
+        .table-wrapper {
+            max-height: 600px; /* Adjust this value based on your needs */
+            overflow-y: auto;
+            display: block;
+        }
+
         footer {
             background: #0033cc; /* Blue background for footer */
             color: #fff;
@@ -134,6 +142,17 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            /* Adjust styles for mobile portrait mode */
+            .table-wrapper {
+                max-height: 400px; /* Reduced height for smaller screens */
+            }
+
+            .search-box input {
+                width: 90%; /* Make search input more responsive */
+            }
         }
     </style>
 </head>
@@ -160,47 +179,48 @@
             <input type="text" id="searchInput" placeholder="Search for winners...">
         </div>
 
-        <table id="winnersTable">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Team</th>
-                    <th>Agent</th>
-                    <th>Name of Winner</th>
-                    <th>Combination</th>
-                    <th>Bet Amount</th>
-                    <th>Type of Bet</th>
-                    <th>Prize</th>
-                    <th>Draw</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>September 1, 2024</td>
-                    <td>9 PM</td>
-                    <td>Team Melani</td>
-                    <td>Melani</td>
-                    <td>Juan Dela Cruz</td>
-                    <td>12-34-13</td>
-                    <td>-</td>
-                    <td>FB</td>
-                    <td>7,500</td>
-                    <td>6/45 Mega Lotto</td>
-                </tr>
-                <tr>
-                    <td>September 2, 2024</td>
-                    <td>2 PM</td>
-                    <td>Team Lucky</td>
-                    <td>David</td>
-                    <td>Maria Clara</td>
-                    <td>12-03</td>
-                    <td>10</td>
-                    <td>Straight</td>
-                    <td>4,900</td>
-                    <td>2D Lotto</td>
-                </tr>
-              <tr><td>Sep 01, 2024</td> <td>2PM</td><td>TEAM LUCKY</td><td>DAVID</td><td>DAVID M</td> <td>01-02-03</td><td>25</td><td>FB</td><td>7500</td><td>6/49 SUPER LOTTO</td></tr>
+        <div class="table-wrapper">
+            <table id="winnersTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Team</th>
+                        <th>Agent</th>
+                        <th>Name of Winner</th>
+                        <th>Combination</th>
+                        <th>Bet Amount</th>
+                        <th>Type of Bet</th>
+                        <th>Prize</th>
+                        <th>Draw</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>September 1, 2024</td>
+                        <td>9 PM</td>
+                        <td>Team Melani</td>
+                        <td>Melani</td>
+                        <td>Juan Dela Cruz</td>
+                        <td>12-34-13</td>
+                        <td>-</td>
+                        <td>FB</td>
+                        <td>7,500</td>
+                        <td>6/45 Mega Lotto</td>
+                    </tr>
+                    <tr>
+                        <td>September 2, 2024</td>
+                        <td>2 PM</td>
+                        <td>Team Lucky</td>
+                        <td>David</td>
+                        <td>Maria Clara</td>
+                        <td>12-03</td>
+                        <td>10</td>
+                        <td>Straight</td>
+                        <td>4,900</td>
+                        <td>2D Lotto</td>
+                    </tr>
+                   <tr><td>Sep 01, 2024</td> <td>2PM</td><td>TEAM LUCKY</td><td>DAVID</td><td>DAVID M</td> <td>01-02-03</td><td>25</td><td>FB</td><td>7500</td><td>6/49 SUPER LOTTO</td></tr>
 <tr><td>Sep 01, 2024</td> <td>2PM</td><td>TEAM LUCKY</td><td>DAVID</td><td>ALVIN V</td> <td>01-02-03</td><td>50</td><td></td><td>18000</td><td>6/49 SUPER LOTTO</td></tr>
 <tr><td>Sep 01, 2024</td> <td>2PM</td><td>TEAM LUCKY</td><td>DAVID</td><td>FRED C</td> <td>01-02-03</td><td>50</td><td></td><td>18000</td><td>6/49 SUPER LOTTO</td></tr>
 <tr><td>Sep 01, 2024</td> <td>2PM</td><td>TEAM LUCKY</td><td>DAVID</td><td>ALMIRA B</td> <td>01-02-03</td><td>50</td><td>RB</td><td>18000</td><td>6/49 SUPER LOTTO</td></tr>
@@ -228,10 +248,10 @@
 <tr><td>Sep 01, 2024</td> <td>2PM</td><td>TEAM LUCKY</td><td>DAVID</td><td>MORNI E</td> <td>1-2-3</td><td>10</td><td>RUMBLE</td><td>7500</td><td>3D LOTTO</td></tr>
 <tr><td>Sep 01, 2024</td> <td>2PM</td><td>TEAM LUCKY</td><td>DAVID</td><td>GOTY N</td> <td>1-2-3</td><td>10</td><td>RUMBLE</td><td>7500</td><td>3D LOTTO</td></tr>
 <tr><td>Sep 01, 2024</td> <td>2PM</td><td>TEAM LUCKY</td><td>DAVID</td><td>JITT W</td> <td>1-2-3</td><td>10</td><td>RUMBLE</td><td>7500</td><td>3D LOTTO</td></tr>
-
-
-            </tbody>
-        </table>
+                    <!-- Make sure to remove or paginate excessive rows for better performance -->
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <footer>
@@ -260,4 +280,3 @@
     </script>
 </body>
 </html>
-
