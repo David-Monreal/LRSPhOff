@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRS Philippines - Results</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4; /* Light grey background */
+        }
+
+        header {
+            background: #0033cc; /* Dark blue */
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background: #ff0000; /* Red background for navigation */
+            position: relative;
+        }
+
+        nav .logo {
+            margin-right: 20px;
+        }
+
+        nav .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav .nav-links li {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-links a:hover,
+        nav .nav-links a:focus {
+            color: #ffff00; /* Yellow on hover */
+        }
+
+        nav .nav-links i {
+            margin-right: 8px;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-container input {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        .results-table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .results-table th, .results-table td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .results-table th {
+            background-color: #0033cc;
+            color: #fff;
+        }
+
+        .results-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            background: #0033cc; /* Blue background for footer */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background: #ff0000; /* Red background for dropdown menu */
+                padding: 10px;
+                position: absolute;
+                top: 60px; /* Adjust based on header height */
+                left: 0;
+                z-index: 1000; /* Make sure the menu appears on top */
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+                background: #ff0000; /* Red background for toggle button */
+                color: #fff;
+                border: none;
+                padding: 10px;
+                font-size: 1em;
+                cursor: pointer;
+                margin-top: 10px;
+                z-index: 1000; /* Ensure toggle button is accessible */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LRS Philippines Official</h1>
+    </header>
+
+    <nav role="navigation">
+        <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+        <div class="logo">
+            <a href="#">LRS</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html#home"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="index.html#games"><i class="fas fa-gamepad"></i>Games</a></li>
+            <li><a href="results.html"><i class="fas fa-trophy"></i>Results</a></li>
+            <li><a href="index.html#winners"><i class="fas fa-crown"></i>Winners</a></li>
+            <li><a href="index.html#contact"><i class="fas fa-envelope"></i>Contact Info</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="results">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search results...">
+            </div>
+
+            <table class="results-table" id="results-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Game</th>
+                        <th>Winning Numbers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-09-01</td>
+                        <td>Lotto 6/42</td>
+                        <td>05, 12, 18, 23, 30, 42</td>
+                    </tr>
+                    <tr>
+                        <td>2024-09-02</td>
+                        <td>Lotto 6/49</td>
+                        <td>03, 09, 14, 21, 28, 36</td>
+                    </tr>
+                    <tr>
+                        <td>2024-09-03</td>
+                        <td>Super Lotto</td>
+                        <td>07, 11, 19, 27, 33, 44</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        });
+
+        // Search functionality for the results table
+        document.getElementById('search-input').addEventListener('keyup', function() {
+            const searchValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#results-table tbody tr');
+
+            rows.forEach(row => {
+                const cells = row.getElementsByTagName('td');
+                let found = false;
+                for (let i = 0; i < cells.length; i++) {
+                    if (cells[i].textContent.toLowerCase().includes(searchValue)) {
+                        found = true;
+                        break;
+                    }
+                }
+                row.style.display = found ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

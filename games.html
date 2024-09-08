@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRS Philippines Official - Games</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4; /* Light grey background */
+        }
+
+        /* Header and Navigation */
+        header {
+            background: #0033cc; /* Dark blue */
+            color: #fff;
+            padding: 10px 0;
+            text-align: center; /* Center-align the header content */
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center; /* Center-align the navigation */
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background: #ff0000; /* Red background for navigation */
+            position: relative;
+        }
+
+        nav .logo {
+            margin-right: 20px;
+        }
+
+        nav .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav .nav-links li {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-links a:hover,
+        nav .nav-links a:focus {
+            color: #ffff00; /* Yellow on hover */
+        }
+
+        nav .nav-links i {
+            margin-right: 8px;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+        }
+
+        .games-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .game-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Pointer cursor to indicate clickable area */
+            position: relative;
+            padding-bottom: 50px; /* Space for expanded content */
+        }
+
+        .game-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .game-card h3 {
+            background: #0033cc; /* Dark blue */
+            color: #fff;
+            padding: 10px;
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .game-card p {
+            padding: 10px;
+            font-size: 1em;
+            color: #333;
+            line-height: 1.6;
+            display: none; /* Initially hide the captions */
+        }
+
+        .game-card.show p {
+            display: block; /* Show the caption when the card has 'show' class */
+        }
+
+        footer {
+            background: #0033cc; /* Blue background for footer */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .games-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .game-card {
+                max-width: 100%;
+            }
+
+            nav .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background: #ff0000; /* Red background for dropdown menu */
+                padding: 10px;
+                position: absolute;
+                top: 60px; /* Adjust based on header height */
+                left: 0;
+                z-index: 1000; /* Make sure the menu appears on top */
+            }
+
+            nav .nav-links.show {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+                background: #ff0000; /* Red background for toggle button */
+                color: #fff;
+                border: none;
+                padding: 10px;
+                font-size: 1em;
+                cursor: pointer;
+                margin-top: 10px;
+                z-index: 1000; /* Ensure toggle button is accessible */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LRS Philippines Official</h1>
+    </header>
+
+    <nav role="navigation">
+        <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+        <div class="logo">
+            <a href="index.html">LRS</a>
+        </div>
+        <ul class="nav-links" aria-label="Main Navigation">
+            <li><a href="index.html#home" tabindex="0"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="index.html#games" tabindex="0"><i class="fas fa-gamepad"></i>Games</a></li>
+            <li><a href="index.html#results" tabindex="0"><i class="fas fa-trophy"></i>Results</a></li>
+            <li><a href="index.html#winners" tabindex="0"><i class="fas fa-crown"></i>Winners</a></li>
+            <li><a href="index.html#contact" tabindex="0"><i class="fas fa-envelope"></i>Contact Info</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Our Lotto Games</h2>
+        <div class="games-container">
+            <!-- 6/45 Lotto -->
+            <div class="game-card" tabindex="0" aria-expanded="false">
+                <img src="6-45-lotto.jpg" alt="6/45 Lotto">
+                <h3>6/45 Lotto</h3>
+                <p>Pick 3 numbers from 1 to 45. If all three numbers appear in the six drawn numbers, you win immediately. If only two numbers match, you receive a return bet.</p>
+            </div>
+
+            <!-- 6/49 Lotto -->
+            <div class="game-card" tabindex="0" aria-expanded="false">
+                <img src="6-49-lotto.jpg" alt="6/49 Lotto">
+                <h3>6/49 Lotto</h3>
+                <p>Pick 3 numbers from 1 to 49. If all three numbers appear in the six drawn numbers, you win immediately. If only two numbers match, you receive a return bet.</p>
+            </div>
+
+            <!-- 6/55 Lotto -->
+            <div class="game-card" tabindex="0" aria-expanded="false">
+                <img src="6-55-lotto.jpg" alt="6/55 Lotto">
+                <h3>6/55 Lotto</h3>
+                <p>Pick 3 numbers from 1 to 55. If all three numbers appear in the six drawn numbers, you win immediately. If only two numbers match, you receive a return bet.</p>
+            </div>
+
+            <!-- 6/58 Lotto -->
+            <div class="game-card" tabindex="0" aria-expanded="false">
+                <img src="6-58-lotto.jpg" alt="6/58 Lotto">
+                <h3>6/58 Lotto</h3>
+                <p>Pick 3 numbers from 1 to 58. If all three numbers appear in the six drawn numbers, you win immediately. If only two numbers match, you receive a return bet.</p>
+            </div>
+
+            <!-- 2D Lotto -->
+            <div class="game-card" tabindex="0" aria-expanded="false">
+                <img src="2d-lotto.jpg" alt="2D Lotto">
+                <h3>2D Lotto</h3>
+                <p>Pick 2 numbers from 1 to 31. Add 'S' for straight or 'exact order', 'R' for rumble or 'in any order', and 'P' for pompi or 'same number'.</p>
+            </div>
+
+            <!-- 3D Lotto -->
+            <div class="game-card" tabindex="0" aria-expanded="false">
+                <img src="3d-lotto.jpg" alt="3D Lotto">
+                <h3>3D Lotto</h3>
+                <p>Pick 3 numbers from 0 to 9. Add 'S' for straight or 'exact order', 'R' for rumble or 'in any order', and 'T' for trio or 'same numbers'.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.game-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('show');
+                const expanded = this.classList.contains('show');
+                this.setAttribute('aria-expanded', expanded);
+            });
+        });
+
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+            this.setAttribute('aria-expanded', navLinks.classList.contains('show'));
+        });
+    </script>
+</body>
+</html>
