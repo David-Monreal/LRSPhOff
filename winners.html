@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winners - LRS Philippines Official</title>
+    <title>LRS Philippines Official - Winners</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4; /* Light grey background */
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background: #0033cc; /* Dark blue */
+            background: #0033cc;
             color: #fff;
             padding: 10px 0;
-            text-align: center; /* Center-align the header content */
+            text-align: center;
         }
 
         header h1 {
@@ -28,12 +28,12 @@
 
         nav {
             display: flex;
-            justify-content: center; /* Center-align the navigation */
+            justify-content: center;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            background: #ff0000; /* Red background for navigation */
+            background: #ff0000;
             position: relative;
         }
 
@@ -73,7 +73,7 @@
 
         nav .nav-links a:hover,
         nav .nav-links a:focus {
-            color: #ffff00; /* Yellow on hover */
+            color: #ffff00;
         }
 
         nav .nav-links i {
@@ -87,6 +87,8 @@
         }
 
         .search-box {
+            display: flex;
+            justify-content: center;
             margin-bottom: 20px;
         }
 
@@ -99,12 +101,16 @@
             border-radius: 5px;
         }
 
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
             background-color: #fff;
             border: 1px solid #ddd;
+            position: relative;
         }
 
         th, td {
@@ -114,8 +120,11 @@
         }
 
         th {
-            background-color: #0033cc; /* Dark blue background for table headers */
+            background-color: #0033cc;
             color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1;
         }
 
         tr:nth-child(even) {
@@ -127,13 +136,69 @@
         }
 
         footer {
-            background: #0033cc; /* Blue background for footer */
+            background: #0033cc;
             color: #fff;
             text-align: center;
             padding: 10px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+            nav .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav .nav-links li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-box input {
+                width: 100%;
+                max-width: none;
+            }
+
+            table, thead, tbody, tr, th, td {
+                display: block;
+            }
+
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                border: 1px solid #ddd;
+                margin-bottom: 10px;
+                display: block;
+                padding: 10px 0;
+                position: relative;
+            }
+
+            td {
+                border: none;
+                position: relative;
+                padding-left: 50%;
+                text-align: left;
+            }
+
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+            }
         }
     </style>
 </head>
@@ -160,49 +225,39 @@
             <input type="text" id="searchInput" placeholder="Search for winners...">
         </div>
 
-        <table id="winnersTable">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Team</th>
-                    <th>Agent</th>
-                    <th>Name of Winner</th>
-                    <th>Combination</th>
-                    <th>Bet Amount</th>
-                    <th>Type of Bet</th>
-                    <th>Prize</th>
-                    <th>Draw</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>September 1, 2024</td>
-                    <td>9 PM</td>
-                    <td>Team Melani</td>
-                    <td>Melani</td>
-                    <td>Juan Dela Cruz</td>
-                    <td>12-34-13</td>
-                    <td>-</td>
-                    <td>FB</td>
-                    <td>7,500</td>
-                    <td>6/45 Mega Lotto</td>
-                </tr>
-                <tr>
-                    <td>September 2, 2024</td>
-                    <td>2 PM</td>
-                    <td>Team Lucky</td>
-                    <td>David</td>
-                    <td>Maria Clara</td>
-                    <td>12-03</td>
-                    <td>10</td>
-                    <td>Straight</td>
-                    <td>4,900</td>
-                    <td>2D Lotto</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+        <div class="table-wrapper">
+            <table id="winnersTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Team</th>
+                        <th>Agent</th>
+                        <th>Name of Winner</th>
+                        <th>Combination</th>
+                        <th>Bet Amount</th>
+                        <th>Type of Bet</th>
+                        <th>Prize</th>
+                        <th>Draw</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Date">2024-09-09</td>
+                        <td data-label="Time">14:30</td>
+                        <td data-label="Team">Team A</td>
+                        <td data-label="Agent">Agent X</td>
+                        <td data-label="Name of Winner">John Doe</td>
+                        <td data-label="Combination">12345</td>
+                        <td data-label="Bet Amount">$10</td>
+                        <td data-label="Type of Bet">Single</td>
+                        <td data-label="Prize">$1000</td>
+                        <td data-label="Draw">Draw 1</td>
+                    </tr>
+                    <!-- More rows... -->
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <footer>
