@@ -16,15 +16,16 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4; /* Light grey background */
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Header and Navigation */
         header {
-            background: #0033cc; /* Dark blue */
+            background: #0033cc;
             color: #fff;
             padding: 10px 0;
-            text-align: center; /* Center-align the header content */
+            text-align: center;
         }
 
         header h1 {
@@ -34,12 +35,12 @@
 
         nav {
             display: flex;
-            justify-content: center; /* Center-align the navigation */
+            justify-content: center;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            background: #ff0000; /* Red background for navigation */
+            background: #ff0000;
             position: relative;
         }
 
@@ -79,18 +80,13 @@
 
         nav .nav-links a:hover,
         nav .nav-links a:focus {
-            color: #ffff00; /* Yellow on hover */
+            color: #ffff00;
         }
 
         nav .nav-links i {
             margin-right: 8px;
         }
 
-        .nav-toggle {
-            display: none;
-        }
-
-        /* Main Content */
         main {
             padding: 20px;
         }
@@ -107,17 +103,17 @@
             flex: 1;
             max-width: 100%;
             height: auto;
-            border: 5px solid #0033cc; /* Blue border for image */
+            border: 5px solid #0033cc;
         }
 
         .video-container {
             flex: 1;
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             max-width: 100%;
-            background: #0033cc; /* Blue background for video container */
+            background: #0033cc;
         }
 
         .video-container iframe {
@@ -139,7 +135,7 @@
 
         .about-us h2 {
             font-size: 2em;
-            color: #0033cc; /* Dark blue for the heading */
+            color: #0033cc;
             margin-bottom: 10px;
         }
 
@@ -150,7 +146,7 @@
         }
 
         footer {
-            background: #0033cc; /* Blue background for footer */
+            background: #0033cc;
             color: #fff;
             text-align: center;
             padding: 10px 0;
@@ -159,7 +155,6 @@
             bottom: 0;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .content-wrapper {
                 flex-direction: column;
@@ -176,35 +171,11 @@
                 align-items: center;
             }
 
-            nav .nav-links {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                background: #ff0000; /* Red background for dropdown menu */
-                padding: 10px;
-                position: absolute;
-                top: 60px; /* Adjust based on header height */
-                left: 0;
-                z-index: 1000; /* Make sure the menu appears on top */
-            }
-
             nav .nav-links.show {
                 display: flex;
             }
 
-            .nav-toggle {
-                display: block;
-                background: #ff0000; /* Red background for toggle button */
-                color: #fff;
-                border: none;
-                padding: 10px;
-                font-size: 1em;
-                cursor: pointer;
-                margin-top: 10px;
-                z-index: 1000; /* Ensure toggle button is accessible */
-            }
-        }
+
     </style>
 </head>
 <body>
@@ -213,7 +184,6 @@
     </header>
 
     <nav role="navigation">
-        <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
         <div class="logo">
             <a href="#">LRS</a>
         </div>
@@ -235,9 +205,15 @@
                 </div>
             </div>
             <div class="about-us">
-                <h2>LRS Philippines Official</h2>
+                <h2>About Us</h2>
                 <p>
-                    Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto. Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo. Sa pamamagitan ng aming sistema, maaari mong piliin ang tatlong numero mula sa iba't ibang laro ng lotto at manalo agad kung ang tatlong numerong iyon ay nasa anim na lumabas na numero. Kung dalawa lamang ang nagmatch na numero, makakatanggap ka parin ng return bet. Sa LRS, ang iyong kasiyahan at tagumpay ang aming pangunahing layunin.
+                    Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto. Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.
+                </p>
+                <p>
+                    Sa pamamagitan ng aming sistema, maaari mong piliin ang tatlong numero mula sa iba't ibang laro ng lotto at manalo agad kung ang tatlong numerong iyon ay nasa anim na lumabas na numero. Kung dalawa lamang ang nagmatch na numero, makakatanggap ka parin ng return bet.
+                </p>
+                <p>
+                    Sa LRS, ang iyong kasiyahan at tagumpay ang aming pangunahing layunin.
                 </p>
             </div>
     </main>
