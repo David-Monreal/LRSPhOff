@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LRS Philippines - Results</title>
-    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body, h1, h2, h3, p, ul, li {
@@ -16,11 +15,13 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4; /* Light grey background */
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
 
         header {
-            background: #0033cc; /* Dark blue */
+            background: #0033cc;
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -38,7 +39,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            background: #ff0000; /* Red background for navigation */
+            background: #ff0000;
             position: relative;
         }
 
@@ -78,15 +79,17 @@
 
         nav .nav-links a:hover,
         nav .nav-links a:focus {
-            color: #ffff00; /* Yellow on hover */
+            color: #ffff00;
         }
 
         nav .nav-links i {
             margin-right: 8px;
         }
 
-        .nav-toggle {
-            display: none;
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         main {
@@ -143,37 +146,6 @@
             bottom: 0;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                background: #ff0000; /* Red background for dropdown menu */
-                padding: 10px;
-                position: absolute;
-                top: 60px; /* Adjust based on header height */
-                left: 0;
-                z-index: 1000; /* Make sure the menu appears on top */
-            }
-
-            .nav-links.show {
-                display: flex;
-            }
-
-            .nav-toggle {
-                display: block;
-                background: #ff0000; /* Red background for toggle button */
-                color: #fff;
-                border: none;
-                padding: 10px;
-                font-size: 1em;
-                cursor: pointer;
-                margin-top: 10px;
-                z-index: 1000; /* Ensure toggle button is accessible */
-            }
-        }
     </style>
 </head>
 <body>
