@@ -99,26 +99,54 @@
         .search-container {
             margin-bottom: 20px;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
 
-        .search-container input {
+        .search-container input[type="text"] {
             padding: 10px;
             font-size: 1em;
             border: 1px solid #ddd;
             border-radius: 5px;
             width: 100%;
-            max-width: 400px;
+            max-width: 200px;
             box-sizing: border-box;
+        }
+
+        .search-container input[type="date"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 200px;
+            box-sizing: border-box;
+        }
+
+        .results-table-wrapper {
+            position: relative;
+            overflow-x: auto;
+            max-width: 100%;
         }
 
         .results-table {
             width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
             border-collapse: collapse;
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 10px;
+            max-width: 100%;
+        }
+
+        .results-table thead th {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            background-color: #0033cc;
+            color: #fff;
+            z-index: 1;
         }
 
         .results-table th, .results-table td {
@@ -127,13 +155,59 @@
             border-bottom: 1px solid #ddd;
         }
 
-        .results-table th {
-            background-color: #0033cc;
-            color: #fff;
+        .results-table th:nth-child(1) {
+            width: 150px;
+        }
+
+        .results-table th:nth-child(2) {
+            width: 100px;
+        }
+
+        .results-table th:nth-child(3) {
+            width: 150px;
         }
 
         .results-table tr:nth-child(even) {
             background-color: #f2f2f2;
+        }
+
+        .pagination {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .pagination button {
+            padding: 10px;
+            margin: 0 5px;
+            border: none;
+            background: #0033cc;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .pagination button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .view-all-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .view-all-container button {
+            padding: 10px;
+            border: none;
+            background: #ff0000;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .view-all-container button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
         }
 
         footer {
@@ -145,7 +219,6 @@
             width: 100%;
             bottom: 0;
         }
-
     </style>
 </head>
 <body>
@@ -169,36 +242,35 @@
     <main>
         <section id="results">
             <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search results...">
+                <input type="text" id="search-input" placeholder="Search by numbers...">
+                <input type="date" id="date-input">
             </div>
 
-            <table class="results-table" id="results-table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Game</th>
-                        <th>Winning Numbers</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2024-09-01</td>
-                        <td>Lotto 6/42</td>
-                        <td>05, 12, 18, 23, 30, 42</td>
-                    </tr>
-                    <tr>
-                        <td>2024-09-02</td>
-                        <td>Lotto 6/49</td>
-                        <td>03, 09, 14, 21, 28, 36</td>
-                    </tr>
-                    <tr>
-                        <td>2024-09-03</td>
-                        <td>Super Lotto</td>
-                        <td>07, 11, 19, 27, 33, 44</td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                </tbody>
-            </table>
+            <div class="results-table-wrapper">
+                <table class="results-table" id="results-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Game</th>
+                            <th>Winning Numbers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be inserted dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <button id="prev-page" disabled>Previous</button>
+                <span id="page-info">Page 1</span>
+                <button id="next-page">Next</button>
+            </div>
+
+            <div class="view-all-container">
+                <button id="view-all">View All</button>
+            </div>
         </section>
     </main>
 
@@ -207,28 +279,79 @@
     </footer>
 
     <script>
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('show');
-        });
+        const searchInput = document.getElementById('search-input');
+        const dateInput = document.getElementById('date-input');
+        const resultsTable = document.getElementById('results-table');
+        const tbody = resultsTable.querySelector('tbody');
+        const prevPageButton = document.getElementById('prev-page');
+        const nextPageButton = document.getElementById('next-page');
+        const pageInfo = document.getElementById('page-info');
+        const viewAllButton = document.getElementById('view-all');
+        const rowsPerPage = 10;
+        let currentPage = 1;
+        let showAll = false;
+        let data = [
+            { date: '2024-09-01', time: '14:30', game: 'Lotto 6/42', numbers: '05, 12, 18, 23, 30, 42' },
+            { date: '2024-09-02', time: '16:00', game: 'Lotto 6/49', numbers: '03, 09, 14, 21, 28, 36' },
+            { date: '2024-09-03', time: '18:15', game: 'Super Lotto', numbers: '07, 11, 19, 27, 33, 44' },
+            // Add more rows as needed
+        ];
 
-        // Search functionality for the results table
-        document.getElementById('search-input').addEventListener('keyup', function() {
-            const searchValue = this.value.toLowerCase();
-            const rows = document.querySelectorAll('#results-table tbody tr');
+        function sortDataByDate(data) {
+            return data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
 
-            rows.forEach(row => {
-                const cells = row.getElementsByTagName('td');
-                let found = false;
-                for (let i = 0; i < cells.length; i++) {
-                    if (cells[i].textContent.toLowerCase().includes(searchValue)) {
-                        found = true;
-                        break;
-                    }
-                }
-                row.style.display = found ? '' : 'none';
+        function renderTable() {
+            tbody.innerHTML = '';
+            const sortedData = sortDataByDate(data);
+            const filteredData = sortedData.filter(row => {
+                const searchMatch = row.numbers.toLowerCase().includes(searchInput.value.toLowerCase());
+                const dateMatch = dateInput.value ? row.date === dateInput.value : true;
+                return searchMatch && dateMatch;
             });
+
+            const startIndex = (currentPage - 1) * rowsPerPage;
+            const endIndex = showAll ? filteredData.length : startIndex + rowsPerPage;
+            const paginatedData = filteredData.slice(startIndex, endIndex);
+
+            paginatedData.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.date}</td>
+                    <td>${row.time}</td>
+                    <td>${row.game}</td>
+                    <td>${row.numbers}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            prevPageButton.disabled = currentPage === 1;
+            nextPageButton.disabled = !showAll && (currentPage * rowsPerPage) >= filteredData.length;
+            pageInfo.textContent = `Page ${currentPage}`;
+        }
+
+        searchInput.addEventListener('keyup', renderTable);
+        dateInput.addEventListener('change', renderTable);
+        prevPageButton.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+            }
         });
+        nextPageButton.addEventListener('click', () => {
+            if (!showAll && (currentPage * rowsPerPage) < data.length) {
+                currentPage++;
+                renderTable();
+            }
+        });
+        viewAllButton.addEventListener('click', () => {
+            showAll = !showAll;
+            renderTable();
+            viewAllButton.textContent = showAll ? 'Show Less' : 'View All';
+        });
+
+        // Initial render
+        renderTable();
     </script>
 </body>
 </html>
