@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LRS Philippines Official - Experience the thrill of winning with our exciting lottery games!">
+    <meta property="og:title" content="LRS Philippines Official">
+    <meta property="og:description" content="Experience the thrill of winning with our exciting lottery games!">
+    <meta property="og:image" content="https://example.com/hero-bg.jpg">
+    <meta property="og:url" content="https://david-monreal.github.io/LRSPhOff/">
     <title>LRS Philippines Official</title>
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #0033cc;
+            --secondary-color: #ff0000;
+            --accent-color: #ffff00;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+        }
+
         body, h1, h2, h3, p, ul, li {
             margin: 0;
             padding: 0;
@@ -16,13 +29,11 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+            background-color: var(--background-color);
         }
 
         header {
-            background: #0033cc;
+            background: var(--primary-color);
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -40,7 +51,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            background: #ff0000;
+            background: var(--secondary-color);
             position: relative;
         }
 
@@ -80,22 +91,58 @@
 
         nav .nav-links a:hover,
         nav .nav-links a:focus {
-            color: #ffff00;
+            color: var(--accent-color);
         }
 
         nav .nav-links i {
             margin-right: 8px;
         }
+
         .container {
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
-	@media (max-width: 768px) {
-    .container {
-        padding: 0 10px;
-    }
-}
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(167, 25, 48, 0.7), rgba(13, 34, 64, 0.7)), url('https://example.com/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--accent-color);
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #e0bb1a;
+        }
 
         main {
             padding: 20px;
@@ -103,35 +150,28 @@
 
         .content-wrapper {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
             flex-wrap: wrap;
             gap: 20px;
         }
 
-        .promo-image {
-            flex: 1;
+        .main-video {
+            flex: 2;
             max-width: 100%;
-            height: auto;
-            border: 5px solid #0033cc;
+            border: 5px solid var(--primary-color);
         }
 
-        .video-container {
+        .related-images {
             flex: 1;
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #0033cc;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .related-images img {
             width: 100%;
-            height: 100%;
+            max-width: 300px;
+            border: 5px solid var(--primary-color);
+            border-radius: 10px;
         }
 
         .about-us {
@@ -145,18 +185,53 @@
 
         .about-us h2 {
             font-size: 2em;
-            color: #0033cc;
+            color: var(--primary-color);
             margin-bottom: 10px;
         }
 
         .about-us p {
             font-size: 1.1em;
-            color: #333;
+            color: var(--text-color);
             line-height: 1.8;
         }
 
+        .watch-live-draws {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .watch-live-draws h2 {
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .watch-live-draws .video-wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .watch-live-draws .video-wrapper iframe {
+            width: 100%;
+            max-width: 300px;
+            border: 5px solid var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .draw-caption {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: var(--text-color);
+        }
+
         footer {
-            background: #0033cc;
+            background: var(--primary-color);
             color: #fff;
             text-align: center;
             padding: 10px 0;
@@ -167,25 +242,24 @@
 
         @media (max-width: 768px) {
             .content-wrapper {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                flex-wrap: nowrap;
             }
 
-            .promo-image, .video-container {
-                width: 100%;
-                max-width: 100%;
+            .main-video {
+                flex: 2;
             }
 
-            nav {
-                flex-direction: column;
-                align-items: center;
+            .related-images {
+                flex-direction: row;
+                flex: 1;
             }
 
-            nav .nav-links.show {
-                display: flex;
+            .watch-live-draws .video-wrapper {
+                flex-direction: row;
+                justify-content: space-between;
             }
-
-
+        }
     </style>
 </head>
 <body>
@@ -207,36 +281,65 @@
     </nav>
 
     <main>
-        <section id="home">
-            <div class="content-wrapper">
-                <img src="img/45 PRIZE.jpg" alt="Promo" class="promo-image">
+        <section class="hero">
+            <h1>Welcome to LRS Philippines Official</h1>
+            <p>Experience the thrill of winning with our exciting lottery games!</p>
+        </section>
+
+        <section class="about-us">
+            <h2>What's New?</h2>
+        </section>
+
+        <section class="content-wrapper">
+            <div class="main-video">
+                <!-- Main promo video -->
+                <video controls>
+                    <source src="your-promo-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="related-images">
+                <img src="https://example.com/promo-image1.jpg" alt="Promo Image 1">
+                <img src="https://example.com/promo-image2.jpg" alt="Promo Image 2">
+                <img src="https://example.com/promo-image3.jpg" alt="Promo Image 3">
+            </div>
+        </section>
+
+        <!-- Watch Live Draws Section -->
+        <section class="watch-live-draws">
+            <h2>Watch Live Draws</h2>
+            <div class="video-wrapper">
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zGj_EzM-Zsw?si=RgRIdE16rpbGcQg7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="draw-caption">2pm Draw</div>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="draw-caption">5pm Draw</div>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="draw-caption">9pm Draw</div>
                 </div>
             </div>
-            <div class="about-us">
-                <h2>About Us</h2>
-                <p>
-                    Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto. Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.
-                </p>
-                <p>
-                    Sa pamamagitan ng aming sistema, maaari mong piliin ang tatlong numero mula sa iba't ibang laro ng lotto at manalo agad kung ang tatlong numerong iyon ay nasa anim na lumabas na numero. Kung dalawa lamang ang nagmatch na numero, makakatanggap ka parin ng return bet.
-                </p>
-                <p>
-                    Sa LRS, ang iyong kasiyahan at tagumpay ang aming pangunahing layunin.
-                </p>
-            </div>
+        </section>
+
+        <section class="about-us">
+            <h2>About Us</h2>
+            <p>
+                Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto. Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.
+            </p>
+            <p>
+                Sa pamamagitan ng aming sistema, maaari mong piliin ang tatlong numero mula sa iba't ibang laro ng lotto at manalo agad kung ang tatlong numerong iyon ay nasa anim na lumabas na numero. Kung dalawa lamang ang nagmatch na numero, makakatanggap ka parin ng return bet.
+            </p>
+            <p>
+                Sa LRS, ang iyong kasiyahan at tagumpay ang aming pangunahing layunin.
+            </p>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('show');
-        });
-    </script>
 </body>
 </html>
