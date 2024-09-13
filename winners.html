@@ -2,10 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>LRS Philippines Official - Winners</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRS Philippines - Winners</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* CSS styles */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -19,6 +26,18 @@
             color: #fff;
             padding: 10px 0;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .logo {
+            margin-right: 20px;
+        }
+
+        header .logo img {
+            width: 50px; /* Adjust as needed */
+            height: auto;
         }
 
         header h1 {
@@ -86,63 +105,114 @@
             margin: 0 auto;
         }
 
-        .search-box {
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
+        main {
+            padding: 20px;
         }
 
-        .search-box input {
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-container input[type="text"] {
             padding: 10px;
             font-size: 1em;
             width: 100%;
-            max-width: 500px;
+            max-width: 400px;
             border: 1px solid #ddd;
             border-radius: 5px;
         }
 
-        .table-wrapper {
-            max-height: 600px;
-            overflow-y: auto;
-            display: block;
+        .winners-table-wrapper {
             position: relative;
+            overflow-x: auto;
+            max-width: 100%;
         }
 
-        table {
+        .winners-table {
             width: 100%;
             border-collapse: collapse;
             background-color: #fff;
             border: 1px solid #ddd;
-            transform: scale(1); /* Default zoom level */
-            transform-origin: 0 0; /* Zooming from top-left corner */
+            border-radius: 10px;
+            max-width: 100%;
         }
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #0033cc;
-            color: #fff;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #ddd;
-        }
-
-        .fixed-header thead {
-            position: -webkit-sticky; /* For Safari */
+        .winners-table thead th {
+            position: -webkit-sticky;
             position: sticky;
             top: 0;
             background-color: #0033cc;
             color: #fff;
-            z-index: 10;
+            z-index: 1;
+        }
+
+        .winners-table th, .winners-table td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .winners-table th:nth-child(1) {
+            width: 150px;
+        }
+
+        .winners-table th:nth-child(2) {
+            width: 100px;
+        }
+
+        .winners-table th:nth-child(3) {
+            width: 150px;
+        }
+
+        .winners-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .pagination {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .pagination button {
+            padding: 10px;
+            margin: 0 5px;
+            border: none;
+            background: #0033cc;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .pagination button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .view-all-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .view-all-container button {
+            padding: 10px;
+            border: none;
+            background: #ff0000;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .view-all-container button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
         }
 
         footer {
@@ -154,20 +224,13 @@
             width: 100%;
             bottom: 0;
         }
-
-        @media (max-width: 768px) {
-            .table-wrapper {
-                max-height: 400px;
-            }
-
-            .search-box input {
-                width: 90%;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
+        <div class="logo">
+            <img src="path/to/logo.png" alt="LRS Logo">
+        </div>
         <h1>LRS Philippines Official</h1>
     </header>
 
@@ -184,304 +247,360 @@
         </ul>
     </nav>
 
-    <div class="container">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search for winners...">
-        </div>
+    <main>
+        <section id="winners">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for winners...">
+            </div>
 
-        <div class="table-wrapper">
-            <table id="winnersTable" class="fixed-header">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Team</th>
-                        <th>Agent</th>
-                        <th>Winner</th>
-                        <th>Combination</th>
-                        <th>Bet</th>
-                        <th>TOB</th>
-                        <th>Prize</th>
-                        <th>Draw</th>
-                    </tr>
-                </thead>
-                <tbody>
-<tr><td>Sep 01, 2024</td><td>2PM</td><td>Jazz</td><td>Manuel</td><td>J Saavedra</td><td>02 08</td><td>20</td><td>R</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 01, 2024</td><td>5PM</td><td>Gigi</td><td>Blunt</td><td>D Daypuyart 02</td><td>11 04</td><td>20</td><td>R</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 01, 2024</td><td>5PM</td><td>Jing</td><td>Jing</td><td>Jayla</td><td>11 04</td><td>30</td><td>R</td><td>7350</td><td>2D Lotto</td></tr>
-<tr><td>Sep 01, 2024</td><td>5PM</td><td>Kylie</td><td>Kylie</td><td>Ador</td><td>04 11</td><td>20</td><td>S</td><td>9800</td><td>2D Lotto</td></tr>
-<tr><td>Sep 01, 2024</td><td>5PM</td><td>Kylie</td><td>Kylie</td><td>Ador</td><td>11 04</td><td>30</td><td>R</td><td>7350</td><td>2D Lotto</td></tr>
-<tr><td>Sep 01, 2024</td><td>9PM</td><td>Kylie</td><td>Kylie</td><td>Ador</td><td>28 20</td><td>30</td><td>R</td><td>7350</td><td>2D Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>2PM</td><td>Jing</td><td>Amalia</td><td>E Diaz Ac</td><td>15 17</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>2PM</td><td>Mich</td><td>Maryl</td><td>O Volante Mc</td><td>3 4 0</td><td>10</td><td>R</td><td>750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>5PM</td><td>Heart</td><td>Alexa</td><td>Hb Saurane</td><td>27 02</td><td>20</td><td>S</td><td>9800</td><td>2D Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>5PM</td><td>Heart</td><td>Alexa</td><td>Hb Saurane</td><td>27 02</td><td>20</td><td>R</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>5PM</td><td>Naza</td><td>Naza</td><td>Dls Jenny</td><td>02 27</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>5PM</td><td>Raymart</td><td>Raymart</td><td>N Pagdangaran</td><td>02 27</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>9PM</td><td>Heart</td><td>Ange</td><td>Lito B</td><td>6 1 7</td><td>10</td><td>R</td><td>750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>9PM</td><td>Ivy</td><td>Ivy</td><td>Neb</td><td>6 7 1</td><td>20</td><td>S</td><td>9600</td><td>3D Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>9PM</td><td>Jollifer</td><td>Jollifer</td><td>Candy</td><td>1 6 7</td><td>20</td><td>R</td><td>1500</td><td>3D Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>2PM</td><td>Ellaine</td><td>Ellaine</td><td>Bernie</td><td>04 26</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>2PM</td><td>Jollifer</td><td>Jollifer</td><td>Ap Padilla</td><td>04 26</td><td>100</td><td>R</td><td>24500</td><td>2D Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>2PM</td><td>Melani</td><td>Melani</td><td>Md Catan</td><td>04 26</td><td>30</td><td>R</td><td>7350</td><td>2D Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>2PM</td><td>Melani</td><td>Melani</td><td>Md Catan</td><td>04 26</td><td>20</td><td>R</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>5PM</td><td>Heart</td><td>Aubrie</td><td>N Dao</td><td>14 28</td><td>20</td><td>R</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>9PM</td><td>Kylie</td><td>Kylie</td><td>Ador</td><td>1 1 9</td><td>40</td><td>R</td><td>3000</td><td>3D Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>9PM</td><td>Hanna</td><td>Monaliza</td><td>E Vista</td><td>1 1 9</td><td>20</td><td>R</td><td>1500</td><td>3D Lotto</td></tr>
-<tr><td>Sep 04, 2024</td><td>9PM</td><td>Jing</td><td>Amalia</td><td>Ma Gallo Ac</td><td>02 22</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 04, 2024</td><td>9PM</td><td>Irish</td><td>Irish</td><td>Bryan</td><td>1 0 7</td><td>10</td><td>R</td><td>750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>2PM</td><td>Jorge</td><td>Christian</td><td>J Quijano</td><td>28 18</td><td>10</td><td>S</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>2PM</td><td>Jennifer</td><td>Jennifer</td><td>C Tan J4</td><td>18 28</td><td>20</td><td>R</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>5PM</td><td>Joy</td><td>Joy</td><td>Jomel</td><td>07 19</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>5PM</td><td>Maricel</td><td>Maricel</td><td>Madam Vee Hh</td><td>07 19</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>5PM</td><td>Khar</td><td>Ramoncarlo</td><td>Fair Rc</td><td>07 19</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>5PM</td><td>Ivy</td><td>Karen</td><td>J-J Simbulan</td><td> 9 6 3</td><td>20</td><td>R</td><td>1500</td><td>3D Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Jollifer</td><td>Jollifer</td><td>R A Bautista</td><td>29 22</td><td>20</td><td>R</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Heart</td><td>Zoe</td><td>M Castro (Zd</td><td>22 29</td><td>20</td><td>R</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Maricel</td><td>Maricel</td><td>M L Agullo</td><td>1 7 5</td><td>20</td><td>R</td><td>1500</td><td>3D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>2PM</td><td>Melani</td><td>Melani</td><td>Md Catan</td><td>22 26</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>2PM</td><td>Melani</td><td>Melani</td><td>Md Catan</td><td>22 26</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>2PM</td><td>Heart</td><td>Alexa</td><td>J Agripata</td><td>4 9 2</td><td>10</td><td>R</td><td>750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>5pm</td><td>Jennifer</td><td>Jennifer</td><td>Jessie J4</td><td>03 08</td><td>20</td><td>R</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>5pm</td><td>Hanna</td><td>Monaliza</td><td>Cheska</td><td>08 03</td><td>10</td><td>S</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>5pm</td><td>Khar</td><td>Ramoncarlo</td><td>Fair Rc</td><td>08 03</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>5pm</td><td>Heart</td><td>Zoe</td><td>J Castillo (Zd</td><td>08 03</td><td>50</td><td>R</td><td>12250</td><td>2D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>9PM</td><td>Jennifer</td><td>Jennifer</td><td>Jessie J4</td><td>31 12</td><td>20</td><td>R</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>9PM</td><td>Ivy</td><td>Karen</td><td>J A Bundalian</td><td>12 31</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>9PM</td><td>Ivy</td><td>Karen</td><td>J A Bundalian</td><td>12 31</td><td>10</td><td>S</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>9PM</td><td>Mich</td><td>Nikky</td><td>C Cateron</td><td>12 31</td><td>50</td><td>S</td><td>24500</td><td>2D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>9PM</td><td>Jing</td><td>Jing</td><td>D Sotto</td><td>9 1 1</td><td>30</td><td>S</td><td>14400</td><td>3D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>9PM</td><td>Melani</td><td>Melani</td><td>D Austria</td><td>9 1 1</td><td>30</td><td>R</td><td>2250</td><td>3D Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>9PM</td><td>Mich</td><td>Mich</td><td>R Bation</td><td>1 9 1</td><td>30</td><td>R</td><td>2250</td><td>3D Lotto</td></tr>
-<tr><td>Sep 07, 2024</td><td>9PM</td><td>Ellaine</td><td>Ellaine</td><td>Ejl</td><td>01 19</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 07, 2024</td><td>9PM</td><td>Gigi</td><td>Jannalyn</td><td>Clha</td><td>01 19</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 07, 2024</td><td>9PM</td><td>Kylie</td><td>Kylie</td><td>Ador</td><td>01 19</td><td>30</td><td>R</td><td>7350</td><td>2D Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>2PM</td><td>Heart</td><td>Chabs</td><td>Joey Duzz</td><td>18 25</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>2PM</td><td>Gigi</td><td>Jannalyn</td><td>Nestor</td><td>6 1 4</td><td>20</td><td>R</td><td>1500</td><td>3D Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>5PM</td><td>Raymart</td><td>Candace</td><td>M D Dandan</td><td>05 01</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>5PM</td><td>Gigi</td><td>Jannalyn</td><td>M Hubilla</td><td>05 01</td><td>30</td><td>R</td><td>7350</td><td>2D Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>5PM</td><td>Jollifer</td><td>Jollifer</td><td>R Cornel</td><td>01 05</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>9PM</td><td>Mich</td><td>Mich</td><td>Michelle</td><td>03 24</td><td>20</td><td>S</td><td>9800</td><td>2D Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>9PM</td><td>Mich</td><td>Mich</td><td>Michelle</td><td>03 24</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>9PM</td><td>Jennifer</td><td>Jennifer</td><td>Jessie J4</td><td>5 4 5</td><td>50</td><td>S</td><td>24000</td><td>3D Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>9PM</td><td>Mich</td><td>Lou</td><td>G Soriano Af</td><td>5 4 5</td><td>10</td><td>R</td><td>750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>2PM</td><td>Jollifer</td><td>Jollifer</td><td>J R Hawn</td><td>5 1 8</td><td>20</td><td>R</td><td>1500</td><td>3D Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>2PM</td><td>Joy</td><td>Joy</td><td>Grey</td><td>5 1 8</td><td>10</td><td>R</td><td>750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>2PM</td><td>Heart</td><td>Rizel</td><td>M J B Ayson</td><td>5 1 8</td><td>10</td><td>R</td><td>750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Gigi</td><td>Jannalyn</td><td>Clha</td><td>01 19</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Ivy</td><td>Ivy</td><td>Tiger</td><td>3 3 9</td><td>30</td><td>R</td><td>2250</td><td>3D Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Maricel</td><td>Maricel</td><td>L Bautista</td><td>9 3 3</td><td>20</td><td>S</td><td>9600</td><td>3D Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Maricel</td><td>Maricel</td><td>L Bautista</td><td>9 3 3</td><td>30</td><td>R</td><td>2250</td><td>3D Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>2PM</td><td>Ellaine</td><td>Ellaine</td><td>Sir Melchor</td><td>18 24</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>2PM</td><td>Heart</td><td>Zoe</td><td>W S Umpa (Zd</td><td>18 24</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>2PM</td><td>Monica</td><td>Carisa</td><td>Ceb</td><td>5 1 6</td><td>20</td><td>R</td><td>1500</td><td>3D Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>9PM</td><td>Ivy</td><td>Karen</td><td>Kiteng</td><td>08 15</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>2PM</td><td>Monica</td><td>Carisa</td><td>G Alvarado</td><td>15 29</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>2PM</td><td>Ellaine</td><td>Ellaine</td><td>J Bruto</td><td>15 29</td><td>20</td><td>S</td><td>9800</td><td>2D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>2PM</td><td>Krystal</td><td>Krystal</td><td>Kc</td><td>15 29</td><td>20</td><td>R</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>2PM</td><td>Heart</td><td>Aubrie</td><td>Bitoy</td><td>4 4 6</td><td>100</td><td>S</td><td>48000</td><td>3D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>2PM</td><td>Heart</td><td>Aubrie</td><td>Bitoy</td><td>4 4 6</td><td>20</td><td>R</td><td>1500</td><td>3D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>2PM</td><td>Joy</td><td>Joy</td><td>Mere</td><td>4 6 4</td><td>10</td><td>R</td><td>750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>5PM</td><td>Jing</td><td>Jing</td><td>J Manzon</td><td>19 19</td><td>40</td><td>P</td><td>17200</td><td>2D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>5PM</td><td>Monica</td><td>Carisa</td><td>Ceb</td><td>6 3 1</td><td>20</td><td>R</td><td>1500</td><td>3D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>5PM</td><td>Jing</td><td>Jing</td><td>G F Sorino</td><td>6 1 3</td><td>50</td><td>S</td><td>24000</td><td>3D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>5PM</td><td>Jing</td><td>Jing</td><td>G F Sorino</td><td>6 1 3</td><td>20</td><td>R</td><td>1500</td><td>3D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Hanna</td><td>Angeli</td><td>Marilou</td><td>16 14</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Gigi</td><td>Blunt</td><td>E D Justa 2</td><td>14 16</td><td>10</td><td>S</td><td>4900</td><td>2D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Adriano</td><td>Pilits</td><td>A Robles</td><td>16 14</td><td>50</td><td>R</td><td>12250</td><td>2D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Mae</td><td>Leos</td><td>Sweetcrissie</td><td>6 9 2</td><td>10</td><td>R</td><td>750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Naza</td><td>Naza</td><td>D L S Jenny</td><td>9 2 6</td><td>10</td><td>R</td><td>750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>2PM</td><td>Ivy</td><td>Ivy</td><td>M Cabrera</td><td>28 31</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>2PM</td><td>Raymart</td><td>Raymart</td><td>E Egipto</td><td>28 31</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>2PM</td><td>Gigi</td><td>Jannalyn</td><td>Nestor</td><td>3 5 1</td><td>50</td><td>R</td><td>3750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>5PM</td><td>Ellaine</td><td>Ellaine</td><td>Ejl</td><td>07 30</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>5PM</td><td>Realyn</td><td>Jiselle</td><td>B Ha M Bham</td><td>07 30</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>5PM</td><td>Gigi</td><td>Jannalyn</td><td>Nestor</td><td>3 5 2</td><td>50</td><td>S</td><td>24000</td><td>3D Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>5PM</td><td>Gigi</td><td>Jannalyn</td><td>Nestor</td><td>3 5 2</td><td>50</td><td>R</td><td>3750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Ady</td><td>Ady</td><td>Arnold</td><td>05 04</td><td>10</td><td>R</td><td>2450</td><td>2D Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Heart</td><td>Zoe</td><td>Batshoy (Zd</td><td>4 1 0</td><td>10</td><td>R</td><td>750</td><td>3D Lotto</td></tr>
-<tr><td>Sep 01, 2024</td><td>9PM</td><td>Venice</td><td>Venice</td><td>Evangeline Amplayo ‼️</td><td>28 16 04</td><td>50</td><td></td><td>18000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 01, 2024</td><td>9PM</td><td>She</td><td>Wena</td><td>Arturo Bual </td><td>28 20 04</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 01, 2024</td><td>9PM</td><td>She</td><td>Wena</td><td>Mina Rosco </td><td>04 16 20</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 01, 2024</td><td>9PM</td><td>Issa</td><td>Issa</td><td>S-Win C 💕 </td><td>04 16 28</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 01, 2024</td><td>9PM</td><td>Ellaine</td><td>Ellaine</td><td>Aj Tj Tres </td><td>16 44 28</td><td>50</td><td></td><td>18000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 01, 2024</td><td>9PM</td><td>Friday</td><td>Allen</td><td>Leah Valdez Doles </td><td>04 28 20</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>9PM</td><td>Gigi</td><td>Blunt</td><td>Nida Toledo 02 •••</td><td>16 30 25</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>9PM</td><td>Kyara</td><td>Kyara</td><td>Jojo Hoa</td><td>25 39 30</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>9PM</td><td>Melani</td><td>Melani</td><td>Mika Mika</td><td>30 17 36</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>9PM</td><td>Melani</td><td>Melani</td><td>Dover Lee</td><td>17 36 16</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 02, 2024</td><td>9PM</td><td>Naza</td><td>Naza</td><td>Danny Jj</td><td>36 16 25</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>9PM</td><td>Friday</td><td>Claudia</td><td>Joanna Vip</td><td>01 11 18</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>9PM</td><td>Gigi</td><td>Gigi</td><td>Mark Russel Ditan G1</td><td>01 11 18</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>9PM</td><td>Joyce</td><td>Joyce</td><td>Sherlyn Javin </td><td>01 11 20</td><td>50</td><td></td><td>18000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>9PM</td><td>Khar</td><td>Randy</td><td>ファリナ・ジョ Zz</td><td>01 11 13</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>9PM</td><td>Ronalyn</td><td>Ana Mik</td><td>Engelbert </td><td>01 20 18</td><td>25</td><td>FB</td><td>7500</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 03, 2024</td><td>9PM</td><td>Vivian</td><td>Vivian</td><td>Eiyo</td><td>01 18 44</td><td>25</td><td>FB</td><td>7500</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 04, 2024</td><td>9PM</td><td>Aliana</td><td>Aliana</td><td>Janice O. Tabano </td><td>16 28 33</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 04, 2024</td><td>9PM</td><td>Khar</td><td>Reggie</td><td>Adrian Montaño</td><td>16 20 28</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 04, 2024</td><td>9PM</td><td>She</td><td>She</td><td>Fhe Villanueva </td><td>20 28 16</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Aliana</td><td>Athena</td><td>J Mesia</td><td>09 12 28</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Katelyn</td><td>John</td><td>Hero **</td><td>09 28 49</td><td>475</td><td></td><td>171000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Katelyn</td><td>John</td><td>Hero **</td><td>09 28 42</td><td>225</td><td></td><td>81000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Khar</td><td>Maricris</td><td>Jhey Ehm </td><td>09 12 42</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Kyara</td><td>Kyara</td><td>Justin P</td><td>09 28 49</td><td>100</td><td></td><td>36000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Kyara</td><td>Kyara</td><td>Karl Karl</td><td>28 09 49</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Melani</td><td>Melani</td><td>David L</td><td>09 28 49</td><td>100</td><td></td><td>36000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Monica</td><td>Josua</td><td>J F. Teves J</td><td>12 28 09</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 05, 2024</td><td>9PM</td><td>Naza</td><td>Naza</td><td>R Lagera </td><td>09 12 28</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>9PM</td><td>Kyara</td><td>Kyara</td><td>Denver Ccc</td><td>41 40 53</td><td>25</td><td></td><td>10500</td><td>6/58 Ultra Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>9PM</td><td>Melani</td><td>Melani</td><td>Jasper P</td><td>53 45 18</td><td>25</td><td></td><td>10500</td><td>6/58 Ultra Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>9PM</td><td>Melani</td><td>Melani</td><td>Sparky Sprks</td><td>45 18 41</td><td>25</td><td>FB</td><td>7500</td><td>6/58 Ultra Lotto</td></tr>
-<tr><td>Sep 06, 2024</td><td>9PM</td><td>Naza</td><td>Naza</td><td>Milagros 56&45</td><td>41 40 13</td><td>25</td><td></td><td>10500</td><td>6/58 Ultra Lotto</td></tr>
-<tr><td>Sep 07, 2024</td><td>9PM</td><td>Aliana</td><td>Athena</td><td>Nel </td><td>17 20 24</td><td>100</td><td></td><td>39200</td><td>6/55 Grand Lotto</td></tr>
-<tr><td>Sep 07, 2024</td><td>9PM</td><td>Friday</td><td>Claudia</td><td>Orly Vip </td><td>03 17 31</td><td>50</td><td></td><td>19600</td><td>6/55 Grand Lotto</td></tr>
-<tr><td>Sep 07, 2024</td><td>9PM</td><td>Heart</td><td>Heart</td><td>Entz L</td><td>03 17 20</td><td>25</td><td></td><td>9800</td><td>6/55 Grand Lotto</td></tr>
-<tr><td>Sep 07, 2024</td><td>9PM</td><td>Khar</td><td>Gliceria</td><td>Rita G Lanog 69</td><td>17 03 24</td><td>25</td><td></td><td>9800</td><td>6/55 Grand Lotto</td></tr>
-<tr><td>Sep 07, 2024</td><td>9PM</td><td>Kimberly</td><td>Kenley</td><td>Willie Entena </td><td>03 17 24</td><td>25</td><td>FB</td><td>7500</td><td>6/55 Grand Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>9PM</td><td>Gigi</td><td>Christine</td><td>S M Parantes 🉑</td><td>07 03 38</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>9PM</td><td>Monica</td><td>Carisa</td><td>R Peregua Elefan</td><td>07 03 35</td><td>50</td><td></td><td>18000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 08, 2024</td><td>9PM</td><td>Ronalyn</td><td>Erniejie</td><td>N-Basan</td><td>07 35 38</td><td>50</td><td></td><td>18000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Aliana</td><td>Athena</td><td>Lilibeth </td><td>12 25 33</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Aliana</td><td>Kassy</td><td>Dar D</td><td>12 33 09</td><td>100</td><td></td><td>32800</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Ardin</td><td>Vince</td><td>Epel</td><td>37 07 09</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Friday</td><td>Allen</td><td>Sandy Lee </td><td>07 09 33</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Friday</td><td>Allen</td><td>Sandy Lee </td><td>12 25 33</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Gigi</td><td>Jannalyn</td><td>Nestor</td><td>37 12 25</td><td>500</td><td></td><td>164000</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Gigi</td><td>Jannalyn</td><td>Glaiza</td><td>07 09 12</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Heart</td><td>Zoe</td><td>S Mira (Zd</td><td>09 12 25</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Ivy</td><td>Ivy</td><td>Ramo Van</td><td>07 25 33</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Joyce</td><td>Joyce</td><td>T Marcos</td><td>12 09 25</td><td>100</td><td></td><td>32800</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Katelyn</td><td>John</td><td>Bogut **</td><td>12 25 09</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Katelyn</td><td>John</td><td>Preciosa **</td><td>07 09 12</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Khar</td><td>Ramon Carlo</td><td>Daisy Rc6</td><td>09 12 33</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Krystal</td><td>Andie</td><td>J Concepcion </td><td>12 09 25</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Mae</td><td>Leos</td><td>Lance B• </td><td>09 25 12</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Melani</td><td>Melani</td><td>Rk</td><td>07 09 33</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Melani</td><td>Melani</td><td>L Singular Millan </td><td>07 09 25</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Melani</td><td>Melani</td><td>Sky Nath 56</td><td>13 37 25</td><td>150</td><td></td><td>49200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Mich</td><td>Nikky</td><td>A Salonga </td><td>12 09 25</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Naza</td><td>Naza</td><td>Nancy P%</td><td>37 25 12</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 09, 2024</td><td>9PM</td><td>Ronalyn</td><td>Ana Mik</td><td>Velo </td><td>09 33 25</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>9PM</td><td>Ardin</td><td>Jannah</td><td>Michael Villaflor </td><td>13 17 45</td><td>300</td><td></td><td>108000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>9PM</td><td>Katelyn</td><td>Katelyn</td><td>April John Cabrera **</td><td>17 02 19</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>9PM</td><td>Katelyn</td><td>John</td><td>Aurelio Tanig **</td><td>13 17 19</td><td>50</td><td>RB</td><td>18000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>9PM</td><td>Kyara</td><td>Kyara</td><td>Cahaya </td><td>19 17 35</td><td>50</td><td>RB</td><td>18000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>9PM</td><td>Maricel</td><td>Maricel</td><td>Jocel Mesa Madriñan </td><td>02 13 19</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>9PM</td><td>Monica</td><td>Josua</td><td>Nayr Enafalliv J</td><td>17 02 35</td><td>50</td><td></td><td>18000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>9PM</td><td>Venice</td><td>Venice</td><td>Yrrag Garry </td><td>19 02 45</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 10, 2024</td><td>9PM</td><td>Venice</td><td>Venice</td><td>Paulo Louie Bautista ‼️</td><td>19 35 17</td><td>200</td><td>RB</td><td>72000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Adriano</td><td>Adriano</td><td>Benchbench Oaboalab Ab8</td><td>09 14 41</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Aliana</td><td>Aliana</td><td>Lyn Lyn </td><td>13 14 09</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Aliana</td><td>Kassy</td><td>Nhok S</td><td>04 13 14</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Ardin</td><td>Jannah</td><td>L Smith Bugarin</td><td>09 13 14</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Gigi</td><td>Roland</td><td>F Armas •••</td><td>13 14 09</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Gigi</td><td>Gigi</td><td>V Bognot G1</td><td>09 13 14</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Gigi</td><td>Gigi</td><td>M Mariano G6</td><td>04 13 23</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Hanna</td><td>Angeli</td><td>Jose Phine C</td><td>04 09 23</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Heart</td><td>Angel</td><td>Ginafermalino M</td><td>09 23 14</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Irish</td><td>Irish</td><td>Lavender</td><td>14 23 09</td><td>100</td><td></td><td>32800</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Ivy</td><td>Angel</td><td>Rey Gane </td><td>23 04 41</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Joy</td><td>Joy</td><td>Doris</td><td>23 09 13</td><td>100</td><td></td><td>32800</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Katelyn</td><td>John</td><td>Bogut **</td><td>14 23 04</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Katelyn</td><td>John</td><td>Mader Dee **</td><td>13 14 23</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Kimberly</td><td>Liza</td><td>Rleen Cruz </td><td>09 14 04</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Kimberly</td><td>Kenley</td><td>Cyd Dilao </td><td>09 13 23</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Kylie</td><td>Kylie</td><td>L Gebilaguin </td><td>04 14 09</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Mae</td><td>Mae</td><td>Dave E. 3</td><td>14 13 09</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Maricel</td><td>Honey</td><td>J Baleña Hh</td><td>09 14 04</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Mark</td><td>Raymond</td><td>A Cerezo Rrb</td><td>09 13 41</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Megan</td><td>Megan</td><td>Rose</td><td>09 23 14</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Monica</td><td>Carisa</td><td>Jan🩷 </td><td>09 13 23</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Monica</td><td>Carisa</td><td>Guard Besone </td><td>04 13 23</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Monica</td><td>Josua</td><td>J Daileg Monroe J</td><td>09 13 41</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Ronalyn</td><td>Ana Mik</td><td>J Aquino </td><td>09 14 13</td><td>25</td><td></td><td>8200</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Ryan</td><td>Ryan</td><td> R. Perlas </td><td>09 14 23</td><td>50</td><td></td><td>16400</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Ryan</td><td>Fred</td><td>R R. Valencia </td><td>09 13 14</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Vivian</td><td>Vivian</td><td>Jayson</td><td>09 04 23</td><td>100</td><td></td><td>32800</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 11, 2024</td><td>9PM</td><td>Vivian</td><td>Vivian</td><td>Jayson</td><td>13 09 23</td><td>25</td><td>FB</td><td>7500</td><td>6/45 Mega Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Adel</td><td>Isabel</td><td>Jr Supremo </td><td>12 18 44</td><td>50</td><td></td><td>18000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Adriano</td><td>Pilits</td><td>F G Ravana </td><td>12 05 24</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Aliana</td><td>Athena</td><td>M Roble</td><td>12 24 38</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Aliana</td><td>Abigail</td><td>A Jocson Moleño </td><td>12 38 24</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Bella</td><td>Fred</td><td>J Patulin </td><td>12 18 24</td><td>200</td><td></td><td>72000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Gigi</td><td>Charlie</td><td>Irish Irish 💎</td><td>18 12 38</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Hanna</td><td>Hanna</td><td>Anha </td><td>12 05 18</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Jing</td><td>Jing</td><td>Chache Chache </td><td>12 18 24</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Katelyn</td><td>Katelyn</td><td>F Oliquiano Jr. **</td><td>24 18 44</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Khar</td><td>Ramon Carlo</td><td>E Tabing Rc </td><td>05 24 38</td><td>25</td><td>FB</td><td>7500</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Khar</td><td>Ramon Carlo</td><td>M Tabanao Rc </td><td>05 24 38</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Krystal</td><td>Krystal</td><td>Nmanalo </td><td>24 12 18</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Mae</td><td>Mae</td><td>Sad Dam 2</td><td>05 12 24</td><td>100</td><td></td><td>36000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Megan</td><td>Mike</td><td>Seno Xela </td><td>12 05 18</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Melani</td><td>Melani</td><td>D Oliva De Luna </td><td>05 12 24</td><td>25</td><td></td><td>9000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Monica</td><td>Josua</td><td>N Mariz Arevalo J</td><td>12 18 44</td><td>100</td><td></td><td>36000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Paul</td><td>Paul</td><td>Alas</td><td>05 12 38</td><td>50</td><td></td><td>18000</td><td>6/49 Super Lotto</td></tr>
-<tr><td>Sep 12, 2024</td><td>9PM</td><td>Ruby</td><td>Mareen</td><td>Arnel O.</td><td>05 18 24</td><td>25</td><td>FB</td><td>7500</td><td>6/49 Super Lotto</td></tr>
+            <div class="winners-table-wrapper">
+                <table class="winners-table" id="winners-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Team</th>
+                            <th>Agent</th>
+                            <th>Winner</th>
+                            <th>Combination</th>
+                            <th>Bet</th>
+                            <th>TOB</th>
+                            <th>Prize</th>
+                            <th>Game</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be inserted dynamically -->
+                    </tbody>
+                </table>
+            </div>
 
-                </tbody>
-            </table>
-        </div>
-    </div>
+            <div class="no-data" id="no-data-message" style="display: none;">
+                No data available
+            </div>
+
+            <div class="pagination">
+                <button id="prev-page" disabled>Previous</button>
+                <span id="page-info">Winner Page 1</span>
+                <button id="next-page">Next</button>
+            </div>
+
+            <div class="view-all-container">
+                <button id="view-all">View All</button>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
     </footer>
 
     <script>
-        document.getElementById('searchInput').addEventListener('keyup', function() {
-            const searchValue = this.value.toLowerCase();
-            const rows = document.querySelectorAll('#winnersTable tbody tr');
+        const winnersTable = document.getElementById('winners-table');
+        const tbody = winnersTable.querySelector('tbody');
+        const prevPageButton = document.getElementById('prev-page');
+        const nextPageButton = document.getElementById('next-page');
+        const pageInfo = document.getElementById('page-info');
+        const viewAllButton = document.getElementById('view-all');
+        const noDataMessage = document.getElementById('no-data-message');
+        const searchInput = document.getElementById('search-input');
+        const rowsPerPage = 10;
+        let currentPage = 1;
+        let showAll = false;
+        let data = [
+ { date: 'Sep 01, 2024', time: '2PM', team: 'Jazz', agent: 'Manuel', winner: 'J Saavedra', combi: '02 08', bet: '20', tob: 'R', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 01, 2024', time: '5PM', team: 'Gigi', agent: 'Blunt', winner: 'D Daypuyart 02', combi: '11 04', bet: '20', tob: 'R', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 01, 2024', time: '5PM', team: 'Jing', agent: 'Jing', winner: 'Jayla', combi: '11 04', bet: '30', tob: 'R', prize: '7350', game: '2D Lotto' },
+ { date: 'Sep 01, 2024', time: '5PM', team: 'Kylie', agent: 'Kylie', winner: 'Ador', combi: '04 11', bet: '20', tob: 'S', prize: '9800', game: '2D Lotto' },
+ { date: 'Sep 01, 2024', time: '5PM', team: 'Kylie', agent: 'Kylie', winner: 'Ador', combi: '11 04', bet: '30', tob: 'R', prize: '7350', game: '2D Lotto' },
+ { date: 'Sep 01, 2024', time: '9PM', team: 'Kylie', agent: 'Kylie', winner: 'Ador', combi: '28 20', bet: '30', tob: 'R', prize: '7350', game: '2D Lotto' },
+ { date: 'Sep 02, 2024', time: '2PM', team: 'Jing', agent: 'Amalia', winner: 'E Diaz Ac', combi: '15 17', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 02, 2024', time: '2PM', team: 'Mich', agent: 'Maryl', winner: 'O Volante Mc', combi: '3 4 0', bet: '10', tob: 'R', prize: '750', game: '3D Lotto' },
+ { date: 'Sep 02, 2024', time: '5PM', team: 'Heart', agent: 'Alexa', winner: 'Hb Saurane', combi: '27 02', bet: '20', tob: 'S', prize: '9800', game: '2D Lotto' },
+ { date: 'Sep 02, 2024', time: '5PM', team: 'Heart', agent: 'Alexa', winner: 'Hb Saurane', combi: '27 02', bet: '20', tob: 'R', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 02, 2024', time: '5PM', team: 'Naza', agent: 'Naza', winner: 'Dls Jenny', combi: '02 27', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 02, 2024', time: '5PM', team: 'Raymart', agent: 'Raymart', winner: 'N Pagdangaran', combi: '02 27', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 02, 2024', time: '9PM', team: 'Heart', agent: 'Ange', winner: 'Lito B', combi: '6 1 7', bet: '10', tob: 'R', prize: '750', game: '3D Lotto' },
+ { date: 'Sep 02, 2024', time: '9PM', team: 'Ivy', agent: 'Ivy', winner: 'Neb', combi: '6 7 1', bet: '20', tob: 'S', prize: '9600', game: '3D Lotto' },
+ { date: 'Sep 02, 2024', time: '9PM', team: 'Jollifer', agent: 'Jollifer', winner: 'Candy', combi: '1 6 7', bet: '20', tob: 'R', prize: '1500', game: '3D Lotto' },
+ { date: 'Sep 03, 2024', time: '2PM', team: 'Ellaine', agent: 'Ellaine', winner: 'Bernie', combi: '04 26', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 03, 2024', time: '2PM', team: 'Jollifer', agent: 'Jollifer', winner: 'Ap Padilla', combi: '04 26', bet: '100', tob: 'R', prize: '24500', game: '2D Lotto' },
+ { date: 'Sep 03, 2024', time: '2PM', team: 'Melani', agent: 'Melani', winner: 'Md Catan', combi: '04 26', bet: '30', tob: 'R', prize: '7350', game: '2D Lotto' },
+ { date: 'Sep 03, 2024', time: '2PM', team: 'Melani', agent: 'Melani', winner: 'Md Catan', combi: '04 26', bet: '20', tob: 'R', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 03, 2024', time: '5PM', team: 'Heart', agent: 'Aubrie', winner: 'N Dao', combi: '14 28', bet: '20', tob: 'R', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 03, 2024', time: '9PM', team: 'Kylie', agent: 'Kylie', winner: 'Ador', combi: '1 1 9', bet: '40', tob: 'R', prize: '3000', game: '3D Lotto' },
+ { date: 'Sep 03, 2024', time: '9PM', team: 'Hanna', agent: 'Monaliza', winner: 'E Vista', combi: '1 1 9', bet: '20', tob: 'R', prize: '1500', game: '3D Lotto' },
+ { date: 'Sep 04, 2024', time: '9PM', team: 'Jing', agent: 'Amalia', winner: 'Ma Gallo Ac', combi: '02 22', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 04, 2024', time: '9PM', team: 'Irish', agent: 'Irish', winner: 'Bryan', combi: '1 0 7', bet: '10', tob: 'R', prize: '750', game: '3D Lotto' },
+ { date: 'Sep 05, 2024', time: '2PM', team: 'Jorge', agent: 'Christian', winner: 'J Quijano', combi: '28 18', bet: '10', tob: 'S', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 05, 2024', time: '2PM', team: 'Jennifer', agent: 'Jennifer', winner: 'C Tan J4', combi: '18 28', bet: '20', tob: 'R', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 05, 2024', time: '5PM', team: 'Joy', agent: 'Joy', winner: 'Jomel', combi: '07 19', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 05, 2024', time: '5PM', team: 'Maricel', agent: 'Maricel', winner: 'Madam Vee Hh', combi: '07 19', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 05, 2024', time: '5PM', team: 'Khar', agent: 'Ramoncarlo', winner: 'Fair Rc', combi: '07 19', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 05, 2024', time: '5PM', team: 'Ivy', agent: 'Karen', winner: 'J-J Simbulan', combi: ' 9 6 3', bet: '20', tob: 'R', prize: '1500', game: '3D Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Jollifer', agent: 'Jollifer', winner: 'R A Bautista', combi: '29 22', bet: '20', tob: 'R', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Heart', agent: 'Zoe', winner: 'M Castro (Zd', combi: '22 29', bet: '20', tob: 'R', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Maricel', agent: 'Maricel', winner: 'M L Agullo', combi: '1 7 5', bet: '20', tob: 'R', prize: '1500', game: '3D Lotto' },
+ { date: 'Sep 06, 2024', time: '2PM', team: 'Melani', agent: 'Melani', winner: 'Md Catan', combi: '22 26', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 06, 2024', time: '2PM', team: 'Melani', agent: 'Melani', winner: 'Md Catan', combi: '22 26', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 06, 2024', time: '2PM', team: 'Heart', agent: 'Alexa', winner: 'J Agripata', combi: '4 9 2', bet: '10', tob: 'R', prize: '750', game: '3D Lotto' },
+ { date: 'Sep 06, 2024', time: '5pm', team: 'Jennifer', agent: 'Jennifer', winner: 'Jessie J4', combi: '03 08', bet: '20', tob: 'R', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 06, 2024', time: '5pm', team: 'Hanna', agent: 'Monaliza', winner: 'Cheska', combi: '08 03', bet: '10', tob: 'S', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 06, 2024', time: '5pm', team: 'Khar', agent: 'Ramoncarlo', winner: 'Fair Rc', combi: '08 03', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 06, 2024', time: '5pm', team: 'Heart', agent: 'Zoe', winner: 'J Castillo (Zd', combi: '08 03', bet: '50', tob: 'R', prize: '12250', game: '2D Lotto' },
+ { date: 'Sep 06, 2024', time: '9PM', team: 'Jennifer', agent: 'Jennifer', winner: 'Jessie J4', combi: '31 12', bet: '20', tob: 'R', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 06, 2024', time: '9PM', team: 'Ivy', agent: 'Karen', winner: 'J A Bundalian', combi: '12 31', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 06, 2024', time: '9PM', team: 'Ivy', agent: 'Karen', winner: 'J A Bundalian', combi: '12 31', bet: '10', tob: 'S', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 06, 2024', time: '9PM', team: 'Mich', agent: 'Nikky', winner: 'C Cateron', combi: '12 31', bet: '50', tob: 'S', prize: '24500', game: '2D Lotto' },
+ { date: 'Sep 06, 2024', time: '9PM', team: 'Jing', agent: 'Jing', winner: 'D Sotto', combi: '9 1 1', bet: '30', tob: 'S', prize: '14400', game: '3D Lotto' },
+ { date: 'Sep 06, 2024', time: '9PM', team: 'Melani', agent: 'Melani', winner: 'D Austria', combi: '9 1 1', bet: '30', tob: 'R', prize: '2250', game: '3D Lotto' },
+ { date: 'Sep 06, 2024', time: '9PM', team: 'Mich', agent: 'Mich', winner: 'R Bation', combi: '1 9 1', bet: '30', tob: 'R', prize: '2250', game: '3D Lotto' },
+ { date: 'Sep 07, 2024', time: '9PM', team: 'Ellaine', agent: 'Ellaine', winner: 'Ejl', combi: '01 19', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 07, 2024', time: '9PM', team: 'Gigi', agent: 'Jannalyn', winner: 'Clha', combi: '01 19', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 07, 2024', time: '9PM', team: 'Kylie', agent: 'Kylie', winner: 'Ador', combi: '01 19', bet: '30', tob: 'R', prize: '7350', game: '2D Lotto' },
+ { date: 'Sep 08, 2024', time: '2PM', team: 'Heart', agent: 'Chabs', winner: 'Joey Duzz', combi: '18 25', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 08, 2024', time: '2PM', team: 'Gigi', agent: 'Jannalyn', winner: 'Nestor', combi: '6 1 4', bet: '20', tob: 'R', prize: '1500', game: '3D Lotto' },
+ { date: 'Sep 08, 2024', time: '5PM', team: 'Raymart', agent: 'Candace', winner: 'M D Dandan', combi: '05 01', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 08, 2024', time: '5PM', team: 'Gigi', agent: 'Jannalyn', winner: 'M Hubilla', combi: '05 01', bet: '30', tob: 'R', prize: '7350', game: '2D Lotto' },
+ { date: 'Sep 08, 2024', time: '5PM', team: 'Jollifer', agent: 'Jollifer', winner: 'R Cornel', combi: '01 05', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 08, 2024', time: '9PM', team: 'Mich', agent: 'Mich', winner: 'Michelle', combi: '03 24', bet: '20', tob: 'S', prize: '9800', game: '2D Lotto' },
+ { date: 'Sep 08, 2024', time: '9PM', team: 'Mich', agent: 'Mich', winner: 'Michelle', combi: '03 24', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 08, 2024', time: '9PM', team: 'Jennifer', agent: 'Jennifer', winner: 'Jessie J4', combi: '5 4 5', bet: '50', tob: 'S', prize: '24000', game: '3D Lotto' },
+ { date: 'Sep 08, 2024', time: '9PM', team: 'Mich', agent: 'Lou', winner: 'G Soriano Af', combi: '5 4 5', bet: '10', tob: 'R', prize: '750', game: '3D Lotto' },
+ { date: 'Sep 09, 2024', time: '2PM', team: 'Jollifer', agent: 'Jollifer', winner: 'J R Hawn', combi: '5 1 8', bet: '20', tob: 'R', prize: '1500', game: '3D Lotto' },
+ { date: 'Sep 09, 2024', time: '2PM', team: 'Joy', agent: 'Joy', winner: 'Grey', combi: '5 1 8', bet: '10', tob: 'R', prize: '750', game: '3D Lotto' },
+ { date: 'Sep 09, 2024', time: '2PM', team: 'Heart', agent: 'Rizel', winner: 'M J B Ayson', combi: '5 1 8', bet: '10', tob: 'R', prize: '750', game: '3D Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Gigi', agent: 'Jannalyn', winner: 'Clha', combi: '01 19', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Ivy', agent: 'Ivy', winner: 'Tiger', combi: '3 3 9', bet: '30', tob: 'R', prize: '2250', game: '3D Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Maricel', agent: 'Maricel', winner: 'L Bautista', combi: '9 3 3', bet: '20', tob: 'S', prize: '9600', game: '3D Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Maricel', agent: 'Maricel', winner: 'L Bautista', combi: '9 3 3', bet: '30', tob: 'R', prize: '2250', game: '3D Lotto' },
+ { date: 'Sep 10, 2024', time: '2PM', team: 'Ellaine', agent: 'Ellaine', winner: 'Sir Melchor', combi: '18 24', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 10, 2024', time: '2PM', team: 'Heart', agent: 'Zoe', winner: 'W S Umpa (Zd', combi: '18 24', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 10, 2024', time: '2PM', team: 'Monica', agent: 'Carisa', winner: 'Ceb', combi: '5 1 6', bet: '20', tob: 'R', prize: '1500', game: '3D Lotto' },
+ { date: 'Sep 10, 2024', time: '9PM', team: 'Ivy', agent: 'Karen', winner: 'Kiteng', combi: '08 15', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 11, 2024', time: '2PM', team: 'Monica', agent: 'Carisa', winner: 'G Alvarado', combi: '15 29', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 11, 2024', time: '2PM', team: 'Ellaine', agent: 'Ellaine', winner: 'J Bruto', combi: '15 29', bet: '20', tob: 'S', prize: '9800', game: '2D Lotto' },
+ { date: 'Sep 11, 2024', time: '2PM', team: 'Krystal', agent: 'Krystal', winner: 'Kc', combi: '15 29', bet: '20', tob: 'R', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 11, 2024', time: '2PM', team: 'Heart', agent: 'Aubrie', winner: 'Bitoy', combi: '4 4 6', bet: '100', tob: 'S', prize: '48000', game: '3D Lotto' },
+ { date: 'Sep 11, 2024', time: '2PM', team: 'Heart', agent: 'Aubrie', winner: 'Bitoy', combi: '4 4 6', bet: '20', tob: 'R', prize: '1500', game: '3D Lotto' },
+ { date: 'Sep 11, 2024', time: '2PM', team: 'Joy', agent: 'Joy', winner: 'Mere', combi: '4 6 4', bet: '10', tob: 'R', prize: '750', game: '3D Lotto' },
+ { date: 'Sep 11, 2024', time: '5PM', team: 'Jing', agent: 'Jing', winner: 'J Manzon', combi: '19 19', bet: '40', tob: 'P', prize: '17200', game: '2D Lotto' },
+ { date: 'Sep 11, 2024', time: '5PM', team: 'Monica', agent: 'Carisa', winner: 'Ceb', combi: '6 3 1', bet: '20', tob: 'R', prize: '1500', game: '3D Lotto' },
+ { date: 'Sep 11, 2024', time: '5PM', team: 'Jing', agent: 'Jing', winner: 'G F Sorino', combi: '6 1 3', bet: '50', tob: 'S', prize: '24000', game: '3D Lotto' },
+ { date: 'Sep 11, 2024', time: '5PM', team: 'Jing', agent: 'Jing', winner: 'G F Sorino', combi: '6 1 3', bet: '20', tob: 'R', prize: '1500', game: '3D Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Hanna', agent: 'Angeli', winner: 'Marilou', combi: '16 14', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Gigi', agent: 'Blunt', winner: 'E D Justa 2', combi: '14 16', bet: '10', tob: 'S', prize: '4900', game: '2D Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Adriano', agent: 'Pilits', winner: 'A Robles', combi: '16 14', bet: '50', tob: 'R', prize: '12250', game: '2D Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Mae', agent: 'Leos', winner: 'Sweetcrissie', combi: '6 9 2', bet: '10', tob: 'R', prize: '750', game: '3D Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Naza', agent: 'Naza', winner: 'D L S Jenny', combi: '9 2 6', bet: '10', tob: 'R', prize: '750', game: '3D Lotto' },
+ { date: 'Sep 12, 2024', time: '2PM', team: 'Ivy', agent: 'Ivy', winner: 'M Cabrera', combi: '28 31', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 12, 2024', time: '2PM', team: 'Raymart', agent: 'Raymart', winner: 'E Egipto', combi: '28 31', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 12, 2024', time: '2PM', team: 'Gigi', agent: 'Jannalyn', winner: 'Nestor', combi: '3 5 1', bet: '50', tob: 'R', prize: '3750', game: '3D Lotto' },
+ { date: 'Sep 12, 2024', time: '5PM', team: 'Ellaine', agent: 'Ellaine', winner: 'Ejl', combi: '07 30', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 12, 2024', time: '5PM', team: 'Realyn', agent: 'Jiselle', winner: 'B Ha M Bham', combi: '07 30', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 12, 2024', time: '5PM', team: 'Gigi', agent: 'Jannalyn', winner: 'Nestor', combi: '3 5 2', bet: '50', tob: 'S', prize: '24000', game: '3D Lotto' },
+ { date: 'Sep 12, 2024', time: '5PM', team: 'Gigi', agent: 'Jannalyn', winner: 'Nestor', combi: '3 5 2', bet: '50', tob: 'R', prize: '3750', game: '3D Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Ady', agent: 'Ady', winner: 'Arnold', combi: '05 04', bet: '10', tob: 'R', prize: '2450', game: '2D Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Heart', agent: 'Zoe', winner: 'Batshoy (Zd', combi: '4 1 0', bet: '10', tob: 'R', prize: '750', game: '3D Lotto' },
+ { date: 'Sep 01, 2024', time: '9PM', team: 'Venice', agent: 'Venice', winner: 'Evangeline Amplayo ‼️', combi: '28 16 04', bet: '50', tob: '', prize: '18000', game: '6/49 Super Lotto' },
+ { date: 'Sep 01, 2024', time: '9PM', team: 'She', agent: 'Wena', winner: 'Arturo Bual ', combi: '28 20 04', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 01, 2024', time: '9PM', team: 'She', agent: 'Wena', winner: 'Mina Rosco ', combi: '04 16 20', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 01, 2024', time: '9PM', team: 'Issa', agent: 'Issa', winner: 'S-Win C 💕 ', combi: '04 16 28', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 01, 2024', time: '9PM', team: 'Ellaine', agent: 'Ellaine', winner: 'Aj Tj Tres ', combi: '16 44 28', bet: '50', tob: '', prize: '18000', game: '6/49 Super Lotto' },
+ { date: 'Sep 01, 2024', time: '9PM', team: 'Friday', agent: 'Allen', winner: 'Leah Valdez Doles ', combi: '04 28 20', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 02, 2024', time: '9PM', team: 'Gigi', agent: 'Blunt', winner: 'Nida Toledo 02 •••', combi: '16 30 25', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 02, 2024', time: '9PM', team: 'Kyara', agent: 'Kyara', winner: 'Jojo Hoa', combi: '25 39 30', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 02, 2024', time: '9PM', team: 'Melani', agent: 'Melani', winner: 'Mika Mika', combi: '30 17 36', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 02, 2024', time: '9PM', team: 'Melani', agent: 'Melani', winner: 'Dover Lee', combi: '17 36 16', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 02, 2024', time: '9PM', team: 'Naza', agent: 'Naza', winner: 'Danny Jj', combi: '36 16 25', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 03, 2024', time: '9PM', team: 'Friday', agent: 'Claudia', winner: 'Joanna Vip', combi: '01 11 18', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 03, 2024', time: '9PM', team: 'Gigi', agent: 'Gigi', winner: 'Mark Russel Ditan G1', combi: '01 11 18', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 03, 2024', time: '9PM', team: 'Joyce', agent: 'Joyce', winner: 'Sherlyn Javin ', combi: '01 11 20', bet: '50', tob: '', prize: '18000', game: '6/49 Super Lotto' },
+ { date: 'Sep 03, 2024', time: '9PM', team: 'Khar', agent: 'Randy', winner: 'ファリナ・ジョ Zz', combi: '01 11 13', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 03, 2024', time: '9PM', team: 'Ronalyn', agent: 'Ana Mik', winner: 'Engelbert ', combi: '01 20 18', bet: '0', tob: 'FB', prize: '7500', game: '6/49 Super Lotto' },
+ { date: 'Sep 03, 2024', time: '9PM', team: 'Vivian', agent: 'Vivian', winner: 'Eiyo', combi: '01 18 44', bet: '0', tob: 'FB', prize: '7500', game: '6/49 Super Lotto' },
+ { date: 'Sep 04, 2024', time: '9PM', team: 'Aliana', agent: 'Aliana', winner: 'Janice O. Tabano ', combi: '16 28 33', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 04, 2024', time: '9PM', team: 'Khar', agent: 'Reggie', winner: 'Adrian Montaño', combi: '16 20 28', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 04, 2024', time: '9PM', team: 'She', agent: 'She', winner: 'Fhe Villanueva ', combi: '20 28 16', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Aliana', agent: 'Athena', winner: 'J Mesia', combi: '09 12 28', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Katelyn', agent: 'John', winner: 'Hero **', combi: '09 28 49', bet: '475', tob: '', prize: '171000', game: '6/49 Super Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Katelyn', agent: 'John', winner: 'Hero **', combi: '09 28 42', bet: '225', tob: '', prize: '81000', game: '6/49 Super Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Khar', agent: 'Maricris', winner: 'Jhey Ehm ', combi: '09 12 42', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Kyara', agent: 'Kyara', winner: 'Justin P', combi: '09 28 49', bet: '100', tob: '', prize: '36000', game: '6/49 Super Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Kyara', agent: 'Kyara', winner: 'Karl Karl', combi: '28 09 49', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Melani', agent: 'Melani', winner: 'David L', combi: '09 28 49', bet: '100', tob: '', prize: '36000', game: '6/49 Super Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Monica', agent: 'Josua', winner: 'J F. Teves J', combi: '12 28 09', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 05, 2024', time: '9PM', team: 'Naza', agent: 'Naza', winner: 'R Lagera ', combi: '09 12 28', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 06, 2024', time: '9PM', team: 'Kyara', agent: 'Kyara', winner: 'Denver Ccc', combi: '41 40 53', bet: '25', tob: '', prize: '10500', game: '6/58 Ultra Lotto' },
+ { date: 'Sep 06, 2024', time: '9PM', team: 'Melani', agent: 'Melani', winner: 'Jasper P', combi: '53 45 18', bet: '25', tob: '', prize: '10500', game: '6/58 Ultra Lotto' },
+ { date: 'Sep 06, 2024', time: '9PM', team: 'Melani', agent: 'Melani', winner: 'Sparky Sprks', combi: '45 18 41', bet: '0', tob: 'FB', prize: '7500', game: '6/58 Ultra Lotto' },
+ { date: 'Sep 06, 2024', time: '9PM', team: 'Naza', agent: 'Naza', winner: 'Milagros 56&45', combi: '41 40 13', bet: '25', tob: '', prize: '10500', game: '6/58 Ultra Lotto' },
+ { date: 'Sep 07, 2024', time: '9PM', team: 'Aliana', agent: 'Athena', winner: 'Nel ', combi: '17 20 24', bet: '100', tob: '', prize: '39200', game: '6/55 Grand Lotto' },
+ { date: 'Sep 07, 2024', time: '9PM', team: 'Friday', agent: 'Claudia', winner: 'Orly Vip ', combi: '03 17 31', bet: '50', tob: '', prize: '19600', game: '6/55 Grand Lotto' },
+ { date: 'Sep 07, 2024', time: '9PM', team: 'Heart', agent: 'Heart', winner: 'Entz L', combi: '03 17 20', bet: '25', tob: '', prize: '9800', game: '6/55 Grand Lotto' },
+ { date: 'Sep 07, 2024', time: '9PM', team: 'Khar', agent: 'Gliceria', winner: 'Rita G Lanog 69', combi: '17 03 24', bet: '25', tob: '', prize: '9800', game: '6/55 Grand Lotto' },
+ { date: 'Sep 07, 2024', time: '9PM', team: 'Kimberly', agent: 'Kenley', winner: 'Willie Entena ', combi: '03 17 24', bet: '0', tob: 'FB', prize: '7500', game: '6/55 Grand Lotto' },
+ { date: 'Sep 08, 2024', time: '9PM', team: 'Gigi', agent: 'Christine', winner: 'S M Parantes 🉑', combi: '07 03 38', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 08, 2024', time: '9PM', team: 'Monica', agent: 'Carisa', winner: 'R Peregua Elefan', combi: '07 03 35', bet: '50', tob: '', prize: '18000', game: '6/49 Super Lotto' },
+ { date: 'Sep 08, 2024', time: '9PM', team: 'Ronalyn', agent: 'Erniejie', winner: 'N-Basan', combi: '07 35 38', bet: '50', tob: '', prize: '18000', game: '6/49 Super Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Aliana', agent: 'Athena', winner: 'Lilibeth ', combi: '12 25 33', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Aliana', agent: 'Kassy', winner: 'Dar D', combi: '12 33 09', bet: '100', tob: '', prize: '32800', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Ardin', agent: 'Vince', winner: 'Epel', combi: '37 07 09', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Friday', agent: 'Allen', winner: 'Sandy Lee ', combi: '07 09 33', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Friday', agent: 'Allen', winner: 'Sandy Lee ', combi: '12 25 33', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Gigi', agent: 'Jannalyn', winner: 'Nestor', combi: '37 12 25', bet: '500', tob: '', prize: '164000', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Gigi', agent: 'Jannalyn', winner: 'Glaiza', combi: '07 09 12', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Heart', agent: 'Zoe', winner: 'S Mira (Zd', combi: '09 12 25', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Ivy', agent: 'Ivy', winner: 'Ramo Van', combi: '07 25 33', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Joyce', agent: 'Joyce', winner: 'T Marcos', combi: '12 09 25', bet: '100', tob: '', prize: '32800', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Katelyn', agent: 'John', winner: 'Bogut **', combi: '12 25 09', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Katelyn', agent: 'John', winner: 'Preciosa **', combi: '07 09 12', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Khar', agent: 'Ramon Carlo', winner: 'Daisy Rc6', combi: '09 12 33', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Krystal', agent: 'Andie', winner: 'J Concepcion ', combi: '12 09 25', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Mae', agent: 'Leos', winner: 'Lance B• ', combi: '09 25 12', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Melani', agent: 'Melani', winner: 'Rk', combi: '07 09 33', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Melani', agent: 'Melani', winner: 'L Singular Millan ', combi: '07 09 25', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Melani', agent: 'Melani', winner: 'Sky Nath 56', combi: '13 37 25', bet: '150', tob: '', prize: '49200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Mich', agent: 'Nikky', winner: 'A Salonga ', combi: '12 09 25', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Naza', agent: 'Naza', winner: 'Nancy P%', combi: '37 25 12', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 09, 2024', time: '9PM', team: 'Ronalyn', agent: 'Ana Mik', winner: 'Velo ', combi: '09 33 25', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 10, 2024', time: '9PM', team: 'Ardin', agent: 'Jannah', winner: 'Michael Villaflor ', combi: '13 17 45', bet: '300', tob: '', prize: '108000', game: '6/49 Super Lotto' },
+ { date: 'Sep 10, 2024', time: '9PM', team: 'Katelyn', agent: 'Katelyn', winner: 'April John Cabrera **', combi: '17 02 19', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 10, 2024', time: '9PM', team: 'Katelyn', agent: 'John', winner: 'Aurelio Tanig **', combi: '13 17 19', bet: '50', tob: 'RB', prize: '18000', game: '6/49 Super Lotto' },
+ { date: 'Sep 10, 2024', time: '9PM', team: 'Kyara', agent: 'Kyara', winner: 'Cahaya ', combi: '19 17 35', bet: '50', tob: 'RB', prize: '18000', game: '6/49 Super Lotto' },
+ { date: 'Sep 10, 2024', time: '9PM', team: 'Maricel', agent: 'Maricel', winner: 'Jocel Mesa Madriñan ', combi: '02 13 19', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 10, 2024', time: '9PM', team: 'Monica', agent: 'Josua', winner: 'Nayr Enafalliv J', combi: '17 02 35', bet: '50', tob: '', prize: '18000', game: '6/49 Super Lotto' },
+ { date: 'Sep 10, 2024', time: '9PM', team: 'Venice', agent: 'Venice', winner: 'Yrrag Garry ', combi: '19 02 45', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 10, 2024', time: '9PM', team: 'Venice', agent: 'Venice', winner: 'Paulo Louie Bautista ‼️', combi: '19 35 17', bet: '200', tob: 'RB', prize: '72000', game: '6/49 Super Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Adriano', agent: 'Adriano', winner: 'Benchbench Oaboalab Ab8', combi: '09 14 41', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Aliana', agent: 'Aliana', winner: 'Lyn Lyn ', combi: '13 14 09', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Aliana', agent: 'Kassy', winner: 'Nhok S', combi: '04 13 14', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Ardin', agent: 'Jannah', winner: 'L Smith Bugarin', combi: '09 13 14', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Gigi', agent: 'Roland', winner: 'F Armas •••', combi: '13 14 09', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Gigi', agent: 'Gigi', winner: 'V Bognot G1', combi: '09 13 14', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Gigi', agent: 'Gigi', winner: 'M Mariano G6', combi: '04 13 23', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Hanna', agent: 'Angeli', winner: 'Jose Phine C', combi: '04 09 23', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Heart', agent: 'Angel', winner: 'Ginafermalino M', combi: '09 23 14', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Irish', agent: 'Irish', winner: 'Lavender', combi: '14 23 09', bet: '100', tob: '', prize: '32800', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Ivy', agent: 'Angel', winner: 'Rey Gane ', combi: '23 04 41', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Joy', agent: 'Joy', winner: 'Doris', combi: '23 09 13', bet: '100', tob: '', prize: '32800', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Katelyn', agent: 'John', winner: 'Bogut **', combi: '14 23 04', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Katelyn', agent: 'John', winner: 'Mader Dee **', combi: '13 14 23', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Kimberly', agent: 'Liza', winner: 'Rleen Cruz ', combi: '09 14 04', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Kimberly', agent: 'Kenley', winner: 'Cyd Dilao ', combi: '09 13 23', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Kylie', agent: 'Kylie', winner: 'L Gebilaguin ', combi: '04 14 09', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Mae', agent: 'Mae', winner: 'Dave E. 3', combi: '14 13 09', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Maricel', agent: 'Honey', winner: 'J Baleña Hh', combi: '09 14 04', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Mark', agent: 'Raymond', winner: 'A Cerezo Rrb', combi: '09 13 41', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Megan', agent: 'Megan', winner: 'Rose', combi: '09 23 14', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Monica', agent: 'Carisa', winner: 'Jan🩷 ', combi: '09 13 23', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Monica', agent: 'Carisa', winner: 'Guard Besone ', combi: '04 13 23', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Monica', agent: 'Josua', winner: 'J Daileg Monroe J', combi: '09 13 41', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Ronalyn', agent: 'Ana Mik', winner: 'J Aquino ', combi: '09 14 13', bet: '25', tob: '', prize: '8200', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Ryan', agent: 'Ryan', winner: ' R. Perlas ', combi: '09 14 23', bet: '50', tob: '', prize: '16400', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Ryan', agent: 'Fred', winner: 'R R. Valencia ', combi: '09 13 14', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Vivian', agent: 'Vivian', winner: 'Jayson', combi: '09 04 23', bet: '100', tob: '', prize: '32800', game: '6/45 Mega Lotto' },
+ { date: 'Sep 11, 2024', time: '9PM', team: 'Vivian', agent: 'Vivian', winner: 'Jayson', combi: '13 09 23', bet: '0', tob: 'FB', prize: '7500', game: '6/45 Mega Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Adel', agent: 'Isabel', winner: 'Jr Supremo ', combi: '12 18 44', bet: '50', tob: '', prize: '18000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Adriano', agent: 'Pilits', winner: 'F G Ravana ', combi: '12 05 24', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Aliana', agent: 'Athena', winner: 'M Roble', combi: '12 24 38', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Aliana', agent: 'Abigail', winner: 'A Jocson Moleño ', combi: '12 38 24', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Bella', agent: 'Fred', winner: 'J Patulin ', combi: '12 18 24', bet: '200', tob: '', prize: '72000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Gigi', agent: 'Charlie', winner: 'Irish Irish 💎', combi: '18 12 38', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Hanna', agent: 'Hanna', winner: 'Anha ', combi: '12 05 18', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Jing', agent: 'Jing', winner: 'Chache Chache ', combi: '12 18 24', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Katelyn', agent: 'Katelyn', winner: 'F Oliquiano Jr. **', combi: '24 18 44', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Khar', agent: 'Ramon Carlo', winner: 'E Tabing Rc ', combi: '05 24 38', bet: '0', tob: 'FB', prize: '7500', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Khar', agent: 'Ramon Carlo', winner: 'M Tabanao Rc ', combi: '05 24 38', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Krystal', agent: 'Krystal', winner: 'Nmanalo ', combi: '24 12 18', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Mae', agent: 'Mae', winner: 'Sad Dam 2', combi: '05 12 24', bet: '100', tob: '', prize: '36000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Megan', agent: 'Mike', winner: 'Seno Xela ', combi: '12 05 18', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Melani', agent: 'Melani', winner: 'D Oliva De Luna ', combi: '05 12 24', bet: '25', tob: '', prize: '9000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Monica', agent: 'Josua', winner: 'N Mariz Arevalo J', combi: '12 18 44', bet: '100', tob: '', prize: '36000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Paul', agent: 'Paul', winner: 'Alas', combi: '05 12 38', bet: '50', tob: '', prize: '18000', game: '6/49 Super Lotto' },
+ { date: 'Sep 12, 2024', time: '9PM', team: 'Ruby', agent: 'Mareen', winner: 'Arnel O.', combi: '05 18 24', bet: '0', tob: 'FB', prize: '7500', game: '6/49 Super Lotto' },
 
-            rows.forEach(row => {
-                const cells = row.getElementsByTagName('td');
-                let match = false;
+            // Add more data as needed
+        ];
 
-                for (let i = 0; i < cells.length; i++) {
-                    if (cells[i].textContent.toLowerCase().includes(searchValue)) {
-                        match = true;
-                        break;
-                    }
-                }
-
-                row.style.display = match ? '' : 'none';
-            });
-        });
-
-        function parseDate(dateStr) {
-            const [monthStr, day, year] = dateStr.split(' ');
-            const month = new Date(Date.parse(monthStr + " 1, 2020")).getMonth(); // get month index from string
-            return new Date(year, month, day);
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString(undefined, options);
         }
 
-        function parseTime(timeStr) {
-            const [time, period] = timeStr.split(' ');
-            let [hours, minutes] = time.split(':').map(Number);
-            if (period === 'PM' && hours !== 12) hours += 12;
-            if (period === 'AM' && hours === 12) hours = 0;
-            return new Date(2000, 0, 1, hours, minutes);
-        }
-
-        function sortTable() {
-            const table = document.getElementById('winnersTable');
-            const rows = Array.from(table.querySelectorAll('tbody tr'));
-            rows.sort((a, b) => {
-                const dateA = parseDate(a.cells[0].textContent);
-                const timeA = parseTime(a.cells[1].textContent);
-                const dateTimeA = new Date(dateA.toDateString() + ' ' + timeA.toTimeString().split(' ')[0]);
-
-                const dateB = parseDate(b.cells[0].textContent);
-                const timeB = parseTime(b.cells[1].textContent);
-                const dateTimeB = new Date(dateB.toDateString() + ' ' + timeB.toTimeString().split(' ')[0]);
-
-                return dateTimeB - dateTimeA; // Sort from latest to oldest
-            });
-
-            const tbody = table.querySelector('tbody');
+        function renderTable() {
             tbody.innerHTML = '';
-            rows.forEach(row => tbody.appendChild(row));
+            const searchTerm = searchInput.value.toLowerCase();
+            const sortedData = sortDataByDate(data);
+
+            // Automatically show all data when searching
+            const filteredData = sortedData.filter(row =>
+                Object.values(row).some(value =>
+                    value.toString().toLowerCase().includes(searchTerm)
+                )
+            );
+
+            // If searching, show all filtered results, else paginate
+            const pageData = searchTerm ? filteredData : (showAll ? sortedData : sortedData.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage));
+
+            if (pageData.length === 0) {
+                noDataMessage.style.display = 'block';
+                winnersTable.style.display = 'none';
+            } else {
+                noDataMessage.style.display = 'none';
+                winnersTable.style.display = 'table';
+
+                pageData.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${formatDate(row.date)}</td>
+                        <td>${row.time}</td>
+                        <td>${row.team}</td>
+                        <td>${row.agent}</td>
+                        <td>${row.winner}</td>
+                        <td>${row.combi}</td>
+                        <td>${row.bet}</td>
+                        <td>${row.tob}</td>
+                        <td>${row.prize}</td>
+                        <td>${row.game}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+
+                prevPageButton.disabled = currentPage === 1 || showAll || searchTerm;
+                nextPageButton.disabled = (currentPage * rowsPerPage) >= sortedData.length || showAll || searchTerm;
+                pageInfo.textContent = `Winner Page ${currentPage}`;
+            }
         }
 
-        document.addEventListener('DOMContentLoaded', sortTable);
+        function sortDataByDate(data) {
+            return data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
+
+        function toggleViewAll() {
+            showAll = !showAll;
+            currentPage = 1;
+            renderTable();
+            viewAllButton.textContent = showAll ? 'Show Less' : 'View All';
+        }
+
+        function changePage(increment) {
+            if (showAll || searchInput.value) return;
+            currentPage += increment;
+            renderTable();
+        }
+
+        function handleSearch() {
+            currentPage = 1; // Reset to first page when searching
+            renderTable();
+        }
+
+        searchInput.addEventListener('input', handleSearch);
+        prevPageButton.addEventListener('click', () => changePage(-1));
+        nextPageButton.addEventListener('click', () => changePage(1));
+        viewAllButton.addEventListener('click', toggleViewAll);
+
+        renderTable();
     </script>
 </body>
 </html>
