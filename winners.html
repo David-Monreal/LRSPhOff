@@ -448,9 +448,9 @@
         });
 
         function parseDate(dateStr) {
-            const months = { 'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6, 'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12 };
-            const [month, day, year] = dateStr.split(' ');
-            return new Date(`${year}-${months[month]}-${day}`);
+            const [monthStr, day, year] = dateStr.split(' ');
+            const month = new Date(Date.parse(monthStr + " 1, 2020")).getMonth(); // get month index from string
+            return new Date(year, month, day);
         }
 
         function parseTime(timeStr) {
@@ -468,7 +468,7 @@
                 const dateA = parseDate(a.cells[0].textContent);
                 const timeA = parseTime(a.cells[1].textContent);
                 const dateTimeA = new Date(dateA.toDateString() + ' ' + timeA.toTimeString().split(' ')[0]);
-                
+
                 const dateB = parseDate(b.cells[0].textContent);
                 const timeB = parseTime(b.cells[1].textContent);
                 const dateTimeB = new Date(dateB.toDateString() + ' ' + timeB.toTimeString().split(' ')[0]);
