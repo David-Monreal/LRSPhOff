@@ -540,17 +540,16 @@
                 )
             );
 
-            // If searching, show all filtered results, else paginate
-            const pageData = searchTerm ? filteredData : (showAll ? sortedData : sortedData.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage));
+            const paginatedData = paginateData(filteredData);
 
-            if (pageData.length === 0) {
+            if (paginatedData.length === 0) {
                 noDataMessage.style.display = 'block';
                 winnersTable.style.display = 'none';
             } else {
                 noDataMessage.style.display = 'none';
                 winnersTable.style.display = 'table';
 
-                pageData.forEach(row => {
+                paginatedData.forEach(row => {
                     const tr = document.createElement('tr');
                     tr.innerHTML = `
                         <td>${formatDate(row.date)}</td>
@@ -568,13 +567,22 @@
                 });
 
                 prevPageButton.disabled = currentPage === 1 || showAll || searchTerm;
-                nextPageButton.disabled = (currentPage * rowsPerPage) >= sortedData.length || showAll || searchTerm;
+                nextPageButton.disabled = (currentPage * rowsPerPage) >= filteredData.length || showAll || searchTerm;
                 pageInfo.textContent = `Winner Page ${currentPage}`;
             }
         }
 
         function sortDataByDate(data) {
             return data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
+
+        function paginateData(data) {
+            if (showAll || searchInput.value) {
+                return data; // Show all data when search or view-all is active
+            }
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            return data.slice(start, end);
         }
 
         function toggleViewAll() {
