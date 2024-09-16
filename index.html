@@ -108,6 +108,50 @@
             .container {
                 padding: 0 10px;
             }
+
+            nav .nav-links {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .main-video {
+                width: 100%;
+                max-width: 100%;
+                border: none;
+            }
+
+            .related-images {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .related-images img {
+                width: 100%;
+                max-width: 100px;
+            }
+
+            .watch-live-draws .video-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .watch-live-draws .video-wrapper iframe {
+                width: 100%;
+                max-width: 100%;
+            }
         }
 
         .hero {
@@ -240,26 +284,6 @@
             bottom: 0;
         }
 
-        @media (max-width: 768px) {
-            .content-wrapper {
-                flex-direction: row;
-                flex-wrap: nowrap;
-            }
-
-            .main-video {
-                flex: 2;
-            }
-
-            .related-images {
-                flex-direction: row;
-                flex: 1;
-            }
-
-            .watch-live-draws .video-wrapper {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
     </style>
 </head>
 <body>
@@ -270,40 +294,39 @@
     </div>
 </header>
 
-    <nav role="navigation">
-        <ul class="nav-links">
-            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="games.html"><i class="fas fa-gamepad"></i>Games</a></li>
-            <li><a href="results.html"><i class="fas fa-trophy"></i>Results</a></li>
-            <li><a href="winners.html"><i class="fas fa-crown"></i>Winners</a></li>
-        </ul>
-    </nav>
+<nav role="navigation">
+    <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="games.html"><i class="fas fa-gamepad"></i>Games</a></li>
+        <li><a href="results.html"><i class="fas fa-trophy"></i>Results</a></li>
+        <li><a href="winners.html"><i class="fas fa-crown"></i>Winners</a></li>
+    </ul>
+</nav>
 
-    <main>
-        <section class="hero">
-            <h1>Welcome to LRS Philippines Official</h1>
-            <p>Experience the thrill of winning with our exciting lottery games!</p>
-        </section>
+<main>
+    <section class="hero">
+        <h1>Welcome to LRS Philippines Official</h1>
+        <p>Experience the thrill of winning with our exciting lottery games!</p>
+    </section>
 
-        <section class="about-us">
-            <h2>What's New?</h2>
-        </section>
+    <section class="about-us">
+        <h2>What's New?</h2>
+    </section>
 
-        <section class="content-wrapper">
-            <div class="main-video">
-                <!-- Main promo video -->
-                <video controls>
-                    <source src="img/video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="related-images">
-                <img src="img/lrs.png" alt="Promo Image 1">
-                <img src="img/lrs.png" alt="Promo Image 2">
-            </div>
-        </section>
+    <section class="content-wrapper">
+        <div class="main-video">
+            <!-- Main promo video -->
+            <video controls>
+                <source src="img/video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="related-images">
+            <img src="img/lrs.png" alt="Related Image 1">
+            <img src="img/lrs.png" alt="Related Image 2">
 
-        <!-- Watch Live Draws Section -->
+        </div>
+    </section>
+
         <section class="watch-live-draws">
             <h2>Watch Live Draws</h2>
             <div class="video-wrapper">
@@ -322,7 +345,7 @@
             </div>
         </section>
 
-        <section class="about-us">
+      <section class="about-us">
             <h2>About Us</h2>
             <p>
                 Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto. Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.
@@ -334,10 +357,11 @@
                 Sa LRS, ang iyong kasiyahan at tagumpay ang aming pangunahing layunin.
             </p>
         </section>
-    </main>
+</main>
 
-    <footer>
-        <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
