@@ -34,12 +34,12 @@
 
         nav {
             display: flex;
-            justify-content: center; /* Center-align the navigation */
+            justify-content: center;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            background: #ff0000; /* Red background for navigation */
+            background: var(--secondary-color);
             position: relative;
         }
 
@@ -79,15 +79,17 @@
 
         nav .nav-links a:hover,
         nav .nav-links a:focus {
-            color: #ffff00; /* Yellow on hover */
+            color: var(--accent-color);
         }
 
         nav .nav-links i {
             margin-right: 8px;
         }
 
-        .nav-toggle {
-            display: none;
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         /* Main Content */
