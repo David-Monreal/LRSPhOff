@@ -252,18 +252,30 @@
         }
 
         .watch-live-draws .video-wrapper {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between videos */
+  }
 
-        .watch-live-draws .video-wrapper iframe {
-            width: 100%;
-            max-width: 300px;
-            border: 5px solid var(--primary-color);
-            border-radius: 10px;
-        }
+  .watch-live-draws .video-wrapper iframe {
+    flex: 1 1 45%; /* Take 45% of the available width on wider screens */
+    max-width: 100%; /* Don't exceed the container's width */
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+  }
+
+  /* Adjust for wider screens */
+  @media screen and (min-width: 1200px) {
+    .watch-live-draws .video-wrapper iframe {
+      flex: 1 1 30%; /* Videos take 30% of the width on very wide screens */
+    }
+  }
+
+  /* On mobile or smaller screens */
+  @media screen and (max-width: 768px) {
+    .watch-live-draws .video-wrapper iframe {
+      flex: 1 1 100%; /* Full width on mobile screens */
+    }
+  }
 
         .draw-caption {
             margin-top: 10px;
@@ -308,7 +320,6 @@
 
     <section class="about-us">
         <h2>What's New?</h2>
-    </section>
 
 <div class="main-video">
   <video controls>
@@ -324,15 +335,15 @@
             <div class="video-wrapper">
                 <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/HaxJ0sg4JM4?si=20tLQeW3Vb0QZfih" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="draw-caption">2pm Draw</div>
+                    <div class="draw-caption">September 16, 2024 (2pm Draw)</div>
                 </div>
                 <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/iOY-8-opeBs?si=DYlfwIT9nuPKQ4V3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="draw-caption">5pm Draw</div>
+                    <div class="draw-caption">September 16, 2024 (5pm Draw)</div>
                 </div>
                 <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/6YWvSZWe1vs?si=NHemDgKnlFcqs-Tf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="draw-caption">9pm Draw</div>
+                    <div class="draw-caption">September 16, 2024 (9pm Draw)</div>
                 </div>
             </div>
         </section>
@@ -340,11 +351,11 @@
       <section class="about-us">
             <h2>About Us</h2>
             <p style="text-indent: 4em;">Ang <strong>LRS Philippines Official</strong> ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto. Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.
-            </p>
+            </p><div style="height: 20px;"></div>
             <p style="text-indent: 4em;">Sa pamamagitan ng aming sistema, maaari mong piliin ang tatlong numero mula sa iba't ibang laro ng lotto at manalo agad kung ang tatlong numerong iyon ay nasa anim na lumabas na numero. Kung dalawa lamang ang nagmatch na numero, makakatanggap ka parin ng return bet.
-            </p>
+            </p><div style="height: 20px;"></div>
             <p style="text-indent: 4em;">Sa LRS, ang iyong kasiyahan at tagumpay ang aming pangunahing layunin.
-            </p>
+            </p><div style="height: 20px;"></div>
         </section>
 </main>
 
