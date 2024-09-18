@@ -139,15 +139,7 @@
             max-width: 100%;
             }
 
-            .related-images {
-                flex-direction: row;
-                gap: 10px;
-            }
 
-            .related-images img {
-                width: 100%;
-                max-width: 100px;
-            }
 
             .watch-live-draws .video-wrapper {
                 flex-direction: column;
@@ -205,25 +197,22 @@
             gap: 20px;
         }
 
-        .main-video {
-            flex: 2;
-            max-width: 100%;
-            border: 5px solid var(--primary-color);
-        }
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%; /* Ensures video is not larger than its container */
+    background: #000;
+  }
 
-        .related-images {
-            flex: 1;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .related-images img {
-            width: 100%;
-            max-width: 300px;
-            border: 5px solid var(--primary-color);
-            border-radius: 10px;
-        }
+  .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
         .about-us {
             margin-top: 20px;
@@ -322,17 +311,13 @@
     </section>
 
     <section class="content-wrapper">
-        <div class="main-video">
-            <!-- Main promo video -->
-            <video controls>
-                <source src="img/video.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="related-images">
-            <img src="img/lrs.png" alt="Related Image 1">
-            <img src="img/lrs.png" alt="Related Image 2">
+<div class="video-container">
+  <video controls>
+    <source src="your-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
-        </div>
     </section>
 
         <section class="watch-live-draws">
