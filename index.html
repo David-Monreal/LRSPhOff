@@ -29,19 +29,16 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: var(--background-color);
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
 
         header {
-            background: var(--primary-color);
+            background: #0033cc;
             color: #fff;
             padding: 10px 0;
             text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
         }
 
         header h1 {
@@ -56,7 +53,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            background: var(--secondary-color);
+            background: #ff0000;
             position: relative;
         }
 
@@ -96,7 +93,7 @@
 
         nav .nav-links a:hover,
         nav .nav-links a:focus {
-            color: var(--accent-color);
+            color: #ffff00;
         }
 
         nav .nav-links i {
@@ -246,6 +243,7 @@
             font-size: 1.1em;
             color: var(--text-color);
             line-height: 1.8;
+          text-align: justify;
         }
 
         .watch-live-draws {
@@ -303,14 +301,14 @@
     </div>
 </header>
 
-<nav role="navigation">
-    <ul class="nav-links">
-        <li><a href="index.html" tabindex="0"><i class="fas fa-home"></i></a></li>
-        <li><a href="games.html"><i class="fas fa-gamepad"></i>Games</a></li>
-        <li><a href="results.html"><i class="fas fa-trophy"></i>Results</a></li>
-        <li><a href="winners.html"><i class="fas fa-crown"></i>Winners</a></li>
-    </ul>
-</nav>
+    <nav role="navigation">
+        <ul class="nav-links" aria-label="Main Navigation">
+            <li><a href="index.html" tabindex="0"><i class="fas fa-home"></i></a></li>
+            <li><a href="games.html" tabindex="0"><i class="fas fa-gamepad"></i>Games</a></li>
+            <li><a href="results.html" tabindex="0"><i class="fas fa-trophy"></i>Results</a></li>
+            <li><a href="winners.html" tabindex="0"><i class="fas fa-crown"></i>Winners</a></li>
+        </ul>
+    </nav>
 
 <main>
     <section class="hero">
@@ -356,14 +354,11 @@
 
       <section class="about-us">
             <h2>About Us</h2>
-            <p>
-                Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto. Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.
+            <p style="text-indent: 4em;">Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto. Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.
             </p>
-            <p>
-                Sa pamamagitan ng aming sistema, maaari mong piliin ang tatlong numero mula sa iba't ibang laro ng lotto at manalo agad kung ang tatlong numerong iyon ay nasa anim na lumabas na numero. Kung dalawa lamang ang nagmatch na numero, makakatanggap ka parin ng return bet.
+            <p style="text-indent: 4em;">Sa pamamagitan ng aming sistema, maaari mong piliin ang tatlong numero mula sa iba't ibang laro ng lotto at manalo agad kung ang tatlong numerong iyon ay nasa anim na lumabas na numero. Kung dalawa lamang ang nagmatch na numero, makakatanggap ka parin ng return bet.
             </p>
-            <p>
-                Sa LRS, ang iyong kasiyahan at tagumpay ang aming pangunahing layunin.
+            <p style="text-indent: 4em;">Sa LRS, ang iyong kasiyahan at tagumpay ang aming pangunahing layunin.
             </p>
         </section>
 </main>
