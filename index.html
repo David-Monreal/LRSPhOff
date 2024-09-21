@@ -152,10 +152,11 @@
             }
         }
 
-            .hero {
+    .hero {
         position: relative;
-        height: 100vh;
+        height: 100vh; /* Full viewport height */
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         color: var(--accent-color);
@@ -168,10 +169,24 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        width: 100vw; /* Full viewport width */
+        height: 100vh; /* Full viewport height */
+        object-fit: cover; /* Ensures video covers the area */
+        transform: translate(-50%, -50%);
+        z-index: -2;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    /* Gradient overlay */
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        transform: translate(-50%, -50%);
+        background: linear-gradient(rgba(167, 25, 48, 0.7), rgba(13, 34, 64, 0.7)); /* Gradient color */
         z-index: -1;
     }
 
@@ -182,19 +197,7 @@
 
     .hero p {
         font-size: 1.2rem;
-        margin-bottom: 2rem;
-    }
-
-    /* Optional: Add a semi-transparent overlay to enhance text readability */
-    .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
-        z-index: -1;
+        margin-top: 0.5rem; /* Adds space between h1 and p */
     }
 
         .btn {
@@ -318,7 +321,19 @@
             width: 100%;
             bottom: 0;
         }
+ @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
 
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .hero {
+            padding: 2rem 0;
+        }
+    }
     </style>
 </head>
 <body>
@@ -339,7 +354,7 @@
     </nav>
  <section class="hero">
     <video autoplay muted loop>
-        <source src="img/hello.mp4" type="video/mp4">
+        <source src="img/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <h1>Welcome to LRS Philippines Official</h1>
