@@ -222,24 +222,27 @@
             gap: 20px;
         }
 
-  .main-video {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%; /* Ensures video is not larger than its container */
-    background: #000;
-  }
+.main-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100%; /* Ensure video doesn't exceed container width */
+    height: auto; /* Adjust height according to width */
+}
 
-  .main-video video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: AUTO;
+.main-video video {
+    width: 100%; /* Video will scale responsively */
+    height: auto; /* Maintain aspect ratio */
     max-width: 800px; /* Set a max width for larger screens */
     object-fit: contain; /* Ensures the entire video is shown without cropping */
-  }
+}
+@media (max-width: 768px) {
+    .main-video video {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
 
         .about-us {
             margin-top: 20px;
