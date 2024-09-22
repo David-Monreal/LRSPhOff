@@ -346,6 +346,90 @@
 </head>
 <body>
 
+    <style>
+        /* Centering and fixing image size with border */
+        .centered-image {
+            width: 100%;  /* Responsive width */
+            max-width: 600px;  /* Fixed maximum width */
+            height: 400px;  /* Fixed height for consistency */
+            object-fit: contain;  /* Ensures images fit within the container without cropping */
+            display: block;
+            margin: 0 auto;
+            border: 5px solid #f00; /* Add red border */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+            overflow: hidden; /* Ensures images don't overflow */
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;  /* Middle of the image */
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            transform: translateY(-50%); /* Vertically center the buttons */
+        }
+
+        .prev {
+            left: 0;  /* Position the previous button on the left */
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;  /* Position the next button on the right */
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a background color */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* The dots/bullets */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .centered-image {
+                max-width: 100%;  /* Ensure images resize fully on small screens */
+                height: auto; /* Adjust height for small screens */
+            }
+
+            .prev, .next {
+                font-size: 12px;  /* Reduce button size on smaller screens */
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
 <!-- Slideshow container -->
 <div class="slideshow-container">
 
@@ -439,7 +523,6 @@
         }, 5000);
     }
 </script>
-
     <h1 class="highlight">WELCOME SA LRS OFFICIAL PHILIPPINES! 🎉</h1>
     <h2>TUMAYA NA! ONLINE LOTTO GAMING, MAS PINADALI! 🎉</h2>
 
