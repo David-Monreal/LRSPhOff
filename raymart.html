@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="x-icon" href="img/lrs.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Official website of LRS Philippines. Discover our services and latest updates.">
     <meta name="keywords" content="LRS Philippines, services, news, official website">
@@ -197,35 +196,42 @@
 
 <!-- Slideshow Script -->
 <script>
-let slideIndex = 0;
-showSlides();
+let slideIndex = 1;
+showSlides(slideIndex);
 
-// Function to show the slides
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 3000); // Change image every 3 seconds
-}
-
-// Next/previous controls
+// Function to control next/previous
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
+// Function to control dot navigation
 function currentSlide(n) {
   showSlides(slideIndex = n);
+}
+
+// Function to show the selected slide
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  
+  // Ensure the slide index stays within bounds
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  
+  // Hide all slides
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  // Remove "active" class from all dots
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  // Show the current slide and activate the corresponding dot
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 </script>
 
@@ -242,19 +248,29 @@ function currentSlide(n) {
   to {opacity: 1}
 }
 
-/* Centering the image */
+/* Centering and fixing image size */
 .centered-image {
-  width: 100%;
-  height: auto;
+  width: 100%;  /* Responsive width */
+  max-width: 600px;  /* Fixed maximum width */
+  height: auto;  /* Keep aspect ratio */
   display: block;
   margin: 0 auto;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  overflow: hidden; /* Ensures images don't overflow */
 }
 
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 50%;  /* Middle of the image */
   padding: 16px;
   color: white;
   font-weight: bold;
@@ -262,16 +278,22 @@ function currentSlide(n) {
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  transform: translateY(-50%); /* Vertically center the buttons */
+}
+
+.prev {
+  left: 0;  /* Position the previous button on the left */
+  border-radius: 3px 0 0 3px;
 }
 
 .next {
-  right: 0;
+  right: 0;  /* Position the next button on the right */
   border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a background color */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* The dots/bullets */
@@ -289,12 +311,20 @@ function currentSlide(n) {
 .active, .dot:hover {
   background-color: #717171;
 }
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+  .centered-image {
+    max-width: 100%;  /* Ensure images resize fully on small screens */
+  }
+
+  .prev, .next {
+    font-size: 12px;  /* Reduce button size on smaller screens */
+    padding: 10px;
+  }
+}
 </style>
-
-
-            <p>"Maraming ng nanalo sa LRS PHILIPPINES OFFICIAL, at baka ikaw na ang susunod! <br>Ang aming <a href="https://m.me/j/AbbHc04DktMovcIb/" target="_blank">Group Chat</a> ay nandiyan din para sa iyong mga katanungan <br>at para makasama ang mga kapwa bettor, na handang magbigay ng guidance.</p>
-
-
+            <p>"Maraming ng nanalo sa <strong>LRS PHILIPPINES OFFICIAL</strong>, at baka ikaw na ang susunod! <br>Ang aming <a href="https://m.me/j/AbbHc04DktMovcIb/" target="_blank">Group Chat</a> ay nandiyan din para sa iyong mga katanungan <br>at para makasama ang mga kapwa bettor, na handang magbigay ng guidance.</p>
 
         </div>
     </div>
