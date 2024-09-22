@@ -264,6 +264,181 @@
     </style>
 </head>
 <body>
+    <style>
+        /* Centering and fixing image size */
+        .centered-image {
+            width: 100%;  /* Responsive width */
+            max-width: 600px;  /* Fixed maximum width */
+            height: 400px;  /* Fixed height for consistency */
+            object-fit: cover;  /* Ensures images fit within the container without distortion */
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+            overflow: hidden; /* Ensures images don't overflow */
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;  /* Middle of the image */
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            transform: translateY(-50%); /* Vertically center the buttons */
+        }
+
+        .prev {
+            left: 0;  /* Position the previous button on the left */
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;  /* Position the next button on the right */
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a background color */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* The dots/bullets */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .centered-image {
+                max-width: 100%;  /* Ensure images resize fully on small screens */
+                height: auto; /* Adjust height for small screens */
+            }
+
+            .prev, .next {
+                font-size: 12px;  /* Reduce button size on smaller screens */
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <div class="mySlides">
+        <img src="img/raymartbanner1.jpg" class="centered-image" alt="Promo Picture 1">
+    </div>
+
+    <div class="mySlides">
+        <img src="img/raymartbanner2.jpg" class="centered-image" alt="Promo Picture 2">
+    </div>
+
+    <div class="mySlides">
+        <img src="img/raymartbanner3.jpg" class="centered-image" alt="Promo Picture 3">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+    let slideIndex = 1;
+    let autoPlayInterval;
+
+    // Show the first slide initially
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        clearInterval(autoPlayInterval);
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        clearInterval(autoPlayInterval);
+        showSlides(slideIndex = n);
+    }
+
+    // Swipe through images
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slideshowContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    slideshowContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX) plusSlides(1); // Swipe left
+        if (touchEndX > touchStartX) plusSlides(-1); // Swipe right
+    }
+
+    // Show slides function
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) slideIndex = 1;
+        if (n < 1) slideIndex = slides.length;
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+
+        // Auto-play every 5 seconds
+        autoPlayInterval = setInterval(() => {
+            plusSlides(1);
+        }, 5000);
+    }
+</script>
 
     <h1 class="highlight">WELCOME SA LRS OFFICIAL PHILIPPINES! 🎉</h1>
     <h2>TUMAYA NA! ONLINE LOTTO GAMING, MAS PINADALI! 🎉</h2>
@@ -282,8 +457,8 @@
 
     <p class="highlight">📩 Pindutin ang "JOIN" para sa mga detalye!</p>
 
-    <a href="https://m.me/j/AbbHc04DktMovcIb/" class="button">Join Now</a>
-
+    <a href="#" class="button">Join Now</a>
+<p>&nbsp</p>
 </body>
 
         </div>
