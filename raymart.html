@@ -164,95 +164,13 @@
                 </a>
             </div>
 
-<!-- Slideshow container -->
-<div class="slideshow-container" style="max-width: 1000px; margin: auto; position: relative; text-align: center;">
-
-  <!-- Slide 1 -->
-  <div class="mySlides fade">
-    <img src="img/raymartbanner1.jpg" class="centered-image">
-  </div>
-
-  <!-- Slide 2 -->
-  <div class="mySlides fade">
-    <img src="img/raymartbanner2.jpg" class="centered-image">
-  </div>
-
-  <!-- Slide 3 -->
-  <div class="mySlides fade">
-    <img src="img/raymartbanner3.jpg" class="centered-image">
-  </div>
-
-  <!-- Next and Previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-
-<!-- Dots to navigate the slideshow -->
-<div style="text-align: center; margin-top: 10px;">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
-
-<!-- Slideshow Script -->
-<script>
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Function to control next/previous
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Function to control dot navigation
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-// Function to show the selected slide
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  
-  // Ensure the slide index stays within bounds
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  
-  // Hide all slides
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-
-  // Remove "active" class from all dots
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-
-  // Show the current slide and activate the corresponding dot
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
-</script>
-
-<!-- Slideshow CSS -->
 <style>
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
 /* Centering and fixing image size */
 .centered-image {
   width: 100%;  /* Responsive width */
   max-width: 600px;  /* Fixed maximum width */
-  height: auto;  /* Keep aspect ratio */
+  height: 400px;  /* Fixed height for consistency */
+  object-fit: cover;  /* Ensures images fit within the container without distortion */
   display: block;
   margin: 0 auto;
 }
@@ -316,6 +234,7 @@ function showSlides(n) {
 @media screen and (max-width: 600px) {
   .centered-image {
     max-width: 100%;  /* Ensure images resize fully on small screens */
+    height: auto; /* Adjust height for small screens */
   }
 
   .prev, .next {
@@ -323,8 +242,49 @@ function showSlides(n) {
     padding: 10px;
   }
 }
-</style>
-            <p>"Maraming ng nanalo sa <strong>LRS PHILIPPINES OFFICIAL</strong>, at baka ikaw na ang susunod! <br>Ang aming <a href="https://m.me/j/AbbHc04DktMovcIb/" target="_blank">Group Chat</a> ay nandiyan din para sa iyong mga katanungan <br>at para makasama ang mga kapwa bettor, na handang magbigay ng guidance.</p>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .highlight {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        .button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="highlight">WELCOME SA LRS OFFICIAL PHILIPPINES! 🎉</h1>
+    <h2>TUMAYA NA! ONLINE LOTTO GAMING, MAS PINADALI! 🎉</h2>
+
+    <p>💰 Jackpot na naghihintay sa'yo!</p>
+    <p>👉 Paano? Simple lang!</p>
+    <ol>
+        <li>I-send ang iyong taya kahit saan gamit ang GCash!</li>
+        <li>Sumali sa aming Group Chat para sa mga updates, resulta, at exclusive promos!</li>
+        <li>Iwas hassle, mabilis na proseso, at tuloy-tuloy ang saya!</li>
+    </ol>
+
+    <p>🎁 BONUS: May mga pa-promo at raffle kami sa group chat!!</p>
+
+    <p>📲 GCash na, bet na! Huwag palampasin ang pagkakataon. Sumali na sa group chat ngayon!</p>
+
+    <p class="highlight">📩 Pindutin ang "JOIN" para sa mga detalye!</p>
+
+    <a href="https://m.me/j/AbbHc04DktMovcIb/" class="button">Join Now</a>
+
+</body>
 
         </div>
     </div>
