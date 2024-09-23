@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official website of LRS Philippines. Discover our services and latest updates.">
+    <meta name="keywords" content="LRS Philippines, services, news, official website">
+    <meta property="og:title" content="LRS Philippines Official">
+    <meta property="og:description" content="Discover the services and latest updates from LRS Philippines.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="lrsphilippinesofficial.com/melani">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LRS Philippines Official">
+    <meta name="twitter:description" content="Discover the services and latest updates from LRS Philippines.">
+    <meta name="twitter:image" content="logo.png">
+    <title>LRS Philippines Official - Admin Arlene</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('img/background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2 {
+            color: #ff4757;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .highlight {
+            color: #ffa502;
+            font-weight: bold;
+        }
+        .content-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .banner-img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .steps ol {
+            padding-left: 20px;
+            font-size: 1.1em;
+        }
+        ol li {
+            margin-bottom: 15px;
+        }
+        .cta {
+            margin-top: 30px;
+        }
+        .cta a {
+            background-color: #1e90ff;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .cta a:hover {
+            background-color: #3742fa;
+        }
+        .bonus {
+            background-color: #2ed573;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 1.1em;
+            color: #ff6348;
+        }
+        .join-now {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #ff4757;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Content -->
+    <div class="content-container">
+      <div class="join-now"><a href="https://m.me/j/AbYBu32VQHxcSTaZ/">Join Now!</a></div>
+        <img src="img/arlenebanner.jpg" alt="Arlene Banner" class="banner-img">
+
+        <h1>MALIGAYANG PAGDATING SA LRS PHILIPPINES OFFICIAL! 🎉</h1>
+        <h2>SUBUKAN ANG SWERTE! ONLINE LOTTO, MAS PINADALI PARA SA'YO! 🎉</h2>
+
+        <p><span class="highlight">Malaking jackpot</span> ang naghihintay sa'yo—subukan ang swerte ngayon!</p>
+
+        <div class="steps">
+            <h3>Paano maglaro? Sundin ang mga hakbang na ito:</h3>
+            <ol>
+                <li><strong>Piliin ang iyong mga paboritong numero</strong> mula sa iba't ibang lotto games na aming inaalok—mula sa 2D, 3D Lotto, hanggang sa mga malalaking laro gaya ng 6/45, 6/49, 6/55, at 6/58!</li>
+                <li><strong>I-send ang iyong taya gamit ang GCash</strong>—Iwas hassle, iwas pila, isang pindot lang, tapos na ang taya mo!</li>
+                <li><strong>Sumali sa aming Group Chat</strong> para sa real-time na updates ng mga resulta, exclusive promos, at mga exciting raffle prizes.</li>
+                <li><strong>Iwas abala, mabilis ang proseso!</strong> Sa loob lang ng ilang minuto, kasali ka na sa susunod na draw at baka ikaw na ang susunod na milyonaryo!</li>
+            </ol>
+        </div>
+
+        <p class="bonus">🎁 SPECIAL OFFER: Sumali sa aming Group Chat at makakuha ng access sa mga exclusive promo!</p>
+
+        <div class="cta">
+            <p><strong>Ano pang hinihintay mo?</strong> Mag-GCash na at i-send ang iyong taya!</p>
+            <p>📩 Pindutin ang JOIN NOW para sa kumpletong detalye!</p>
+        </div>
+
+        <p class="footer">Mas maraming taya, mas malaki ang tsansa ng panalo at premyo! 🎉</p>
+    </div>
+
+</body>
+</html>
