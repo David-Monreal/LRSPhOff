@@ -16,26 +16,6 @@
     <title>LRS Philippines Official</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Facebook Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '517583130976614'); // Insert your pixel ID here.
-      fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-      />
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -116,10 +96,13 @@
         }
         .mySlides {
             display: none;
+            width: 100%;
+            height: auto;
         }
         .mySlides img {
-            width: 100%; /* Make the image responsive */
+            width: 100%;
             height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Ensures the entire image is visible */
         }
         .prev, .next {
             cursor: pointer;
