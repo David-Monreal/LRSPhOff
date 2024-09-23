@@ -15,38 +15,49 @@
     <meta name="twitter:image" content="logo.png">
     <title>LRS Philippines Official</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID'); // Insert your pixel ID here.
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background: linear-gradient(135deg, #0033a0, #ff4f4f, #f8e72b); /* Gradient background */
+            background: linear-gradient(135deg, #0033a0, #ff4f4f, #f8e72b);
             color: #333;
-            min-height: 100vh; /* Ensures full height background on all screens */
+            min-height: 100vh;
         }
         header {
-            background-color: rgba(0, 68, 204, 0.8); /* Semi-transparent background */
+            background-color: rgba(0, 68, 204, 0.8);
             color: white;
             padding: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
             text-align: center;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         .logo img {
             height: 50px;
             margin-right: 10px;
-        }
-        .logo h1 {
-            margin: 0;
-            font-size: 24px;
         }
         .container {
             padding: 15px;
@@ -55,10 +66,7 @@
             align-items: center;
             flex-direction: column;
             min-height: 80vh;
-        }
-        .main-content {
-            max-width: 1200px;
-            text-align: center;
+            text-align: center; /* Center all text within the container */
         }
         .admin-info {
             display: flex;
@@ -66,30 +74,20 @@
             align-items: center;
             position: relative;
         }
-        .admin-info a {
-            text-decoration: none;
-            color: inherit;
-        }
         .admin-info img {
-            width: 100px; /* Adjust size as needed */
-            height: 100px; /* Adjust size as needed */
+            width: 100px;
+            height: 100px;
             border-radius: 10px;
             clip-path: circle(40%);
             object-fit: cover;
         }
-        .admin-details {
-            margin-top: 10px;
-        }
         .admin-details h2 {
             margin: 0;
             font-size: 18px;
-            color: #fff; /* White color for better contrast */
-        }
-        .admin-info a:hover .admin-details h2 {
-            color: #e0e0e0; /* Light color on hover */
+            color: #fff;
         }
         footer {
-            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            background-color: rgba(51, 51, 51, 0.8);
             color: white;
             text-align: center;
             padding: 10px;
@@ -97,50 +95,65 @@
             width: 100%;
             bottom: 0;
         }
-        figure {
-            margin: 0;
-            text-align: center;
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: inline-block; /* Keeps the figure centered */
+        .highlight {
+            color: white;
+            font-weight: bold;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border: none; /* Removes border */
-        }
-        figcaption {
-            font-style: italic;
-            margin-top: 10px;
-            color: #666;
-        }
-        .info-caption {
-            font-size: 18px;
-            margin-top: 10px;
-            color: #333;
-        }
-        .video-link {
-            margin-top: 10px;
-            font-size: 18px;
-        }
-        .video-link a {
-            color: #0044cc;
+        .button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
             text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
         }
-        .video-link a:hover {
-            color: #0033a0;
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+            overflow: hidden;
+        }
+        .mySlides {
+            display: none;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
+            transform: translateY(-50%);
+        }
+        .prev { left: 0; }
+        .next { right: 0; }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
         }
         @media (max-width: 768px) {
-            .logo h1 {
-                font-size: 20px;
-            }
             .admin-info img {
-                width: 80px; /* Adjust size for smaller screens */
-                height: 80px; /* Adjust size for smaller screens */
+                width: 80px;
+                height: 80px;
             }
             .admin-details h2 {
-                font-size: 16px; /* Adjust font size for smaller screens */
+                font-size: 16px;
             }
         }
     </style>
@@ -163,392 +176,80 @@
                     </div>
                 </a>
             </div>
-
-<style>
-/* Centering and fixing image size */
-.centered-image {
-  width: 100%;  /* Responsive width */
-  max-width: 600px;  /* Fixed maximum width */
-  height: 400px;  /* Fixed height for consistency */
-  object-fit: cover;  /* Ensures images fit within the container without distortion */
-  display: block;
-  margin: 0 auto;
-}
-
-/* Slideshow container */
-.slideshow-container {
-  position: relative;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-  overflow: hidden; /* Ensures images don't overflow */
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;  /* Middle of the image */
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  transform: translateY(-50%); /* Vertically center the buttons */
-}
-
-.prev {
-  left: 0;  /* Position the previous button on the left */
-  border-radius: 3px 0 0 3px;
-}
-
-.next {
-  right: 0;  /* Position the next button on the right */
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a background color */
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* The dots/bullets */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Media query for smaller screens */
-@media screen and (max-width: 600px) {
-  .centered-image {
-    max-width: 100%;  /* Ensure images resize fully on small screens */
-    height: auto; /* Adjust height for small screens */
-  }
-
-  .prev, .next {
-    font-size: 12px;  /* Reduce button size on smaller screens */
-    padding: 10px;
-  }
-}
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            padding: 20px;
-        }
-        .highlight {
-            color: white;
-            font-weight: bold;
-        }
-        .button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <style>
-        /* Centering and fixing image size */
-        .centered-image {
-            width: 100%;  /* Responsive width */
-            max-width: 600px;  /* Fixed maximum width */
-            height: 400px;  /* Fixed height for consistency */
-            object-fit: cover;  /* Ensures images fit within the container without distortion */
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* Slideshow container */
-        .slideshow-container {
-            position: relative;
-            max-width: 1000px;
-            margin: auto;
-            text-align: center;
-            overflow: hidden; /* Ensures images don't overflow */
-        }
-
-        /* Next & previous buttons */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;  /* Middle of the image */
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            transform: translateY(-50%); /* Vertically center the buttons */
-        }
-
-        .prev {
-            left: 0;  /* Position the previous button on the left */
-            border-radius: 3px 0 0 3px;
-        }
-
-        .next {
-            right: 0;  /* Position the next button on the right */
-            border-radius: 3px 0 0 3px;
-        }
-
-        /* On hover, add a background color */
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* The dots/bullets */
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        .active, .dot:hover {
-            background-color: #717171;
-        }
-
-        /* Media query for smaller screens */
-        @media screen and (max-width: 600px) {
-            .centered-image {
-                max-width: 100%;  /* Ensure images resize fully on small screens */
-                height: auto; /* Adjust height for small screens */
-            }
-
-            .prev, .next {
-                font-size: 12px;  /* Reduce button size on smaller screens */
-                padding: 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <style>
-        /* Centering and fixing image size with border */
-        .centered-image {
-            width: 100%;  /* Responsive width */
-            max-width: 600px;  /* Fixed maximum width */
-            height: 400px;  /* Fixed height for consistency */
-            object-fit: contain;  /* Ensures images fit within the container without cropping */
-            display: block;
-            margin: 0 auto;
-            border: 5px solid #f00; /* Add red border */
-            border-radius: 10px; /* Rounded corners */
-        }
-
-        /* Slideshow container */
-        .slideshow-container {
-            position: relative;
-            max-width: 1000px;
-            margin: auto;
-            text-align: center;
-            overflow: hidden; /* Ensures images don't overflow */
-        }
-
-        /* Next & previous buttons */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;  /* Middle of the image */
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            transform: translateY(-50%); /* Vertically center the buttons */
-        }
-
-        .prev {
-            left: 0;  /* Position the previous button on the left */
-            border-radius: 3px 0 0 3px;
-        }
-
-        .next {
-            right: 0;  /* Position the next button on the right */
-            border-radius: 3px 0 0 3px;
-        }
-
-        /* On hover, add a background color */
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* The dots/bullets */
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        .active, .dot:hover {
-            background-color: #717171;
-        }
-
-        /* Media query for smaller screens */
-        @media screen and (max-width: 600px) {
-            .centered-image {
-                max-width: 100%;  /* Ensure images resize fully on small screens */
-                height: auto; /* Adjust height for small screens */
-            }
-
-            .prev, .next {
-                font-size: 12px;  /* Reduce button size on smaller screens */
-                padding: 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<!-- Slideshow container -->
-<div class="slideshow-container">
-
-    <div class="mySlides">
-        <img src="img/raymartbanner1.jpg" class="centered-image" alt="Promo Picture 1">
-    </div>
-
-    <div class="mySlides">
-        <img src="img/raymartbanner2.jpg" class="centered-image" alt="Promo Picture 2">
-    </div>
-
-    <div class="mySlides">
-        <img src="img/raymartbanner3.jpg" class="centered-image" alt="Promo Picture 3">
-    </div>
-
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-
-<br>
-
-<!-- The dots/circles -->
-<div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-
-<script>
-    let slideIndex = 1;
-    let autoPlayInterval;
-
-    // Show the first slide initially
-    showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-        clearInterval(autoPlayInterval);
-        showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-        clearInterval(autoPlayInterval);
-        showSlides(slideIndex = n);
-    }
-
-    // Swipe through images
-    const slideshowContainer = document.querySelector('.slideshow-container');
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    slideshowContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-
-    slideshowContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        if (touchEndX < touchStartX) plusSlides(1); // Swipe left
-        if (touchEndX > touchStartX) plusSlides(-1); // Swipe right
-    }
-
-    // Show slides function
-    function showSlides(n) {
-        let i;
-        const slides = document.getElementsByClassName("mySlides");
-        const dots = document.getElementsByClassName("dot");
-
-        if (n > slides.length) slideIndex = 1;
-        if (n < 1) slideIndex = slides.length;
-
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-
-        // Auto-play every 5 seconds
-        autoPlayInterval = setInterval(() => {
-            plusSlides(1);
-        }, 5000);
-    }
-</script>
-    <h1 class="highlight">WELCOME SA LRS OFFICIAL PHILIPPINES! 🎉</h1>
-    <h2>TUMAYA NA! ONLINE LOTTO GAMING, MAS PINADALI! 🎉</h2>
-
-    <p>💰 Jackpot na naghihintay sa'yo!</p>
-    <p>👉 Paano? Simple lang!</p>
-    <ol>
-        <li>I-send ang iyong taya kahit saan gamit ang GCash!</li>
-        <li>Sumali sa aming Group Chat para sa mga updates, resulta, at exclusive promos!</li>
-        <li>Iwas hassle, mabilis na proseso, at tuloy-tuloy ang saya!</li>
-    </ol>
-
-    <p>🎁 BONUS: May mga pa-promo at raffle kami sa group chat!!</p>
-
-    <p>📲 GCash na, bet na! Huwag palampasin ang pagkakataon. Sumali na sa group chat ngayon!</p>
-
-    <p class="highlight">📩 Pindutin ang "JOIN" para sa mga detalye!</p>
-
-    <a href="https://m.me/j/AbbHc04DktMovcIb/" class="button">Join Now</a>
+            <p class="highlight">Pindutin ang "JOIN" para sa mga detalye!</p>
+            <a href="https://m.me/j/AbbHc04DktMovcIb/" class="button">Join Now</a>
 <p>&nbsp</p>
-</body>
+    <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="img/raymartbanner1.jpg" class="centered-image" alt="Promo Picture 1">
+                </div>
+                <div class="mySlides">
+                    <img src="img/raymartbanner2.jpg" class="centered-image" alt="Promo Picture 2">
+                </div>
+                <div class="mySlides">
+                    <img src="img/raymartbanner3.jpg" class="centered-image" alt="Promo Picture 3">
+                </div>
 
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+            <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    const slides = document.getElementsByClassName("mySlides");
+                    const dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) { slideIndex = 1 }
+                    if (n < 1) { slideIndex = slides.length }
+                    for (let i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (let i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                }
+            </script> 
+<p>&nbsp</p>        
+            <h1 class="highlight">WELCOME SA LRS OFFICIAL PHILIPPINES! 🎉</h1>
+            <h2>TUMAYA NA! ONLINE LOTTO GAMING, MAS PINADALI! 🎉</h2>
+
+            <p>💰 Jackpot na naghihintay sa'yo!</p>
+            <p>👉 Paano? Simple lang!</p>
+            <ol>
+                <li>I-send ang iyong taya kahit saan gamit ang GCash!</li>
+                <li>Sumali sa aming Group Chat para sa mga updates, resulta, at exclusive promos!</li>
+                <li>Iwas hassle, mabilis na proseso, at tuloy-tuloy ang saya!</li>
+            </ol>
+
+            <p>🎁 BONUS: May mga pa-promo at raffle kami sa group chat!!</p>
+            <p>📲 GCash na, bet na! Huwag palampasin ang pagkakataon. Sumali na sa group chat ngayon!</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+           
         </div>
     </div>
 
     <footer>
-        &copy; 2024 LRS Philippines Official. All rights reserved.
+        <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
     </footer>
 </body>
 </html>
