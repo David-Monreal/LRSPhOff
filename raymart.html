@@ -120,52 +120,41 @@
             border-radius: 5px;
             margin-top: 10px;
         }
-        .slideshow-container {
-            position: relative;
-            max-width: 1000px;
-            margin: auto;
+	figure {
+            margin: 0;
             text-align: center;
-            overflow: hidden;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block; /* Keeps the figure centered */
         }
-        .mySlides {
-            display: none;
-            width: 100%;
+        video {
+            max-width: 100%;
             height: auto;
+            display: block;
+            border: none; /* Removes border */
         }
-        .mySlides img {
-            width: 100%;
-            height: auto; /* Maintain aspect ratio */
-            object-fit: contain; /* Ensures the entire image is visible */
+        figcaption {
+            font-style: italic;
+            margin-top: 10px;
+            color: #666;
         }
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
+        .info-caption {
             font-size: 18px;
-            transition: 0.6s ease;
-            user-select: none;
-            transform: translateY(-50%);
+            margin-top: 10px;
+            color: #333;
         }
-        .prev { left: 0; }
-        .next { right: 0; }
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+        .video-link {
+            margin-top: 10px;
+            font-size: 18px;
         }
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
+        .video-link a {
+            color: #0044cc;
+            text-decoration: none;
         }
-        .active, .dot:hover {
-            background-color: #717171;
+        .video-link a:hover {
+            color: #0033a0;
+        }
+        
         }
         @media (max-width: 768px) {
             .admin-info img {
@@ -206,59 +195,12 @@
             <p class="highlight">Pindutin ang "JOIN" para sa mga detalye!</p>
             <a href="https://m.me/j/AbbHc04DktMovcIb/" class="button">Join Now</a>
             <p>&nbsp</p>
-            <div class="slideshow-container">
-                <div class="mySlides">
-                    <img src="img/raymartbanner1.jpg" class="centered-image" alt="Promo Picture 1">
-                </div>
-                <div class="mySlides">
-                    <img src="img/raymartbanner2.jpg" class="centered-image" alt="Promo Picture 2">
-                </div>
-                <div class="mySlides">
-                    <img src="img/raymartbanner3.jpg" class="centered-image" alt="Promo Picture 3">
-                </div>
+		<figure>
+                <video autoplay muted loop controls>
+                    <source src="img/raymart.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video></figure>
 
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-
-            <br>
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-
-            <script>
-                let slideIndex = 1;
-                showSlides(slideIndex);
-
-                function plusSlides(n) {
-                    showSlides(slideIndex += n);
-                }
-
-                function currentSlide(n) {
-                    showSlides(slideIndex = n);
-                }
-
-                function showSlides(n) {
-                    const slides = document.getElementsByClassName("mySlides");
-                    const dots = document.getElementsByClassName("dot");
-                    if (n > slides.length) { slideIndex = 1 }
-                    if (n < 1) { slideIndex = slides.length }
-                    for (let i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                    }
-                    for (let i = 0; i < dots.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active", "");
-                    }
-                    slides[slideIndex - 1].style.display = "block";
-                    dots[slideIndex - 1].className += " active";
-                    // Auto-play every 5 seconds
-        autoPlayInterval = setInterval(() => {
-            plusSlides(1);
-        }, 5000);
-                }
-            </script> 
             <p>&nbsp</p>        
             <h1 class="highlight">WELCOME SA LRS OFFICIAL PHILIPPINES! 🎉</h1>
             <h2>TUMAYA NA! ONLINE LOTTO GAMING, MAS PINADALI! 🎉</h2>
