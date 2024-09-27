@@ -17,32 +17,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #ffff00, #ff7f00, #ff4500);
             color: #333;
             line-height: 1.6;
-            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
         }
         header {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: blue;
+            padding: 20px;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            z-index: 10;
+            flex-wrap: wrap;
+            text-align: center;
         }
-        header img {
-            max-width: 80px;
-            margin-right: 10px;
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        .logo h1 {
+            margin: 0;
+            font-size: 28px;
         }
         .caption-container {
             max-width: 600px;
@@ -59,7 +67,7 @@
             color: #2b6ed2;
         }
         .highlight {
-            color: #ff4500; /* Highlight color */
+            color: #ff4500;
             font-weight: bold;
         }
         .caption-container ul {
@@ -117,14 +125,16 @@
 </head>
 <body>
     <header>
-        <img src="img/lrs.png" alt="LRS Logo">
-        <h1>LRS Philippines Official</h1>
+        <div class="logo">
+            <img src="img/lrs.png" alt="LRS Philippines Logo"> 
+            <h1>LRS Philippines Official</h1>
+        </div>
     </header>
-    <div class="admin-title">ADMIN IVY</div>
+  <div class="admin-title"><strong><span style="color: white;">ADMIN IVY</strong></span></div>
     <div class="button-container">
       <a href="https://m.me/j/AbbtSITAbCwUUDmA/"> <button>Sumali sa Group Chat!</button></a>
     </div>
-    <img src="img/ivy.jpg" alt="Admin Ivy">
+    <img src="img/ivy.jpg" alt="Admin IVY">
     <div class="caption-container">
         <h2>🎉 Mas Pinadali at Mas Pinalaki ang Panalo sa LRS Philippines Official! 🎉</h2>
         <p style="text-align: center;">Subukan ang iyong <span class="highlight">swerte</span> at <span class="highlight">tumaya</span> na para sa pagkakataong manalo ng <span class="highlight">malalaking papremyo</span>! 🤑💸 <br>Sundan lang ang simpleng hakbang na ito:</p>
@@ -141,8 +151,8 @@
             <li>4️⃣ <strong>Hintayin ang kumpirmasyon</strong> ng iyong taya mula sa amin. Once confirmed, valid na ang iyong entry!</li>
             <li>5️⃣ <strong>Panoorin ang live draw</strong> at abangan kung ikaw na ang susunod na <span class="highlight">maswerteng mananalo</span>! 📺🎊</li>
         </ul>
-        <p style="text-align: center;">For more info, join our <a hreh="https://m.me/j/AbbtSITAbCwUUDmA/" , span class="highlight">Group Chat.</a></p>
-        <p style="text-align: center;">Huwag palampasin ang pagkakataong manalo ng <span class="highlight">malalaking premyo</span>! 💰 Taya na!</p>
+        <p style="text-align: center;">Huwag palampasin ang <br>pagkakataong manalo ng <span class="highlight">malalaking premyo</span>! <br>💰 Taya na!</p>
+      <p style="text-align: center;">For more info, join our <a href="https://m.me/j/AbbtSITAbCwUUDmA/" class="highlight">Group Chat.</a></p>
     </div>
 </body>
 </html>
