@@ -1,439 +1,501 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" type="x-icon" href="img/lrs.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LRS Philippines Official - Experience the thrill of winning with our exciting lottery games!">
-    <meta property="og:title" content="LRS Philippines Official">
-    <meta property="og:description" content="Experience the thrill of winning with our exciting lottery games!">
-    <meta property="og:image" content="https://example.com/hero-bg.jpg">
-    <meta property="og:url" content="https://lrsphilippinesofficial.com">
     <title>LRS Philippines Official</title>
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" type="x-icon" href="creatives/lrs.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
     <style>
-        :root {
-            --primary-color: #0033cc;
-            --secondary-color: #ff0000;
-            --accent-color: #ffff00;
-            --background-color: #f4f4f4;
-            --text-color: #333;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(creatives/bannerhero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.container {
+    max-width: 1200px;  /* Fixed maximum width */
+    margin: 0 auto;     /* Center the content */
+    padding: 0 15px;    /* Add padding to prevent content from touching the edges */
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 10px;  /* Adjust padding on smaller screens */
+    }
+}
+/* Navigation Styles */
+nav {
+    display: flex;
+    padding: 10px 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(4, 9, 30, 0.7);
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+nav img {
+    width: 120px;
+  height: auto;
+    transition: opacity 0.3s ease;
+}
+
+@media(max-width: 700px) {
+            nav img {
+                width: 100px;
+            }
+            .text-box h1 {
+                font-size: 24px;
+            }
+            .text-box p {
+                font-size: 14px;
+            }
         }
 
-        body, h1, h2, h3, p, ul, li {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: blue;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+.text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center; 
+}
+
+.text-box h1 {
+    font-size: 62px;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    border: 1px solid blue;
+    background: blue;
+    transition: 0.5s;
+}
+
+nav .fa {
+    display: none;
+}
+
+/* Media Queries for Mobile */
+@media(max-width: 700px) {
+            header {
+                height: 100vh; 
+                background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(creatives/bannerherom.jpg); 
+            }
+            .text-box h1 {
+                font-size: 20px; 
+            }
+            .nav-links ul li {
+                display: block;
+            }
+            .nav-links {
+                position: absolute;
+                background: rgba(0, 0, 0, 0.9); 
+                height: 100vh;
+                width: 200px;
+                top: 0;
+                right: -200px;
+                text-align: left;
+                z-index: 999;
+                transition: 0.5s;
+            }
+            nav .fa {
+                display: block;
+                color: white;
+                margin: 10px;
+                font-size: 22px;
+                cursor: pointer;
+                z-index: 1000;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links ul {
+                padding: 30px;
+            }
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+/* Video Section */
+.video {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+  	text-align: center;
+  	margin: 50px 0;
+}
+
+.video h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.video video {
+    width: 80%;
+	  height: auto;
+    max-width: 700px;
+  	margin-bottom: 20px;
+}
+.video-caption {
+            font-size: 16px;
+            color: black;
+            padding: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+ 
+.video-caption h1 {
+            color: red; /* Red color for h1 */
+            font-size: 28px;
+            margin-bottom: 10px;
         }
 
-        header {
-            background: #0033cc;
-            color: #fff;
-            padding: 10px 0;
+        .video-caption h2 {
+            color: blue; /* Blue color for h2 */
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* Box for h3 and p */
+        .boxed-section {
+            background-color: white;
+            padding: 15px;
+            border: 2px solid #FFD700;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .boxed-section h3 {
+            color: blue;
+            font-size: 18px;
+            margin-bottom: 10px;
             text-align: center;
         }
 
-        header h1 {
-            font-size: 1.8em;
-            font-weight: bold;
+        .boxed-section p {
+            text-align: center;
+            font-size: 16px;
+            margin: 10px 0;
         }
 
-        nav {
-            display: flex;
+        .highlight {
+            color: #FF6347; /* Text color for highlight (light red) */
+		font-weight: bold;
+        }
+
+/* Live Draws Section */
+.live-draws {
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.live-draws h2{
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.video-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.video-box {
+    width: 30%;
+    text-align: center;
+    border: 2px solid #ccc;  /* Add a border for the box */
+    border-radius: 8px;      /* Optional: add rounded corners */
+    padding: 10px;           /* Space inside the box */
+    background-color: white; /* Background color for the box */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 250px;
+}
+
+.caption {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 700px) {
+    .video-box {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Space between boxes */
+    }
+}
+
+
+/* Popup styles */
+        .popup {
+            position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+            max-width: 100%;
+            height: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            display: none; /* Hidden by default */
             justify-content: center;
             align-items: center;
-            max-width: 100%px;
-            margin: 0 auto;
-            padding: 0 20px;
-            background: #ff0000;
+            z-index: 10;	
+        }
+	    @media (max-width: 700px) {
+    .popup {
+	    top: 0;
+	    left: 0;
+    }
+}
+
+        .popup-content {
             position: relative;
-        }
-
-        nav .logo {
-            margin-right: 20px;
-        }
-
-        nav .logo a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-
-        nav .nav-links {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-
-        nav .nav-links li {
-            margin-left: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        nav .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1em;
-            display: flex;
-            align-items: center;
-            transition: color 0.3s ease;
-        }
-
-        nav .nav-links a:hover,
-        nav .nav-links a:focus {
-            color: #ffff00;
-        }
-
-        nav .nav-links i {
-            margin-right: 8px;
-        }
-
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 10px;
-            }
-
-            nav .nav-links {
-                flex-direction: row;
-                justify-content: space-around;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .content-wrapper {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .main-video {
-            flex: 2;
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
             max-width: 100%;
-            }
-
-
-
-            .watch-live-draws .video-wrapper {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .watch-live-draws .video-wrapper iframe {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
-.hero {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--accent-color);
-    padding: 4rem 0;
-    overflow: hidden;
-}
-
-.hero video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video covers the hero section */
-    z-index: -2;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(167, 25, 48, 0.7), rgba(13, 34, 64, 0.7)); /* Gradient overlay */
-    z-index: -1;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
-}
-
-
-
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--accent-color);
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-weight: bold;
-        }
-
-        .btn:hover {
-            background-color: #e0bb1a;
-        }
-
-        main {
             padding: 20px;
-            margin-top: 100px;
-        }
-
-        .content-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-.main-video {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 100%; /* Ensure video doesn't exceed container width */
-    height: auto; /* Adjust height according to width */
-}
-
-.main-video video {
-    width: 100%; /* Video will scale responsively */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 800px; /* Set a max width for larger screens */
-    object-fit: contain; /* Ensures the entire video is shown without cropping */
-}
-@media (max-width: 768px) {
-    .main-video video {
-        width: 100%; /* Full width on mobile */
-        height: auto; /* Maintain aspect ratio */
-    }
-}
-
-        .about-us {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
+            background-color: white;
+            border-radius: 8px;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .about-us h2 {
-            font-size: 2em;
-            color: var(--primary-color);
-            margin-bottom: 10px;
+        /* Image inside the popup */
+        .popup-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+	    z-index: 1;
         }
 
-        .about-us p {
-            font-size: 1.1em;
-            color: var(--text-color);
-            line-height: 1.8;
-          text-align: justify;
-        }
 
-        .watch-live-draws {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
+        /* Close button styles */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
             text-align: center;
+            line-height: 30px;
         }
 
-        .watch-live-draws h2 {
-            font-size: 2em;
-            color: var(--primary-color);
-            margin-bottom: 10px;
+        .close-btn:hover {
+            background-color: darkred;
         }
 
-        .watch-live-draws .video-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Space between videos */
-  }
-
-  .watch-live-draws .video-wrapper iframe {
-    flex: 1 1 45%; /* Take 45% of the available width on wider screens */
-    max-width: 100%; /* Don't exceed the container's width */
-    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
-  }
-
-  /* Adjust for wider screens */
-  @media screen and (min-width: 1200px) {
-    .watch-live-draws .video-wrapper iframe {
-      flex: 1 1 30%; /* Videos take 30% of the width on very wide screens */
-    }
-  }
-
-  /* On mobile or smaller screens */
-  @media screen and (max-width: 768px) {
-    .watch-live-draws .video-wrapper iframe {
-      flex: 1 1 100%; /* Full width on mobile screens */
-    }
-  }
-
-        .draw-caption {
-            margin-top: 10px;
-            font-size: 1.2em;
-            color: var(--text-color);
-        }
-
+        /*------ Footer ------*/
         footer {
-            background: var(--primary-color);
-            color: #fff;
+            bottom: 0;
+            width: 100%;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            background-color: rgba(4, 9, 30, 0.7);
+            color: white;
         }
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .hero {
-        height: auto; /* Automatically adjust hero height based on video aspect ratio */
-        padding: 2rem 0;
-    }
-
-    .hero video {
-        height: auto;
-        width: 100%; /* Ensures the video width scales down while maintaining aspect ratio */
-    }
-
-    .hero h1 {
-        font-size: 2rem; /* Adjust heading size for smaller screens */
-    }
-
-    .hero p {
-        font-size: 1rem; /* Adjust paragraph size for smaller screens */
-    }
-}
     </style>
 </head>
 <body>
-<header>
-    <div style="display: flex; align-items: center; justify-content: center;">
-        <img src="img/lrs.png" alt="LRS Logo" style="width: 50px; height: 50px; margin-right: 10px;">
-        <h1>LRS Philippines Official</h1>
-    </div>
-</header>
-
-    <nav role="navigation">
-        <ul class="nav-links" aria-label="Main Navigation">
-            <li><a href="./" tabindex="0"><i class="fas fa-home"></i></a></li>
-            <li><a href="./games" tabindex="0"><i class="fas fa-gamepad"></i>Games</a></li>
-            <li><a href="./results" tabindex="0"><i class="fas fa-trophy"></i>Results</a></li>
-            <li><a href="./winners" tabindex="0"><i class="fas fa-crown"></i>Winners</a></li>
-        </ul>
+<section class="header">
+    <nav>
+        <a href="./"><img src="creatives/lrs.png" alt="LRS Logo"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="toggleMenu()"></i>
+            <ul>
+                <li><a href="./">HOME</a></li>
+                <li><a href="./games">GAMES</a></li>
+                <li><a href="./results">RESULT</a></li>
+                <li><a href="./winners">WINNERS</a></li>
+                <li><a href="./proof">PROOF OF PAID</a></li>
+                <li><a href="./contact">CONTACT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
     </nav>
- <section class="hero">
-    <video autoplay muted loop>
-        <source src="img/hello.mp4" type="video/mp4">
+
+<div class="text-box">
+        <h1>LRS Philippines Official</h1>
+        <p>Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto. <br>Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.</p>
+        <a href="./games" class="hero-btn">Learn More About our Games</a>
+    </div>
+
+</section>
+
+<div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">X</button>
+            <img src="creatives/2D PRIZE.jpg" alt="Popup Image">
+            <p>Don't miss our latest promotion!</p>
+        </div>
+    </div>
+<div class="container">
+<!-- Video Section -->
+<div class="video">
+    <h2>JOIN THE FUN!</h2>
+	<video autoplay muted loop controls>
+        <source src="video/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-        <h1>Your Lucky Day Awaits</h1>
-        <p>Win big with LRS Philippines Official!</p>
-</section>
-
-<main>
-<section class="about-us" style="background: url('img/banner1.jpg') no-repeat center center; background-size: cover; padding: 20px; border: 1px solid #ddd; border-radius: 10px; max-width: 1200px; margin: 0 auto;">
-    <h2 style="color: #0033cc; text-align: center;">Join Us!</h2>
-    <div class="about-us-content" style="display: flex; flex-direction: column; align-items: center;">
-        <div class="main-video" style="flex: 1; min-width: 300px; max-width: 600px;">
-            <video autoplay muted loop controls style="width: 100%; border-radius: 10px;">
-                <source src="img/video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+<div class="video-caption">
+        <h1>🌟 SUBUKAN ANG SWERTE 🌟</h1>
+        
+        <h2>PAANO TUMAYA?</h2>
+        <p>➤ Pumili ng laro sa <strong>6/45, 6/49, 6/55, 6/58, 2D,</strong> o<strong> 3D</strong> Lotto games.<br>
+        ➤ I-send ang iyong napiling numero sa aming group chat.<br>
+        ➤ Magbayad gamit ang GCash at i-send ang screenshot ng iyong payment.<br>&nbsp<br>
+        Abangan ang draw at alamin kung ikaw na ba ang susunod na <span class="highlight">JACKPOT WINNER!</span></p>&nbsp<br>
+        
+         <!-- Box containing h3 and its paragraph -->
+        <div class="boxed-section">
+            <h3>💥 BAKIT DITO?</h3>
+            <p>💰 <strong>MAS MALAKING TSANSANG MANALO</strong> 💰<br> Sa ANIM (6) na numerong lumabas sa Lotto Live Draw kapag ang tatlong numero (3) na napili mo ay nabunot dito, IKAW AY PANALO!<br>&nbsp<br>
+            📲 <strong>CONVENIENT NA PAGTAYA</strong> 📲<br> Hussle Free! Dahil di na kailangan pumila ng mahaba sa mga lotto outlets. Ang pagtaya ay online na!<br>&nbsp<br>
+            🎯 <strong>SIMPLE AT MABILIS NA PROSESO</strong> 🎯<br> I-send lang ang iyong numero at ang confirmation ng bayad sa Group Chat!</p>
         </div>
-        <div class="about-us-text" style="flex: 1; min-width: 300px; max-width: 600px; padding: 20px; text-align: center; background-color: rgba(255, 255, 255, 0.8); border-radius: 10px; margin-top: 20px;">
-            <h2 style="color: #ff0000;">Subukan ang Iyong Swerte sa LRS Philippines Official!</h2>
-            <h3 style="color: #0033cc;">Paano Tumaya?</h3>
-            <div style="padding-left: 20px; text-align: left;">
-                <p style="color: #333;">Pumili ng iyong paboritong mga numero para sa 6/45, 6/49, 6/55, 6/58, 2D, o 3D Lotto games.</p>
-                <p style="color: #333;">I-send ang iyong napiling numero sa aming group chat.</p>
-                <p style="color: #333;">Magbayad gamit ang <strong style="color: #ff0000;">GCash</strong> at i-send ang screenshot ng iyong payment bilang kumpirmasyon.</p>
-                <p style="color: #333;">Abangan ang draw at alamin kung ikaw na ba ang susunod na <strong style="color: #ff0000;">JACKPOT WINNER!</strong> 💥</p>
-            </div>
-            
-            <h3 style="color: #0033cc; margin-top: 20px;">Bakit Dito?</h3>
-            <div style="padding-left: 20px; text-align: left;">
-                <p style="color: #333;">💰 <strong style="color: #ff0000;">Mas malaking tsansa manalo</strong> dahil kahit 3 numbers lang, pwede ka nang magwagi!</p>
-                <p style="color: #333;">📲 <strong style="color: #ff0000;">Convenient</strong> na pagtaya gamit ang online payment at group chat confirmation.</p>
-                <p style="color: #333;">🎯 <strong style="color: #ff0000;">Simple at mabilis</strong> ang proseso — i-send lang ang iyong numero at bayad!</p>
-            </div>
 
-            <p style="color: #333;">Ano pang hinihintay mo? Tumaya na ngayon at baka ikaw na ang susunod na maging milyonaryo! 🤑</p>
+        <p><strong>🤑 Tumaya na ngayon at baka ikaw na ang susunod na mapalad na <span class="highlight">PANALO</span>! 🤑</strong></p>
+    </div>
+</div>
+
+<div class="live-draws">
+    <h2>WATCH LOTTO LIVE DRAWS</h2>
+    <div class="video-container">
+        <div class="video-box">
+            <iframe width="100%" height="250" src="https://www.youtube.com/embed/DW6QDQmW_qc?si=F9h-HzDp6x85vpIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="caption">October 01, 2024 - 2PM Live Draw</p>
+        </div>
+        <div class="video-box">
+            <iframe width="100%" height="250" src="https://www.youtube.com/embed/kv21WLfBFcs?si=hYaFSLFsQWv4Kk7U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="caption">October 01, 2024 - 5PM Live Draw</p>
+        </div>
+        <div class="video-box">
+            <iframe width="100%" height="250" src="https://www.youtube.com/embed/kkWRlNbx3OM?si=Z_dlNztjoATchu-t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="caption">October 01, 2024 - 9PM Live Draw</p>
         </div>
     </div>
-</section>
-
-
-        <section class="watch-live-draws">
-            <h2>Watch Live Draws</h2>
-            <div class="video-wrapper">
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6RqzLeJdfqE?si=lvd3EhmYDQVO7sk6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="draw-caption">September 21, 2024<br>(2pm Draw)</div>
-                </div>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cTg9CGAxciQ?si=hlrm5iiZCYqJiMBk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="draw-caption">September 21, 2024<br>(5pm Draw)</div>
-                </div>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IjGsphAtvXA?si=T3SqXpz8G6n0ChBw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="draw-caption">September 21, 2024<br>(9pm Draw)</div>
-                </div>
-            </div>
-        </section>
-
-      <section class="about-us">
-            <h2>About Us</h2>
-            <p style="text-indent: 4em;">Ang <strong>LRS Philippines Official</strong> ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto. Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.
-            </p><div style="height: 20px;"></div>
-            <p style="text-indent: 4em;">Sa pamamagitan ng aming sistema, maaari mong piliin ang tatlong numero mula sa iba't ibang laro ng lotto at manalo agad kung ang tatlong numerong iyon ay nasa anim na lumabas na numero. Kung dalawa lamang ang nagmatch na numero, makakatanggap ka parin ng return bet.
-            </p><div style="height: 20px;"></div>
-            <p style="text-indent: 4em;">Sa LRS, ang iyong kasiyahan at tagumpay ang aming pangunahing layunin.
-            </p><div style="height: 20px;"></div>
-        </section>
-</main>
+</div>
+</div>
 
 <footer>
     <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
 </footer>
+
+<script>
+var navLinks = document.getElementById("navLinks");
+var menuBtn = document.getElementById("menuBtn");
+
+function toggleMenu() {
+    if (navLinks.style.right === "0px") {
+        navLinks.style.right = "-200px";  
+        menuBtn.style.display = "block";  
+    } else {
+        navLinks.style.right = "0";  
+        menuBtn.style.display = "none";  
+    }
+}
+
+let lastScrollTop = 0; 
+const logo = document.querySelector('nav img');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        logo.style.opacity = '0'; 
+    } else {
+        logo.style.opacity = '1'; 
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+});
+
+// Show the popup after 30 seconds
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'flex';
+        }, 3000); // 30,000 milliseconds = 30 seconds
+
+        // Close the popup when the close button is clicked
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+</script>
 
 </body>
 </html>
