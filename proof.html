@@ -1,228 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Info - LRS Philippines Official</title>
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>LRS Philippines Official - Proof of Winners</title>
+    <link rel="shortcut icon" type="x-icon" href="creatives/lrs.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        body, h1, h2, h3, p, ul, li {
+        * {
             margin: 0;
             padding: 0;
+            font-family: "Poppins", sans-serif;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4; /* Light grey background */
-        }
-
-        /* Header and Navigation */
         header {
-            background: #0033cc; /* Dark blue */
-            color: #fff;
-            padding: 10px 0;
-            text-align: center; /* Center-align the header content */
+            width: 100vw; 
+            height: 50vh; 
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(creatives/heroproof.jpg);
+            background-position: center; 
+            background-size: cover; 
+            position: relative;
+            z-index: 1;
         }
+        
+.container {
+    max-width: 1200px;  /* Fixed maximum width */
+    margin: 0 auto;     /* Center the content */
+    padding: 0 15px;    /* Add padding to prevent content from touching the edges */
+}
 
-        header h1 {
-            font-size: 1.8em;
-            font-weight: bold;
-        }
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 10px;  /* Adjust padding on smaller screens */
+    }
+}
 
         nav {
+            position: fixed; /* Keep navigation fixed */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(4, 9, 30, 0.7); /* Background for visibility */
+            z-index: 10;
+            padding: 10px 6%; /* Padding */
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            background: var(--secondary-color);
+            transition: opacity 0.3s ease; /* Smooth transition for visibility */
+        }
+
+        nav img {
+            width: 120px; /* Desktop size */
+            transition: opacity 0.3s ease; /* Smooth transition for visibility */
+        }
+
+        @media(max-width: 700px) {
+            nav img {
+                width: 100px; /* Mobile size */
+            }
+            .text-box h1 {
+                font-size: 24px; /* Mobile size */
+            }
+            .text-box p {
+                font-size: 14px; /* Mobile size */
+            }
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: right;
+        }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
             position: relative;
         }
 
-        nav .logo {
-            margin-right: 20px;
-        }
-
-        nav .logo a {
-            color: #fff;
+        .nav-links ul li a {
+            color: white;
             text-decoration: none;
-            font-size: 1.8em;
-            font-weight: bold;
+            font-size: 13px;
         }
 
-        nav .nav-links {
-            list-style: none;
-            display: flex;
+        .nav-links ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: blue;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover::after {
+            width: 100%;
+        }
+
+        .text-box {
+            width: 90%;
+            color: white;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center; 
+        }
+
+        .text-box h1 {
+            font-size: 40px; /* Desktop size */
+        }
+
+        .text-box p {
+            margin: 10px 0 40px;
+            font-size: 16px; /* Desktop size */
+            color: white;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            border: 1px solid white;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hero-btn:hover {
+            border: 1px solid blue;
+            background: blue;
+            transition: 0.5s;
+        }
+
+        nav .fa {
+            display: none;
+        }
+
+        @media(max-width: 700px) {
+            header {
+                height: 50vh; 
+                background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(creatives/heroproofm.jpg); 
+            }
+            .text-box h1 {
+                font-size: 24px; /* Mobile size */
+            }
+            .nav-links ul li {
+                display: block;
+            }
+            .nav-links {
+                position: absolute;
+                background: rgba(0, 0, 0, 0.9); 
+                height: 100vh;
+                width: 200px;
+                top: 0;
+                right: -200px;
+                text-align: left;
+                z-index: 999;
+                transition: 0.5s;
+            }
+            nav .fa {
+                display: block;
+                color: white;
+                margin: 10px;
+                font-size: 22px;
+                cursor: pointer;
+                z-index: 1000;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links ul {
+                padding: 30px;
+            }
+        }
+        
+        /*------ Pictures ------*/
+        .pictures {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            flex-wrap: wrap;
+            background-color: #f4f4f4;
         }
 
-        nav .nav-links li {
-            margin-left: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        nav .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1em;
-            display: flex;
-            align-items: center;
-            transition: color 0.3s ease;
-        }
-
-        nav .nav-links a:hover,
-        nav .nav-links a:focus {
-            color: var(--accent-color);
-        }
-
-        nav .nav-links i {
-            margin-right: 8px;
-        }
-
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Main Content */
-        main {
-            padding: 20px;
-            padding-bottom: 80px; /* Prevents footer overlap */
-        }
-
-        .contact-info {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 800px;
-            margin: 20px auto;
+        h1 {
             text-align: center;
+            padding: 20px;
+            font-size: 24px;
         }
 
-        .contact-info h2 {
-            font-size: 2em;
-            color: #0033cc; /* Dark blue for the heading */
-            margin-bottom: 10px;
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
         }
 
-        .contact-info p {
-            font-size: 1.1em;
-            color: #333;
-            line-height: 1.8;
+        .gallery-item {
+            flex: 1 1 calc(20% - 20px);
+            max-width: calc(20% - 20px);
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
         }
 
-        .contact-info a {
-            color: #0033cc;
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 1 1 calc(33.33% - 20px);
+                max-width: calc(33.33% - 20px);
+            }
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+        }
+
+        .lightbox .close, .lightbox .prev, .lightbox .next {
+            position: absolute;
+            top: 50%;
+            font-size: 30px;
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
         }
 
-        .contact-info a:hover {
-            text-decoration: underline;
+        .lightbox .close {
+            top: 20px;
+            right: 30px;
+            font-size: 35px;
         }
 
+        .lightbox .prev {
+            left: 20px;
+        }
+
+        .lightbox .next {
+            right: 20px;
+        }
+        
+/*------ Footer ------*/
         footer {
-            background: #0033cc; /* Blue background for footer */
-            color: #fff;
+            bottom: 0;
+            width: 100%;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav .nav-links {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                background: #ff0000; /* Red background for dropdown menu */
-                padding: 10px;
-                position: absolute;
-                top: 60px; /* Adjust based on header height */
-                left: 0;
-                z-index: 1000; /* Make sure the menu appears on top */
-            }
-
-            nav .nav-links.show {
-                display: flex;
-            }
-
-            .nav-toggle {
-                display: block;
-                background: #ff0000; /* Red background for toggle button */
-                color: #fff;
-                border: none;
-                padding: 10px;
-                font-size: 1em;
-                cursor: pointer;
-                margin-top: 10px;
-                z-index: 1000; /* Ensure toggle button is accessible */
-            }
+            background-color: rgba(4, 9, 30, 0.7);
+            color: white;
         }
     </style>
 </head>
+
 <body>
-<header>
-    <div style="display: flex; align-items: center; justify-content: center;">
-        <img src="img/lrs.png" alt="LRS Logo" style="width: 50px; height: 50px; margin-right: 10px;">
-        <h1>LRS Philippines Official</h1>
+<section class="header">
+    <header>
+        <nav>
+            <a href="./"><img src="creatives/lrs.png" alt="LRS Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="toggleMenu()"></i>
+                <ul>
+                    <li><a href="./">HOME</a></li>
+                    <li><a href="./games">GAMES</a></li>
+                    <li><a href="./results">RESULT</a></li>
+                    <li><a href="./winners">WINNERS</a></li>
+                    <li><a href="./proof">PROOF OF PAID</a></li>
+                    <li><a href="./contact">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
+        </nav>
+    </header>
+</section>
+    
+<div class="container">
+<section class="pictures">
+    <h1>Paid Winners</h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="proof/8.jpg" alt="Proof 8">
+        </div>
+        <div class="gallery-item">
+            <img src="proof/7.jpg" alt="Proof 7">
+        </div>
+        <div class="gallery-item">
+            <img src="proof/6.jpg" alt="Proof 6">
+        </div>
+        <div class="gallery-item">
+            <img src="proof/5.jpg" alt="Proof 5">
+        </div>
+        <div class="gallery-item">
+            <img src="proof/4.jpg" alt="Proof 4">
+        </div>
+        <div class="gallery-item">
+            <img src="proof/3.jpg" alt="Proof 3">
+        </div>
+        <div class="gallery-item">
+            <img src="proof/2.jpg" alt="Proof 2">
+        </div>
+        <div class="gallery-item">
+            <img src="proof/1.jpg" alt="Proof 1">
+        </div>
     </div>
-</header>
+</section>
+</div>
+<div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <span class="prev" onclick="changePhoto(-1)">&#10094;</span>
+    <img id="lightbox-img" src="" alt="Photo">
+    <span class="next" onclick="changePhoto(1)">&#10095;</span>
+</div>
 
-    <nav role="navigation">
-        <ul class="nav-links" aria-label="Main Navigation">
-            <li><a href="./" tabindex="0"><i class="fas fa-home"></i></a></li>
-            <li><a href="./games" tabindex="0"><i class="fas fa-gamepad"></i>Games</a></li>
-            <li><a href="./results" tabindex="0"><i class="fas fa-trophy"></i>Results</a></li>
-            <li><a href="./winners" tabindex="0"><i class="fas fa-crown"></i>Winners</a></li>
-        </ul>
-    </nav>
+<script>
+var navLinks = document.getElementById("navLinks");
+var menuBtn = document.getElementById("menuBtn");
 
-    <main>
-        <section class="contact-info">
-            <h2>Contact Us</h2>
-            <p>
-                For any inquiries or support, please reach out to us using the following contact details:
-            </p>
-            <p>
-                <strong>Email:</strong> <a href="mailto:luckyrobinpangilinan@gmail.com">luckyrobinpangilinan@gmail.com</a><br>
-                <strong>Address:</strong> 571 Shaw Blvd, Mandaluyong, 1552 Metro Manila
-            </p>
-            <p>
-.
-            </p>
-            <p>
-                We look forward to hearing from you!
-            </p>
-        </section>
-    </main>
+function toggleMenu() {
+    if (navLinks.style.right === "0px") {
+        navLinks.style.right = "-200px";  
+        menuBtn.style.display = "block";  
+    } else {
+        navLinks.style.right = "0";  
+        menuBtn.style.display = "none";  
+    }
+}
 
-    <footer>
-        <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
-    </footer>
+let lastScrollTop = 0; 
+const logo = document.querySelector('nav img');
 
-    <script>
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('show');
-        });
-    </script>
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        logo.style.opacity = '0'; 
+    } else {
+        logo.style.opacity = '1'; 
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+});
+
+// Lightbox Functionality
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const images = document.querySelectorAll('.gallery-item img');
+let currentIndex = 0;
+
+images.forEach((image, index) => {
+    image.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = image.src;
+        currentIndex = index;
+    });
+});
+
+function closeLightbox() {
+    lightbox.style.display = 'none';
+}
+
+function changePhoto(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+    } else if (currentIndex >= images.length) {
+        currentIndex = 0;
+    }
+    lightboxImg.src = images[currentIndex].src;
+}
+
+// Swipe functionality for lightbox
+let startX = 0;
+lightbox.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener('touchmove', (e) => {
+    if (!startX) return;
+    let moveX = e.touches[0].clientX;
+    let diffX = startX - moveX;
+
+    if (diffX > 50) { 
+        changePhoto(1);
+        startX = 0;
+    } else if (diffX < -50) { 
+        changePhoto(-1);
+        startX = 0;
+    }
+});
+
+lightbox.addEventListener('touchend', () => {
+    startX = 0;
+});
+</script>
+
+<footer>
+    <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
