@@ -142,6 +142,26 @@
             width: 100%;
             bottom: 0;
         }
+      /* Video Section */
+.video {
+    padding: 50px 20px;
+    text-align: center;
+  	text-align: center;
+  	margin: 50px 0;
+}
+
+.video h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.video video {
+    width: 80%;
+	  height: auto;
+    max-width: 700px;
+  	margin-bottom: 20px;
+}
+      
         .figure {
           position: relative;
             margin: 0;
@@ -157,7 +177,7 @@
         .fugure video {
             max-width: 500px;
             height: 400px;
-          object-fit: contain;
+          object-fit: cover;
             border: none;
         }
         figcaption {
@@ -309,7 +329,7 @@
     <span class="join-text" id="joinText">Click here to join group chat</span>
             </div>
           <p></p>
-            <div class="figure">
+            <div class="video">
               <video autoplay muted loop controls>
                 <source src="https://github.com/David-Monreal/LRSPhOff/raw/main/img/video.mp4" type="video/mp4">
                 </video>
@@ -349,7 +369,7 @@
   
  <script>  
   function redirectToMessenger() {
-    window.open('https://m.me/j/AbYoVjQR1Auiyhmy/', '_blank'); // Replace with your Messenger link
+    window.open('YOUR_MESSENGER_LINK_HERE', '_blank'); // Replace with your Messenger link
 }
 
 // Function to show and hide the text
