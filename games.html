@@ -10,37 +10,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
-    <style>
-* {
+  
+<style>
+  * {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
     box-sizing: border-box;
-}
-    header {
-        width: 100vw; 
-        height: 50vh; 
-        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(creatives/herogames.jpg);
-        background-position: center; 
-         background-size: cover; 
-        position: relative;
-        z-index: 1;
-    }
+  }
+    
+  header {
+    width: 100vw;
+    height: 50vh; 
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/bannerhero.jpg);
+    background-position: center; 
+    background-size: cover; 
+    position: relative;
+    z-index: 1;
+  }
+  
+  .container {
+    max-width: 1200px;  
+    margin: 0 auto;     
+    padding: 0 15px;
+  }
 
-.container {
-    max-width: 1200px;  /* Fixed maximum width */
-    margin: 0 auto;     /* Center the content */
-    padding: 0 15px;    /* Add padding to prevent content from touching the edges */
-}
-
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 10px;  /* Adjust padding on smaller screens */
-    }
-}
-
-/* Navigation Styles */
-nav {
+  nav {
     display: flex;
     padding: 10px 6%;
     justify-content: space-between;
@@ -52,44 +47,32 @@ nav {
     background: rgba(4, 9, 30, 0.7);
     z-index: 10;
     transition: opacity 0.3s ease;
-}
-
-nav img {
+  }
+  
+  nav img {
     width: 150px;
     transition: opacity 0.3s ease;
-}
-
-@media(max-width: 700px) {
-            nav img {
-                width: 100px;
-            }
-            .text-box h1 {
-                font-size: 24px;
-            }
-            .text-box p {
-                font-size: 14px;
-            }
-        }
-
-.nav-links {
+  }
+  
+  .nav-links {
     flex: 1;
     text-align: right;
-}
-
-.nav-links ul li {
+  }
+  
+  .nav-links ul li {
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
-}
-
-.nav-links ul li a {
+  }
+  
+  .nav-links ul li a {
     color: white;
     text-decoration: none;
     font-size: 13px;
-}
-
-.nav-links ul li::after {
+  }
+  
+  .nav-links ul li::after {
     content: '';
     width: 0%;
     height: 2px;
@@ -97,33 +80,33 @@ nav img {
     display: block;
     margin: auto;
     transition: 0.5s;
-}
-
-.nav-links ul li:hover::after {
+  }
+  
+  .nav-links ul li:hover::after {
     width: 100%;
-}
-
-.text-box {
+  }
+  
+  .text-box {
     width: 90%;
     color: white;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center; 
-}
-
-.text-box h1 {
+  }
+  
+  .text-box h1 {
     font-size: 62px;
-}
-
-.text-box p {
+  }
+  
+  .text-box p {
     margin: 10px 0 40px;
     font-size: 14px;
     color: white;
-}
-
-.hero-btn {
+  }
+  
+  .hero-btn {
     display: inline-block;
     text-decoration: none;
     color: white;
@@ -133,236 +116,315 @@ nav img {
     background: transparent;
     position: relative;
     cursor: pointer;
-}
-
-.hero-btn:hover {
+  }
+  
+  .hero-btn:hover {
     border: 1px solid blue;
     background: blue;
     transition: 0.5s;
-}
-
-nav .fa {
+  }
+  
+  nav .fa {
     display: none;
-}
-
-/* Media Queries for Mobile */
-@media(max-width: 700px) {
-            header {
-                height: 50vh; 
-                background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(creatives/herogamesm.jpg); 
-            }
-            .text-box h1 {
-                font-size: 20px; 
-            }
-            .nav-links ul li {
-                display: block;
-            }
-            .nav-links {
-                position: absolute;
-                background: rgba(0, 0, 0, 0.9); 
-                height: 100vh;
-                width: 200px;
-                top: 0;
-                right: -200px;
-                text-align: left;
-                z-index: 999;
-                transition: 0.5s;
-            }
-            nav .fa {
-                display: block;
-                color: white;
-                margin: 10px;
-                font-size: 22px;
-                cursor: pointer;
-                z-index: 1000;
-            }
-            .nav-links.active {
-                right: 0;
-            }
-            .nav-links ul {
-                padding: 30px;
-            }
-        }
-
-        
-        /*------ Games ------*/
+  }
+  
+  @media (max-width: 780px) {
+    .container {
+      padding: 0 10px;
+    }
+      
+    nav img {
+      width: 100px;
+    }
+    
+    .text-box h1 {
+      font-size: 62px;
+    }
+    
+    .text-box p {
+      font-size: 12px;
+    }
+    
+    .nav-links ul li {
+      display: block;
+    }
+    
+    .nav-links {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.9); 
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 999;
+      transition: 0.5s;
+    }
+    
+    nav .fa {
+      display: block;
+      color: white;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    
+    .nav-links.active {
+      right: 0;
+    }
+    
+    .nav-links ul {
+      padding: 30px;
+    }
+  }
+ 
+  
+/*------ Games ------*/
 .games {
-   width: 80%;
-   margin: auto;
-   text-align: center;
-   padding-top: 100px;
-}
-h1{
-  font-size: 36px;
-  font-weight: 600;
-}
-p{
-  color: black;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 22px;
-  padding: 10px;
-}
-
-        .game-container {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-.game-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-	    width: 100%;
-            max-width: 400px;
-            cursor: pointer;
-            text-align: center;
-            transition: transform 0.3s;
-	    position: relative;
-        }
-
-.overlay {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  }
+  
+  h1{
+    font-size: 36px;
+    font-weight: 600;
+  }
+  
+  p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+  }
+  
+  .game-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .game-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 250px;
+    max-width: 250px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s;
+    position: relative;
+  }
+  
+  .overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    background: rgba(0, 0, 0, 0.5); 
     display: flex;
     align-items: center;
     justify-content: center;
-	align-items: center;
-	color: white;
+    align-items: center;
+    color: white;
     opacity: 0;
     transition: opacity 0.3s;
-}
-
-.game-card:hover .overlay {
-    opacity: 1; /* Show overlay on hover */
-}
-
-	.learn-more {
-	    color: white; /* Text color */
-	    font-size: 20px; /* Font size */
-	    text-align: center; /* Center the text */
-	}
-
-.game-card img {
+  }
+  
+  .game-card:hover .overlay {
+    opacity: 1; 
+  }
+  
+  .learn-more {
+    color: white; 
+    font-size: 20px; 
+    text-align: center; 
+  }
+  
+  .game-card img {
     width: 100%;
     height: auto;
     display: block;
-}
+  }
+  
+  .game-card h2 {
+    background: red;
+    color: yellow;
+    padding: 5px;
+    margin: 0;
+    border-radius: 10px;
+  }
+  
+  .game-card h3 {
+    background: black;
+    color: white;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .game-card p {
+    padding: 10px;
+    display: none; 
+  }
+  
+  .expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .expanded-content {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+  }
+  
+  .description {
+    padding: 20px;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    position: relative;
+    font-size: 17px;
+    border-radius: 5px;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .click {
+    display: none;
+  }
+  
+  
+  @media (max-width: 780px) {
+  .games {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  h1{
+    font-size: 24px;
+  }
+  h3{
+    display: none;
+  }
+  
+  p{
+    font-size: 12px;
+  }
+  
+  .game-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .game-card {
+    width: 120px;
+    max-width: 120px;
+  }
+  
+  .learn-more {
+    color: white; 
+    font-size: 15px; 
+  }
+  
+  .expanded {
+    padding: 10px;
+  }
+  
+  .expanded-content {
+    flex-direction: column;
+    max-width: 95%;
+    height: 95%;
+  }
+  
+  .description {
+    padding: 10px;
+    font-size: 12px;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+  
+  .close-btn {
+    font-size: 18px;
+    top: 40px;
+    right: 40px;
+    z-index: 10;
+  }
+    
+  .click {
+    display: block;
+    text-align: center;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+    padding: 10px;
+  }
+  }
 
-        .game-card h3 {
-            background: #0033cc;
-            color: white;
-            padding: 10px;
-            margin: 0;
-        }
+/*------ Footer ------*/
+  footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(4, 9, 30, 0.7);
+  }
+  
+  .footer p{
+    color: white;
+  }
 
-        .game-card p {
-            padding: 10px;
-            display: none; /* Hide by default */
-        }
 
-        .expanded {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-	    padding: 20px;
-        }
-
-        .expanded-content {
-            display: flex;
-	    flex-direction: row;
-            max-width: 800px;
-            height: 100%;
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-	    padding: 10px;
-        }
-
-        .description {
-            padding: 20px;
-            background-color: white;
-            color: black;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-width: 100%;
-            position: relative;
-            font-size: 17px;
-	    border-radius: 5px;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: red;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-	    border-radius: 5px;
-        }
-
-        @media(max-width: 700px) {
-.game-card {
-        max-width: 100%; /* Make full width on smaller screens */
-    }
-	    .expanded-content {
-		max-width: 95%;
-	        max-height: 95%;
-	        flex-direction: column; /* Stack the image and description in a column */
-	    }
-	    .expanded {
-        	padding: 10px; /* Add padding on all sides for mobile */
-	    }
-            .description {
-                font-size: 12px; /* Smaller font size for mobile */
-		max-height: 100%; /* Allow the description to take up the bottom half */
-        	overflow-y: auto; /* Enable scrolling if the description is too long */
-		padding: 10px; /* Add padding on all sides for mobile */
-            }
-
-	    .close-btn {
-	        font-size: 18px; /* Smaller close button for mobile */
-    }
-        }
-
-        /*------ Footer ------*/
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            background-color: rgba(4, 9, 30, 0.7);
-            color: white;
-        }
-
-    </style>
+</style>
 </head>
 
 <body>
 <header>
     <section class="header">
     <nav>
-        <a href="./"><img src="creatives/lrs.png" alt="LRS Logo"></a>
+        <a href="./"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/lrs.png" alt="LRS Logo"></a>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="toggleMenu()"></i>
             <ul>
@@ -376,25 +438,31 @@ p{
         </div>
         <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
     </nav>
+      
+      <div class="text-box">
+        <h1>LRS GAMES</h1>
+        <p>Ang LRS Philippines Official ay nag-aalok ng iba't ibang lotto games na tiyak na magpapasaya at magbibigay ng pagkakataong manalo ng malalaking premyo! </p>
+    </div>
+      
 </header>
     <main>
 <div class="container">
 <section class="games">
-<h1>Pick 3 Games</h1>
-  <p>Kahit ikaw ay sanay na manlalaro o bagong tuklas sa saya ng lotto, nagbibigay kami ng simpleng at nakakaengganyong karanasan sa pagtaya. Tuklasin ang iyong paboritong laro ngayon at dagdagan ang iyong tsansa na manalo ng jackpot!</p>	
-  <p>Sumali sa saya sa aming iba't ibang laro ng lotto! Pumili mula sa 6/45, 6/49, 6/55 at 6/58. Bawat laro ay nag-aalok ng natatanging pagkakataon upang manalo ng malaki! 🏆💰</p>
-</section>
+<h1>💥 Pick 3 Lotto 💥</h1>
+  <p>Mas pinasimple, mas pinabilis, at mas mataas ang tsansa mong manalo sa aming Pick 3 Games - kung saan maaari mong i-enjoy ang mga laro tulad ng 6/45, 6/49, 6/55, at 6/58! 🏆💸</p>
+  <p>Pumili lamang ang 3 numero mula sa kabuuang numero ng bawat Draw, at kapag ang tatlong napiling numero ay lumabas sa anim na bola, ikaw ay panalo na agad! 🤑💸</p>
+</section> 
         <div class="game-container">
             <!-- 6/45 Mega Lotto Game Card -->
             <div class="game-card" onclick="expandDescription(this)">
 		<picture>
-		        <source media="(max-width: 500px)" srcset="creatives/45 PRIZE.jpg">
-		        <img src="creatives/45lotto.jpg" alt="6/45 Lotto">
+		        <source media="(max-width: 780px)" srcset="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/45 PRIZE.jpg">
+		        <img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/45.jpg" alt="6/45 Lotto">
     		</picture>
 		<div class="overlay">
-        		<h3 class="learn-more">Learn More</h3></div>	
+        		<h2 class="learn-more">Learn More</h2></div>	
                 <h3>6/45 Mega Lotto</h3>
-                <p>Pumili ng mga Numero
+                <p>1. Pumili ng mga Numero
 		    <br>● Pumili ng tatlong (3) numero mula 1 hanggang 45.
                     <br>2. Mga Panuntunan sa Pagtaya
                     <br>● Kapag ang lahat ng tatlong numero na iyong pinili ay tumugma sa alinman sa anim na (6) bolang lumabas, ikaw ay mananalo ng premyo!
@@ -416,11 +484,11 @@ p{
             <!-- 6/49 Mega Lotto Game Card -->
             <div class="game-card" onclick="expandDescription(this)">
 		<picture>
-		        <source media="(max-width: 700px)" srcset="creatives/49 PRIZE.jpg">
-		        <img src="creatives/49lotto.jpg" alt="6/49 Lotto">
+		        <source media="(max-width: 780px)" srcset="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/49 PRIZE.jpg">
+		        <img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/49.jpg" alt="6/49 Lotto">
     		</picture>
 		<div class="overlay">
-        		<h3 class="learn-more">Learn More</h3></div>
+        		<h2 class="learn-more">Learn More</h2></div>
                 <h3>6/49 Super Lotto</h3>
                 <p>
                     1. Pumili ng mga Numero
@@ -445,11 +513,11 @@ p{
             <!-- 6/55 Mega Lotto Game Card -->
             <div class="game-card" onclick="expandDescription(this)">
 		<picture>
-		        <source media="(max-width: 700px)" srcset="creatives/55 PRIZE.jpg">
-		        <img src="creatives/55lotto.jpg" alt="6/55 Lotto">
+		        <source media="(max-width: 780px)" srcset="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/55 PRIZE.jpg">
+		        <img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/55.jpg" alt="6/55 Lotto">
     		</picture>
 		<div class="overlay">
-        		<h3 class="learn-more">Learn More</h3></div>
+        		<h2 class="learn-more">Learn More</h2></div>
                 <h3>6/55 Grand Lotto</h3>
                 <p>
                     1. Pumili ng mga Numero
@@ -474,11 +542,11 @@ p{
             <!-- 6/58 Mega Lotto Game Card -->
             <div class="game-card" onclick="expandDescription(this)">
 		<picture>
-		        <source media="(max-width: 700px)" srcset="creatives/58 PRIZE.jpg">
-		        <img src="creatives/58lotto.jpg" alt="6/58 Lotto">
+		        <source media="(max-width: 780px)" srcset="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/58 PRIZE.jpg">
+		        <img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/58.jpg" alt="6/58 Lotto">
     		</picture>
 		<div class="overlay">
-        		<h3 class="learn-more">Learn More</h3></div>
+        		<h2 class="learn-more">Learn More</h2></div>
                 <h3>6/58 Ultra Lotto</h3>
                 <p>
                     1. Pumili ng mga Numero
@@ -500,20 +568,23 @@ p{
                 </p>
             </div>
 </div>
-
+ <div class="click">
+   <em>Click Photo for more Info!<em>
+  </div>
 <section class="games">
 <h1>🎉 2D at 3D Lotto 🎉</h1>
-  <p>Kahit ikaw ay sanay na manlalaro o bagong tuklas sa saya ng lotto, nagbibigay kami ng simpleng at nakakaengganyong karanasan sa pagtaya. Tuklasin ang iyong paboritong laro ngayon at dagdagan ang iyong tsansa na manalo ng jackpot!</p>
+  <p>Kung nais mo ng bagong hamon o gusto ng ibang paraan para subukan ang iyong swerte, narito ang 2D at 3D Lotto—mabilis, simple, at puno ng pagkakataon para manalo! 🏆💸</p>
+  <p>🕑 2PM, 🕔 5PM, at 🕘 9PM na draw, kaya maraming pagkakataon upang subukan ang iyong swerte! </p>
 </section>
         <div class="game-container">
             <!-- 2D Lotto Game Card -->
             <div class="game-card" onclick="expandDescription(this)">
 		<picture>
-		        <source media="(max-width: 700px)" srcset="creatives/2D PRIZE.jpg">
-		        <img src="creatives/2D PRIZE.jpg" alt="2D Lotto">
+		        <source media="(max-width: 700px)" srcset="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/2lotto.jpg">
+		        <img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/2lotto.jpg" alt="2D Lotto">
     		</picture>
 		<div class="overlay">
-        		<h3 class="learn-more">Learn More</h3></div>
+        		<h2 class="learn-more">Learn More</h2></div>
                 <h3>2D Lotto</h3>
                 <p>
                     1. Pumili ng mga Numero
@@ -540,11 +611,11 @@ p{
             <!-- 3D Lotto Game Card -->
             <div class="game-card" onclick="expandDescription(this)">
 		<picture>
-		        <source media="(max-width: 700px)" srcset="creatives/3D PRIZE.jpg">
-		        <img src="creatives/3D PRIZE.jpg" alt="3D Lotto">
+		        <source media="(max-width: 700px)" srcset="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/3dlotto.jpg">
+		        <img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/3dlotto.jpg" alt="3D Lotto">
     		</picture>
 		<div class="overlay">
-        		<h3 class="learn-more">Learn More</h3></div>
+        		<h2 class="learn-more">Learn More</h2></div>
                 <h3>3D Lotto</h3>
                 <p>
                     1. Pumili ng mga Numero
@@ -579,10 +650,14 @@ p{
             </div>
 	</div>
 		</div>
+   <div class="click">
+   <em>Click Photo for more Info!<em>
+  </div>
     </main>
 
 
-    <footer>
+    <div class="footer">
+      <footer>
     <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
 </footer>
 
