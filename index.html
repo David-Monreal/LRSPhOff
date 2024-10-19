@@ -23,8 +23,8 @@
 
 .header {
     width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(creatives/bannerhero.jpg);
+    height: 70vh;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/bannerhero.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -110,7 +110,7 @@ nav img {
     width: 90%;
     color: white;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center; 
@@ -152,10 +152,10 @@ nav .fa {
 @media(max-width: 700px) {
             header {
                 height: 100vh; 
-                background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(creatives/bannerherom.jpg); 
+                background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/bannerherom.jpg); 
             }
             .text-box h1 {
-                font-size: 20px; 
+                font-size: 40px; 
             }
             .nav-links ul li {
                 display: block;
@@ -254,76 +254,20 @@ nav .fa {
 		font-weight: bold;
         }
 
-/* Live Draws Section */
-.live-draws {
-    padding: 50px;
-    background-color: #f9f9f9;
-}
-
-.live-draws h2{
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
-}
-
-.video-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.video-box {
-    width: 30%;
-    text-align: center;
-    border: 2px solid #ccc;  /* Add a border for the box */
-    border-radius: 8px;      /* Optional: add rounded corners */
-    padding: 10px;           /* Space inside the box */
-    background-color: white; /* Background color for the box */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-}
-
-.video-box iframe {
-    width: 100%;
-    height: 250px;
-}
-
-.caption {
-    font-size: 16px;
-    color: #333;
-    margin-top: 10px;
-}
-
-/* Responsive for Mobile */
-@media (max-width: 700px) {
-    .video-box {
-        width: 100%; /* Full width on smaller screens */
-        margin-bottom: 20px; /* Space between boxes */
-    }
-}
-
-
 /* Popup styles */
         .popup {
             position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-            max-width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
             height: auto;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-            display: none; /* Hidden by default */
+            background-color: rgba(0, 0, 0, 0.5); 
+            display: none; 
             justify-content: center;
             align-items: center;
             z-index: 10;	
         }
-	    @media (max-width: 700px) {
-    .popup {
-	    top: 0;
-	    left: 0;
-    }
-}
-
+      
         .popup-content {
             position: relative;
             max-width: 100%;
@@ -334,7 +278,6 @@ nav .fa {
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Image inside the popup */
         .popup-content img {
             width: 100%;
             height: auto;
@@ -343,7 +286,6 @@ nav .fa {
         }
 
 
-        /* Close button styles */
         .close-btn {
             position: absolute;
             top: 10px;
@@ -363,7 +305,7 @@ nav .fa {
         .close-btn:hover {
             background-color: darkred;
         }
-
+      
         /*------ Footer ------*/
         footer {
             bottom: 0;
@@ -378,7 +320,7 @@ nav .fa {
 <body>
 <section class="header">
     <nav>
-        <a href="./"><img src="creatives/lrs.png" alt="LRS Logo"></a>
+        <a href="./"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/lrs.png" alt="LRS Logo"></a>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="toggleMenu()"></i>
             <ul>
@@ -404,7 +346,7 @@ nav .fa {
 <div class="popup" id="popup">
         <div class="popup-content">
             <button class="close-btn" onclick="closePopup()">X</button>
-            <img src="creatives/2D PRIZE.jpg" alt="Popup Image">
+            <img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/2D PRIZE.jpg" alt="Popup Image">
             <p>Don't miss our latest promotion!</p>
         </div>
     </div>
@@ -434,24 +376,6 @@ nav .fa {
         </div>
 
         <p><strong>🤑 Tumaya na ngayon at baka ikaw na ang susunod na mapalad na <span class="highlight">PANALO</span>! 🤑</strong></p>
-    </div>
-</div>
-
-<div class="live-draws">
-    <h2>WATCH LOTTO LIVE DRAWS</h2>
-    <div class="video-container">
-        <div class="video-box">
-            <iframe width="100%" height="250" src="https://www.youtube.com/embed/DW6QDQmW_qc?si=F9h-HzDp6x85vpIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p class="caption">October 01, 2024 - 2PM Live Draw</p>
-        </div>
-        <div class="video-box">
-            <iframe width="100%" height="250" src="https://www.youtube.com/embed/kv21WLfBFcs?si=hYaFSLFsQWv4Kk7U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p class="caption">October 01, 2024 - 5PM Live Draw</p>
-        </div>
-        <div class="video-box">
-            <iframe width="100%" height="250" src="https://www.youtube.com/embed/kkWRlNbx3OM?si=Z_dlNztjoATchu-t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p class="caption">October 01, 2024 - 9PM Live Draw</p>
-        </div>
     </div>
 </div>
 </div>
@@ -491,7 +415,7 @@ window.addEventListener('scroll', function() {
 // Show the popup after 30 seconds
         setTimeout(function() {
             document.getElementById('popup').style.display = 'flex';
-        }, 300000); // 30,000 milliseconds = 30 seconds
+        }, 3000); // 30,000 milliseconds = 30 seconds
 
         // Close the popup when the close button is clicked
         function closePopup() {
