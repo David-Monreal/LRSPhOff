@@ -11,36 +11,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <style>
-
-       * {
+ * {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
     box-sizing: border-box;
-}
-
-.header {
+  }
+    
+  header {
     width: 100vw;
-    height: 50vh;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(creatives/heroresult.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 50vh; 
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/bannerhero.jpg);
+    background-position: center; 
+    background-size: cover; 
     position: relative;
-}
-.container {
-    max-width: 1200px;  /* Fixed maximum width */
-    margin: 0 auto;     /* Center the content */
-    padding: 0 15px;    /* Add padding to prevent content from touching the edges */
-}
+    z-index: 1;
+  }
+  
+  .container {
+    max-width: 1200px;  
+    margin: 0 auto;     
+    padding: 0 15px;
+  }
 
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 10px;  /* Adjust padding on smaller screens */
-    }
-}
-/* Navigation Styles */
-nav {
+  nav {
     display: flex;
     padding: 10px 6%;
     justify-content: space-between;
@@ -52,45 +46,32 @@ nav {
     background: rgba(4, 9, 30, 0.7);
     z-index: 10;
     transition: opacity 0.3s ease;
-}
-
-nav img {
-    width: 120px;
-  height: auto;
+  }
+  
+  nav img {
+    width: 150px;
     transition: opacity 0.3s ease;
-}
-
-@media(max-width: 700px) {
-            nav img {
-                width: 100px;
-            }
-            .text-box h1 {
-                font-size: 24px;
-            }
-            .text-box p {
-                font-size: 14px;
-            }
-        }
-
-.nav-links {
+  }
+  
+  .nav-links {
     flex: 1;
     text-align: right;
-}
-
-.nav-links ul li {
+  }
+  
+  .nav-links ul li {
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
-}
-
-.nav-links ul li a {
+  }
+  
+  .nav-links ul li a {
     color: white;
     text-decoration: none;
     font-size: 13px;
-}
-
-.nav-links ul li::after {
+  }
+  
+  .nav-links ul li::after {
     content: '';
     width: 0%;
     height: 2px;
@@ -98,33 +79,33 @@ nav img {
     display: block;
     margin: auto;
     transition: 0.5s;
-}
-
-.nav-links ul li:hover::after {
+  }
+  
+  .nav-links ul li:hover::after {
     width: 100%;
-}
-
-.text-box {
+  }
+  
+  .text-box {
     width: 90%;
     color: white;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center; 
-}
-
-.text-box h1 {
+  }
+  
+  .text-box h1 {
     font-size: 62px;
-}
-
-.text-box p {
+  }
+  
+  .text-box p {
     margin: 10px 0 40px;
     font-size: 14px;
     color: white;
-}
-
-.hero-btn {
+  }
+  
+  .hero-btn {
     display: inline-block;
     text-decoration: none;
     color: white;
@@ -134,56 +115,68 @@ nav img {
     background: transparent;
     position: relative;
     cursor: pointer;
-}
-
-.hero-btn:hover {
+  }
+  
+  .hero-btn:hover {
     border: 1px solid blue;
     background: blue;
     transition: 0.5s;
-}
-
-nav .fa {
+  }
+  
+  nav .fa {
     display: none;
-}
-
-/* Media Queries for Mobile */
-@media(max-width: 700px) {
-            header {
-                height: 50vh; 
-                background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(creatives/heroresultm.jpg); 
-            }
-            .text-box h1 {
-                font-size: 20px; 
-            }
-            .nav-links ul li {
-                display: block;
-            }
-            .nav-links {
-                position: absolute;
-                background: rgba(0, 0, 0, 0.9); 
-                height: 100vh;
-                width: 200px;
-                top: 0;
-                right: -200px;
-                text-align: left;
-                z-index: 999;
-                transition: 0.5s;
-            }
-            nav .fa {
-                display: block;
-                color: white;
-                margin: 10px;
-                font-size: 22px;
-                cursor: pointer;
-                z-index: 1000;
-            }
-            .nav-links.active {
-                right: 0;
-            }
-            .nav-links ul {
-                padding: 30px;
-            }
-        }
+  }
+  
+  @media (max-width: 900px) {
+    .container {
+      padding: 0 10px;
+    }
+      
+    nav img {
+      width: 100px;
+    }
+    
+    .text-box h1 {
+      font-size: 62px;
+    }
+    
+    .text-box p {
+      font-size: 12px;
+    }
+    
+    .nav-links ul li {
+      display: block;
+    }
+    
+    .nav-links {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.9); 
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 999;
+      transition: 0.5s;
+    }
+    
+    nav .fa {
+      display: block;
+      color: white;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    
+    .nav-links.active {
+      right: 0;
+    }
+    
+    .nav-links ul {
+      padding: 30px;
+    }
+  }
  
 /* Live Draws Section */
 .live-draws {
@@ -336,6 +329,10 @@ nav .fa {
             </div>
             <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
         </nav>
+      <div class="text-box">
+        <h1>RESULT AND LIVE DRAWS</h1>
+        <p>Be updated sa pinakabagong lotto draws at mga nanalong numero!<br> Para sa <strong>2D, 3D, o Pick 3 Results</strong>, narito kami para tulungan ka. Panoorin ang mga live draws, balikan ang mga nakaraang resulta, at tingnan kung ikaw na ba ang susunod na maswerteng mananalo! </p>
+    </div>
     </header>
 </section>
 <div class="container">
@@ -343,16 +340,16 @@ nav .fa {
 <h2>WATCH LOTTO LIVE DRAWS</h2>
     <div class="video-container">
         <div class="video-box">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/EaKOLxlqjUw?si=bStVJo3ZBa3dUidh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p class="caption">October 19, 2024 - 2PM Live Draw</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Fq3N8vIqlHs?si=tOqo0fuGoeEby4NZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="caption">October 21, 2024 - 2PM Live Draw</p>
         </div>
         <div class="video-box">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/NxVHuaIShH0?si=6vxtbG_vGRObLbyD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p class="caption">October 19, 2024 - 5PM Live Draw</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8-D90ZWz7Rs?si=N1txS8dTHZqI4Da2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="caption">October 21, 2024 - 5PM Live Draw</p>
         </div>
         <div class="video-box">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/nh7gtlWP7YI?si=lq9hX63Jv1xSUyOD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p class="caption">October 19, 2024 - 9PM Live Draw</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/EtR3TfbXPzQ?si=iiqSQfgr_PlwAjJq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="caption">October 21, 2024 - 9PM Live Draw</p>
         </div>
     </div>
 </section>
@@ -376,7 +373,7 @@ nav .fa {
         </tbody>
     </table>
 
-    <h2>PREVIOUS RESULTS</h2>
+    <h2>Previous Results</h2>
     <table id="allResultsTable">
         <thead>
             <tr>
@@ -445,7 +442,7 @@ fetch('https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/ma
                 const latestDate = results.data[0].DATE;
 
                 // Update the title of the latest results table
-                document.getElementById('latestResultsTitle').textContent = `LATEST RESULT -  ${latestDate}`;
+                document.getElementById('latestResultsTitle').textContent = `Today's Result -  ${latestDate}`;
 
                 results.data.forEach(row => {
                     const newRow = document.createElement('tr');
