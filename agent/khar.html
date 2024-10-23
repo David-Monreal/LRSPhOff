@@ -363,6 +363,19 @@ h1, h2 {
   .cta a:hover {
     background-color: #004494;
   }
+  
+  #dynamicImage {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 768px) {
+    #dynamicImage {
+      
+    }
+  }
+  
   </style>
 </head>
 <body>
@@ -403,10 +416,10 @@ h1, h2 {
                 </ol>
             </div>
 
-            <p>🎁 <strong>SPECIAL OFFER:</strong> Sumali sa aming Group Chat at makakuha ng access sa mga exclusive promo at raffle na para lamang sa mga miyembro ng aming community!</p>
-            
-            <p class="highlight" style="color: #e63946;">Mas maraming taya, mas malaki ang tsansa ng panalo at premyo!</p>
-
+            <p>🎁 <strong>SPECIAL OFFER</strong> 🎁<br> Sumali sa aming Group Chat at makakuha ng access sa mga exclusive promo at raffle na para lamang sa mga miyembro ng aming community!</p>
+            <p>&nbsp</p>
+            <p class="highlight" style="color: blue; font-size: 20px;">Mas maraming taya, mas malaki ang tsansa ng panalo at premyo!</p>
+<img id="dynamicImage" src="" alt="Daily Image">
             <div class="cta">
                 <p><strong>Ano pang hinihintay mo?</strong> <br>Mag-GCash na at i-send ang iyong taya!</p>
               <p>&nbsp</p>
@@ -441,7 +454,38 @@ function toggleJoinText() {
 setInterval(() => {
     toggleJoinText();
 }, 5000); 
-  
+   
+   // Images for each day of the week
+    const images = {
+        0: 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/49-2d-3d.jpg',   // Sunday
+        1: 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/45-2d-3d.jpg',   // Monday
+        2: 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/49-2d-3d.jpg',  // Tuesday
+        3: 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/45-2d-3d.jpg',// Wednesday
+        4: 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/49-2d-3d.jpg', // Thursday
+        5: 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/58-2d-3d.jpg',   // Friday
+        6: 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/55-2d-3d.jpg'  // Saturday
+    };
+
+    // Get the current day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+    const currentDay = new Date().getDay();
+
+    // Set the image based on the current day
+    const imageElement = document.getElementById('dynamicImage');
+    imageElement.src = images[currentDay];
+
+    // Optionally, you can add alt text based on the day
+    const altTexts = {
+        0: 'Sunday Draw and Prizes',
+        1: 'Monday Draw and Prizes',
+        2: 'Tuesday Draw and Prizes',
+        3: 'Wednesday Draw and Prizes',
+        4: 'Thursday Draw and Prizes',
+        5: 'Friday Draw and Prizes',
+        6: 'Saturday Draw and Prizes'
+    };
+    imageElement.alt = altTexts[currentDay];
+   
+   
   </script>
 </body>
 </html>
