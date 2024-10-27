@@ -408,15 +408,28 @@ function filterTable() {
         );
     });
 
-    if (filteredData.length) {
+    if (filteredData.length === 0) {
+        tbody.innerHTML = '<p>No winners found matching your search criteria.</p>';
+        return;
+    }
+
+    const groupedWinners = filteredData.reduce((acc, winner) => {
+        const dateKey = new Date(winner.DATE).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        if (!acc[dateKey]) acc[dateKey] = [];
+        acc[dateKey].push(winner);
+        return acc;
+    }, {});
+
+    const sortedDates = Object.keys(groupedWinners).sort((a, b) => new Date(b) - new Date(a));
+
+    sortedDates.forEach(date => {
         const tableHeader = document.createElement('h2');
-        tableHeader.textContent = 'Winners';
+        tableHeader.textContent = `${date} Winners`;
         tbody.appendChild(tableHeader);
 
         const table = document.createElement('table');
         table.innerHTML = `<thead>
             <tr>
-                <th>DATE</th>
                 <th>TEAM</th>
                 <th>AGENT</th>
                 <th>BETTOR</th>
@@ -429,14 +442,10 @@ function filterTable() {
             </tr>
         </thead><tbody></tbody>`;
 
-        const tbodyForFiltered = table.querySelector('tbody');
+        const tbodyForWinners = table.querySelector('tbody');
 
-        // Sort by date from latest to oldest
-        const sortedFilteredData = filteredData.sort((a, b) => new Date(b.DATE) - new Date(a.DATE));
-
-        sortedFilteredData.forEach(winner => {
+        groupedWinners[date].forEach(winner => {
             const row = `<tr>
-                <td>${new Date(winner.DATE).toLocaleDateString('en-US')}</td>
                 <td>${winner.TEAM}</td>
                 <td>${winner.AGENT}</td>
                 <td>${winner.BETTOR}</td>
@@ -447,14 +456,15 @@ function filterTable() {
                 <td>${winner.TOB}</td>
                 <td>${winner.TIME}</td>
             </tr>`;
-            tbodyForFiltered.innerHTML += row;
+            tbodyForWinners.innerHTML += row;
         });
 
         tbody.appendChild(table);
-    }
+    });
 }
 
-    loadCSV();
+// Load CSV when the page is ready
+window.onload = loadCSV;
 
     // Menu Button Function   
     var navLinks = document.getElementById("navLinks");
