@@ -186,6 +186,7 @@ h1 {
   margin: 20px auto;
   width: 90%;
   overflow-x: auto; 
+  margin-bottom: 20px;
         }
 .table-container h2 {
     text-align: center;
@@ -245,6 +246,26 @@ th:nth-child(8), td:nth-child(8) {
 th:nth-child(9), td:nth-child(9) {
   min-width: 80px; 
         }
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+  position: relative;
+}
+.scroll-row {
+    height: 20px; /* Adjust as needed */
+}
+
+.scroll-row .scroll-indicator {
+    height: 6px;
+    width: 100%; /* Full width of table */
+    background-color: #ccc; /* Light gray color for scroll bar */
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.scroll-indicator:hover {
+    background-color: #888; /* Darker color on hover */
+}
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
@@ -266,6 +287,19 @@ th:nth-child(9), td:nth-child(9) {
   border: 1px solid #ddd;
   border-radius: 4px;
         }
+ .scroll-info {
+    display: none; 
+    font-size: 14px;
+    color: RED; 
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .scroll-info {
+        display: block; 
+    }
+}
 
 /*------ Footer ------*/
         footer {
@@ -277,12 +311,10 @@ th:nth-child(9), td:nth-child(9) {
             color: white;
         }
 </style>
-
-<!-- PapaParse Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-
+    <!-- PapaParse Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 </head>
-
+  
 <body>
 <section class="header">
     <header>
@@ -305,19 +337,24 @@ th:nth-child(9), td:nth-child(9) {
     </div>
     </header>
 </section>
+<div class="container">
 
-<!-- Search Input -->
-<input type="text" id="search" placeholder="Search Winner">
-
-<div class="table-container">
-    <div id="winners-table">
-        <!-- Data will be inserted here -->
+    <!-- Search Input -->
+    <input type="text" id="search" placeholder="Search Winner">
+<p class="scroll-info">I-swipe lamang ang screen para makita ang buong detalye ng mga nanalo.</p>
+    <!-- Winners Table -->
+    <div class="table-container">
+      <div class="table-scroll">
+        <div id="winners-table">
+            <!-- Data will be inserted here -->
+        </div>
     </div>
 </div>
-
-<footer>
-    <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
-</footer>
+  </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+    </footer>
 
 <script>
     const csvUrl = 'https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/csv/winner.csv';
@@ -496,6 +533,5 @@ window.addEventListener('scroll', function() {
 
     document.getElementById('search').addEventListener('input', filterTable);
 </script>
-
 </body>
 </html>
