@@ -5,7 +5,7 @@
     <title>LRS Philippines Official</title>
     <meta property="og:title" content="LRS Philippines Official">
     <meta property="og:description" content="Experience the thrill of winning with our exciting lottery games!">
-    <link rel="shortcut icon" type="x-icon" href="creatives/lrs.png">
+    <link rel="shortcut icon" type="x-icon" href="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/lrs.png">
     <meta property="og:url" content="https://lrsphilippinesofficial.com/index33">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +41,7 @@
         padding: 0 10px;  /* Adjust padding on smaller screens */
     }
 }
+	    
 /* Navigation Styles */
 nav {
     display: flex;
@@ -58,18 +59,18 @@ nav {
 
 nav img {
     width: 120px;
-  height: auto;
+    height: auto;
     transition: opacity 0.3s ease;
 }
 
 @media(max-width: 700px) {
-            nav img {
-                width: 100px;
+	nav img {
+		width: 100px;
             }
-            .text-box h1 {
+	.text-box h1 {
                 font-size: 24px;
             }
-            .text-box p {
+	.text-box p {
                 font-size: 14px;
             }
         }
@@ -215,13 +216,13 @@ nav .fa {
         }
  
 .video-caption h1 {
-            color: red; /* Red color for h1 */
+            color: red; 
             font-size: 28px;
             margin-bottom: 10px;
         }
 
         .video-caption h2 {
-            color: blue; /* Blue color for h2 */
+            color: blue; 
             font-size: 22px;
             margin-bottom: 10px;
         }
@@ -509,6 +510,106 @@ nav .fa {
         background-color: #0056b3; 
       }
       
+      @media (max-width: 500px) {
+      .lottoresult {
+        max-width: 100%;
+        flex-direction: column;
+      }
+      
+      .box-container {
+        border-radius: 8px;
+        padding: 3px;
+        width: 100%;
+        }
+      
+      .pick-container {
+        padding: 5px;
+        margin: 5px auto;
+      }
+      
+      .youtube-videos {
+        width: 100%; 
+        flex-wrap: wrap;
+      }
+      
+      .youtube-container {
+        margin-bottom: 10px; 
+        padding: 5px;
+        flex-wrap: wrap;
+      }
+      
+      .youtube-caption {
+        margin-top: 5px;
+        font-size: 8px;
+        flex-wrap: wrap;
+      }
+      
+      .table-container {
+        border-radius: 8px;
+        padding: 8px;
+        margin-top: 8px;
+      }
+      
+      .date-title {
+        font-size: 0.8em;
+        margin-bottom: 10px;
+        }
+      
+        .main-image {
+          width: 40px;
+        }
+      
+        .loading {
+          font-size: 0.8em;
+        }
+      
+        .lotto-row {
+          margin-top: 5px;
+        }
+      
+        .lotto-balls {
+          margin-left: 5px; 
+        }
+      
+        .lotto-ball {
+          width: 30px;
+          height: 30px;
+          margin: 0 3px;
+          font-size: 0.8em;
+        }
+      
+      table {
+        margin-top: 8px; 
+      }
+        
+      td {
+        padding: 3px; 
+      }
+      
+      td img {
+        width: 30px;
+        height: auto; 
+      }
+      
+      .image-name {
+        font-weight: bold;
+        font-size: 0.5em;
+        margin-top: 1px;
+        flex-wrap: wrap;
+        }
+      
+      .button-container {
+        margin-top: 6px;  
+        width: 100%;
+        padding: 10px;
+      }
+      
+      .styled-button {
+        padding: 8px 15px; 
+        font-size: 8px; 
+      }
+      }
+      
     </style>
 </head>
 <body>
@@ -522,6 +623,7 @@ nav .fa {
                 <li><a href="./games">GAMES</a></li>
                 <li><a href="./results">RESULT</a></li>
                 <li><a href="./winners">WINNERS</a></li>
+		<li><a href="./proof">PROOF OF PAYOUT</a></li>
             </ul>
         </div>
         <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
@@ -590,7 +692,7 @@ nav .fa {
 </table>
   <!-- Button Section -->
 <div class="button-container">
-    <a href="https://lrsphilippinesofficial.com/results" class="styled-button">VIEW ALL RESULTS</a>
+    <a href="/.results" class="styled-button">VIEW ALL RESULTS</a>
 </div>
 </div>
     <!-- YouTube iframe -->
@@ -783,7 +885,7 @@ window.addEventListener('scroll', function() {
             const imageName = date.charAt(0).toUpperCase() + date.slice(1) + '.png'; // Generate image name based on date
 
             if (time === '2PM') {
-                document.getElementById('2pmImageName').innerHTML = `<img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/2PM.png" alt="${date} 2PM" /><div class="image-name">${date}</div>`;
+                document.getElementById('2pmImageName').innerHTML = `<img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/2PM.png" alt="2PM" /><div class="image-name">${date}</div>`;
                 document.getElementById('2pmNumbers').innerHTML = `<div class="lotto-balls">
                     <div class="lotto-ball">${number1}</div>
                     <div class="lotto-ball">${number2}</div>
@@ -794,7 +896,7 @@ window.addEventListener('scroll', function() {
                     <div class="lotto-ball">${number5}</div>
                 </div>`;
             } else if (time === '5PM') {
-                document.getElementById('5pmImageName').innerHTML = `<img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/5PM.png" alt="${date} 5PM" /><div class="image-name">${date}</div>`;
+                document.getElementById('5pmImageName').innerHTML = `<img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/5PM.png" alt="5PM" /><div class="image-name">${date}</div>`;
                 document.getElementById('5pmNumbers').innerHTML = `<div class="lotto-balls">
                     <div class="lotto-ball">${number1}</div>
                     <div class="lotto-ball">${number2}</div>
@@ -805,7 +907,7 @@ window.addEventListener('scroll', function() {
                     <div class="lotto-ball">${number5}</div>
                 </div>`;
             } else if (time === '9PM') {
-                document.getElementById('9pmImageName').innerHTML = `<img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/9PM.png" alt="${date} 9PM" /><div class="image-name">${date}</div>`;
+                document.getElementById('9pmImageName').innerHTML = `<img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/9PM.png" alt="9PM" /><div class="image-name">${date}</div>`;
                 document.getElementById('9pmNumbers').innerHTML = `<div class="lotto-balls">
                     <div class="lotto-ball">${number1}</div>
                     <div class="lotto-ball">${number2}</div>
