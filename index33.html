@@ -14,318 +14,242 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
     <style>
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-}
-
-.header {
-    width: 100vw;
-    height: 70vh;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/bannerhero.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-}
-.container {
-    max-width: 1200px; 
-    margin: 0 auto;     
-    padding: 0 15px;   
-}
-
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 10px;  /* Adjust padding on smaller screens */
-    }
-}
-	    
-/* Navigation Styles */
-nav {
-    display: flex;
-    padding: 10px 6%;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(4, 9, 30, 0.7);
-    z-index: 10;
-    transition: opacity 0.3s ease;
-}
-
-nav img {
-    width: 120px;
-    height: auto;
-    transition: opacity 0.3s ease;
-}
-
-@media(max-width: 700px) {
-	nav img {
-		width: 100px;
-            }
-	.text-box h1 {
-                font-size: 24px;
-            }
-	.text-box p {
-                font-size: 14px;
-            }
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+      }
+      
+      .header {
+        width: 100vw;
+        height: 70vh;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/bannerhero.jpg);
+        background-position: center;
+        background-size: cover;background-repea
+        t: no-repeat;
+        position: relative;
+      }
+      
+      .container {
+        max-width: 1200px; 
+        margin: 0 auto;    
+        padding: 0 15px;
+      }
+      
+      nav {
+        display: flex;
+        padding: 10px 6%;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(4, 9, 30, 0.7);
+        z-index: 10;
+        transition: opacity 0.3s ease;
+      }
+      
+      nav img {
+        width: 120px;
+        height: auto;
+        transition: opacity 0.3s ease;
+      }
+      
+      .nav-links {
+        flex: 1;
+        text-align: right;
+      }
+      
+      .nav-links ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+      }
+      
+      .nav-links ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 13px;
+      }
+      
+      .nav-links ul li::after {
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: blue;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+      }
+      
+      .nav-links ul li:hover::after {
+        width: 100%;
+      }
+      
+      .text-box {
+        width: 90%;
+        color: white;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center; 
+      }
+      
+      .text-box h1 {
+        font-size: 62px;
+      }
+      
+      .text-box p {
+        margin: 10px 0 40px;
+        font-size: 14px;
+        color: white;
+      }
+      
+      .hero-btn {
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        color: white;
+        border: 1px solid white;
+        padding: 12px 34px;
+        font-size: 13px;
+        background: transparent;
+        position: relative;
+      }
+      
+      .hero-btn:hover {
+        border: 1px solid blue;
+        background: blue;
+        transition: 0.5s;
+      }
+      
+      nav .fa {
+        display: none;
+      }
+      
+      @media(max-width: 700px) {
+        .container {
+          padding: 0 10px;  
         }
-
-.nav-links {
-    flex: 1;
-    text-align: right;
-}
-
-.nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-}
-
-.nav-links ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-}
-
-.nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: blue;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.nav-links ul li:hover::after {
-    width: 100%;
-}
-
-.text-box {
-    width: 90%;
-    color: white;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center; 
-}
-
-.text-box h1 {
-    font-size: 62px;
-}
-
-.text-box p {
-    margin: 10px 0 40px;
-    font-size: 14px;
-    color: white;
-}
-
-.hero-btn {
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-    color: white;
-    border: 1px solid white;
-    padding: 12px 34px;
-    font-size: 13px;
-    background: transparent;
-    position: relative;
-}
-
-.hero-btn:hover {
-    border: 1px solid blue;
-    background: blue;
-    transition: 0.5s;
-}
-
-nav .fa {
-    display: none;
-}
-
-/* Media Queries for Mobile */
-@media(max-width: 700px) {
-            header {
-                height: 100vh; 
-                background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/bannerherom.jpg); 
-            }
-            .text-box h1 {
-                font-size: 40px; 
-            }
-            .nav-links ul li {
-                display: block;
-            }
-            .nav-links {
-                position: absolute;
-                background: rgba(0, 0, 0, 0.9); 
-                height: 100vh;
-                width: 200px;
-                top: 0;
-                right: -200px;
-                text-align: left;
-                z-index: 999;
-                transition: 0.5s;
-            }
-            nav .fa {
-                display: block;
-                color: white;
-                margin: 10px;
-                font-size: 22px;
-                cursor: pointer;
-                z-index: 1000;
-            }
-            .nav-links.active {
-                right: 0;
-            }
-            .nav-links ul {
-                padding: 30px;
-            }
+        
+        .nav-links ul li {
+          display: block;
         }
-
-/* Video Section */
-.video {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #f1f1f1;
-  	text-align: center;
-}
-
-.video h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.video video {
-    width: 80%;
-	  height: auto;
-    max-width: 700px;
-  	margin-bottom: 20px;
-}
-.video-caption {
-            font-size: 16px;
-            color: black;
-            padding: 20px;
-            max-width: 700px;
-            margin: 0 auto;
+        
+        .nav-links {
+          position: absolute;
+          background: rgba(0, 0, 0, 0.9); 
+          height: 100vh;
+          width: 200px;
+          top: 0;
+          right: -200px;
+          text-align: left;
+          z-index: 999;
+          transition: 0.5s;
         }
- 
-.video-caption h1 {
-            color: red; 
-            font-size: 28px;
-            margin-bottom: 10px;
+        
+        nav .fa {
+          display: block;
+          color: white;
+          margin: 10px;
+          font-size: 22px;
+          cursor: pointer;
+          z-index: 1000;
         }
-
-        .video-caption h2 {
-            color: blue; 
-            font-size: 22px;
-            margin-bottom: 10px;
+        
+        .nav-links.active {
+          right: 0;
         }
-
-        /* Box for h3 and p */
-        .boxed-section {
-            background-color: white;
-            padding: 15px;
-            border: 2px solid #FFD700;
-            border-radius: 5px;
-            margin-bottom: 15px;
+        
+        .nav-links ul {
+          padding: 30px;
         }
-
-        .boxed-section h3 {
-            color: blue;
-            font-size: 18px;
-            margin-bottom: 10px;
-            text-align: center;
+        
+        nav img {
+          width: 100px;
         }
-
-        .boxed-section p {
-            text-align: center;
-            font-size: 16px;
-            margin: 10px 0;
+        
+        .text-box h1 {
+          font-size: 24px;
         }
-
-        .highlight {
-            color: #FF6347; /* Text color for highlight (light red) */
-		font-weight: bold;
+        
+        .text-box p {
+          font-size: 12px;
         }
-
+      }
+      
 /* Popup styles */
+      .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: auto;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        width: 90%;
+        max-width: 1000px;
+      }
+      
+      .popup-content {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        background-color: transparent;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .popup-content img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        z-index: 1;
+      }
+      
+      .close-btn {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        background-color: red;
+        color: white;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 30px;
+      }
+      
+      .close-btn:hover {
+        background-color: darkred;
+      }
+      
+      @media (max-width: 900px) {
         .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: auto;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 10;
-            width: 90%;
-            max-width: 1000px;
+          width: 100%;
+          max-width: 100%;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
         }
+        
         .popup-content {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            background-color: transparent;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
         }
-        .popup-content img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            z-index: 1;
-        }
-        .close-btn {
-            position: absolute;
-            top: 5%;
-            right: 5%;
-            background-color: red;
-            color: white;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            line-height: 30px;
-        }
-        .close-btn:hover {
-            background-color: darkred;
-        }
-        @media (max-width: 900px) {
-            .popup {
-                width: 100%;
-                max-width: 100%;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
-            .popup-content {
-                border-radius: 8px;
-            }
-        }
+      }
       
-        /*------ Footer ------*/
-        footer {
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            background-color: rgba(4, 9, 30, 0.7);
-            color: white;
-        }
-      
-       /*------ result ------*/
+/*------ Result Section ------*/
       .lottoresult {
         display: flex;
         align-items: flex-start;
@@ -534,7 +458,7 @@ nav .fa {
       
       .youtube-container {
         margin-bottom: 10px; 
-        padding: 5px;
+        padding: 8px;
         flex-wrap: wrap;
       }
       
@@ -556,7 +480,8 @@ nav .fa {
         }
       
         .main-image {
-          width: 40px;
+          width: 80px;
+          padding: 10px;
         }
       
         .loading {
@@ -574,16 +499,16 @@ nav .fa {
         .lotto-ball {
           width: 30px;
           height: 30px;
-          margin: 0 3px;
+          margin: 1px;
           font-size: 0.8em;
         }
       
       table {
-        margin-top: 8px; 
+        margin-top: 4px; 
       }
         
       td {
-        padding: 3px; 
+        padding: 2px; 
       }
       
       td img {
@@ -610,139 +535,270 @@ nav .fa {
       }
       }
       
-    </style>
+/* Video Section */
+      .video {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #f1f1f1;
+        text-align: center;
+      }
+      
+      .video h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      .video video {
+        width: 80%;
+        height: auto;
+        max-width: 700px;
+        margin-bottom: 20px;
+        border: 5px solid white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .video-caption {
+        font-size: 16px;
+        color: black;
+        padding: 20px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      
+      .video-caption h1 {
+        color: red; 
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+      
+      .video-caption h2 {
+        color: blue; 
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .boxed-section {
+        background-color: white;
+        padding: 15px;
+        border: 2px solid #FFD700;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+      
+      .boxed-section h3 {
+        color: blue;
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      
+      .boxed-section p {
+        text-align: center;
+        font-size: 16px;
+        margin: 10px 0;
+      }
+      
+      .highlight {
+        color: #FF6347; 
+        font-weight: bold;
+      }
+      
+      @media (max-width: 500px) {
+        .video {
+        padding: 20px 10px;
+      }
+      
+      .video h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      .video video {
+        width: 90%;
+      }
+      
+      .video-caption {
+        font-size: 12px;
+      }
+      
+      .video-caption h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      
+      .video-caption h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      
+      .boxed-section h3 {
+        font-size: 18px;
+      }
+      
+      .boxed-section p {
+        font-size: 12px;
+      }
+      }
+
+
+      
+/*------ Footer ------*/
+      footer {
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: rgba(4, 9, 30, 0.7);
+        color: white;
+      }
+      
+
+  </style>
 </head>
+
 <body>
-<section class="header">
+  <section class="header">
     <nav>
-        <a href="./"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/lrs.png" alt="LRS Logo"></a>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="toggleMenu()"></i>
-            <ul>
-                <li><a href="./">HOME</a></li>
-                <li><a href="./games">GAMES</a></li>
-                <li><a href="./results">RESULT</a></li>
-                <li><a href="./winners">WINNERS</a></li>
-		<li><a href="./proof">PROOF OF PAYOUT</a></li>
-            </ul>
-        </div>
+      <a href="./"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/lrs.png" alt="LRS Logo"></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="toggleMenu()"></i>
+        <ul>
+          <li><a href="./">HOME</a></li>
+          <li><a href="./games">GAMES</a></li>
+          <li><a href="./results">RESULT</a></li>
+          <li><a href="./winners">WINNERS</a></li>
+          <li><a href="./proof">PROOF OF PAYOUT</a></li>
+       </ul>
+      </div>
         <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
     </nav>
-
-<div class="text-box">
-        <h1>LRS Philippines Official</h1>
-        <p>Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto. <br>Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.</p>
-        <a href="./games" class="hero-btn">Learn More About our Games</a>
+    
+    <div class="text-box">
+      <h1>LRS Philippines Official</h1>
+      <p>Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto.
+        <br>Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.</p>
+      <a href="./games" class="hero-btn">Learn More About our Games</a>
     </div>
-
-</section>
+  </section>
 
 <div class="popup" id="popup">
-        <div class="popup-content">
-            <button class="close-btn" onclick="closePopup()">X</button>
-            <img id="popup-image" src="" alt="Popup Image">
-        </div>
-    </div>
+  <div class="popup-content">
+    <button class="close-btn" onclick="closePopup()">X</button>
+    <img id="popup-image" src="" alt="Popup Image">
+  </div>
+</div>
   
 <div class="container">
   <div  style="text-align: center; justify-content: center; background-color: #f1f1f1; padding-top: 40px;">
-    <h2>🎉 Lotto Update Alert! 🎉</h2>
-    <p style="padding: 30px;"> Get ready for the latest results! Check out the winning numbers for today’s draws and see if you're one of the lucky winners! 💰✨ <br>&nbsp <br> Abangan ang iba pang updates at tandaan, bawat taya ay may tsansang manalo! Mas maraming taya, mas maraming tyansang manalo!🥳</p>
+    <h2>LRS UPDATES!</h2>
+    <p style="padding: 30px; font-size: 12px;">Get ready for the latest results! Check out the winning numbers for today’s draws and see if you're one of the lucky winners! 💰✨
+      <br>&nbsp
+      <br>Abangan ang iba pang updates at tandaan, bawat taya ay may tsansang manalo! Mas maraming taya, mas maraming tyansang manalo!🥳</p>
   </div>
-  <div class="lottoresult">  
-<div class="box-container">
-<div class="pick-container">
-    <div class="date-title" id="dateTitle"></div>
-    <div class="lotto-row">
-        <img id="dailyImage" src="" alt="Lotto Image of the Day" class="main-image">
-        <div class="lotto-balls">
+
+<!-- Result Table -->
+  <div class="lottoresult">
+    <div class="box-container">
+      <div class="pick-container">
+        <div class="date-title" id="dateTitle"></div>
+        <div class="lotto-row">
+          <img id="dailyImage" src="" alt="Lotto Image of the Day" class="main-image">
+          <div class="lotto-balls">
             <div class="lotto-ball">34</div>
             <div class="lotto-ball">43</div>
             <div class="lotto-ball">39</div>
             <div class="lotto-ball">27</div>
             <div class="lotto-ball">37</div>
             <div class="lotto-ball">03</div>
+          </div>
         </div>
+        <div id="loadingMessage" class="loading">Loading image...</div>
+      </div>
+      
+      <table>
+        <tr>
+          <td></td>
+          <td><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/2D.png" alt="2D Lotto"></td>
+          <td><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/3D.png" alt="3D Lotto"></td>
+        </tr>
+        <tr>
+          <td id="2pmImageName"></td>
+          <td id="2pmNumbers"></td>
+          <td id="3d2pmNumbers"></td>
+        </tr>
+        <tr>
+          <td id="5pmImageName"></td>
+          <td id="5pmNumbers"></td>
+          <td id="3d5pmNumbers"></td>
+        </tr>
+        <tr>
+          <td id="9pmImageName"></td>
+          <td id="9pmNumbers"></td>
+          <td id="3d9pmNumbers"></td>
+        </tr>
+      </table>
+      
+      <div class="button-container">
+        <a href="/.results" class="styled-button">VIEW ALL RESULTS</a>
+      </div>
+  </div>
+    
+<!-- YouTube Videos -->
+  <div class="youtube-videos">
+    <div class="youtube-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/yl-bMGGJ2RI?si=nSCt_xJOhwEjuKVt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p class="youtube-caption">October 30, 2024 - 9PM Live Draw</p>
     </div>
-    <div id="loadingMessage" class="loading">Loading image...</div>
-</div>
-
-<!-- Table below the main box -->
-<table>
-    <tr>
-        <td></td>
-        <td><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/2D.png" alt="2D Lotto"></td>
-        <td><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/3D.png" alt="3D Lotto"></td>
-    </tr>
-    <tr>
-        <td id="2pmImageName"></td>
-        <td id="2pmNumbers"></td>
-        <td id="3d2pmNumbers"></td>
-    </tr>
-    <tr>
-        <td id="5pmImageName"></td>
-        <td id="5pmNumbers"></td>
-        <td id="3d5pmNumbers"></td>
-    </tr>
-    <tr>
-        <td id="9pmImageName"></td>
-        <td id="9pmNumbers"></td>
-        <td id="3d9pmNumbers"></td>
-    </tr>
-</table>
-  <!-- Button Section -->
-<div class="button-container">
-    <a href="/.results" class="styled-button">VIEW ALL RESULTS</a>
-</div>
-</div>
-    <!-- YouTube iframe -->
-    <div class="youtube-videos">
-        <div class="youtube-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/yl-bMGGJ2RI?si=nSCt_xJOhwEjuKVt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p class="youtube-caption">October 30, 2024 - 9PM Live Draw</p>
-        </div>
-        <div class="youtube-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/715IPuDqtDE?si=KREpwZ5eNVC_B3nd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-		<p class="youtube-caption">October 30, 2024 - 5PM Live Draw</p>
-        </div>
-        <div class="youtube-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/5Qi4bvUkkbI?si=wYyT0GBFRRyigm94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p class="youtube-caption">October 30, 2024 - 2PM Live Draw</p>
-        </div>
+    <div class="youtube-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/715IPuDqtDE?si=KREpwZ5eNVC_B3nd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p class="youtube-caption">October 30, 2024 - 5PM Live Draw</p>
     </div>
+    <div class="youtube-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/5Qi4bvUkkbI?si=wYyT0GBFRRyigm94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p class="youtube-caption">October 30, 2024 - 2PM Live Draw</p>
+    </div>
+  </div>
 </div>
+  
 <!-- Video Section -->
 <div class="video">
-    <h2>JOIN THE FUN!</h2>
-	<video autoplay muted loop controls>
-        <source src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/video/video.mp4" type="video/mp4" type="video/mp4">
+  <h2>JOIN THE FUN!</h2>
+  <video autoplay muted loop controls>
+    <source src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/video/video.mp4" type="video/mp4" type="video/mp4">
         Your browser does not support the video tag.
-    </video>
-<div class="video-caption">
-        <h1>🌟 SUBUKAN ANG SWERTE 🌟</h1>
+  </video>
+  <div class="video-caption">
+    <h1>🌟 TRY YOUR LUCK 🌟</h1>
+      <h2>PAANO TUMAYA?</h2>
+      <p>➤ Pumili ng laro sa <strong>6/45, 6/49, 6/55, 6/58, 2D,</strong> o<strong> 3D</strong> Lotto games.
+        <br>➤ I-send ang iyong napiling numero sa aming group chat.
+        <br>➤ Magbayad gamit ang GCash at i-send ang screenshot ng iyong payment.
+        <br>&nbsp
+        <br>Abangan ang draw at alamin kung ikaw na ba ang susunod na <span class="highlight">JACKPOT WINNER!</span>
+      </p>&nbsp<br>
         
-        <h2>PAANO TUMAYA?</h2>
-        <p>➤ Pumili ng laro sa <strong>6/45, 6/49, 6/55, 6/58, 2D,</strong> o<strong> 3D</strong> Lotto games.<br>
-        ➤ I-send ang iyong napiling numero sa aming group chat.<br>
-        ➤ Magbayad gamit ang GCash at i-send ang screenshot ng iyong payment.<br>&nbsp<br>
-        Abangan ang draw at alamin kung ikaw na ba ang susunod na <span class="highlight">JACKPOT WINNER!</span></p>&nbsp<br>
-        
-         <!-- Box containing h3 and its paragraph -->
-        <div class="boxed-section">
-            <h3>💥 BAKIT DITO?</h3>
-            <p>💰 <strong>MAS MALAKING TSANSANG MANALO</strong> 💰<br> Sa ANIM (6) na numerong lumabas sa Lotto Live Draw kapag ang tatlong numero (3) na napili mo ay nabunot dito, IKAW AY PANALO!<br>&nbsp<br>
-            📲 <strong>CONVENIENT NA PAGTAYA</strong> 📲<br> Hussle Free! Dahil di na kailangan pumila ng mahaba sa mga lotto outlets. Ang pagtaya ay online na!<br>&nbsp<br>
-            🎯 <strong>SIMPLE AT MABILIS NA PROSESO</strong> 🎯<br> I-send lang ang iyong numero at ang confirmation ng bayad sa Group Chat!</p>
-        </div>
-
-        <p><strong>🤑 Tumaya na ngayon at baka ikaw na ang susunod na mapalad na <span class="highlight">PANALO</span>! 🤑</strong></p>
+<!-- Text Inside the Box -->
+    <div class="boxed-section">
+      <h3>💥 BAKIT DITO? 💥</h3>
+        <p>💰 <strong>MAS MALAKING TSANSANG MANALO</strong> 💰
+          <br> Sa ANIM (6) na numerong lumabas sa Lotto Live Draw kapag ang tatlong numero (3) na napili mo ay nabunot dito, IKAW AY PANALO!
+          <br>&nbsp
+          <br>📲 <strong>CONVENIENT NA PAGTAYA</strong> 📲
+          <br> Hussle Free! Dahil di na kailangan pumila ng mahaba sa mga lotto outlets. Ang pagtaya ay online na!
+          <br>&nbsp
+          <br>🎯 <strong>SIMPLE AT MABILIS NA PROSESO</strong> 🎯
+          <br> I-send lang ang iyong numero at ang confirmation ng bayad sa Group Chat!
+        </p>
     </div>
-</div>
+    
+    <p><strong>🤑 Tumaya na ngayon at baka ikaw na ang susunod na mapalad na <span class="highlight">PANALO</span>! 🤑</strong></p>
+  </div>
+</div>  
 </div>
 
 <footer>
-    <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+  <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
 </footer>
 
+  
 <script>
 var navLinks = document.getElementById("navLinks");
 var menuBtn = document.getElementById("menuBtn");
