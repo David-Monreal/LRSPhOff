@@ -35,6 +35,23 @@
         max-width: 1200px; 
         margin: 0 auto;    
         padding: 0 15px;
+        background-color: #f1f1f1; 
+        justify-content: center; 
+        text-align: center; 
+      }
+      
+      .container h2 {
+        text-align: center; 
+        padding-top: 40px;
+        font-size: 36px;
+      }
+      
+      .container h1 {
+        font-size: 34px;
+      }
+      
+      .container p {
+        font-size: 14px;
       }
       
       nav {
@@ -136,6 +153,18 @@
           padding: 0 10px;  
         }
         
+        .container h2 {
+          font-size: 24px;
+        }
+        
+        .container h1 {
+          font-size: 20px;
+        }
+        
+        .container p {
+          font-size: 12px;
+        }
+        
         .nav-links ul li {
           display: block;
         }
@@ -235,7 +264,7 @@
         background-color: darkred;
       }
       
-      @media (max-width: 900px) {
+      @media (max-width: 700px) {
         .popup {
           width: 100%;
           max-width: 100%;
@@ -304,6 +333,7 @@
       
       .youtube-container {
         width: 100%; 
+        max-width: 300px;
         margin-bottom: 10px; 
         padding: 10px;
         border: 1px solid #ccc;
@@ -434,7 +464,7 @@
         background-color: #0056b3; 
       }
       
-      @media (max-width: 500px) {
+      @media (max-width: 700px) {
       .lottoresult {
         max-width: 100%;
         flex-direction: column;
@@ -454,6 +484,8 @@
       .youtube-videos {
         width: 100%; 
         flex-wrap: wrap;
+        justify-content: center; 
+        text-align: center; 
       }
       
       .youtube-container {
@@ -567,7 +599,7 @@
       .video-caption h1 {
         color: red; 
         font-size: 28px;
-        margin-bottom: 10px;
+        margin-bottom: 2px;
       }
       
       .video-caption h2 {
@@ -602,7 +634,7 @@
         font-weight: bold;
       }
       
-      @media (max-width: 500px) {
+      @media (max-width: 700px) {
         .video {
         padding: 20px 10px;
       }
@@ -621,12 +653,12 @@
       
       .video-caption h1 {
         font-size: 20px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
       }
       
       .video-caption h2 {
         font-size: 18px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
       }
       
       .boxed-section h3 {
@@ -648,6 +680,12 @@
         padding: 10px 0;
         background-color: rgba(4, 9, 30, 0.7);
         color: white;
+      }
+      
+      @media (max-width: 700px) {
+        footer {
+          font-size: 10px;
+        }
       }
       
 
@@ -687,12 +725,10 @@
 </div>
   
 <div class="container">
-  <div  style="text-align: center; justify-content: center; background-color: #f1f1f1; padding-top: 40px;">
     <h2>LRS UPDATES!</h2>
-    <p style="padding: 30px; font-size: 12px;">Get ready for the latest results! Check out the winning numbers for today’s draws and see if you're one of the lucky winners! 💰✨
+    <p>Get ready for the latest results! Check out the winning numbers for today’s draws and see if you're one of the lucky winners! 💰✨
       <br>&nbsp
       <br>Abangan ang iba pang updates at tandaan, bawat taya ay may tsansang manalo! Mas maraming taya, mas maraming tyansang manalo!🥳</p>
-  </div>
 
 <!-- Result Table -->
   <div class="lottoresult">
@@ -702,12 +738,12 @@
         <div class="lotto-row">
           <img id="dailyImage" src="" alt="Lotto Image of the Day" class="main-image">
           <div class="lotto-balls">
-            <div class="lotto-ball">37</div>
-            <div class="lotto-ball">45</div>
-            <div class="lotto-ball">15</div>
+            <div class="lotto-ball">34</div>
+            <div class="lotto-ball">43</div>
+            <div class="lotto-ball">39</div>
             <div class="lotto-ball">27</div>
-            <div class="lotto-ball">24</div>
-            <div class="lotto-ball">42</div>
+            <div class="lotto-ball">37</div>
+            <div class="lotto-ball">03</div>
           </div>
         </div>
         <div id="loadingMessage" class="loading">Loading image...</div>
@@ -737,7 +773,7 @@
       </table>
       
       <div class="button-container">
-        <a href="/.results" class="styled-button">VIEW ALL RESULTS</a>
+        <a href="https://lrsphilippinesofficial.com/results" class="styled-button">VIEW ALL RESULTS</a>
       </div>
   </div>
     
