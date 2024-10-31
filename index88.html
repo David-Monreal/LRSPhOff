@@ -959,7 +959,7 @@ function closePopup() {
 }
 
 async function loadLottoNumbers() {
-    const response = await fetch('https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/csv/drawimages.csv');
+    const response = await fetch('https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/csv/pick3.csv');
     const csvText = await response.text();
     const csvRows = csvText.split('\n');
 
@@ -984,7 +984,7 @@ async function loadLottoNumbers() {
 }
 
 async function loadCSV() {
-    const response = await fetch('https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/csv/lotto_data.csv');
+    const response = await fetch('https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/csv/2D.csv');
     const data = await response.text();
     const rows = data.split('\n').slice(1); // Skip header row
 
