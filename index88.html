@@ -743,7 +743,7 @@
       <h1>LRS Philippines Official</h1>
       <p>Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto.
         <br>Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.</p>
-      <a href="./games" class="hero-btn">Learn More About our Games</a>
+      <a href="https://lrsphilippinesofficial.com/games" class="hero-btn">Learn More About our Games</a>
     </div>
   </section>
 
@@ -813,23 +813,32 @@
   </div>
     
 <!-- YouTube Videos -->
-  <div class="youtube-videos">
+<div class="youtube-videos"> 
     <div class="youtube-container">
-      <video autoplay muted loop controls>
-      <source src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/video/9pm.mp4" type="video/mp4" type="video/mp4"></video>
-      <p class="youtube-caption">October 30, 2024 - 9PM Live Draw</p>
+        <a id="link-9PM" target="_blank"> <!-- Link overlay for the 9PM video -->
+            <video autoplay loop muted playsinline>
+                <source src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/video/9pm.mp4" type="video/mp4">
+            </video>
+        </a>
+        <p id="caption-9PM" class="youtube-caption">Default Caption</p>
     </div>
     <div class="youtube-container">
-      <video autoplay muted loop controls>
-      <source src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/video/5pm.mp4" type="video/mp4" type="video/mp4"></video>
-      <p class="youtube-caption">October 30, 2024 - 5PM Live Draw</p>
+        <a id="link-5PM" target="_blank"> <!-- Link overlay for the 5PM video -->
+            <video autoplay loop muted playsinline>
+                <source src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/video/5pm.mp4" type="video/mp4">
+            </video>
+        </a>
+        <p id="caption-5PM" class="youtube-caption">Default Caption</p>
     </div>
     <div class="youtube-container">
-      <video autoplay muted loop controls>
-      <source src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/video/2pm.mp4" type="video/mp4" type="video/mp4"></video>
-      <p class="youtube-caption">October 30, 2024 - 2PM Live Draw</p>
+        <a id="link-2PM" target="_blank"> <!-- Link overlay for the 2PM video -->
+            <video autoplay loop muted playsinline>
+                <source src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/video/2pm.mp4" type="video/mp4">
+            </video>
+        </a>
+        <p id="caption-2PM" class="youtube-caption">Default Caption</p>
     </div>
-  </div>
+</div>
 </div>
   
 <!-- Video Section -->
@@ -1041,6 +1050,45 @@ document.addEventListener('DOMContentLoaded', function() {
     loadCSV();
     loadLottoNumbers();
 });
+  // Load CSV data
+async function loadCsvData() {
+    const response = await fetch("https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/csv/youtube_links.csv");
+    const data = await response.text();
+    const videoData = parseCsv(data);
+    updateVideos(videoData);
+}
+
+// Parse CSV data to create link and caption info
+function parseCsv(data) {
+    const lines = data.trim().split("\n");
+    const result = {};
+
+    for (let i = 1; i < lines.length; i++) { // Skip header row
+        const [date, time, url] = lines[i].split(",");
+        const linkId = `link-${time.trim()}`; // Generate link ID
+        const captionId = `caption-${time.trim()}`; // Generate caption ID
+        const captionText = `${date.trim()} - ${time.trim()} Live Draw`; // Construct caption text
+        result[linkId] = { url: url.trim(), captionId, captionText }; // Map IDs to URL and caption
+    }
+
+    return result;
+}
+
+// Set href attributes and captions for the anchor and caption tags
+function updateVideos(videoData) {
+    for (const [id, { url, captionId, captionText }] of Object.entries(videoData)) {
+        const anchor = document.getElementById(id);
+        const caption = document.getElementById(captionId);
+        if (anchor && caption) {
+            anchor.href = url;
+            caption.textContent = captionText;
+        }
+    }
+}
+
+// Initialize loading of CSV data and video updates
+loadCsvData();
+  
 </script>
 
 
