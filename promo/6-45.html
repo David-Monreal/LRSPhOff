@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRS Philippines Official</title>
+    <link rel="shortcut icon" type="x-icon" href="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/lrs.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+  
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+  }
+    
+  header {
+    width: 100vw;
+    height: 50vh; 
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/bannerhero.jpg);
+    background-position: center; 
+    background-size: cover; 
+    position: relative;
+    z-index: 1;
+  }
+  
+  .container {
+    max-width: 1200px;  
+    margin: 0 auto;     
+    padding: 0 15px;
+  }
+
+  nav {
+    display: flex;
+    padding: 10px 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(4, 9, 30, 0.7);
+    z-index: 10;
+    transition: opacity 0.3s ease;
+  }
+  
+  nav img {
+    width: 150px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-links {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  
+  .nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  
+  .nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: blue;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  
+  .nav-links ul li:hover::after {
+    width: 100%;
+  }
+  
+  .text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center; 
+  }
+  
+  .text-box h1 {
+    font-size: 62px;
+  }
+  
+  .text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .hero-btn:hover {
+    border: 1px solid blue;
+    background: blue;
+    transition: 0.5s;
+  }
+  
+  nav .fa {
+    display: none;
+  }
+  
+  @media (max-width: 900px) {
+    .container {
+      padding: 0 10px;
+    }
+      
+    nav img {
+      width: 100px;
+    }
+    
+    .text-box h1 {
+      font-size: 62px;
+    }
+    
+    .text-box p {
+      font-size: 12px;
+    }
+    
+    .nav-links ul li {
+      display: block;
+    }
+    
+    .nav-links {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.9); 
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 999;
+      transition: 0.5s;
+    }
+    
+    nav .fa {
+      display: block;
+      color: white;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    
+    .nav-links.active {
+      right: 0;
+    }
+    
+    .nav-links ul {
+      padding: 30px;
+    }
+  }
+ 
+  
+/*------ Free Bet Mechanics ------*/
+.mechanics {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f1f1f1; 
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .freebet {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .freebet img {
+            width: 70%;
+            border-radius: 5px;
+            cursor: pointer; /* Cursor indicates clickable */
+        }
+        .mechanics h1 {
+            color: #333;
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .mechanics h2 {
+            color: #222;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+        .note-box, .important-note-box {
+            background-color: lightyellow;
+            padding: 15px;
+            border-left: 4px solid yellow;
+            margin: 10px 0;
+            border-radius: 5px;
+            color: #333;
+        }
+        .important-note-box {
+            background-color: pink;
+            border-left-color: red;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 0;
+        }
+/*------ Footer ------*/
+  footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(4, 9, 30, 0.7);
+  }
+  
+  .footer p{
+    color: white;
+  }
+
+
+</style>
+</head>
+
+<body>
+<header>
+    <section class="header">
+    <nav>
+        <a href="./"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/lrs.png" alt="LRS Logo"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="toggleMenu()"></i>
+            <ul>
+                <li><a href="./">HOME</a></li>
+                <li><a href="./games">GAMES</a></li>
+                <li><a href="./promo">PROMOS</a></li>
+                <li><a href="./results">RESULT</a></li>
+                <li><a href="./winners">WINNERS</a></li>
+		<li><a href="./proof">PROOF OF PAYOUT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
+    </nav>
+      
+      <div class="text-box">
+        <h1>PROMOS</h1>
+        <p>Ang LRS Philippines Official ay nag-aalok ng iba't ibang promo na tiyak na magpapasaya at magbibigay ng pagkakataong manalo ng malalaking premyo! </p>
+    </div>
+      
+</header>
+<div class="mechanics">
+    <div class="freebet">
+        <a href="https://lrsphilippinesofficial.com/promo/6-45.html"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/645.png" alt="6/45 Draw"></a>
+        <a href="https://lrsphilippinesofficial.com/promo/6-49.html"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/649.png" alt="6/49 Draw"></a>
+        <a href="https://lrsphilippinesofficial.com/promo/6-55.html"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/655.png" alt="6/55 Draw"></a>
+        <a href="https://lrsphilippinesofficial.com/promo/6-58.html"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/658.png" alt="6/58 Draw"></a>
+    </div>
+<br>&nbsp
+    <h1>6/45 MEGA LOTTO FREEBET (FB) MECHANICS</h1>
+
+    <div>
+        <h2>Free Bet sa bawat ₱100 Taya</h2>
+        <p>Sa bawat ₱100 na halaga ng taya, makakakuha ka ng isang Free Bet. <br><em>Mga halimbawa:</em></p>
+        <ul>
+            <li>₱25 x 4 ➤ 1 FB</li>
+            <li>₱50 x 2 ➤ 1 FB</li>
+            <li>₱100 ➤ 1 FB</li>
+        </ul>
+        <h2>Free Bets para sa Tumbok na Taya</h2>
+        <p>Para sa mga tumbok na taya, makakakuha ka ng isang Free Bet sa bawat ₱100 na taya ngunit ito ay limitado hanggang 3 Free Bets lamang.<br><em>Mga halimbawa:</em></p>
+        <ul>
+            <li>₱200 ➤ 2 FB</li>
+            <li>₱300 ➤ 3 FB</li>
+            <li>₱400 o ₱500 ➤ 3 FB (Maximum)</li>
+        </ul>
+        <h2>Free Bets para sa Pinagsamang Taya (Tumbok + Maliit na Taya)</h2>
+        <p>Para sa mga taya na mayroong tumbok at karagdagang maliit na taya na mas mababa sa ₱100, may makakakuha ng hanggang 3 Free Bets para sa tumbok na taya at isa pang karagdagang Free Bet kapag nakabuo ng ₱100 pa na taya.<br><em>Mga halimbawa:</em></p>
+        <ul>
+            <li>₱150 + ₱50 = ₱200 ➤ 2 FB</li>
+            <li>₱275 + ₱25 = ₱300 ➤ 3 FB</li>
+            <li>₱325 + ₱75 = 3 FB para sa ₱300 + 1 FB para sa ₱25 + ₱75 ➤ 4 FB</li>
+            <li>₱425 + ₱75 = 3 FB para sa ₱300 + 1 FB para sa ₱125 + ₱75 ➤ 4 FB</li>
+            <li>₱500 + ₱75 = 3 FB para sa ₱300 + 1 FB para sa ₱200 + ₱75 ➤ 4 FB</li>
+        </ul>
+        <div class="note-box">
+            <strong>Note:</strong> <br><em>Para sa mga karagdagang maliit na taya (₱25, ₱50, o ₱75), kahit na umabot sila sa maraming ₱100 na kabuuan, isang Free Bet lamang ang ibibigay bilang extra dadil tto ay karagdagan lamang sa maximum na 3 Free Bets para sa tumbok na taya.</em>
+        </div>
+<br>&nbsp
+        <p>Para mapadami ang iyong free bet, pwedeng mong paghiwa-hiwalyin o maraming combinations ang iyong taya para meron kang FB sa kada ₱100 na taya.<br><em>Halimbawa:</em></p>
+        <ul>
+            <li>01-02-03 = ₱100</li>
+            <li>04-05-06 = ₱100</li>
+            <li>07-08-09 = ₱100</li>
+            <li>10-11-12 = ₱100</li>
+            <li>13-14-15 = ₱100</li>
+        </ul>
+        <p>Total of 5 Free Bets</p>
+
+        <div class="important-note-box">
+            <strong>IMPORTANT NOTE:</strong> <br>Ang Free Bet ay dapat na walang katulad o kaparehas na number combinations sa inyong regular bet o promo bets (FB, RB o WB).<br>&nbsp
+          <br>Ang premyo ng Freebet ay naka-fix sa <strong>₱7,500</strong> sa kahit na anong draw. 
+        </div>
+    </div>
+</div>
+
+    <div class="footer">
+      <footer>
+    <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+</footer>
+
+    <script>
+var navLinks = document.getElementById("navLinks");
+var menuBtn = document.getElementById("menuBtn");
+
+function toggleMenu() {
+    if (navLinks.style.right === "0px") {
+        navLinks.style.right = "-200px";  
+        menuBtn.style.display = "block";  
+    } else {
+        navLinks.style.right = "0";  
+        menuBtn.style.display = "none";  
+    }
+}
+
+let lastScrollTop = 0; 
+const logo = document.querySelector('nav img');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        logo.style.opacity = '0'; 
+    } else {
+        logo.style.opacity = '1'; 
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+});
+    </script>
+</body>
+</html>
