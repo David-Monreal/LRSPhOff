@@ -386,8 +386,9 @@
         }
       
       .image-container {
-        flex-shrink: 50;
-        margin-right: 20px;
+        flex-shrink: 2;
+        margin-right: 0;
+        display: flex;
         }
       
       .image-container img {
@@ -436,6 +437,7 @@
           justify-content: center;
           color: white;
           font-weight: bold;
+          font-size: 1.5em;
           background-color: blue;
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
@@ -494,6 +496,38 @@
         background-color: #0056b3; 
       }
       
+      @media (max-width: 400px) {
+      .image-container img {
+        width: 50px !important;
+        }
+        
+        .image-container {
+        flex-direction: column;
+          
+        }
+        
+        .date-title {
+        font-size: 0.5em !important;
+        }
+        
+        .lotto-balls {
+          margin-left: 5px; 
+          font-size: 0.8em !important;
+        }
+      
+        .lotto-ball {
+          max-width: 20px;
+          max-height: 20px;
+          margin: 1px;
+          font-size: 0.8em !important;
+        }
+        
+        .image-container img {
+        width: 60px;
+        }
+        
+      }
+      
       @media (max-width: 700px) {
       .lottoresult {
         max-width: 100%;
@@ -504,6 +538,10 @@
         border-radius: 8px;
         padding: 3px;
         width: 100%;
+        }
+        
+        .image-container img {
+        width: 80px;
         }
       
       .pick-container {
@@ -537,7 +575,7 @@
       }
       
       .date-title {
-        font-size: 0.8em;
+        font-size: 1.0em;
         margin-bottom: 10px;
         }
       
@@ -547,7 +585,7 @@
         }
       
         .loading {
-          font-size: 0.8em;
+          font-size: 0.5em;
         }
       
         .lotto-row {
@@ -556,13 +594,14 @@
       
         .lotto-balls {
           margin-left: 5px; 
+          font-size: 1.0em;
         }
       
         .lotto-ball {
           width: 30px;
           height: 30px;
           margin: 1px;
-          font-size: 0.8em;
+          font-size: 1.0em;
         }
       
       table {
