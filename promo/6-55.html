@@ -3,15 +3,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LRS Philippines Official</title>
-    <link rel="shortcut icon" type="x-icon" href="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/lrs.png">
+    <link rel="shortcut icon" type="x-icon" href="creatives/lrs.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
-  
-<style>
+    <style>
   * {
     margin: 0;
     padding: 0;
@@ -181,74 +180,118 @@
  
   
 /*------ Free Bet Mechanics ------*/
-.mechanics {
+
+        .free {
             max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
             padding: 20px;
-            background-color: #f1f1f1; 
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .freebet {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+      
+      .free img {
+            width: 250px;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
             text-align: center;
         }
-        .freebet img {
-            width: 70%;
-            border-radius: 5px;
-            cursor: pointer; /* Cursor indicates clickable */
+
+        .mechanics {
+            margin-top: 20px;
+            max-width: 800px;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.6;
         }
-        .mechanics h1 {
-            color: #333;
-            font-size: 22px;
-            text-align: center;
-            margin-bottom: 15px;
+
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
         }
-        .mechanics h2 {
-            color: #222;
-            font-size: 18px;
-            margin-top: 15px;
-        }
-        .note-box, .important-note-box {
-            background-color: lightyellow;
+      
+      .note-box, .important-note-box {
+            background-color: #e3f2fd;
             padding: 15px;
-            border-left: 4px solid yellow;
+            border-left: 4px solid #1976d2;
             margin: 10px 0;
             border-radius: 5px;
             color: #333;
         }
+      
         .important-note-box {
-            background-color: pink;
-            border-left-color: red;
+            background-color: #fff9c4;
+            border-left-color: #fbc02d;
         }
-        ul {
+      
+      ul {
             list-style-type: disc;
             padding-left: 20px;
             margin-top: 0;
+      }
+      
+      /* Image grid styling */
+        .image-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+            overflow-x: auto;
         }
-/*------ Footer ------*/
-  footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    background-color: rgba(4, 9, 30, 0.7);
-  }
+
+        .image-box {
+            width: 130px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          padding: 10px;
+          background-color: lightgray;
+          border: 2px solid black;
+          border-radius: 10px;
+        }
   
-  .footer p{
-    color: white;
-  }
-
-
-</style>
+        .image-box img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+      
+      @media (max-width: 900px) {
+        .image-box {
+          width: 20%;
+          padding: 7px;
+        }
+        
+        .image-grid {
+            justify-content: center;
+        } 
+      }
+      
+/*------ Footer ------*/
+      footer {
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: rgba(4, 9, 30, 0.7);
+        color: white;
+      }
+      
+      @media (max-width: 700px) {
+        footer {
+          font-size: 10px;
+        }
+      }
+      
+    </style>
 </head>
-
 <body>
-<header>
+  <header>
     <section class="header">
     <nav>
         <a href="./"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/lrs.png" alt="LRS Logo"></a>
@@ -257,7 +300,6 @@
             <ul>
                 <li><a href="./">HOME</a></li>
                 <li><a href="./games">GAMES</a></li>
-                <li><a href="./promo">PROMOS</a></li>
                 <li><a href="./results">RESULT</a></li>
                 <li><a href="./winners">WINNERS</a></li>
 		<li><a href="./proof">PROOF OF PAYOUT</a></li>
@@ -267,72 +309,94 @@
     </nav>
       
       <div class="text-box">
-        <h1>PROMOS</h1>
-        <p>Ang LRS Philippines Official ay nag-aalok ng iba't ibang promo na tiyak na magpapasaya at magbibigay ng pagkakataong manalo ng malalaking premyo! </p>
+        <h1>FREEBET</h1>
+        <p> Isang libreng taya, sa bawat 300 Pesos! Gamitin ang Free Bet para lumaki ang chances na manalo! </p>
     </div>
       
 </header>
-<div class="mechanics">
-    <div class="freebet">
-        <a href="https://lrsphilippinesofficial.com/promo/6-45.html"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/645.png" alt="6/45 Draw"></a>
-        <a href="https://lrsphilippinesofficial.com/promo/6-49.html"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/649.png" alt="6/49 Draw"></a>
-        <a href="https://lrsphilippinesofficial.com/promo/6-55.html"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/655.png" alt="6/55 Draw"></a>
-        <a href="https://lrsphilippinesofficial.com/promo/6-58.html"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/658.png" alt="6/58 Draw"></a>
-    </div>
-<br>&nbsp
-    <h1>6/45 MEGA LOTTO FREEBET (FB) MECHANICS</h1>
-
-    <div>
-        <h2>Free Bet sa bawat ₱100 Taya</h2>
-        <p>Sa bawat ₱100 na halaga ng taya, makakakuha ka ng isang Free Bet. <br><em>Mga halimbawa:</em></p>
-        <ul>
-            <li>₱25 x 4 ➤ 1 FB</li>
-            <li>₱50 x 2 ➤ 1 FB</li>
-            <li>₱100 ➤ 1 FB</li>
-        </ul>
-        <h2>Free Bets para sa Tumbok na Taya</h2>
-        <p>Para sa mga tumbok na taya, makakakuha ka ng isang Free Bet sa bawat ₱100 na taya ngunit ito ay limitado hanggang 3 Free Bets lamang.<br><em>Mga halimbawa:</em></p>
-        <ul>
-            <li>₱200 ➤ 2 FB</li>
-            <li>₱300 ➤ 3 FB</li>
-            <li>₱400 o ₱500 ➤ 3 FB (Maximum)</li>
-        </ul>
-        <h2>Free Bets para sa Pinagsamang Taya (Tumbok + Maliit na Taya)</h2>
-        <p>Para sa mga taya na mayroong tumbok at karagdagang maliit na taya na mas mababa sa ₱100, may makakakuha ng hanggang 3 Free Bets para sa tumbok na taya at isa pang karagdagang Free Bet kapag nakabuo ng ₱100 pa na taya.<br><em>Mga halimbawa:</em></p>
-        <ul>
-            <li>₱150 + ₱50 = ₱200 ➤ 2 FB</li>
-            <li>₱275 + ₱25 = ₱300 ➤ 3 FB</li>
-            <li>₱325 + ₱75 = 3 FB para sa ₱300 + 1 FB para sa ₱25 + ₱75 ➤ 4 FB</li>
-            <li>₱425 + ₱75 = 3 FB para sa ₱300 + 1 FB para sa ₱125 + ₱75 ➤ 4 FB</li>
-            <li>₱500 + ₱75 = 3 FB para sa ₱300 + 1 FB para sa ₱200 + ₱75 ➤ 4 FB</li>
-        </ul>
-        <div class="note-box">
-            <strong>Note:</strong> <br><em>Para sa mga karagdagang maliit na taya (₱25, ₱50, o ₱75), kahit na umabot sila sa maraming ₱100 na kabuuan, isang Free Bet lamang ang ibibigay bilang extra dadil tto ay karagdagan lamang sa maximum na 3 Free Bets para sa tumbok na taya.</em>
+    <div class="container">
+      <div class="free">
+        <div class="image-grid">
+    
+            <div class="image-box">
+                <a href="https://lrsphilippinesofficial.com/promo/6-45" target="_blank"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/645.png" alt="6/45 FB Mechanics" ></a>
+            </div>
+            <div class="image-box">
+                <a href="https://lrsphilippinesofficial.com/promo/6-49" target="_blank"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/649.png" alt="6/49 FB Mechanics"></a>
+            </div>
+            <div class="image-box" style="border: 5px solid black; background-color: white;">
+                <a href="https://lrsphilippinesofficial.com/promo/6-55" target="_blank"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/655.png" alt="6/55 FB Mechanics"></a>
+            </div>
+            <div class="image-box">
+                <a href="https://lrsphilippinesofficial.com/promo/6-58" target="_blank"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/658.png" alt="6/58 FB Mechanics"></a>
+            </div>
         </div>
-<br>&nbsp
-        <p>Para mapadami ang iyong free bet, pwedeng mong paghiwa-hiwalyin o maraming combinations ang iyong taya para meron kang FB sa kada ₱100 na taya.<br><em>Halimbawa:</em></p>
-        <ul>
-            <li>01-02-03 = ₱100</li>
-            <li>04-05-06 = ₱100</li>
-            <li>07-08-09 = ₱100</li>
-            <li>10-11-12 = ₱100</li>
-            <li>13-14-15 = ₱100</li>
-        </ul>
-        <p>Total of 5 Free Bets</p>
-
-        <div class="important-note-box">
+        <div class="text-container">
+            <h2 class="highlight">6/55 FREEBET MECHANICS</h2>
+          
+            <div class="mechanics">
+                <p><strong>Free Bet sa bawat ₱300 Taya</strong><br>
+                Sa bawat ₱300 na halaga ng taya, makakakuha ka ng isang Free Bet.</p>    
+              <p><em>Mga halimbawa:</em><br>
+                <ul>
+                  <li>₱25 x 12 ➤ 1 FB</li>
+                  <li>₱50 x 6 ➤ 1 FB</li>
+                  <li>₱100 x 3 ➤ 1 FB</li>
+                  <li>₱300 ➤ 1 FB</li>
+                  <li>₱400 ➤ 1 FB</li>
+                  <li>₱500 ➤ 1 FB</li>
+                  </ul></p>
+                <p>&nbsp</p>
+          
+                <p><strong>Free Bets para sa Pinagsamang Taya (Tumbok + Maliit na Taya)</strong><br>
+                Para sa mga taya na mayroong tumbok at karagdagang maliit na taya na mas mababa sa ₱300, may makakakuhang isang Free Bet para sa tumbok na taya at isa pang karagdagang Free Bet kapag nakabuo ng ₱300 pa na taya.</p>
+                <p><em>Mga halimbawa:</em><br>
+                <ul>
+                  <li>₱350 + ₱250 = ₱600 ➤ 2 FB</li>
+                  <li>₱375 + ₱225 = ₱600 ➤ 2 FB</li>
+                  <li>₱325 + ₱275 = 1 FB para sa ₱300 + 1 FB para sa ₱25 + ₱275 ➤ 2 FB</li>
+                  <li>₱425 + ₱175 = 1 FB para sa ₱300 + 1 FB para sa ₱125 + ₱175 ➤ 2 FB</li>
+                  <li>₱500 + ₱275 = 1 FB para sa ₱300 + 1 FB para sa ₱200 + ₱275 ➤ 2 FB</li>
+                  </ul></p>
+             <p>&nbsp</p>
+        
+        <p><strong>Maraming Tumbok na Taya</strong><br>
+                Para sa maraming tumbok na taya ay meron makukuhang isang freebet sa kada 300 o mas mataas pa na taya.</p>
+                <p><em>Mga halimbawa:</em><br>
+                <ul>
+                  <li>₱300 + ₱300 = ₱600 ➤ 1 FB each (2 FB)</li>
+                  <li>₱375 + ₱325 = ₱700 ➤ 1 FB each (2 FB)</li>
+                  <li>₱400 + ₱500 = ₱900 ➤ 1 FB each (2 FB)</li>
+                  <li>₱500 + ₱500 = ₱1000 ➤ 1 FB each (2 FB)</li>
+                  </ul></p>
+      <div class="note-box">
+            <strong>Note:</strong> <br><em>Kahit pa umabot sa total amount na tayang ₱1,000 pero hinati lamang ito sa dalawang tumbok na taya, dalwang Free Bet lamang ang ibibigay dito.</em>
+        </div>
+             <p>&nbsp</p> 
+      <p><strong>Paano maparami ang Free Bet?</strong><br>
+                <p>Para maparami ang Free Bet sa halagang ₱1,000 na taya, pwedeng mong paghiwa-hiwalyin o maraming combinations ang iyong taya para meron kang FB sa kada ₱300 na taya.</p>
+                
+                <p><em>Halimbawa:</em><br>
+                01-02-03 = ₱300<br>
+                04-05-06 = ₱300<br>
+                07-08-09 = ₱300<br>
+                10-11-12 = ₱100<br>
+                Total of 3 Free Bets</p>
+                
+                <div class="important-note-box">
             <strong>IMPORTANT NOTE:</strong> <br>Ang Free Bet ay dapat na walang katulad o kaparehas na number combinations sa inyong regular bet o promo bets (FB, RB o WB).<br>&nbsp
           <br>Ang premyo ng Freebet ay naka-fix sa <strong>₱7,500</strong> sa kahit na anong draw. 
         </div>
+        </div>
+  </div>
+  
     </div>
-</div>
-
-    <div class="footer">
-      <footer>
-    <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
-</footer>
-
-    <script>
+    </div>
+ <footer>
+  <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+</footer> 
+  
+  <script>
 var navLinks = document.getElementById("navLinks");
 var menuBtn = document.getElementById("menuBtn");
 
@@ -359,6 +423,6 @@ window.addEventListener('scroll', function() {
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
 });
-    </script>
+  </script>
 </body>
 </html>
