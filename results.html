@@ -438,7 +438,7 @@ fetch('https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/ma
                 const latestDate = results.data[0].DATE;
 
                 // Update the title of the latest results table
-                document.getElementById('latestResultsTitle').textContent = `Today's Result -  ${latestDate}`;
+                document.getElementById('latestResultsTitle').textContent = `Latest Result -  ${latestDate}`;
 
                 results.data.forEach(row => {
                     const newRow = document.createElement('tr');
