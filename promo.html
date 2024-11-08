@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRS Philippines Official</title>
+    <link rel="shortcut icon" type="x-icon" href="creatives/lrs.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+  
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+  }
+    
+  header {
+    width: 100vw;
+    height: 50vh; 
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/bannerhero.jpg);
+    background-position: center; 
+    background-size: cover; 
+    position: relative;
+    z-index: 1;
+  }
+  
+  .container {
+    max-width: 1200px;  
+    margin: 0 auto;     
+    padding: 0 15px;
+  }
+
+  nav {
+    display: flex;
+    padding: 10px 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(4, 9, 30, 0.7);
+    z-index: 10;
+    transition: opacity 0.3s ease;
+  }
+  
+  nav img {
+    width: 150px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-links {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  
+  .nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  
+  .nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: blue;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  
+  .nav-links ul li:hover::after {
+    width: 100%;
+  }
+  
+  .text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center; 
+  }
+  
+  .text-box h1 {
+    font-size: 62px;
+  }
+  
+  .text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .hero-btn:hover {
+    border: 1px solid blue;
+    background: blue;
+    transition: 0.5s;
+  }
+  
+  nav .fa {
+    display: none;
+  }
+  
+  @media (max-width: 900px) {
+    .container {
+      padding: 0 10px;
+    }
+      
+    nav img {
+      width: 100px;
+    }
+    
+    .text-box h1 {
+      font-size: 62px;
+    }
+    
+    .text-box p {
+      font-size: 12px;
+    }
+    
+    .nav-links ul li {
+      display: block;
+    }
+    
+    .nav-links {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.9); 
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 999;
+      transition: 0.5s;
+    }
+    
+    nav .fa {
+      display: block;
+      color: white;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    
+    .nav-links.active {
+      right: 0;
+    }
+    
+    .nav-links ul {
+      padding: 30px;
+    }
+  }
+ 
+  
+/*------ Games ------*/
+.games {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  }
+  
+  h1{
+    font-size: 36px;
+    font-weight: 600;
+  }
+  
+  p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+  }
+  
+  .game-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .game-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 250px;
+    max-width: 250px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s;
+    position: relative;
+  }
+  
+  .learn-more {
+    color: white; 
+    font-size: 20px; 
+    text-align: center; 
+  }
+  
+  .game-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .game-card h2 {
+    background: red;
+    color: yellow;
+    padding: 5px;
+    margin: 0;
+    border-radius: 10px;
+  }
+  
+  .game-card h3 {
+    background: black;
+    color: white;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .game-card p {
+    padding: 10px;
+    display: none; 
+  }
+  
+  .games a {
+      text-decoration: none;
+      color: inherit;
+    }
+  
+  .click {
+    display: block;
+    text-align: center;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+    padding: 10px;
+  }
+  
+  
+  @media (max-width: 700px) {
+  .games {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  h1{
+    font-size: 24px;
+  }
+  h3{
+    display: none;
+  }
+  
+  p{
+    font-size: 12px;
+  }
+  
+  .game-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .game-card {
+    width: 120px;
+    max-width: 120px;
+  }
+  }
+  
+  @media (max-width: 400px) {
+  .game-card {
+    width: 100px;
+    max-width: 100px;
+  }
+  }
+
+/*------ Footer ------*/
+  footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(4, 9, 30, 0.7);
+  }
+  
+  .footer p{
+    color: white;
+  }
+
+
+</style>
+</head>
+
+<body>
+<header>
+    <section class="header">
+    <nav>
+        <a href="./"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/lrs.png" alt="LRS Logo"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="toggleMenu()"></i>
+            <ul>
+                <li><a href="./">HOME</a></li>
+                <li><a href="./games">GAMES</a></li>
+                <li><a href="./promo">PROMOS</a></li>
+                <li><a href="./results">RESULT</a></li>
+                <li><a href="./winners">WINNERS</a></li>
+		<li><a href="./proof">PROOF OF PAYOUT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
+    </nav>
+      
+      <div class="text-box">
+        <h1>LRS PROMOS</h1>
+        <p>Sa LRS, lahat ng taya ay may laban! Alamin ang paraan para makakuha ng Free Bet at paano nakukuha ang Return Bet! Play more, gain more and win more!</p>
+    </div>
+      
+</header>
+    <main>
+<div class="container">
+<section class="games">
+<h1>💥 FREEBET 💥</h1>
+  <p> Ang Pick 3 Games ay may kasamang Freebet, depende sa partikular na halaga ng iyong taya sa bawat draw. Huwag palampasin ang pagkakataon na makakuha ng libreng taya!</p>
+</section> 
+        <div class="game-container">
+            <!-- 6/45 Game Card -->
+            <div class="game-card">
+              <a href="https://lrsphilippinesofficial.com/promo/6-45" target="_blank">
+		        <img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/promo/pic/45fb.png" alt="6/45 Mega Lotto">
+		        </div></a>
+
+            <!-- 6/49 Game Card -->
+            <div class="game-card">
+              <a href="https://lrsphilippinesofficial.com/promo/6-49" target="_blank">
+		        <img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/promo/pic/49fb.png" alt="6/49 Super Lotto">
+            </div></div></a>
+          
+          <div class="game-container" style="padding-top: 0;">
+            <!-- 6/55 Game Card -->
+            <div class="game-card">
+              <a href="https://lrsphilippinesofficial.com/promo/6-55" target="_blank">
+		        <img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/promo/pic/55fb.png" alt="6/55 Grand Lotto">
+            </div></a>
+
+            <!-- 6/58 Game Card -->
+            <div class="game-card">
+              <a href="https://lrsphilippinesofficial.com/promo/6-58" target="_blank">
+		        <img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/promo/pic/58fb.png" alt="6/58 Ultra Lotto">
+                </div></a>
+</div>
+ <div class="click">
+   <em>Click Photo for more Info!</em>
+  </div>
+<section class="games">
+<h1>🔄 RETURN BET 🔄</h1>
+  <p>Ang Pick 3 Games ay may kasamang Return Bet (RB) para sa mga taya na 50 pesos pataas. Maaari mong gamitin agad ito sa susunod na draw!</p>
+</section>
+        <div class="game-container">
+            <div class="game-card">
+              <a href="https://lrsphilippinesofficial.com/promo/returnbet" target="_blank">
+		        <img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/promo/pic/return.png" alt="Return Bet" alt="3D Lotto">
+                </div></a>
+</section>
+
+		</div>
+   <div class="click">
+   <em>Click Photo for more Info!<em>
+  </div>
+    </main>
+
+
+    <div class="footer">
+      <footer>
+    <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+</footer>
+
+    <script>
+        function expandDescription(card) {
+            var description = card.querySelector("p").innerHTML;
+            var expandedContent = document.getElementById("expandedContent");
+            var gameDescription = document.getElementById("gameDescription");
+
+            gameDescription.innerHTML = description;
+            expandedContent.style.display = "flex";
+        }
+
+        function closeDescription() {
+            document.getElementById("expandedContent").style.display = "none";
+        }
+
+var navLinks = document.getElementById("navLinks");
+var menuBtn = document.getElementById("menuBtn");
+
+function toggleMenu() {
+    if (navLinks.style.right === "0px") {
+        navLinks.style.right = "-200px";  
+        menuBtn.style.display = "block";  
+    } else {
+        navLinks.style.right = "0";  
+        menuBtn.style.display = "none";  
+    }
+}
+
+let lastScrollTop = 0; 
+const logo = document.querySelector('nav img');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        logo.style.opacity = '0'; 
+    } else {
+        logo.style.opacity = '1'; 
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+});
+    </script>
+</body>
+</html>
