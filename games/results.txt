@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRS Philippines Official - Results</title>
+    <link rel="shortcut icon" type="x-icon" href="creatives/lrs.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+      <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/main.css">
+
+</head>
+
+<body>
+<section class="header" style="height: 50vh;">
+    <header>
+        <nav>
+            <a href="./"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/lrs.png" alt="LRS Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="toggleMenu()"></i>
+                <ul>
+                    <li><a href="./">HOME</a></li>
+                    <li><a href="./games">GAMES</a></li>
+		    <li><a href="./promo">PROMOS</a></li>
+                    <li><a href="./results">RESULT</a></li>
+                    <li><a href="./winners">WINNERS</a></li>
+			<li><a href="./proof">PROOF OF PAYOUT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
+        </nav>
+      <div class="text-box">
+        <h1>RESULT</h1>
+        <p>Be updated sa pinakabagong lotto draws at mga nanalong numero!<br> Para sa <strong>2D, 3D, o Pick 3 Results</strong>, narito kami para tulungan ka. Panoorin ang mga live draws, balikan ang mga nakaraang resulta, at tingnan kung ikaw na ba ang susunod na maswerteng mananalo! </p>
+    </div>
+    </header>
+</section>
+<div class="container">
+<section class="live-draws"  style="display: none;">
+<h2>WATCH LOTTO LIVE DRAW</h2>
+  <p> Nais naming ipabatid sa inyo na ang mga resulta mula sa live draw ng PCSO ang ginagamit na opisyal na batayan para sa mga nanalo sa LRS. Para sa mga may nais na makapanood ng Draw, pindutin lamang ito ➔ <a href="https://www.youtube.com/@ptvph/streams">PTV Live Draw</a></p>
+  <div class="video-container">
+      <div class="video-box">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/KxbI1kg1fXQ?si=xz0jOZSuRnnqHl6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+          <p class="caption">November 3, 2024 - 9PM Live Draw</p>
+	</div>
+    </div>
+</section>
+
+<!-- New Table Section -->
+<section class="table-section">
+<h1>LOTTO RESULTS</h1>
+  <p>Narito ang mga opisyal na resulta mula sa mga nakaraang draw. Ang mga numerong ito ay batay sa live draw ng PCSO at ang mga ito ang magiging batayan ng mga nanalo sa LRS.</p>
+    <h2 id="latestResultsTitle">Latest Results</h2>
+    <table id="latestResultsTable">
+        <thead>
+            <tr>
+                <th>DATE</th>
+                <th>TIME</th>
+                <th>WINNING NUMBERS</th>
+                <th>DRAW</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Latest results will be populated here -->
+        </tbody>
+    </table>
+
+    <h2>Previous Results</h2>
+    <table id="allResultsTable">
+        <thead>
+            <tr>
+                <th>DATE</th>
+                <th>TIME</th>
+                <th>WINNING NUMBERS</th>
+                <th>DRAW</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Other results will be populated here -->
+        </tbody>
+    </table>
+
+</section>
+</div>
+<footer>
+    <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+</footer>
+
+
+
+<!------JavaScript for Toggle Menu------>
+<script>
+var navLinks = document.getElementById("navLinks");
+var menuBtn = document.getElementById("menuBtn");
+
+function toggleMenu() {
+    if (navLinks.style.right === "0px") {
+        navLinks.style.right = "-200px";  
+        menuBtn.style.display = "block";  
+    } else {
+        navLinks.style.right = "0";  
+        menuBtn.style.display = "none";  
+    }
+}
+
+let lastScrollTop = 0; 
+const logo = document.querySelector('nav img');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        logo.style.opacity = '0'; 
+    } else {
+        logo.style.opacity = '1'; 
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+});
+	
+// Fetch and display CSV data in the tables
+fetch('https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/csv/result.csv')
+    .then(response => response.text())
+    .then(data => {
+        Papa.parse(data, {
+            header: true,
+            complete: (results) => {
+                // Sort the results by date in descending order
+                results.data.sort((a, b) => new Date(b.DATE) - new Date(a.DATE));
+
+                const latestResultsTableBody = document.getElementById('latestResultsTable').getElementsByTagName('tbody')[0];
+                const allResultsTableBody = document.getElementById('allResultsTable').getElementsByTagName('tbody')[0];
+
+                // Get the latest date
+                const latestDate = results.data[0].DATE;
+
+                // Update the title of the latest results table
+                document.getElementById('latestResultsTitle').textContent = `Latest Result -  ${latestDate}`;
+
+                results.data.forEach(row => {
+                    const newRow = document.createElement('tr');
+                    newRow.insertCell(0).textContent = row.DATE;
+                    newRow.insertCell(1).textContent = row.TIME;
+                    newRow.insertCell(2).textContent = row['WINNING NUMBERS'];
+                    newRow.insertCell(3).textContent = row.DRAW;
+
+                    // If the row is for the latest date, add it to the latest results table
+                    if (row.DATE === latestDate) {
+                        latestResultsTableBody.appendChild(newRow);
+                    } else {
+                        // Otherwise, add it to the all other results table
+                        allResultsTableBody.appendChild(newRow);
+                    }
+                });
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching the CSV data:', error));
+    </script>
+
+</body>
+</html>
