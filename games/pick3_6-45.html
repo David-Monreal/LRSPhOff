@@ -20,7 +20,7 @@
     
   header {
     width: 100vw;
-    height: 30vh; 
+    height: 40vh; 
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://lrsphilippinesofficial.com/creatives/bannerhero.jpg);
     background-position: center; 
     background-size: cover; 
@@ -193,6 +193,10 @@
       .free img {
             width: 250px;
         }
+      
+      .free h1 {
+        font-size: 36px;
+      }
 
         .text-container {
             display: flex;
@@ -227,6 +231,7 @@
         .important-note-box {
             background-color: #fff9c4;
             border-left-color: #fbc02d;
+          width: 50%;
         }
       
       ul {
@@ -240,12 +245,11 @@
             display: flex;
             justify-content: space-between;
             gap: 10px;
-            margin-top: 20px;
             overflow-x: auto;
         }
 
         .image-box {
-            width: 130px;
+            width: 16%;
             height: auto;
             display: flex;
             align-items: center;
@@ -258,21 +262,130 @@
   
         .image-box img {
             max-width: 100%;
-            max-height: 100%;
+            height: auto;
         }
       
       @media (max-width: 600px) {
         .image-box {
-          width: 20%;
-          padding: 7px;
+          padding: 2px;
         }
         
         .image-grid {
             justify-content: center;
+            gap: 3px;
         } 
         .free p, li, .highlight, .note-box, .important-note-box  {
           font-size: 12px;
         }
+        .important-note-box {
+          width: 70%;
+        }
+        
+        .free h1{
+          font-size: 24px;
+        }
+      }
+      
+      .lotto-row {
+          display: flex;
+          margin-top: 10px;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 10px;
+        }
+      
+        .lotto-balls {
+          display: flex;
+          margin-left: 10px; 
+          flex-wrap: wrap;
+        }
+      
+        .lotto-ball, .lotto-ball2 {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: 0.1em solid #2d2d2d;
+          margin: 0 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: radial-gradient(circle at 30% 30%, #fff9c4, #fbc02d, #f57f17);
+          font-weight: bold;
+          font-size: 1.5em;
+          box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+      .lotto-ball2 {
+        background: radial-gradient(circle at 30% 30%, #ffcccc, #ff6666, #b30000);
+      }
+        
+      
+      @media (max-width: 600px) {        
+        .lotto-balls {
+          margin-left: 5px; 
+          font-size: 1.0em !important;
+        }
+      
+        .lotto-ball, .lotto-ball2 {
+          max-width: 35px;
+          max-height: 35px;
+          margin: 1px;
+          font-size: 0.8em !important;
+        }
+      }
+      
+      /* Table Section Styles */
+        .table-section {
+            padding: 50px;
+            background-color: #f9f9f9;
+            max-width: 1200px; 
+            margin: 0 auto; 
+            overflow-x: auto; 
+        }
+
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+          white-space: nowrap;
+          width: 50%;
+        }
+      
+        th {
+          background-color: #f4f4f4;
+          position: sticky;
+          top: 0;
+          z-index: 0; 
+        }
+
+        tr:hover {
+            background-color: #ddd; 
+        }
+
+@media (max-width: 768px) {
+  .table-section {
+    font-size: 9px; 
+            }
+  th, td {
+    padding: 8px; 
+    font-size: 12px;
+            }
+        }
+      
+      .button {
+        text-decoration: none;
+        color: #007bff;
+        cursor: pointer; 
+        transition: background-color 0.3s; 
+      }
+      
+      .button:hover {
+        color: red; 
       }
       
 /*------ Footer ------*/
@@ -313,7 +426,7 @@
     </nav>
       
       <div class="text-box">
-        <h1>6/45</h1>
+        <h1>Pick 3 Lotto</h1>
         <p> Subukan ang iyong swerte sa 6/45 Mega Lotto! Pumili ng 3 numero mula 1 hanggang 45. </p>
     </div>
       
@@ -342,18 +455,43 @@
             </div>
         </div>
         <div class="text-container">
-            <h2 class="highlight">PAANO TUMAYA SA 6/45 MEGA LOTTO</h2>
-          
+          <div class="mechanics">
+          <p style="text-indent: 30px; text-align: center;">Tuwing <strong>Lunes at Miyerkules</strong> ang draw ng 6/45 Mega Lotto, kaya may dalawang (2) beses kang pagkakataon bawat linggo na manalo.</p>
+            <p>&nbsp</p></div>
+        <h1 class="highlight">PAANO TUMAYA?</h1>
             <div class="mechanics">
                 <p><strong>1. Pagpili ng Numero</strong><br>
-                Sa Pick 3 game na 6/45 Mega Lotto, ikaw ay pipili ng 3 numero mula sa hanay ng 1 hanggang 45. Ang mga napili mong numero ay ang magiging kombinasyon ng iyong taya.</p>
-                <p>&nbsp</p>
+                Sa Pick 3 game na 6/45 Mega Lotto, ikaw ay pipili ng 3 numero mula 1 hanggang 45. Ang mga napili mong numero ay ang magiging kombinasyon ng iyong taya.</br>
+             <p>&nbsp</p>
               
                 <p><strong>2. Paglalagay ng Bet Amount</strong><br>
                 Ang iyong taya ay kailangang umabot sa minimum na halaga ng ₱25. Maaari mong dagdagan ito, basta't ito ay divisible by 5 (halimbawa, ₱30, ₱35, ₱40, ₱45, at iba pa).</p>
+              <p>&nbsp</p>
+              
+              <p><strong>3. Format sa Pagtaya</strong><br>
+                Siguraduhing tama ang format sa pagtaya para ma-validate ang inyong taya.</p>
+            <p><strong class="highlight">Mga dapat tandaan:</strong> <br> 
+            📌 Lagyan ng <strong>"dash"</strong> ( - ) ang pagitan ng bawat numerong taya.<br>
+            📌 Maglagay ng <strong>"equal sign"</strong> ( = ) pagkatapos ng mga numerong napili at ilagay ang bet amount sa dulo.<br>
+            📌 Kung ang taya ay kabilang sa <strong>Promo Bet</strong>, ilagay sa dulo ng taya ang code kung saan ito na bibilang.<br>
+            ➤Kung ang taya ay parte ng FB o Freebet, huwag na maglalagay ng bet amount<br>
+            ➤Kung ito naman ay RB o return bet, kailangang ilagay ang bet amount at ang code na RB sa dulo</p>
+            <div class="note-box">
+            <strong>FORMAT:</strong><br>
+              Regular Bet:<br><strong>
+                  ❌ <span style="color:red;"> 1,2,3,25 </span><br>
+                  ❌ <span style="color:red;"> 1 2 3 25 </span><br>
+                  ✔️ <span style="color:green;"> 1-2-3=25 </span></strong><br>&nbsp<br>
+              FreeBet (FB):<br><strong>
+                  ❌ <span style="color:red;"> 1-2-3=25FB </span><br>
+                  ✔️ <span style="color:green;"> 1-2-3=FB </span></strong><br>&nbsp<br>
+              Return Bet (RB):<br><strong>
+                  ❌ <span style="color:red;"> 1-2-3=RB50 </span><br>
+                  ✔️ <span style="color:green;"> 1-2-3=50RB </span></strong>
+        </div>
                 <p>&nbsp</p>
               
-                <p><strong>3. Pag-send ng Taya</strong></p>
+                <p><strong>4. Pag-send ng Taya</strong></p>
                 <p>Ipadala ang iyong napiling numero kasama ang bet amount sa Messenger Group Chat. Kasama rin dito ang pagsasagawa ng bayad gamit ang napagkasunduang paraan, tulad ng GCash, PayMaya o bank transfer.</p>
           <div class="note-box">
             <p><strong>Note:</strong><br>
@@ -362,21 +500,63 @@
                   </ul></p>
         </div>
              <p>&nbsp</p>
-      
-      <p><strong>4. Paano Manalo?</strong><br>
-                <p>Kapag ang lahat ng 3 numero na iyong napili ay lumabas sa anim na bolang nabunot sa 6/45 Mega Lotto draw, ikaw ay itinuturing na panalo at makakatanggap ng premyo depende sa itinalagang halaga ng jackpot.</p><p>&nbsp</p>
-                <p><em>Halimbawa: Ang lumabas na numero PCSO Live Draw ay ang mga numerong <strong> 01, 02, 03, 04, 05, at 06 </strong> tapos ang iyong taya ay <strong>01-02-03</strong> ikaw ay panalo na. Kahit na ito'y magkabalibaliktad basta't nakuha ang tatlong numero, ikaw ay siguradong panalo!</p>
-    <p>&nbsp</p>
+      </div>
+      <h1 class="highlight">PAANO MANALO?</h1>
+      <div class="mechanics">
+                <p style="text-indent: 30px; text-align: justify;">Kapag ang lahat ng 3 numero na iyong napili ay lumabas sa anim na bolang nabunot sa 6/45 Mega Lotto draw, ikaw ay itinuturing na panalo at makakatanggap ng premyo depende sa itinalagang halaga ng jackpot.</p><p>&nbsp</p>
+                <p><em>Halimbawa:<br> Ang iyong taya ay <strong class="highlight">12-45-23</strong> tapos ang lumabas na numero PCSO Live Draw ay ang mga numerong nasa ibaba, ikaw ay siguradong panalo, kahit na magkabali-baliktad pa ito.</em></p>
+                  <div class="lotto-row">
+                    <div class="lotto-balls" aria-label="Winning Numbers">
+                        <div class="lotto-ball">01</div>
+                        <div class="lotto-ball2">12</div>
+                        <div class="lotto-ball2">23</div>
+                        <div class="lotto-ball">34</div>
+                        <div class="lotto-ball2">45</div>
+                        <div class="lotto-ball">08</div>
+                    </div>
+                </div>
+       <p style="text-indent: 30px; text-align: justify;">Kapag naman 2 numero lamang sa iyong tatlong napili ang lumabas, ikaw ay makakatanggap ng RB o return bet. Para malamang kung paano nakakakuha ng RB, pinditin ito. <a href="https://lrsphilippinesofficial.com/promo/returnbet" class="button"> ➤ RB MECHANICS</a>.</p><p>&nbsp</p>
+        
+        <h2 class="highlight">PRIZE LIST</h2>
+                <p style="text-indent: 30px; text-align: justify;">Ang minimum bet amount ay ₱25 at maaaring magdagdag ng halaga na divisible by 5 (halimbawa, 30, 35, 40, 45, at iba pa). Ang maxbet sa kada kombinasyon ng numero ay hanggang ₱500 lamang. </p>
+        <p style="text-indent: 30px; text-align: justify;">Sa halagang ₱25 lamang, maaari ka ng magkamit ng jackpot prize na <strong>₱8,200</strong>, karagdagang <strong>₱1,640</strong> sa kada ₱5 na dagdag na taya na pwedeng umabot sa Jackpot Prize na <strong>₱164,000</strong>. Mas malaking taya, mas malaking Jackpot Prize!</p>
+        <p>&nbsp</p>
+        <table>
+        <tr>
+          <th>BET AMOUNT</th>
+          <th>PRIZE</th>
+        </tr>
+<tr><td>Freebet</td><td>₱ 7,500</td></tr>
+<tr><td>25</td><td>₱ 8,200</td></tr>
+<tr><td>30</td><td>₱ 9,840</td></tr>
+<tr><td>35</td><td>₱ 11,480</td></tr>
+<tr><td>40</td><td>₱ 13,120</td></tr>
+<tr><td>45</td><td>₱ 14,760</td></tr>
+<tr><td>50</td><td>₱ 16,400</td></tr>
+<tr><td>75</td><td>₱ 24,600</td></tr>
+<tr><td>100</td><td>₱ 32,800</td></tr>
+<tr><td>125</td><td>₱ 41,000</td></tr>
+<tr><td>150</td><td>₱ 49,200</td></tr>
+<tr><td>175</td><td>₱ 57,400</td></tr>
+<tr><td>200</td><td>₱ 65,600</td></tr>
+<tr><td>225</td><td>₱ 73,800</td></tr>
+<tr><td>250</td><td>₱ 82,000</td></tr>
+<tr><td>275</td><td>₱ 90,200</td></tr>
+<tr><td>300</td><td>₱ 98,400</td></tr>
+<tr><td>325</td><td>₱ 106,600</td></tr>
+<tr><td>350</td><td>₱ 114,800</td></tr>
+<tr><td>375</td><td>₱ 123,000</td></tr>
+<tr><td>400</td><td>₱ 131,200</td></tr>
+<tr><td>425</td><td>₱ 139,400</td></tr>
+<tr><td>450</td><td>₱ 147,600</td></tr>
+<tr><td>475</td><td>₱ 155,800</td></tr>
+<tr><td>500</td><td>₱ 164,000</td></tr>
+
+
+      </table>
                 
-                <div class="important-note-box">
-            <strong>IMPORTANT NOTE:</strong> <br> ------------------------- <br>
-                  Halimbawa:<br>
-                  <em><strong> === </em><span style="color:blue;">&nbsp ===== </span><br>
-                  ❌ <span style="color:red;"> ===== </span><br>
-                  ✔️ <span style="color:green;"> ===== </span></strong><br>
-          <br> ------------- <strong>₱----</strong> -------------. 
-        </div>
-        </div>
+                
+        
   </div>
   
     </div>
