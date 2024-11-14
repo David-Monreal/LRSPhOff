@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRS Philippines Official</title>
+    <link rel="shortcut icon" type="x-icon" href="https://lrsphilippinesofficial.com/creatives/lrs.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+    <style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+  }
+    
+  header {
+    width: 100vw;
+    height: 40vh; 
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://lrsphilippinesofficial.com/creatives/bannerhero.jpg);
+    background-position: center; 
+    background-size: cover; 
+    position: relative;
+    z-index: 1;
+  }
+  
+  .container {
+    max-width: 1200px;  
+    margin: 0 auto;     
+    padding: 0 15px;
+  }
+
+  nav {
+    display: flex;
+    padding: 10px 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(4, 9, 30, 0.7);
+    z-index: 10;
+    transition: opacity 0.3s ease;
+  }
+  
+  nav img {
+    width: 150px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-links {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  
+  .nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  
+  .nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: blue;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  
+  .nav-links ul li:hover::after {
+    width: 100%;
+  }
+  
+  .text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center; 
+  }
+  
+  .text-box h1 {
+    font-size: 62px;
+  }
+  
+  .text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .hero-btn:hover {
+    border: 1px solid blue;
+    background: blue;
+    transition: 0.5s;
+  }
+  
+  nav .fa {
+    display: none;
+  }
+  
+  @media (max-width: 900px) {
+    .container {
+      padding: 0 10px;
+    }
+      
+    nav img {
+      width: 100px;
+    }
+    
+    .text-box h1 {
+      font-size: 62px;
+    }
+    
+    .text-box p {
+      font-size: 12px;
+    }
+    
+    .nav-links ul li {
+      display: block;
+    }
+    
+    .nav-links {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.9); 
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 999;
+      transition: 0.5s;
+    }
+    
+    nav .fa {
+      display: block;
+      color: white;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    
+    .nav-links.active {
+      right: 0;
+    }
+    
+    .nav-links ul {
+      padding: 30px;
+    }
+  }
+ 
+  
+/*------ Free Bet Mechanics ------*/
+
+        .free {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+      
+      .free img {
+            width: 250px;
+        }
+      
+      .free h1 {
+        font-size: 36px;
+      }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .mechanics {
+            margin-top: 20px;
+            max-width: 800px;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+      
+      .note-box, .important-note-box {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-left: 4px solid #1976d2;
+            margin: 10px 0;
+            border-radius: 5px;
+            color: #333;
+        }
+      
+        .important-note-box {
+            background-color: #fff9c4;
+            border-left-color: #fbc02d;
+        }
+      
+      ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 0;
+      }
+      
+      /* Image grid styling */
+        .image-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            overflow-x: auto;
+        }
+
+        .image-box {
+            width: 16%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          padding: 10px;
+          background-color: lightgray;
+          border: 2px solid black;
+          border-radius: 10px;
+        }
+  
+        .image-box img {
+            max-width: 100%;
+            height: auto;
+        }
+      
+      @media (max-width: 600px) {
+        .image-box {
+          padding: 2px;
+        }
+        
+        .image-grid {
+            justify-content: center;
+            gap: 3px;
+        } 
+        .free p, li, .highlight, .note-box, .important-note-box  {
+          font-size: 12px;
+        }
+        
+        .free h1{
+          font-size: 24px;
+        }
+      }
+      
+      .lotto-row {
+          display: flex;
+          margin-top: 10px;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 10px;
+        }
+      
+        .lotto-balls {
+          display: flex;
+          margin-left: 10px; 
+          flex-wrap: wrap;
+        }
+      
+        .lotto-ball, .lotto-ball2 {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: 0.1em solid #2d2d2d;
+          margin: 0 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: radial-gradient(circle at 30% 30%, #fff9c4, #fbc02d, #f57f17);
+          font-weight: bold;
+          font-size: 1.5em;
+          box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+      .lotto-ball2 {
+        background: radial-gradient(circle at 30% 30%, #ffcccc, #ff6666, #b30000);
+      }
+        
+      
+      @media (max-width: 600px) {        
+        .lotto-balls {
+          margin-left: 5px; 
+          font-size: 1.0em !important;
+        }
+      
+        .lotto-ball, .lotto-ball2 {
+          max-width: 35px;
+          max-height: 35px;
+          margin: 1px;
+          font-size: 0.8em !important;
+        }
+      }
+      
+      /* Table Section Styles */
+        .table-section {
+            padding: 50px;
+            background-color: #f9f9f9;
+            max-width: 1200px; 
+            margin: 0 auto; 
+            overflow-x: auto; 
+        }
+
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+          white-space: nowrap;
+          width: 50%;
+        }
+      
+        th {
+          background-color: #f4f4f4;
+          position: sticky;
+          top: 0;
+          z-index: 0; 
+        }
+
+        tr:hover {
+            background-color: #ddd; 
+        }
+
+@media (max-width: 768px) {
+  .table-section {
+    font-size: 9px; 
+            }
+  th, td {
+    padding: 8px; 
+    font-size: 12px;
+            }
+  
+  #textBox {
+    font-size: 12px;
+    width: 250px !important;
+        }
+        }
+      
+      .button {
+        text-decoration: none;
+        color: #007bff;
+        cursor: pointer; 
+        transition: background-color 0.3s; 
+      }
+      
+      .button:hover {
+        color: red; 
+      }
+      
+      .button2 {
+        text-decoration: none;
+        color: red;
+        cursor: pointer; 
+        transition: background-color 0.3s; 
+      }
+      
+      .button2:hover {
+        color: #007bff; 
+      }
+      
+      #textBox {
+            border: 2px solid #ccc;
+            padding: 16px;
+            margin-bottom: 10px;
+            width: 40%;
+            word-wrap: break-word;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+      
+        #copyButton {
+            display: block;
+            margin: 0 auto; 
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+      
+        #copyButton:hover {
+            background-color: #0056b3;
+        }
+      
+/*------ Footer ------*/
+      footer {
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: rgba(4, 9, 30, 0.7);
+        color: white;
+      }
+      
+      @media (max-width: 700px) {
+        footer {
+          font-size: 10px;
+        }
+      }
+      
+    </style>
+</head>
+<body>
+  <header>
+    <section class="header">
+    <nav>
+        <a href="./"><img src="https://lrsphilippinesofficial.com/creatives/lrs.png" alt="LRS Logo"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="toggleMenu()"></i>
+            <ul>
+              <li><a href="https://lrsphilippinesofficial.com">HOME</a></li>
+              <li><a href="https://lrsphilippinesofficial.com/games">GAMES</a></li>
+              <li><a href="https://lrsphilippinesofficial.com/promo">PROMOS</a></li>
+              <li><a href="https://lrsphilippinesofficial.com/results">RESULT</a></li>
+              <li><a href="https://lrsphilippinesofficial.com/winners">WINNERS</a></li>
+              <li><a href="https://lrsphilippinesofficial.com/proof">PROOF OF PAYOUT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
+    </nav>
+      
+      <div class="text-box">
+        <h1>Pick 3 Lotto</h1>
+        <p> Subukan ang iyong swerte sa 6/49 Super Lotto! Pumili ng 3 numero mula 1 hanggang 49. </p>
+    </div>
+      
+</header>
+    <div class="container">
+      <div class="free">
+        <div class="image-grid">
+    
+            <div class="image-box">
+                <a href="https://lrsphilippinesofficial.com/games/6-45" target="_blank"><img src="https://lrsphilippinesofficial.com/creatives/645.png" alt="How to Play 6/45" ></a>
+            </div>
+            <div class="image-box" style="border: 5px solid black; background-color: white;">
+                <a href="https://lrsphilippinesofficial.com/games/6-49" target="_blank"><img src="https://lrsphilippinesofficial.com/creatives/649.png" alt="How to Play 6/49"></a>
+            </div>
+            <div class="image-box">
+                <a href="https://lrsphilippinesofficial.com/games/6-55" target="_blank"><img src="https://lrsphilippinesofficial.com/creatives/655.png" alt="How to Play 6/55"></a>
+            </div>
+            <div class="image-box">
+                <a href="https://lrsphilippinesofficial.com/games/6-58" target="_blank"><img src="https://lrsphilippinesofficial.com/creatives/658.png" alt="How to Play 6/58"></a>
+            </div>
+          <div class="image-box">
+                <a href="https://lrsphilippinesofficial.com/games/2D" target="_blank"><img src="https://lrsphilippinesofficial.com/creatives/2D.png" alt="How to Play 2D"></a>
+            </div>
+          <div class="image-box">
+                <a href="https://lrsphilippinesofficial.com/games/3D" target="_blank"><img src="https://lrsphilippinesofficial.com/creatives/3D.png" alt="How to Play 3D"></a>
+            </div>
+        </div>
+        
+        <div class="text-container">
+          <div class="mechanics">
+          <p style="text-indent: 30px; text-align: center;">Tuwing <strong>Martes, Huwebes at Linggo</strong> ang draw ng 6/49 Super Lotto, kaya may tatlong (3) beses kang pagkakataon bawat linggo na manalo.</p>
+            <p>&nbsp</p></div>
+        <h1 class="highlight">PAANO TUMAYA?</h1>
+            <div class="mechanics">
+                <p><strong>1. Pagpili ng Numero</strong><br>
+                Sa Pick 3 game na 6/49 Super Lotto, ikaw ay pipili ng 3 numero mula 1 hanggang 49. Ang mga napili mong numero ay ang magiging kombinasyon ng iyong taya.</br>
+             <p>&nbsp</p>
+              
+                <p><strong>2. Paglalagay ng Bet Amount</strong><br>
+                Ang iyong taya ay kailangang umabot sa minimum na halaga ng ₱25. Maaari mong dagdagan ito, basta't ito ay divisible by 5 (tulad ng ₱30, ₱35, ₱40, ₱45, at iba pa).</p>
+              <p>&nbsp</p>
+              
+              <p><strong>3. Format sa Pagtaya</strong><br>
+                Siguraduhing tama ang format sa pagtaya para ma-validate ang inyong taya.</p>
+            <p><strong class="highlight">Mga dapat tandaan:</strong> <br> 
+            📌 Lagyan ng <strong>"dash"</strong> ( - ) ang pagitan ng bawat numerong taya.<br>
+            📌 Maglagay ng <strong>"equal sign"</strong> ( = ) pagkatapos ng mga numerong napili at ilagay ang bet amount sa dulo.<br>
+            📌 Ang mga taya na lamapas sa numerong <strong>"49"</strong> ay isasama sa listahan ng mga Voids.<br>
+            📌 Kung ang taya ay kabilang sa <strong>Promo Bet</strong>, ilagay sa dulo ng taya ang code kung saan ito na bibilang.<br>
+            ➤Kung ang taya ay parte ng FB o Freebet, huwag na maglalagay ng bet amount<br>
+            ➤Kung ito naman ay RB o return bet, kailangang ilagay ang bet amount at ang code na RB sa dulo</p>
+            <div class="note-box">
+            <strong>FORMAT:</strong><br>
+              Regular Bet:<br><strong>
+                  ❌ <span style="color:red;"> 1,2,3,25 </span><br>
+                  ❌ <span style="color:red;"> 1 2 3 25 </span><br>
+                  ✔️ <span style="color:green;"> 1-2-3=25 </span></strong><br>&nbsp<br>
+              FreeBet (FB):<br><strong>
+                  ❌ <span style="color:red;"> 1-2-3=25FB </span><br>
+                  ✔️ <span style="color:green;"> 1-2-3=FB </span></strong><br>&nbsp<br>
+              Return Bet (RB):<br><strong>
+                  ❌ <span style="color:red;"> 1-2-3=RB50 </span><br>
+                  ✔️ <span style="color:green;"> 1-2-3=50RB </span></strong>
+        </div>
+                <p>&nbsp</p>
+              
+                <p><strong>4. Pag-send ng Taya</strong></p>
+                <p>Ipadala ang iyong napiling numero kasama ang bet amount sa Messenger Group Chat. Kasama rin dito ang pagsasagawa ng bayad gamit ang napagkasunduang paraan, tulad ng GCash, PayMaya o bank transfer.</p>
+          <div class="note-box">
+            <p><strong>Note:</strong><br>
+              <ul><li>Tandaan na kapag hindi na-validate (walang react o walang kumpirmasyon) ang inyong taya ay hindi ito isasama sa listahan ng mga maaring manalo.</li>
+                <li>Pagkatapos i-validate ng Admin and inyong taya ay kailangan itong i-send sa LRS Official Encoding GC, hintayin ang kumpirmasyon ng GC Admin para makasiguradong pumasok ang inyong mga taya.</li>
+                  </ul></p>
+        </div>
+             <p>&nbsp</p>
+      </div>
+      <h1 class="highlight">PAANO MANALO?</h1>
+      <div class="mechanics">
+        <p style="text-indent: 30px; text-align: justify;">Ang winning numbers ay nakabase sa <a href="https://www.youtube.com/@ptvph/streams" class="button2">PCSO Lotto Live Draw</a>. Abangan at panoorin nang live ang draw para malaman ang nanalong numero. Maaari mo ring tingnan sa <a href="https://lrsphilippinesofficial.com/promo/returnbet" class="button">"LRS RESULT"</a> ang Latest and Previous winning numbers.</p><p>&nbsp</p>
+        <p style="text-indent: 30px; text-align: justify;">Malalaman mong nanalo ka kapag ang lahat ng 3 numero na iyong napili ay lumabas sa anim na bolang nabunot sa 6/49 Super Lotto draw. Halimbawa, ang lumabas na anim na bola ay ang mga sumusunod na numero:</p>
+        <div class="lotto-row">
+                    <div class="lotto-balls" aria-label="Winning Numbers">
+                        <div class="lotto-ball">02</div>
+                        <div class="lotto-ball2">32</div>
+                        <div class="lotto-ball2">43</div>
+                        <div class="lotto-ball">13</div>
+                        <div class="lotto-ball2">15</div>
+                        <div class="lotto-ball">47</div>
+                    </div>
+                </div>
+                <p style="text-indent: 30px; text-align: justify;">Tapos ang iyong taya ay <strong class="highlight">32-15-43</strong>, kahit na magkabali-baliktad pa ito (in any order), ikaw ay itinuturing na "Lucky Winner" kapag nakuha mo ang tatlong tamang numero at makakatanggap ng premyo depende sa halaga ng iyong taya. Silipin sa <a href="https://lrsphilippinesofficial.com/winners" class="button">"LRS WINNERS"</a> ang mga masuswerteng nanalo sa LRS Lotto Games.</p>
+        <p>&nbsp</p>
+                  
+       <p style="text-indent: 30px; text-align: justify;">Kapag naman 2 numero lamang sa iyong tatlong napili ang lumabas, ikaw ay makakatanggap ng RB o return bet. Para malamang kung paano nakakakuha ng RB, pinditin ito. <a href="https://lrsphilippinesofficial.com/promo/returnbet" class="button"> ➤ RB MECHANICS</a>.</p><p>&nbsp</p>
+        
+        <h2 class="highlight" style="color: red;">PRIZE LIST</h2>
+        <p style="text-indent: 30px; text-align: justify;">Ang halagang ₱25 ay maaaring maging <strong>₱9,000</strong> na pwedeng umabot sa Jackpot Prize na <strong>₱180,000</strong> kung ang bet amount mo ay ₱500. Mas malaking taya, mas malaking Jackpot Prize!</p>
+        <p>&nbsp</p>
+        <table>
+        <tr>
+          <th>BET AMOUNT</th>
+          <th>PRIZE</th>
+        </tr>
+          <tr><td><em>Freebet</em></td><td>₱ 7,500</td></tr>
+          <tr><td>25</td><td>₱ 9,000</td></tr>
+          <tr><td>50</td><td>₱ 18,000</td></tr>
+          <tr><td>75</td><td>₱ 27,000</td></tr>
+          <tr><td>100</td><td>₱ 36,000</td></tr>
+          <tr><td>150</td><td>₱ 54,000</td></tr>
+          <tr><td>200</td><td>₱ 72,000</td></tr>
+          <tr><td>250</td><td>₱ 90,000</td></tr>
+          <tr><td>300</td><td>₱ 108,000</td></tr>
+          <tr><td>350</td><td>₱ 126,000</td></tr>
+          <tr><td>400</td><td>₱ 144,000</td></tr>
+          <tr><td>450</td><td>₱ 162,000</td></tr>
+          <tr><td>500</td><td>₱ 180,000</td></tr>
+          <tr><td><em>additional 5</em></td><td>₱ 1,800</td></tr>
+      </table>
+                <div class="important-note-box">
+            <strong>IMPORTANT NOTE:</strong> <br>
+                  📌 Ang minimum bet amount ay ₱25 at maaaring magdagdag ng halaga na divisible by 5 (tulad ng 30, 35, 40, 45 at iba pa). <br>
+                  📌 Ang mga tayang mas mababa sa 25 ay di tinatanggap. <br>
+                  📌 Ang mga taya na may butal na 1, 2, 3 at 4 ay di rin tatanggapin.<br>
+        </div>
+        </div>
+      <p>&nbsp</p>
+        <h1 class="highlight">PAANO MAKUKUHA ANG PANALO?</h1>
+      <div class="mechanics">
+                <p style="text-indent: 30px; text-align: justify;"> Hintayin ang LRS Official List of Winners na ise-send sa bawat Group Chat ng mga Admins. Mag-fill-out ng form o punan ng mga detalye ang form sa ibaba, at i-send sa inyong admin para ma-claim ang inyong prize.</p>
+        <p>&nbsp</p>
+        <div id="textBox">
+        ⚜️LRS PHILS. OFFICIAL⚜️ <br>
+        ⚜️CASH OUT FORM⚜️ <br><br>
+        ➡️ AGENT'S NAME: <br><br>
+        ➡️📝BETTOR'S NAME: <br>
+        ➡️📝Amount Bet: <br>
+        ➡️📝Acct number: <br>
+        ➡️📝Acct name: <br>
+        ➡️📝Method: <br><br>
+        😇Tip/Balato:
+    </div>
+
+    <button id="copyButton" onclick="copyText()">Copy Form</button><p>&nbsp</p>    
+  </div>
+ </div> 
+    </div>
+    </div>
+ <footer>
+  <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+</footer> 
+  
+  <script>
+var navLinks = document.getElementById("navLinks");
+var menuBtn = document.getElementById("menuBtn");
+
+function toggleMenu() {
+    if (navLinks.style.right === "0px") {
+        navLinks.style.right = "-200px";  
+        menuBtn.style.display = "block";  
+    } else {
+        navLinks.style.right = "0";  
+        menuBtn.style.display = "none";  
+    }
+}
+
+let lastScrollTop = 0; 
+const logo = document.querySelector('nav img');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        logo.style.opacity = '0'; 
+    } else {
+        logo.style.opacity = '1'; 
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+});
+    
+    function copyText() {
+            const textToCopy = document.getElementById('textBox').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            alert('Text copied to clipboard!');
+        }
+  </script>
+</body>
+</html>
