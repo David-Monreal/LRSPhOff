@@ -24,7 +24,7 @@
       .header {
         width: 100vw;
         height: 70vh;
-        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/bannerhero.jpg);
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://lrsphilippinesofficial.com/creatives/bannerhero.jpg);
         background-position: center;
         background-size: cover;background-repea
         t: no-repeat;
@@ -763,7 +763,7 @@
 <body>
   <section class="header">
     <nav>
-      <a href="./"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/lrs.png" alt="LRS Logo"></a>
+      <a href="./"><img src="https://lrsphilippinesofficial.com/creatives/lrs.png" alt="LRS Logo"></a>
       <div class="nav-links" id="navLinks">
         <i class="fa fa-times" onclick="toggleMenu()"></i>
         <ul>
@@ -826,8 +826,8 @@
       <table>
         <tr>
           <td></td>
-          <td><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/2D.png" alt="2D Lotto"></td>
-          <td><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/3D.png" alt="3D Lotto"></td>
+          <td><img src="https://lrsphilippinesofficial.com/creatives/2D.png" alt="2D Lotto"></td>
+          <td><img src="https://lrsphilippinesofficial.com/creatives/3D.png" alt="3D Lotto"></td>
         </tr>
         <tr>
           <td id="2pmImageName"></td>
@@ -856,7 +856,7 @@
     <div class="youtube-container">
         <a id="link-9PM" target="_blank"> <!-- Link overlay for the 9PM video -->
             <video autoplay loop muted playsinline>
-                <source src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/video/9pm.mp4" type="video/mp4">
+                <source src="https://lrsphilippinesofficial.com/img/video/9pm.mp4" type="video/mp4">
             </video>
         </a>
         <p id="caption-9PM" class="youtube-caption">Default Caption</p>
@@ -864,7 +864,7 @@
     <div class="youtube-container">
         <a id="link-5PM" target="_blank"> <!-- Link overlay for the 5PM video -->
             <video autoplay loop muted playsinline>
-                <source src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/video/5pm.mp4" type="video/mp4">
+                <source src="https://lrsphilippinesofficial.com/img/video/5pm.mp4" type="video/mp4">
             </video>
         </a>
         <p id="caption-5PM" class="youtube-caption">Default Caption</p>
@@ -872,7 +872,7 @@
     <div class="youtube-container">
         <a id="link-2PM" target="_blank"> <!-- Link overlay for the 2PM video -->
             <video autoplay loop muted playsinline>
-                <source src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/video/2pm.mp4" type="video/mp4">
+                <source src="https://lrsphilippinesofficial.com/img/video/2pm.mp4" type="video/mp4">
             </video>
         </a>
         <p id="caption-2PM" class="youtube-caption">Default Caption</p>
@@ -951,13 +951,13 @@ window.addEventListener('scroll', function() {
 
 // Define images for specific days and time ranges
 const imageSchedule = {
-    'sunday': 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/49PROMO.png', // Sunday image
-    'monday': 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/45PROMO.png', // Monday image
-    'tuesday': 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/49PROMO.png', // Tuesday image
-    'wednesday': 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/45PROMO.png', // Wednesday image
-    'thursday': 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/49PROMO.png', // Thursday image
-    'friday': 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/58PROMO.png', // Friday image
-    'saturday': 'https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/img/55PROMO.png', // Saturday image
+    'sunday': 'https://lrsphilippinesofficial.com/img/49PROMO.png', // Sunday image
+    'monday': 'https://lrsphilippinesofficial.com/img/45PROMO.png', // Monday image
+    'tuesday': 'https://lrsphilippinesofficial.com/img/49PROMO.png', // Tuesday image
+    'wednesday': 'https://lrsphilippinesofficial.com/img/45PROMO.png', // Wednesday image
+    'thursday': 'https://lrsphilippinesofficial.com/img/49PROMO.png', // Thursday image
+    'friday': 'https://lrsphilippinesofficial.com/img/58PROMO.png', // Friday image
+    'saturday': 'https://lrsphilippinesofficial.com/img/55PROMO.png', // Saturday image
 };
 
 // Get the current date and time
@@ -1049,7 +1049,7 @@ async function loadCSV() {
         const imageName = date.charAt(0).toUpperCase() + date.slice(1) + '.png'; // Generate image name based on date
 
         if (time === '2PM') {
-            document.getElementById('2pmImageName').innerHTML = `<img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/2PM.png" alt="2PM" /><div class="image-name">${date}</div>`;
+            document.getElementById('2pmImageName').innerHTML = `<img src="https://lrsphilippinesofficial.com/creatives/2PM.png" alt="2PM" /><div class="image-name">${date}</div>`;
             document.getElementById('2pmNumbers').innerHTML = `<div class="lotto-balls">
                 <div class="lotto-ball">${number1}</div>
                 <div class="lotto-ball">${number2}</div>
@@ -1060,7 +1060,7 @@ async function loadCSV() {
                 <div class="lotto-ball">${number5}</div>
             </div>`;
         } else if (time === '5PM') {
-            document.getElementById('5pmImageName').innerHTML = `<img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/5PM.png" alt="5PM" /><div class="image-name">${date}</div>`;
+            document.getElementById('5pmImageName').innerHTML = `<img src="https://lrsphilippinesofficial.com/creatives/5PM.png" alt="5PM" /><div class="image-name">${date}</div>`;
             document.getElementById('5pmNumbers').innerHTML = `<div class="lotto-balls">
                 <div class="lotto-ball">${number1}</div>
                 <div class="lotto-ball">${number2}</div>
@@ -1071,7 +1071,7 @@ async function loadCSV() {
                 <div class="lotto-ball">${number5}</div>
             </div>`;
         } else if (time === '9PM') {
-            document.getElementById('9pmImageName').innerHTML = `<img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/9PM.png" alt="9PM" /><div class="image-name">${date}</div>`;
+            document.getElementById('9pmImageName').innerHTML = `<img src="https://lrsphilippinesofficial.com/creatives/9PM.png" alt="9PM" /><div class="image-name">${date}</div>`;
             document.getElementById('9pmNumbers').innerHTML = `<div class="lotto-balls">
                 <div class="lotto-ball">${number1}</div>
                 <div class="lotto-ball">${number2}</div>
