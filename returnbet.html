@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRS Philippines Official</title>
+    <link rel="shortcut icon" type="x-icon" href="creatives/lrs.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+    <style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+  }
+    
+  header {
+    width: 100vw;
+    height: 50vh; 
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/bannerhero.jpg);
+    background-position: center; 
+    background-size: cover; 
+    position: relative;
+    z-index: 1;
+  }
+  
+  .container {
+    max-width: 1200px;  
+    margin: 0 auto;     
+    padding: 0 15px;
+  }
+
+  nav {
+    display: flex;
+    padding: 10px 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(4, 9, 30, 0.7);
+    z-index: 10;
+    transition: opacity 0.3s ease;
+  }
+  
+  nav img {
+    width: 150px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-links {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  
+  .nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  
+  .nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: blue;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  
+  .nav-links ul li:hover::after {
+    width: 100%;
+  }
+  
+  .text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center; 
+  }
+  
+  .text-box h1 {
+    font-size: 62px;
+  }
+  
+  .text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .hero-btn:hover {
+    border: 1px solid blue;
+    background: blue;
+    transition: 0.5s;
+  }
+  
+  nav .fa {
+    display: none;
+  }
+  
+  @media (max-width: 900px) {
+    .container {
+      padding: 0 10px;
+    }
+      
+    nav img {
+      width: 100px;
+    }
+    
+    .text-box h1 {
+      font-size: 62px;
+    }
+    
+    .text-box p {
+      font-size: 12px;
+    }
+    
+    .nav-links ul li {
+      display: block;
+    }
+    
+    .nav-links {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.9); 
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 999;
+      transition: 0.5s;
+    }
+    
+    nav .fa {
+      display: block;
+      color: white;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    
+    .nav-links.active {
+      right: 0;
+    }
+    
+    .nav-links ul {
+      padding: 30px;
+    }
+  }
+ 
+  
+/*------ Free Bet Mechanics ------*/
+
+        .free {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+      
+      .free img {
+            width: 250px;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .mechanics {
+            margin-top: 20px;
+            max-width: 800px;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+      
+      .note-box, .important-note-box {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-left: 4px solid #1976d2;
+            margin: 10px 0;
+            border-radius: 5px;
+            color: #333;
+        }
+      
+        .important-note-box {
+            background-color: #fff9c4;
+            border-left-color: #fbc02d;
+        }
+      
+      ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 0;
+      }
+      
+      /* Image grid styling */
+        .image-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        .image-box {
+            width: 130px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          padding: 10px;
+          background-color: lightgray;
+          border: 2px solid black;
+          border-radius: 10px;
+        }
+  
+        .image-box img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+      
+      @media (max-width: 600px) {
+        .image-box {
+          width: 20%;
+          padding: 7px;
+        }
+        
+        .image-grid {
+            justify-content: center;
+        } 
+        .free p, li,h3, .highlight, .note-box, .important-note-box  {
+          font-size: 12px;
+        }
+      }
+      
+/*------ Footer ------*/
+      footer {
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: rgba(4, 9, 30, 0.7);
+        color: white;
+      }
+      
+      @media (max-width: 700px) {
+        footer {
+          font-size: 10px;
+        }
+      }
+      
+    </style>
+</head>
+<body>
+  <header>
+    <section class="header">
+    <nav>
+        <a href="./"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/lrs.png" alt="LRS Logo"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="toggleMenu()"></i>
+            <ul>
+                <li><a href="https://lrsphilippinesofficial.com">HOME</a></li>
+                <li><a href="https://lrsphilippinesofficial.com/games">GAMES</a></li>
+              	<li><a href="https://lrsphilippinesofficial.com/promo">PROMOS</a></li>
+                <li><a href="https://lrsphilippinesofficial.com/results">RESULT</a></li>
+                <li><a href="https://lrsphilippinesofficial.com/winners">WINNERS</a></li>
+		<li><a href="https://lrsphilippinesofficial.com/returnbet">RETURN BET</a></li>
+		<li><a href="https://lrsphilippinesofficial.com/proof">PROOF OF PAYOUT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
+    </nav>
+      
+      <div class="text-box">
+        <h1>RETURN BET</h1>
+        <p> Ang Return Bet (RB) ay isang espesyal na pagkakataon sa pagtaya na magbibigay sa iyo ng isa pang pagkakataon upang itaya ang iyong mga numero para sa susunod na draw.</p>
+    </div>
+      
+</header>
+    <div class="container">
+      <div class="free">
+        <div class="text-container">
+            <h1 class="highlight">RETURN BET MECHANICS</h1>
+            <div class="mechanics">
+              <p style="color: red;"> <strong>Paano makakuha ng Return Bet (RB)?</strong></p>
+                <p><strong>Pagtaya sa Pick 3 Games</strong><br>
+                Sa mga Pick 3 games tulad ng 6/45, 6/49, 6/55, at 6/58 Lotto, pipili ka ng tatlong numero mula sa isang set ng mga numero.</p>    
+              <p><em>Mga halimbawa:</em><br>
+                <ul>
+                  <li>6/45 Mega Lotto ➤ 1 - 45</li>
+                  <li>6/49 Super Lotto ➤ 1 - 49</li>
+                  <li>6/55 Grand Lotto ➤ 1 - 55</li>
+                  <li>6/58 Ultra Lotto ➤ 1 - 58</li>
+                  </ul></p>
+                <p>&nbsp</p>
+                <p><strong>Dalwang Numero</strong><br>
+                Ang RB ay natatanggap kapag may dalawang tamang numero mula sa tatlong napili o taya ang lumabas mula sa anim na bola ng lotto draw.</p>
+                <p><em>Halimbawa:</em><br>
+                  Ang lumabas na anim na numero sa lotto draw ay <strong>1-2-3-4-5-6</strong><br>
+                  ➤ Tapos ang mga taya mo ay<br>
+                  ✔️ 1-2-9<br>
+                  ❌ 7-8-9<br>
+                  ✔️ 4-5-7<br>
+                  ❌ 9-10-11</p>
+                <p>&nbsp</p>
+                <p><strong>Bet Amount</strong><br>
+                Ang Return Bet ay maaari lamang makuha kung ang halaga ng iyong taya ay 50 pesos pataas. Kaya, kung ang taya mo ay mas mababa sa 50 pesos, hindi ka kwalipikado para sa Return Bet.</p>
+                <p><em>Mga halimbawa:</em><br>
+                  ❌ 1-2-3=25<br>
+                  ✔️ 4-5-6=50<br>
+                  ✔️ 7-8-9=100<br>
+                  ❌ 10-11-12=25<br>
+                  </p>
+             <p>&nbsp</p>
+          
+          <p><strong>Listahan ng mga Return Bet</strong><br>
+                <p>Maglalabas ng opisyal na listahan ng mga bettor na nakakuha ng RB. Ang listahang ito ay ipapadala sa group chat kung saan ka tumaya upang matiyak na alam ng lahat kung sino ang may RB.</p>
+    <p>&nbsp</p>
+          
+          <p><strong>Validity</strong><br>
+                Ang Return Bet ay kailangang gamitin sa susunod na araw at hindi ito pwedeng itaya kung lumipas na ang araw ng validity.</p>
+           <p>&nbsp</p>
+          
+          <p><strong>Paghahati ng Taya</strong><br>
+                <p>Ang RB ay maaaring hatiin sa maliliit na halaga ng taya, ngunit ang bawat taya ay dapat hindi bababa sa 50 pesos. Halimbawa, kung ang RB amount mo ay 500 pesos, maaari itong hatiin sa limang taya na tig-100 pesos o sampung taya na tig-50 pesos. </p>
+                  <div class="note-box">
+                    <strong>Note:</strong> <br><em>Mahalagang tandaan na ang bawat hati ng taya ay kailangang hindi bababa sa 50 pesos. Hindi maaaring bumaba sa halagang ito upang makasunod sa patakaran ng paggamit ng RB.</em>
+                </div>
+    <p>&nbsp</p>
+      
+      <p><strong>Paano Itaya ang Return Bet?</strong><br>
+                <p>Kapag meron kang Return Bet, kailangan mong maglagay ng bagong taya sa susunod na draw, at gamitin ang Return Bet bilang bahagi ng iyong bagong taya. <br>
+                  <em>Halimbawa  ng pagtaya:</em><br>
+                  ➤ 1-2-3=50RB<br>
+                </p>
+    <p>&nbsp</p>
+          
+                <div class="important-note-box">
+            <strong>IMPORTANT NOTE:</strong> <br>
+                  ✔️ Ang Return Bet ay available lamang sa mga taya na <strong>50 pesos pataas</strong>.<br>
+                  ✔️ Ang Return Bet ay valid lamang hanggang sa susunod na draw o sa loob ng isang araw lamang ito pwedeng gamitin.<br>
+                  ✔️ Huwag kalimutan na ilagay ang "RB" sa dulo ng iyong taya upang malaman ng sistema na ito ay isang Return Bet<br>
+        </div>
+        </div>
+  </div>
+  
+    </div>
+    </div>
+ <footer>
+  <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+</footer> 
+  
+  <script>
+var navLinks = document.getElementById("navLinks");
+var menuBtn = document.getElementById("menuBtn");
+
+function toggleMenu() {
+    if (navLinks.style.right === "0px") {
+        navLinks.style.right = "-200px";  
+        menuBtn.style.display = "block";  
+    } else {
+        navLinks.style.right = "0";  
+        menuBtn.style.display = "none";  
+    }
+}
+
+let lastScrollTop = 0; 
+const logo = document.querySelector('nav img');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        logo.style.opacity = '0'; 
+    } else {
+        logo.style.opacity = '1'; 
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+});
+  </script>
+</body>
+</html>
