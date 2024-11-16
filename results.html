@@ -423,7 +423,7 @@ window.addEventListener('scroll', function() {
 });
 	
 // Fetch and display CSV data in the tables
-fetch('https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/csv/result.csv')
+fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJhFK-b1DN2kNv621RRmwF2oP3gftWOOXUX2n_V4mtjNfNH0YoW0g8uoP/pub?gid=193184976&single=true&output=csv')
     .then(response => response.text())
     .then(data => {
         Papa.parse(data, {
