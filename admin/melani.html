@@ -36,13 +36,13 @@
       />
     </noscript>
   <style>
-    body {
+body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: white; 
-  color: #333;
+  color: black;
   min-height: 100vh; }
 
 h1 {
@@ -282,6 +282,37 @@ header, .join-container {
   padding: 10px;
   animation: changeBorderColor2 1s infinite; }
     
+.center-container {
+  text-align: center; }
+    
+.hatag-button {
+  padding: 15px 30px;
+  width: 80%;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    
+.hatag-button:hover {
+  background-color: #0056b3; }
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: rgba(4, 9, 30, 0.7); }
+  .footer p {
+    color: white; }
+    @media (max-width: 768px) {
+    .footer p {
+      font-size: 12px; }}
     
     </style>
   
@@ -290,18 +321,18 @@ header, .join-container {
 <body>
 <header>
   <div class="button-container">
-        <button class="responsive-button" onclick="window.open('https://www.facebook.com/profile.php?id=100050838102176', '_blank')">
+        <button class="responsive-button" onclick="window.location.href='https://www.facebook.com/profile.php?id=100050838102176'">
             <img src="https://lrsphilippinesofficial.com/img/melani.jpg" alt="ADMIN" class="button-image">
             <span class="button-text">ADMIN MELANI</span>
         </button>
-        <button class="responsive-button" onclick="window.open('https://lrsphilippinesofficial.com/admin/updates', '_blank')">
+        <button class="responsive-button">
             <img src="https://lrsphilippinesofficial.com/creatives/lrsbtn.png" alt="UPDATE" class="button-image">
             <span class="button-text">LRS UPDATES</span>
-        </button>
-        <button class="responsive-button" onclick="window.open('https://lrsphilippinesofficial.com/admin/hatag', '_blank')">
+        </button>    
+        <button class="responsive-button" onclick="window.location.href='https://lrsphilippinesofficial.com/admin/hatag'"> 
             <img src="https://lrsphilippinesofficial.com/creatives/hatag.png" alt="HATAG" class="button-image" style="border-radius: 0; border: none;">
             <span class="button-text">HATAG NUMERO</span>
-        </button> </div>
+</button> </div>
   
   
   <div class="video">
@@ -378,9 +409,23 @@ header, .join-container {
                     <img src="https://lrsphilippinesofficial.com/creatives/3DPRIZE.jpg" alt="3D Lotto" class="article-image">
                 </div>
             </article>
-    </div>
+    </div>    
   </section>
-      
+  <p>&nbsp</p>
+  <div class="game-container">
+  <h1>Walang maisip na numero?</h1>
+  <div class="center-container">
+  <p>Huwag mag-alala! Tutulungan kita na pumili ng Lucky Number mo. Pinutin lamang HATAG sa ibaba. </p>  
+        <button class="hatag-button" onclick="window.location.href='https://lrsphilippinesofficial.com/admin/hatag'">HATAG</button>
+    </div> 
+  <p>&nbsp</p>
+  <p>&nbsp</p>
+  </div>
+  
+<div class="footer">
+<footer>
+    <p>&copy; Admin Melani - LRS Philippines Official.</p>
+</footer>
       
   
 <script>
