@@ -297,10 +297,10 @@ function getRangeForSchedule() {
         return { min: 1, max: 49 }; // Wednesday 9:00PM to Thursday 8:59PM
     } else if ((dayOfWeek === 4 && currentTime >= schedule.thursdayToFriday.start) ||
         (dayOfWeek === 5 && currentTime < schedule.fridayToSaturday.end)) {
-        return { min: 1, max: 55 }; // Thursday 9:00PM to Friday 8:59PM
+        return { min: 1, max: 58 }; // Thursday 9:00PM to Friday 8:59PM
     } else if ((dayOfWeek === 5 && currentTime >= schedule.fridayToSaturday.start) ||
         (dayOfWeek === 6 && currentTime < schedule.saturdayToSunday.end)) {
-        return { min: 1, max: 58 }; // Friday 9:00PM to Saturday 8:59PM
+        return { min: 1, max: 55 }; // Friday 9:00PM to Saturday 8:59PM
     } else if ((dayOfWeek === 6 && currentTime >= schedule.saturdayToSunday.start) ||
         (dayOfWeek === 0 && currentTime < schedule.sundayToMonday.end)) {
         return { min: 1, max: 49 }; // Saturday 9:00PM to Sunday 8:59PM
@@ -527,9 +527,9 @@ function copyTextGenerator3() {
         } else if (currentDay === 3 && currentHour >= 21 || currentDay === 4 && currentHour < 21) {
             imageUrl = 'https://lrsphilippinesofficial.com/creatives/649.png';
         } else if (currentDay === 4 && currentHour >= 21 || currentDay === 5 && currentHour < 21) {
-            imageUrl = 'https://lrsphilippinesofficial.com/creatives/655.png';
-        } else if (currentDay === 5 && currentHour >= 21 || currentDay === 6 && currentHour < 21) {
             imageUrl = 'https://lrsphilippinesofficial.com/creatives/658.png';
+        } else if (currentDay === 5 && currentHour >= 21 || currentDay === 6 && currentHour < 21) {
+            imageUrl = 'https://lrsphilippinesofficial.com/creatives/655.png';
         } else if (currentDay === 6 && currentHour >= 21 || currentDay === 0 && currentHour < 21) {
             imageUrl = 'https://lrsphilippinesofficial.com/creatives/649.png';
         }
