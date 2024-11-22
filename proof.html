@@ -9,285 +9,111 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <style>
-    * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-  }
-    
-  header {
-    width: 100vw;
-    height: 50vh; 
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://lrsphilippinesofficial.com/creatives/bannerhero.jpg);
-    background-position: center; 
-    background-size: cover; 
-    position: relative;
-    z-index: 1;
-  }
-  
-  .container {
-    max-width: 1200px;  
-    margin: 0 auto;     
-    padding: 0 15px;
-  }
-
-  nav {
-    display: flex;
-    padding: 10px 6%;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(4, 9, 30, 0.7);
-    z-index: 10;
-    transition: opacity 0.3s ease;
-  }
-  
-  nav img {
-    width: 150px;
-    transition: opacity 0.3s ease;
-  }
-  
-  .nav-links {
-    flex: 1;
-    text-align: right;
-  }
-  
-  .nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-  }
-  
-  .nav-links ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-  }
-  
-  .nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: blue;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-  }
-  
-  .nav-links ul li:hover::after {
-    width: 100%;
-  }
-  
-  .text-box {
-    width: 90%;
-    color: white;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center; 
-  }
-  
-  .text-box h1 {
-    font-size: 62px;
-  }
-  
-  .text-box p {
-    margin: 10px 0 40px;
-    font-size: 14px;
-    color: white;
-  }
-  
-  .hero-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    border: 1px solid white;
-    padding: 12px 34px;
-    font-size: 13px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .hero-btn:hover {
-    border: 1px solid blue;
-    background: blue;
-    transition: 0.5s;
-  }
-  
-  nav .fa {
-    display: none;
-  }
-  
-  @media (max-width: 900px) {
-    .container {
-      padding: 0 10px;
-    }
+    <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/header.css">
+<style>
+.pictures {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-top: 20px;
+  background-color: #f4f4f4; }
       
-    nav img {
-      width: 100px;
-    }
-    
-    .text-box h1 {
-      font-size: 62px;
-    }
-    
-    .text-box p {
-      font-size: 12px;
-    }
-    
-    .nav-links ul li {
-      display: block;
-    }
-    
-    .nav-links {
-      position: absolute;
-      background: rgba(0, 0, 0, 0.9); 
-      height: 100vh;
-      width: 200px;
-      top: 0;
-      right: -200px;
-      text-align: left;
-      z-index: 999;
-      transition: 0.5s;
-    }
-    
-    nav .fa {
-      display: block;
-      color: white;
-      margin: 10px;
-      font-size: 22px;
-      cursor: pointer;
-      z-index: 1000;
-    }
-    
-    .nav-links.active {
-      right: 0;
-    }
-    
-    .nav-links ul {
-      padding: 30px;
-    }
-  }
-        
-        /*------ Pictures ------*/
-        .pictures {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding-top: 100px;
-            background-color: #f4f4f4;
-        }
+.pictures h1{
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center; }
+  @media (max-width: 768px) {
+    .pictures h1{
+      font-size: 24px; }}
       
-      h1{
-          font-size: 36px;
-          font-weight: 600;
-          text-align: center;
-      }
-      
-      p {
-        color: black;
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 22px;
-        padding: 10px;
-        text-align: center;
-      }
+.pictures p {
+  color: black;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+  text-align: center; }
+  @media (max-width: 768px) {
+    .pictures p{
+      font-size: 12px; }}
 
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            padding: 10px;
-        }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px; }
 
-        .gallery-item {
-            flex: 1 1 calc(20% - 20px);
-            max-width: calc(20% - 20px);
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
+.gallery-item {
+  flex: 1 1 calc(20% - 20px);
+  max-width: calc(20% - 20px);
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden; }
+  @media (max-width: 768px) {
+    .gallery-item {
+      flex: 1 1 calc(33.33% - 20px);
+      max-width: calc(33.33% - 20px); } }
 
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block; }
 
-        @media (max-width: 768px) {
-            .gallery-item {
-                flex: 1 1 calc(33.33% - 20px);
-                max-width: calc(33.33% - 20px);
-            }
-        }
+.lightbox {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; }
 
-        /* Lightbox Styles */
-        .lightbox {
-            display: none; 
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
+.lightbox img {
+  max-width: 70%;
+  max-height: 90%;
+  margin: auto; }
 
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            margin: auto;
-        }
+.lightbox .close {
+  position: absolute;
+  text-decoration: none;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  color: white;
+  background: red;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1100; }
 
-        .lightbox .close, .lightbox .prev, .lightbox .next {
-            position: absolute;
-            top: 50%;
-            font-size: 30px;
-            color: white;
-            text-decoration: none;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
 
-        .lightbox .close {
-            top: 20px;
-            right: 30px;
-            font-size: 35px;
-        }
+.lightbox .prev, .lightbox .next {
+  position: absolute;
+  top: 50%;
+  text-decoration: none;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer; }
 
-        .lightbox .prev {
-            left: 20px;
-        }
+.lightbox .prev {
+  left: 10px; }
 
-        .lightbox .next {
-            right: 20px;
-        }
-        
-/*------ Footer ------*/
-        footer {
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            background-color: rgba(4, 9, 30, 0.7);
-            color: white;
-        }
-    </style>
+.lightbox .next {
+  right: 10px; }
+
+</style>
 </head>
-
+  
 <body>
 <section class="header">
     <header>
@@ -320,1080 +146,20 @@
 <section class="pictures">
     <h1>Paid Winners</h1>
   <p>Tingnan ang mga maswerteng nanalo ng LRS Games! Ipinagmamalaki naming ibida ang mga mananayang nag-uwi ng premyo. Baka ikaw na ang susunod na tampok dito!</p>
-    <div class="gallery">
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov500.jpg" alt="Proof Nov500"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov499.jpg" alt="Proof Nov499"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov498.jpg" alt="Proof Nov498"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov497.jpg" alt="Proof Nov497"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov496.jpg" alt="Proof Nov496"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov495.jpg" alt="Proof Nov495"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov494.jpg" alt="Proof Nov494"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov493.jpg" alt="Proof Nov493"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov492.jpg" alt="Proof Nov492"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov491.jpg" alt="Proof Nov491"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov490.jpg" alt="Proof Nov490"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov489.jpg" alt="Proof Nov489"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov488.jpg" alt="Proof Nov488"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov487.jpg" alt="Proof Nov487"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov486.jpg" alt="Proof Nov486"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov485.jpg" alt="Proof Nov485"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov484.jpg" alt="Proof Nov484"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov483.jpg" alt="Proof Nov483"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov482.jpg" alt="Proof Nov482"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov481.jpg" alt="Proof Nov481"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov480.jpg" alt="Proof Nov480"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov479.jpg" alt="Proof Nov479"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov478.jpg" alt="Proof Nov478"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov477.jpg" alt="Proof Nov477"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov476.jpg" alt="Proof Nov476"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov475.jpg" alt="Proof Nov475"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov474.jpg" alt="Proof Nov474"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov473.jpg" alt="Proof Nov473"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov472.jpg" alt="Proof Nov472"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov471.jpg" alt="Proof Nov471"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov470.jpg" alt="Proof Nov470"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov469.jpg" alt="Proof Nov469"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov468.jpg" alt="Proof Nov468"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov467.jpg" alt="Proof Nov467"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov466.jpg" alt="Proof Nov466"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov465.jpg" alt="Proof Nov465"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov464.jpg" alt="Proof Nov464"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov463.jpg" alt="Proof Nov463"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov462.jpg" alt="Proof Nov462"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov461.jpg" alt="Proof Nov461"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov460.jpg" alt="Proof Nov460"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov459.jpg" alt="Proof Nov459"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov458.jpg" alt="Proof Nov458"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov457.jpg" alt="Proof Nov457"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov456.jpg" alt="Proof Nov456"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov455.jpg" alt="Proof Nov455"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov454.jpg" alt="Proof Nov454"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov453.jpg" alt="Proof Nov453"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov452.jpg" alt="Proof Nov452"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov451.jpg" alt="Proof Nov451"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov450.jpg" alt="Proof Nov450"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov449.jpg" alt="Proof Nov449"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov448.jpg" alt="Proof Nov448"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov447.jpg" alt="Proof Nov447"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov446.jpg" alt="Proof Nov446"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov445.jpg" alt="Proof Nov445"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov444.jpg" alt="Proof Nov444"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov443.jpg" alt="Proof Nov443"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov442.jpg" alt="Proof Nov442"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov441.jpg" alt="Proof Nov441"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov440.jpg" alt="Proof Nov440"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov439.jpg" alt="Proof Nov439"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov438.jpg" alt="Proof Nov438"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov437.jpg" alt="Proof Nov437"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov436.jpg" alt="Proof Nov436"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov435.jpg" alt="Proof Nov435"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov434.jpg" alt="Proof Nov434"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov433.jpg" alt="Proof Nov433"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov432.jpg" alt="Proof Nov432"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov431.jpg" alt="Proof Nov431"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov430.jpg" alt="Proof Nov430"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov429.jpg" alt="Proof Nov429"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov428.jpg" alt="Proof Nov428"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov427.jpg" alt="Proof Nov427"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov426.jpg" alt="Proof Nov426"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov425.jpg" alt="Proof Nov425"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov424.jpg" alt="Proof Nov424"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov423.jpg" alt="Proof Nov423"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov422.jpg" alt="Proof Nov422"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov421.jpg" alt="Proof Nov421"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov420.jpg" alt="Proof Nov420"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov419.jpg" alt="Proof Nov419"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov418.jpg" alt="Proof Nov418"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov417.jpg" alt="Proof Nov417"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov416.jpg" alt="Proof Nov416"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov415.jpg" alt="Proof Nov415"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov414.jpg" alt="Proof Nov414"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov413.jpg" alt="Proof Nov413"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov412.jpg" alt="Proof Nov412"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov411.jpg" alt="Proof Nov411"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov410.jpg" alt="Proof Nov410"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov409.jpg" alt="Proof Nov409"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov408.jpg" alt="Proof Nov408"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov407.jpg" alt="Proof Nov407"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov406.jpg" alt="Proof Nov406"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov405.jpg" alt="Proof Nov405"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov404.jpg" alt="Proof Nov404"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov403.jpg" alt="Proof Nov403"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov402.jpg" alt="Proof Nov402"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov401.jpg" alt="Proof Nov401"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov400.jpg" alt="Proof Nov400"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov399.jpg" alt="Proof Nov399"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov398.jpg" alt="Proof Nov398"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov397.jpg" alt="Proof Nov397"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov396.jpg" alt="Proof Nov396"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov395.jpg" alt="Proof Nov395"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov394.jpg" alt="Proof Nov394"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov393.jpg" alt="Proof Nov393"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov392.jpg" alt="Proof Nov392"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov391.jpg" alt="Proof Nov391"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov390.jpg" alt="Proof Nov390"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov389.jpg" alt="Proof Nov389"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov388.jpg" alt="Proof Nov388"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov387.jpg" alt="Proof Nov387"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov386.jpg" alt="Proof Nov386"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov385.jpg" alt="Proof Nov385"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov384.jpg" alt="Proof Nov384"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov383.jpg" alt="Proof Nov383"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov382.jpg" alt="Proof Nov382"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov381.jpg" alt="Proof Nov381"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov380.jpg" alt="Proof Nov380"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov379.jpg" alt="Proof Nov379"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov378.jpg" alt="Proof Nov378"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov377.jpg" alt="Proof Nov377"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov376.jpg" alt="Proof Nov376"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov375.jpg" alt="Proof Nov375"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov374.jpg" alt="Proof Nov374"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov373.jpg" alt="Proof Nov373"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov372.jpg" alt="Proof Nov372"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov371.jpg" alt="Proof Nov371"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov370.jpg" alt="Proof Nov370"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov369.jpg" alt="Proof Nov369"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov368.jpg" alt="Proof Nov368"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov367.jpg" alt="Proof Nov367"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov366.jpg" alt="Proof Nov366"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov365.jpg" alt="Proof Nov365"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov364.jpg" alt="Proof Nov364"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov363.jpg" alt="Proof Nov363"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov362.jpg" alt="Proof Nov362"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov361.jpg" alt="Proof Nov361"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov360.jpg" alt="Proof Nov360"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov359.jpg" alt="Proof Nov359"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov358.jpg" alt="Proof Nov358"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov357.jpg" alt="Proof Nov357"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov356.jpg" alt="Proof Nov356"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov355.jpg" alt="Proof Nov355"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov354.jpg" alt="Proof Nov354"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov353.jpg" alt="Proof Nov353"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov352.jpg" alt="Proof Nov352"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov351.jpg" alt="Proof Nov351"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov350.jpg" alt="Proof Nov350"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov349.jpg" alt="Proof Nov349"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov348.jpg" alt="Proof Nov348"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov347.jpg" alt="Proof Nov347"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov346.jpg" alt="Proof Nov346"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov345.jpg" alt="Proof Nov345"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov344.jpg" alt="Proof Nov344"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov343.jpg" alt="Proof Nov343"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov342.jpg" alt="Proof Nov342"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov341.jpg" alt="Proof Nov341"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov340.jpg" alt="Proof Nov340"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov339.jpg" alt="Proof Nov339"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov338.jpg" alt="Proof Nov338"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov337.jpg" alt="Proof Nov337"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov336.jpg" alt="Proof Nov336"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov335.jpg" alt="Proof Nov335"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov334.jpg" alt="Proof Nov334"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov333.jpg" alt="Proof Nov333"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov332.jpg" alt="Proof Nov332"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov331.jpg" alt="Proof Nov331"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov330.jpg" alt="Proof Nov330"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov329.jpg" alt="Proof Nov329"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov328.jpg" alt="Proof Nov328"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov327.jpg" alt="Proof Nov327"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov326.jpg" alt="Proof Nov326"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov325.jpg" alt="Proof Nov325"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov324.jpg" alt="Proof Nov324"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov323.jpg" alt="Proof Nov323"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov322.jpg" alt="Proof Nov322"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov321.jpg" alt="Proof Nov321"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov320.jpg" alt="Proof Nov320"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov319.jpg" alt="Proof Nov319"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov318.jpg" alt="Proof Nov318"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov317.jpg" alt="Proof Nov317"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov316.jpg" alt="Proof Nov316"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov315.jpg" alt="Proof Nov315"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov314.jpg" alt="Proof Nov314"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov313.jpg" alt="Proof Nov313"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov312.jpg" alt="Proof Nov312"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov311.jpg" alt="Proof Nov311"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov310.jpg" alt="Proof Nov310"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov309.jpg" alt="Proof Nov309"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov308.jpg" alt="Proof Nov308"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov307.jpg" alt="Proof Nov307"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov306.jpg" alt="Proof Nov306"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov305.jpg" alt="Proof Nov305"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov304.jpg" alt="Proof Nov304"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov303.jpg" alt="Proof Nov303"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov302.jpg" alt="Proof Nov302"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov301.jpg" alt="Proof Nov301"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov300.jpg" alt="Proof Nov300"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov299.jpg" alt="Proof Nov299"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov298.jpg" alt="Proof Nov298"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov297.jpg" alt="Proof Nov297"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov296.jpg" alt="Proof Nov296"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov295.jpg" alt="Proof Nov295"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov294.jpg" alt="Proof Nov294"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov293.jpg" alt="Proof Nov293"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov292.jpg" alt="Proof Nov292"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov291.jpg" alt="Proof Nov291"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov290.jpg" alt="Proof Nov290"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov289.jpg" alt="Proof Nov289"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov288.jpg" alt="Proof Nov288"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov287.jpg" alt="Proof Nov287"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov286.jpg" alt="Proof Nov286"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov285.jpg" alt="Proof Nov285"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov284.jpg" alt="Proof Nov284"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov283.jpg" alt="Proof Nov283"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov282.jpg" alt="Proof Nov282"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov281.jpg" alt="Proof Nov281"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov280.jpg" alt="Proof Nov280"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov279.jpg" alt="Proof Nov279"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov278.jpg" alt="Proof Nov278"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov277.jpg" alt="Proof Nov277"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov276.jpg" alt="Proof Nov276"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov275.jpg" alt="Proof Nov275"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov274.jpg" alt="Proof Nov274"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov273.jpg" alt="Proof Nov273"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov272.jpg" alt="Proof Nov272"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov271.jpg" alt="Proof Nov271"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov270.jpg" alt="Proof Nov270"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov269.jpg" alt="Proof Nov269"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov268.jpg" alt="Proof Nov268"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov267.jpg" alt="Proof Nov267"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov266.jpg" alt="Proof Nov266"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov265.jpg" alt="Proof Nov265"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov264.jpg" alt="Proof Nov264"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov263.jpg" alt="Proof Nov263"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov262.jpg" alt="Proof Nov262"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov261.jpg" alt="Proof Nov261"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov260.jpg" alt="Proof Nov260"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov259.jpg" alt="Proof Nov259"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov258.jpg" alt="Proof Nov258"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov257.jpg" alt="Proof Nov257"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov256.jpg" alt="Proof Nov256"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov255.jpg" alt="Proof Nov255"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov254.jpg" alt="Proof Nov254"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov253.jpg" alt="Proof Nov253"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov252.jpg" alt="Proof Nov252"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov251.jpg" alt="Proof Nov251"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov250.jpg" alt="Proof Nov250"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov249.jpg" alt="Proof Nov249"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov248.jpg" alt="Proof Nov248"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov247.jpg" alt="Proof Nov247"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov246.jpg" alt="Proof Nov246"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov245.jpg" alt="Proof Nov245"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov244.jpg" alt="Proof Nov244"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov243.jpg" alt="Proof Nov243"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov242.jpg" alt="Proof Nov242"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov241.jpg" alt="Proof Nov241"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov240.jpg" alt="Proof Nov240"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov239.jpg" alt="Proof Nov239"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov238.jpg" alt="Proof Nov238"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov237.jpg" alt="Proof Nov237"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov236.jpg" alt="Proof Nov236"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov235.jpg" alt="Proof Nov235"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov234.jpg" alt="Proof Nov234"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov233.jpg" alt="Proof Nov233"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov232.jpg" alt="Proof Nov232"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov231.jpg" alt="Proof Nov231"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov230.jpg" alt="Proof Nov230"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov229.jpg" alt="Proof Nov229"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov228.jpg" alt="Proof Nov228"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov227.jpg" alt="Proof Nov227"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov226.jpg" alt="Proof Nov226"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov225.jpg" alt="Proof Nov225"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov224.jpg" alt="Proof Nov224"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov223.jpg" alt="Proof Nov223"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov222.jpg" alt="Proof Nov222"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov221.jpg" alt="Proof Nov221"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov220.jpg" alt="Proof Nov220"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov219.jpg" alt="Proof Nov219"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov218.jpg" alt="Proof Nov218"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov217.jpg" alt="Proof Nov217"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov216.jpg" alt="Proof Nov216"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov215.jpg" alt="Proof Nov215"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov214.jpg" alt="Proof Nov214"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov213.jpg" alt="Proof Nov213"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov212.jpg" alt="Proof Nov212"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov211.jpg" alt="Proof Nov211"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov210.jpg" alt="Proof Nov210"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov209.jpg" alt="Proof Nov209"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov208.jpg" alt="Proof Nov208"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov207.jpg" alt="Proof Nov207"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov206.jpg" alt="Proof Nov206"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov205.jpg" alt="Proof Nov205"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov204.jpg" alt="Proof Nov204"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov203.jpg" alt="Proof Nov203"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov202.jpg" alt="Proof Nov202"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov201.jpg" alt="Proof Nov201"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov200.jpg" alt="Proof Nov200"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov199.jpg" alt="Proof Nov199"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov198.jpg" alt="Proof Nov198"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov197.jpg" alt="Proof Nov197"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov196.jpg" alt="Proof Nov196"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov195.jpg" alt="Proof Nov195"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov194.jpg" alt="Proof Nov194"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov193.jpg" alt="Proof Nov193"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov192.jpg" alt="Proof Nov192"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov191.jpg" alt="Proof Nov191"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov190.jpg" alt="Proof Nov190"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov189.jpg" alt="Proof Nov189"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov188.jpg" alt="Proof Nov188"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov187.jpg" alt="Proof Nov187"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov186.jpg" alt="Proof Nov186"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov185.jpg" alt="Proof Nov185"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov184.jpg" alt="Proof Nov184"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov183.jpg" alt="Proof Nov183"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov182.jpg" alt="Proof Nov182"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov181.jpg" alt="Proof Nov181"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov180.jpg" alt="Proof Nov180"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov179.jpg" alt="Proof Nov179"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov178.jpg" alt="Proof Nov178"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov177.jpg" alt="Proof Nov177"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov176.jpg" alt="Proof Nov176"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov175.jpg" alt="Proof Nov175"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov174.jpg" alt="Proof Nov174"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov173.jpg" alt="Proof Nov173"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov172.jpg" alt="Proof Nov172"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov171.jpg" alt="Proof Nov171"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov170.jpg" alt="Proof Nov170"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov169.jpg" alt="Proof Nov169"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov168.jpg" alt="Proof Nov168"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov167.jpg" alt="Proof Nov167"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov166.jpg" alt="Proof Nov166"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov165.jpg" alt="Proof Nov165"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov164.jpg" alt="Proof Nov164"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov163.jpg" alt="Proof Nov163"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov162.jpg" alt="Proof Nov162"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov161.jpg" alt="Proof Nov161"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov160.jpg" alt="Proof Nov160"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov159.jpg" alt="Proof Nov159"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov158.jpg" alt="Proof Nov158"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov157.jpg" alt="Proof Nov157"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov156.jpg" alt="Proof Nov156"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov155.jpg" alt="Proof Nov155"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov154.jpg" alt="Proof Nov154"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov153.jpg" alt="Proof Nov153"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov152.jpg" alt="Proof Nov152"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov151.jpg" alt="Proof Nov151"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov150.jpg" alt="Proof Nov150"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov149.jpg" alt="Proof Nov149"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov148.jpg" alt="Proof Nov148"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov147.jpg" alt="Proof Nov147"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov146.jpg" alt="Proof Nov146"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov145.jpg" alt="Proof Nov145"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov144.jpg" alt="Proof Nov144"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov143.jpg" alt="Proof Nov143"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov142.jpg" alt="Proof Nov142"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov141.jpg" alt="Proof Nov141"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov140.jpg" alt="Proof Nov140"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov139.jpg" alt="Proof Nov139"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov138.jpg" alt="Proof Nov138"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov137.jpg" alt="Proof Nov137"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov136.jpg" alt="Proof Nov136"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov135.jpg" alt="Proof Nov135"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov134.jpg" alt="Proof Nov134"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov133.jpg" alt="Proof Nov133"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov132.jpg" alt="Proof Nov132"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov131.jpg" alt="Proof Nov131"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov130.jpg" alt="Proof Nov130"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov129.jpg" alt="Proof Nov129"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov128.jpg" alt="Proof Nov128"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov127.jpg" alt="Proof Nov127"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov126.jpg" alt="Proof Nov126"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov125.jpg" alt="Proof Nov125"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov124.jpg" alt="Proof Nov124"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov123.jpg" alt="Proof Nov123"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov122.jpg" alt="Proof Nov122"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov121.jpg" alt="Proof Nov121"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov120.jpg" alt="Proof Nov120"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov119.jpg" alt="Proof Nov119"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov118.jpg" alt="Proof Nov118"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov117.jpg" alt="Proof Nov117"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov116.jpg" alt="Proof Nov116"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov115.jpg" alt="Proof Nov115"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov114.jpg" alt="Proof Nov114"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov113.jpg" alt="Proof Nov113"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov112.jpg" alt="Proof Nov112"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov111.jpg" alt="Proof Nov111"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov110.jpg" alt="Proof Nov110"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov109.jpg" alt="Proof Nov109"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov108.jpg" alt="Proof Nov108"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov107.jpg" alt="Proof Nov107"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov106.jpg" alt="Proof Nov106"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov105.jpg" alt="Proof Nov105"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov104.jpg" alt="Proof Nov104"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov103.jpg" alt="Proof Nov103"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov102.jpg" alt="Proof Nov102"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov101.jpg" alt="Proof Nov101"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov100.jpg" alt="Proof Nov100"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov099.jpg" alt="Proof Nov099"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov098.jpg" alt="Proof Nov098"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov097.jpg" alt="Proof Nov097"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov096.jpg" alt="Proof Nov096"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov095.jpg" alt="Proof Nov095"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov094.jpg" alt="Proof Nov094"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov093.jpg" alt="Proof Nov093"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov092.jpg" alt="Proof Nov092"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov091.jpg" alt="Proof Nov091"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov090.jpg" alt="Proof Nov090"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov089.jpg" alt="Proof Nov089"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov088.jpg" alt="Proof Nov088"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov087.jpg" alt="Proof Nov087"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov086.jpg" alt="Proof Nov086"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov085.jpg" alt="Proof Nov085"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov084.jpg" alt="Proof Nov084"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov083.jpg" alt="Proof Nov083"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov082.jpg" alt="Proof Nov082"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov081.jpg" alt="Proof Nov081"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov080.jpg" alt="Proof Nov080"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov079.jpg" alt="Proof Nov079"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov078.jpg" alt="Proof Nov078"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov077.jpg" alt="Proof Nov077"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov076.jpg" alt="Proof Nov076"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov075.jpg" alt="Proof Nov075"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov074.jpg" alt="Proof Nov074"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov073.jpg" alt="Proof Nov073"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov072.jpg" alt="Proof Nov072"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov071.jpg" alt="Proof Nov071"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov070.jpg" alt="Proof Nov070"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov069.jpg" alt="Proof Nov069"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov068.jpg" alt="Proof Nov068"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov067.jpg" alt="Proof Nov067"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov066.jpg" alt="Proof Nov066"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov065.jpg" alt="Proof Nov065"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov064.jpg" alt="Proof Nov064"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov063.jpg" alt="Proof Nov063"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov062.jpg" alt="Proof Nov062"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov061.jpg" alt="Proof Nov061"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov060.jpg" alt="Proof Nov060"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov059.jpg" alt="Proof Nov059"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov058.jpg" alt="Proof Nov058"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov057.jpg" alt="Proof Nov057"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov056.jpg" alt="Proof Nov056"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov055.jpg" alt="Proof Nov055"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov054.jpg" alt="Proof Nov054"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov053.jpg" alt="Proof Nov053"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov052.jpg" alt="Proof Nov052"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov051.jpg" alt="Proof Nov051"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov050.jpg" alt="Proof Nov050"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov049.jpg" alt="Proof Nov049"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov048.jpg" alt="Proof Nov048"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov047.jpg" alt="Proof Nov047"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov046.jpg" alt="Proof Nov046"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov045.jpg" alt="Proof Nov045"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov044.jpg" alt="Proof Nov044"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov043.jpg" alt="Proof Nov043"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov042.jpg" alt="Proof Nov042"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov041.jpg" alt="Proof Nov041"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov040.jpg" alt="Proof Nov040"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov039.jpg" alt="Proof Nov039"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov038.jpg" alt="Proof Nov038"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov037.jpg" alt="Proof Nov037"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov036.jpg" alt="Proof Nov036"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov035.jpg" alt="Proof Nov035"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov034.jpg" alt="Proof Nov034"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov033.jpg" alt="Proof Nov033"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov032.jpg" alt="Proof Nov032"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov031.jpg" alt="Proof Nov031"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov030.jpg" alt="Proof Nov030"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov029.jpg" alt="Proof Nov029"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov028.jpg" alt="Proof Nov028"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov027.jpg" alt="Proof Nov027"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov026.jpg" alt="Proof Nov026"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov025.jpg" alt="Proof Nov025"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov024.jpg" alt="Proof Nov024"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov023.jpg" alt="Proof Nov023"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov022.jpg" alt="Proof Nov022"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov021.jpg" alt="Proof Nov021"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov020.jpg" alt="Proof Nov020"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov019.jpg" alt="Proof Nov019"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov018.jpg" alt="Proof Nov018"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov017.jpg" alt="Proof Nov017"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov016.jpg" alt="Proof Nov016"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov015.jpg" alt="Proof Nov015"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov014.jpg" alt="Proof Nov014"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov013.jpg" alt="Proof Nov013"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov012.jpg" alt="Proof Nov012"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov011.jpg" alt="Proof Nov011"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov010.jpg" alt="Proof Nov010"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov009.jpg" alt="Proof Nov009"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov008.jpg" alt="Proof Nov008"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov007.jpg" alt="Proof Nov007"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov006.jpg" alt="Proof Nov006"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov005.jpg" alt="Proof Nov005"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov004.jpg" alt="Proof Nov004"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov003.jpg" alt="Proof Nov003"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov002.jpg" alt="Proof Nov002"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/Nov001.jpg" alt="Proof Nov001"></div>
-        
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/548.jpg" alt="Proof Oct548"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/547.jpg" alt="Proof Oct547"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/546.jpg" alt="Proof Oct546"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/545.jpg" alt="Proof Oct545"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/544.jpg" alt="Proof Oct544"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/543.jpg" alt="Proof Oct543"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/542.jpg" alt="Proof Oct542"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/541.jpg" alt="Proof Oct541"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/540.jpg" alt="Proof Oct540"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/539.jpg" alt="Proof Oct539"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/538.jpg" alt="Proof Oct538"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/537.jpg" alt="Proof Oct537"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/536.jpg" alt="Proof Oct536"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/535.jpg" alt="Proof Oct535"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/534.jpg" alt="Proof Oct534"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/533.jpg" alt="Proof Oct533"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/532.jpg" alt="Proof Oct532"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/531.jpg" alt="Proof Oct531"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/530.jpg" alt="Proof Oct530"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/529.jpg" alt="Proof Oct529"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/528.jpg" alt="Proof Oct528"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/527.jpg" alt="Proof Oct527"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/526.jpg" alt="Proof Oct526"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/525.jpg" alt="Proof Oct525"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/524.jpg" alt="Proof Oct524"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/523.jpg" alt="Proof Oct523"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/522.jpg" alt="Proof Oct522"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/521.jpg" alt="Proof Oct521"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/520.jpg" alt="Proof Oct520"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/519.jpg" alt="Proof Oct519"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/518.jpg" alt="Proof Oct518"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/517.jpg" alt="Proof Oct517"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/516.jpg" alt="Proof Oct516"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/515.jpg" alt="Proof Oct515"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/514.jpg" alt="Proof Oct514"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/513.jpg" alt="Proof Oct513"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/512.jpg" alt="Proof Oct512"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/511.jpg" alt="Proof Oct511"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/510.jpg" alt="Proof Oct510"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/509.jpg" alt="Proof Oct509"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/508.jpg" alt="Proof Oct508"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/507.jpg" alt="Proof Oct507"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/506.jpg" alt="Proof Oct506"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/505.jpg" alt="Proof Oct505"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/504.jpg" alt="Proof Oct504"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/503.jpg" alt="Proof Oct503"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/502.jpg" alt="Proof Oct502"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/501.jpg" alt="Proof Oct501"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/500.jpg" alt="Proof Oct500"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/499.jpg" alt="Proof Oct499"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/498.jpg" alt="Proof Oct498"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/497.jpg" alt="Proof Oct497"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/496.jpg" alt="Proof Oct496"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/495.jpg" alt="Proof Oct495"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/494.jpg" alt="Proof Oct494"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/493.jpg" alt="Proof Oct493"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/492.jpg" alt="Proof Oct492"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/491.jpg" alt="Proof Oct491"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/490.jpg" alt="Proof Oct490"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/489.jpg" alt="Proof Oct489"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/488.jpg" alt="Proof Oct488"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/487.jpg" alt="Proof Oct487"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/486.jpg" alt="Proof Oct486"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/485.jpg" alt="Proof Oct485"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/484.jpg" alt="Proof Oct484"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/483.jpg" alt="Proof Oct483"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/482.jpg" alt="Proof Oct482"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/481.jpg" alt="Proof Oct481"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/480.jpg" alt="Proof Oct480"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/479.jpg" alt="Proof Oct479"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/478.jpg" alt="Proof Oct478"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/477.jpg" alt="Proof Oct477"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/476.jpg" alt="Proof Oct476"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/475.jpg" alt="Proof Oct475"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/474.jpg" alt="Proof Oct474"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/473.jpg" alt="Proof Oct473"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/472.jpg" alt="Proof Oct472"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/471.jpg" alt="Proof Oct471"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/470.jpg" alt="Proof Oct470"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/469.jpg" alt="Proof Oct469"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/468.jpg" alt="Proof Oct468"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/467.jpg" alt="Proof Oct467"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/466.jpg" alt="Proof Oct466"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/465.jpg" alt="Proof Oct465"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/464.jpg" alt="Proof Oct464"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/463.jpg" alt="Proof Oct463"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/462.jpg" alt="Proof Oct462"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/461.jpg" alt="Proof Oct461"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/460.jpg" alt="Proof Oct460"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/459.jpg" alt="Proof Oct459"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/458.jpg" alt="Proof Oct458"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/457.jpg" alt="Proof Oct457"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/456.jpg" alt="Proof Oct456"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/455.jpg" alt="Proof Oct455"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/454.jpg" alt="Proof Oct454"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/453.jpg" alt="Proof Oct453"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/452.jpg" alt="Proof Oct452"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/451.jpg" alt="Proof Oct451"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/450.jpg" alt="Proof Oct450"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/449.jpg" alt="Proof Oct449"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/448.jpg" alt="Proof Oct448"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/447.jpg" alt="Proof Oct447"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/446.jpg" alt="Proof Oct446"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/445.jpg" alt="Proof Oct445"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/444.jpg" alt="Proof Oct444"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/443.jpg" alt="Proof Oct443"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/442.jpg" alt="Proof Oct442"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/441.jpg" alt="Proof Oct441"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/440.jpg" alt="Proof Oct440"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/439.jpg" alt="Proof Oct439"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/438.jpg" alt="Proof Oct438"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/437.jpg" alt="Proof Oct437"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/436.jpg" alt="Proof Oct436"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/435.jpg" alt="Proof Oct435"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/434.jpg" alt="Proof Oct434"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/433.jpg" alt="Proof Oct433"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/432.jpg" alt="Proof Oct432"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/431.jpg" alt="Proof Oct431"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/430.jpg" alt="Proof Oct430"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/429.jpg" alt="Proof Oct429"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/428.jpg" alt="Proof Oct428"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/427.jpg" alt="Proof Oct427"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/426.jpg" alt="Proof Oct426"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/425.jpg" alt="Proof Oct425"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/424.jpg" alt="Proof Oct424"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/423.jpg" alt="Proof Oct423"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/422.jpg" alt="Proof Oct422"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/421.jpg" alt="Proof Oct421"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/420.jpg" alt="Proof Oct420"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/419.jpg" alt="Proof Oct419"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/418.jpg" alt="Proof Oct418"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/417.jpg" alt="Proof Oct417"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/416.jpg" alt="Proof Oct416"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/415.jpg" alt="Proof Oct415"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/414.jpg" alt="Proof Oct414"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/413.jpg" alt="Proof Oct413"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/412.jpg" alt="Proof Oct412"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/411.jpg" alt="Proof Oct411"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/410.jpg" alt="Proof Oct410"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/409.jpg" alt="Proof Oct409"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/408.jpg" alt="Proof Oct408"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/407.jpg" alt="Proof Oct407"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/406.jpg" alt="Proof Oct406"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/405.jpg" alt="Proof Oct405"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/404.jpg" alt="Proof Oct404"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/403.jpg" alt="Proof Oct403"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/402.jpg" alt="Proof Oct402"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/401.jpg" alt="Proof Oct401"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/400.jpg" alt="Proof Oct400"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/399.jpg" alt="Proof Oct399"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/398.jpg" alt="Proof Oct398"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/397.jpg" alt="Proof Oct397"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/396.jpg" alt="Proof Oct396"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/395.jpg" alt="Proof Oct395"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/394.jpg" alt="Proof Oct394"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/393.jpg" alt="Proof Oct393"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/392.jpg" alt="Proof Oct392"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/391.jpg" alt="Proof Oct391"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/390.jpg" alt="Proof Oct390"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/389.jpg" alt="Proof Oct389"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/388.jpg" alt="Proof Oct388"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/387.jpg" alt="Proof Oct387"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/386.jpg" alt="Proof Oct386"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/385.jpg" alt="Proof Oct385"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/384.jpg" alt="Proof Oct384"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/383.jpg" alt="Proof Oct383"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/382.jpg" alt="Proof Oct382"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/381.jpg" alt="Proof Oct381"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/380.jpg" alt="Proof Oct380"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/379.jpg" alt="Proof Oct379"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/378.jpg" alt="Proof Oct378"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/377.jpg" alt="Proof Oct377"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/376.jpg" alt="Proof Oct376"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/375.jpg" alt="Proof Oct375"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/374.jpg" alt="Proof Oct374"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/373.jpg" alt="Proof Oct373"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/372.jpg" alt="Proof Oct372"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/371.jpg" alt="Proof Oct371"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/370.1.jpg" alt="Proof Oct370.1"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/370.jpg" alt="Proof Oct370"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/369.jpg" alt="Proof Oct369"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/368.jpg" alt="Proof Oct368"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/367.jpg" alt="Proof Oct367"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/366.jpg" alt="Proof Oct366"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/365.jpg" alt="Proof Oct365"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/364.jpg" alt="Proof Oct364"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/363.jpg" alt="Proof Oct363"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/362.jpg" alt="Proof Oct362"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/361.jpg" alt="Proof Oct361"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/360.jpg" alt="Proof Oct360"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/359.jpg" alt="Proof Oct359"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/358.jpg" alt="Proof Oct358"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/357.jpg" alt="Proof Oct357"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/356.jpg" alt="Proof Oct356"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/355.jpg" alt="Proof Oct355"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/354.jpg" alt="Proof Oct354"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/353.jpg" alt="Proof Oct353"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/352.jpg" alt="Proof Oct352"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/351.jpg" alt="Proof Oct351"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/350.jpg" alt="Proof Oct350"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/349.jpg" alt="Proof Oct349"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/348.jpg" alt="Proof Oct348"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/347.jpg" alt="Proof Oct347"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/346.jpg" alt="Proof Oct346"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/345.jpg" alt="Proof Oct345"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/344.jpg" alt="Proof Oct344"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/343.jpg" alt="Proof Oct343"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/342.jpg" alt="Proof Oct342"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/341.jpg" alt="Proof Oct341"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/340.jpg" alt="Proof Oct340"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/339.jpg" alt="Proof Oct339"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/338.jpg" alt="Proof Oct338"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/337.jpg" alt="Proof Oct337"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/336.jpg" alt="Proof Oct336"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/335.jpg" alt="Proof Oct335"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/334.jpg" alt="Proof Oct334"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/333.jpg" alt="Proof Oct333"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/332.jpg" alt="Proof Oct332"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/331.jpg" alt="Proof Oct331"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/330.jpg" alt="Proof Oct330"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/329.jpg" alt="Proof Oct329"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/328.jpg" alt="Proof Oct328"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/327.jpg" alt="Proof Oct327"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/326.jpg" alt="Proof Oct326"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/325.jpg" alt="Proof Oct325"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/324.jpg" alt="Proof Oct324"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/323.jpg" alt="Proof Oct323"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/322.jpg" alt="Proof Oct322"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/321.jpg" alt="Proof Oct321"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/320.jpg" alt="Proof Oct320"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/319.jpg" alt="Proof Oct319"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/318.jpg" alt="Proof Oct318"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/317.jpg" alt="Proof Oct317"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/316.jpg" alt="Proof Oct316"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/315.jpg" alt="Proof Oct315"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/314.jpg" alt="Proof Oct314"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/313.jpg" alt="Proof Oct313"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/312.jpg" alt="Proof Oct312"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/311.jpg" alt="Proof Oct311"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/310.jpg" alt="Proof Oct310"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/309.jpg" alt="Proof Oct309"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/308.jpg" alt="Proof Oct308"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/307.jpg" alt="Proof Oct307"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/306.jpg" alt="Proof Oct306"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/305.jpg" alt="Proof Oct305"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/304.jpg" alt="Proof Oct304"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/303.jpg" alt="Proof Oct303"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/302.jpg" alt="Proof Oct302"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/301.jpg" alt="Proof Oct301"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/300.jpg" alt="Proof Oct300"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/299.jpg" alt="Proof Oct299"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/298.jpg" alt="Proof Oct298"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/297.jpg" alt="Proof Oct297"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/296.jpg" alt="Proof Oct296"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/295.jpg" alt="Proof Oct295"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/294.jpg" alt="Proof Oct294"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/293.jpg" alt="Proof Oct293"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/292.jpg" alt="Proof Oct292"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/291.jpg" alt="Proof Oct291"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/290.jpg" alt="Proof Oct290"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/289.jpg" alt="Proof Oct289"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/288.jpg" alt="Proof Oct288"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/287.jpg" alt="Proof Oct287"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/286.jpg" alt="Proof Oct286"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/285.jpg" alt="Proof Oct285"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/284.jpg" alt="Proof Oct284"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/283.jpg" alt="Proof Oct283"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/282.jpg" alt="Proof Oct282"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/281.jpg" alt="Proof Oct281"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/280.jpg" alt="Proof Oct280"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/279.jpg" alt="Proof Oct279"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/278.jpg" alt="Proof Oct278"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/277.jpg" alt="Proof Oct277"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/276.jpg" alt="Proof Oct276"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/275.jpg" alt="Proof Oct275"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/274.jpg" alt="Proof Oct274"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/273.jpg" alt="Proof Oct273"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/272.jpg" alt="Proof Oct272"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/271.jpg" alt="Proof Oct271"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/270.jpg" alt="Proof Oct270"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/269.jpg" alt="Proof Oct269"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/268.jpg" alt="Proof Oct268"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/267.jpg" alt="Proof Oct267"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/266.jpg" alt="Proof Oct266"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/265.jpg" alt="Proof Oct265"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/264.jpg" alt="Proof Oct264"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/263.jpg" alt="Proof Oct263"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/262.jpg" alt="Proof Oct262"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/261.jpg" alt="Proof Oct261"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/260.jpg" alt="Proof Oct260"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/259.jpg" alt="Proof Oct259"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/258.jpg" alt="Proof Oct258"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/257.jpg" alt="Proof Oct257"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/256.jpg" alt="Proof Oct256"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/255.jpg" alt="Proof Oct255"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/254.jpg" alt="Proof Oct254"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/253.jpg" alt="Proof Oct253"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/252.jpg" alt="Proof Oct252"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/251.jpg" alt="Proof Oct251"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/250.jpg" alt="Proof Oct250"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/249.jpg" alt="Proof Oct249"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/248.jpg" alt="Proof Oct248"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/247.jpg" alt="Proof Oct247"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/246.jpg" alt="Proof Oct246"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/245.jpg" alt="Proof Oct245"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/244.jpg" alt="Proof Oct244"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/243.jpg" alt="Proof Oct243"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/242.jpg" alt="Proof Oct242"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/241.jpg" alt="Proof Oct241"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/240.jpg" alt="Proof Oct240"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/239.jpg" alt="Proof Oct239"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/238.jpg" alt="Proof Oct238"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/237.jpg" alt="Proof Oct237"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/236.jpg" alt="Proof Oct236"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/235.jpg" alt="Proof Oct235"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/234.jpg" alt="Proof Oct234"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/233.jpg" alt="Proof Oct233"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/232.jpg" alt="Proof Oct232"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/231.jpg" alt="Proof Oct231"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/230.jpg" alt="Proof Oct230"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/229.jpg" alt="Proof Oct229"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/228.jpg" alt="Proof Oct228"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/227.jpg" alt="Proof Oct227"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/226.jpg" alt="Proof Oct226"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/225.jpg" alt="Proof Oct225"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/224.jpg" alt="Proof Oct224"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/223.jpg" alt="Proof Oct223"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/222.jpg" alt="Proof Oct222"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/221.jpg" alt="Proof Oct221"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/220.jpg" alt="Proof Oct220"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/219.jpg" alt="Proof Oct219"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/218.jpg" alt="Proof Oct218"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/217.jpg" alt="Proof Oct217"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/216.jpg" alt="Proof Oct216"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/215.jpg" alt="Proof Oct215"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/214.jpg" alt="Proof Oct214"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/213.jpg" alt="Proof Oct213"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/212.jpg" alt="Proof Oct212"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/211.jpg" alt="Proof Oct211"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/210.jpg" alt="Proof Oct210"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/209.jpg" alt="Proof Oct209"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/208.jpg" alt="Proof Oct208"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/207.jpg" alt="Proof Oct207"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/206.jpg" alt="Proof Oct206"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/205.jpg" alt="Proof Oct205"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/204.jpg" alt="Proof Oct204"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/203.jpg" alt="Proof Oct203"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/202.jpg" alt="Proof Oct202"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/201.jpg" alt="Proof Oct201"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/200.jpg" alt="Proof Oct200"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/199.jpg" alt="Proof Oct199"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/198.jpg" alt="Proof Oct198"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/197.jpg" alt="Proof Oct197"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/196.jpg" alt="Proof Oct196"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/195.jpg" alt="Proof Oct195"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/194.jpg" alt="Proof Oct194"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/193.jpg" alt="Proof Oct193"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/192.jpg" alt="Proof Oct192"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/191.jpg" alt="Proof Oct191"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/190.jpg" alt="Proof Oct190"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/189.jpg" alt="Proof Oct189"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/188.jpg" alt="Proof Oct188"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/187.jpg" alt="Proof Oct187"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/186.jpg" alt="Proof Oct186"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/185.jpg" alt="Proof Oct185"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/184.jpg" alt="Proof Oct184"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/183.jpg" alt="Proof Oct183"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/182.jpg" alt="Proof Oct182"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/181.jpg" alt="Proof Oct181"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/180.jpg" alt="Proof Oct180"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/179.jpg" alt="Proof Oct179"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/178.jpg" alt="Proof Oct178"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/177.jpg" alt="Proof Oct177"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/176.jpg" alt="Proof Oct176"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/175.jpg" alt="Proof Oct175"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/174.jpg" alt="Proof Oct174"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/173.jpg" alt="Proof Oct173"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/172.jpg" alt="Proof Oct172"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/171.jpg" alt="Proof Oct171"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/170.jpg" alt="Proof Oct170"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/169.jpg" alt="Proof Oct169"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/168.jpg" alt="Proof Oct168"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/167.jpg" alt="Proof Oct167"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/166.jpg" alt="Proof Oct166"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/165.jpg" alt="Proof Oct165"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/164.jpg" alt="Proof Oct164"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/163.jpg" alt="Proof Oct163"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/162.jpg" alt="Proof Oct162"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/161.jpg" alt="Proof Oct161"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/160.jpg" alt="Proof Oct160"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/159.jpg" alt="Proof Oct159"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/158.jpg" alt="Proof Oct158"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/157.jpg" alt="Proof Oct157"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/156.jpg" alt="Proof Oct156"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/155.jpg" alt="Proof Oct155"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/154.jpg" alt="Proof Oct154"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/153.jpg" alt="Proof Oct153"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/152.jpg" alt="Proof Oct152"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/151.jpg" alt="Proof Oct151"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/150.jpg" alt="Proof Oct150"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/149.jpg" alt="Proof Oct149"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/148.jpg" alt="Proof Oct148"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/147.jpg" alt="Proof Oct147"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/146.jpg" alt="Proof Oct146"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/145.jpg" alt="Proof Oct145"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/144.jpg" alt="Proof Oct144"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/143.jpg" alt="Proof Oct143"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/142.jpg" alt="Proof Oct142"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/141.jpg" alt="Proof Oct141"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/140.jpg" alt="Proof Oct140"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/139.jpg" alt="Proof Oct139"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/138.jpg" alt="Proof Oct138"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/137.jpg" alt="Proof Oct137"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/136.jpg" alt="Proof Oct136"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/135.jpg" alt="Proof Oct135"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/134.jpg" alt="Proof Oct134"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/133.jpg" alt="Proof Oct133"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/132.jpg" alt="Proof Oct132"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/131.jpg" alt="Proof Oct131"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/130.jpg" alt="Proof Oct130"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/129.jpg" alt="Proof Oct129"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/128.jpg" alt="Proof Oct128"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/127.jpg" alt="Proof Oct127"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/126.jpg" alt="Proof Oct126"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/125.jpg" alt="Proof Oct125"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/124.jpg" alt="Proof Oct124"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/123.jpg" alt="Proof Oct123"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/122.jpg" alt="Proof Oct122"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/121.jpg" alt="Proof Oct121"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/120.jpg" alt="Proof Oct120"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/119.jpg" alt="Proof Oct119"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/118.jpg" alt="Proof Oct118"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/117.jpg" alt="Proof Oct117"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/116.jpg" alt="Proof Oct116"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/115.jpg" alt="Proof Oct115"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/114.jpg" alt="Proof Oct114"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/113.jpg" alt="Proof Oct113"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/112.jpg" alt="Proof Oct112"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/111.jpg" alt="Proof Oct111"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/110.jpg" alt="Proof Oct110"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/109.jpg" alt="Proof Oct109"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/108.jpg" alt="Proof Oct108"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/107.jpg" alt="Proof Oct107"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/106.jpg" alt="Proof Oct106"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/105.jpg" alt="Proof Oct105"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/104.jpg" alt="Proof Oct104"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/103.jpg" alt="Proof Oct103"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/102.jpg" alt="Proof Oct102"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/101.jpg" alt="Proof Oct101"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/100.jpg" alt="Proof Oct100"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/99.jpg" alt="Proof Oct99"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/98.jpg" alt="Proof Oct98"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/97.jpg" alt="Proof Oct97"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/96.jpg" alt="Proof Oct96"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/95.jpg" alt="Proof Oct95"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/94.jpg" alt="Proof Oct94"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/93.jpg" alt="Proof Oct93"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/92.jpg" alt="Proof Oct92"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/91.jpg" alt="Proof Oct91"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/90.jpg" alt="Proof Oct90"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/89.jpg" alt="Proof Oct89"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/88.jpg" alt="Proof Oct88"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/87.jpg" alt="Proof Oct87"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/86.jpg" alt="Proof Oct86"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/85.jpg" alt="Proof Oct85"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/84.jpg" alt="Proof Oct84"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/83.jpg" alt="Proof Oct83"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/82.jpg" alt="Proof Oct82"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/81.jpg" alt="Proof Oct81"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/80.jpg" alt="Proof Oct80"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/79.jpg" alt="Proof Oct79"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/78.jpg" alt="Proof Oct78"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/77.jpg" alt="Proof Oct77"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/76.jpg" alt="Proof Oct76"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/75.jpg" alt="Proof Oct75"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/74.jpg" alt="Proof Oct74"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/73.jpg" alt="Proof Oct73"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/72.jpg" alt="Proof Oct72"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/71.jpg" alt="Proof Oct71"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/70.jpg" alt="Proof Oct70"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/69.jpg" alt="Proof Oct69"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/68.jpg" alt="Proof Oct68"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/67.jpg" alt="Proof Oct67"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/66.jpg" alt="Proof Oct66"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/65.jpg" alt="Proof Oct65"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/64.jpg" alt="Proof Oct64"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/63.jpg" alt="Proof Oct63"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/62.jpg" alt="Proof Oct62"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/61.jpg" alt="Proof Oct61"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/60.jpg" alt="Proof Oct60"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/59.jpg" alt="Proof Oct59"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/58.jpg" alt="Proof Oct58"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/57.jpg" alt="Proof Oct57"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/56.jpg" alt="Proof Oct56"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/55.jpg" alt="Proof Oct55"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/54.jpg" alt="Proof Oct54"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/53.jpg" alt="Proof Oct53"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/52.jpg" alt="Proof Oct52"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/51.jpg" alt="Proof Oct51"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/50.jpg" alt="Proof Oct50"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/49.jpg" alt="Proof Oct49"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/48.jpg" alt="Proof Oct48"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/47.jpg" alt="Proof Oct47"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/46.jpg" alt="Proof Oct46"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/45.jpg" alt="Proof Oct45"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/44.jpg" alt="Proof Oct44"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/43.jpg" alt="Proof Oct43"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/42.jpg" alt="Proof Oct42"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/41.jpg" alt="Proof Oct41"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/40.jpg" alt="Proof Oct40"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/39.jpg" alt="Proof Oct39"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/38.jpg" alt="Proof Oct38"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/37.jpg" alt="Proof Oct37"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/36.jpg" alt="Proof Oct36"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/35.jpg" alt="Proof Oct35"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/34.jpg" alt="Proof Oct34"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/33.jpg" alt="Proof Oct33"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/32.jpg" alt="Proof Oct32"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/31.jpg" alt="Proof Oct31"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/30.jpg" alt="Proof Oct30"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/29.jpg" alt="Proof Oct29"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/28.jpg" alt="Proof Oct28"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/27.jpg" alt="Proof Oct27"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/26.jpg" alt="Proof Oct26"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/25.jpg" alt="Proof Oct25"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/24.jpg" alt="Proof Oct24"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/23.jpg" alt="Proof Oct23"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/22.jpg" alt="Proof Oct22"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/21.jpg" alt="Proof Oct21"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/20.jpg" alt="Proof Oct20"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/19.jpg" alt="Proof Oct19"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/18.jpg" alt="Proof Oct18"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/17.jpg" alt="Proof Oct17"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/16.jpg" alt="Proof Oct16"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/15.jpg" alt="Proof Oct15"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/14.jpg" alt="Proof Oct14"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/13.jpg" alt="Proof Oct13"></div>
-<div class="gallery-item" style="display: none;"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/12.jpg" alt="Proof Oct12"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/11.jpg" alt="Proof Oct11"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/10.jpg" alt="Proof Oct10"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/9.jpg" alt="Proof Oct9"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/8.jpg" alt="Proof Oct8"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/7.jpg" alt="Proof Oct7"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/6.jpg" alt="Proof Oct6"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/5.jpg" alt="Proof Oct5"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/4.jpg" alt="Proof Oct4"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/3.jpg" alt="Proof Oct3"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/2.jpg" alt="Proof Oct2"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/1.jpg" alt="Proof Oct1"></div>
+  <div class="gallery" id="gallery"></div>
 
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep30.1.jpg" alt="Proof 12"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep27.1.jpg" alt="Proof 11"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep21.1.jpg" alt="Proof 10"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep15.2.jpg" alt="Proof 9"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep15.1.jpg" alt="Proof 8"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep12.2.jpg" alt="Proof 7"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep12.1.jpg" alt="Proof 6"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep11.3.jpg" alt="Proof 5"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep11.2.jpg" alt="Proof 4"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep11.1.jpg" alt="Proof 3"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep8.1.jpg" alt="Proof 2"></div>
-<div class="gallery-item"><img src="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/proof/sep5.1.jpg" alt="Proof 1"></div>
-    </div>
-</section>
-</div>
 <div class="lightbox" id="lightbox">
-    <span class="close" onclick="closeLightbox()">&times;</span>
-    <span class="prev" onclick="changePhoto(-1)">&#10094;</span>
-    <img id="lightbox-img" src="" alt="Photo">
-    <span class="next" onclick="changePhoto(1)">&#10095;</span>
+    <a href="#" class="close" id="close">&times;</a>
+    <a href="#" class="prev" id="prev">&#10094;</a>
+    <img src="" alt="Lightbox Image" id="lightboxImage">
+    <a href="#" class="next" id="next">&#10095;</a>
 </div>
-
+  </section>
+  </div>
+<footer>
+  <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
+</footer>
+  
 <script>
 var navLinks = document.getElementById("navLinks");
 var menuBtn = document.getElementById("menuBtn");
@@ -1421,63 +187,123 @@ window.addEventListener('scroll', function() {
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
 });
+  
+  
+  
+// CSV URL for Images
+const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJhFK-b1DN2kNv621RRmwF2oP3gftWOOXUX2n_V4mtjNfNH0YoW0g8uoP/pub?gid=812196717&single=true&output=csv';
 
-// Lightbox Functionality
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const images = document.querySelectorAll('.gallery-item img');
+// Elements
+const galleryContainer = document.querySelector('.gallery');
+const lightbox = document.querySelector('.lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const closeBtn = lightbox.querySelector('.close');
+const prevBtn = lightbox.querySelector('.prev');
+const nextBtn = lightbox.querySelector('.next');
+
+// Variables
+let images = [];
 let currentIndex = 0;
 
-images.forEach((image, index) => {
-    image.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = image.src;
-        currentIndex = index;
-    });
+// Fetch Images from CSV
+fetch(csvUrl)
+    .then(response => response.text())
+    .then(data => {
+        // Parse CSV Data
+        const rows = data.split('\n').slice(1); // Skip header row
+        images = rows.map(row => {
+            const [url, alt] = row.split(',');
+            return { url: url.trim(), alt: alt.trim() };
+        });
+
+        // Populate Gallery
+        images.forEach((image, index) => {
+            const galleryItem = document.createElement('div');
+            galleryItem.classList.add('gallery-item');
+            galleryItem.innerHTML = `<img src="${image.url}" alt="${image.alt}" data-index="${index}">`;
+            galleryContainer.appendChild(galleryItem);
+        });
+
+        // Add Click Event to Gallery Items
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', (e) => {
+                currentIndex = parseInt(e.target.dataset.index);
+                openLightbox(currentIndex);
+            });
+        });
+    })
+    .catch(error => console.error('Error fetching CSV:', error));
+
+// Open Lightbox
+function openLightbox(index) {
+    lightboxImg.src = images[index].url;
+    lightboxImg.alt = images[index].alt;
+    lightbox.style.display = 'flex';
+}
+
+// Close Lightbox
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
 });
 
-function closeLightbox() {
-    lightbox.style.display = 'none';
-}
-
-function changePhoto(direction) {
-    currentIndex += direction;
-    if (currentIndex < 0) {
-        currentIndex = images.length - 1;
-    } else if (currentIndex >= images.length) {
-        currentIndex = 0;
+// Navigate to Previous Image
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateLightboxImage();
     }
-    lightboxImg.src = images[currentIndex].src;
+});
+
+// Navigate to Next Image
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < images.length - 1) {
+        currentIndex++;
+        updateLightboxImage();
+    }
+});
+
+// Update Lightbox Image
+function updateLightboxImage() {
+    lightboxImg.src = images[currentIndex].url;
+    lightboxImg.alt = images[currentIndex].alt;
 }
 
-// Swipe functionality for lightbox
+// Swipe Functionality for Mobile
 let startX = 0;
+let endX = 0;
+
+// Detect Touch Start
 lightbox.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
 });
 
-lightbox.addEventListener('touchmove', (e) => {
-    if (!startX) return;
-    let moveX = e.touches[0].clientX;
-    let diffX = startX - moveX;
+// Detect Touch End
+lightbox.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
 
-    if (diffX > 50) { 
-        changePhoto(1);
-        startX = 0;
-    } else if (diffX < -50) { 
-        changePhoto(-1);
-        startX = 0;
+    const diffX = startX - endX;
+    if (Math.abs(diffX) > 50) { // Minimum threshold for swipe
+        if (diffX > 0 && currentIndex < images.length - 1) {
+            // Swipe Left - Next Image
+            currentIndex++;
+            updateLightboxImage();
+        } else if (diffX < 0 && currentIndex > 0) {
+            // Swipe Right - Previous Image
+            currentIndex--;
+            updateLightboxImage();
+        }
     }
 });
 
-lightbox.addEventListener('touchend', () => {
-    startX = 0;
+// Close Lightbox on Outside Click
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
 });
 </script>
 
-<footer>
-    <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
-</footer>
+
 
 </body>
 </html>
