@@ -107,7 +107,7 @@ nav img {
   font-size: 62px; }
   @media (max-width: 768px) {
     .text-box h1 {
-      font-size: 62px; } }
+      font-size: 32px; } }
   
 .text-box p {
   margin: 10px 0 40px;
@@ -115,7 +115,7 @@ nav img {
   color: white; }
   @media (max-width: 768px) {
     .text-box p {
-      font-size: 12px; } }
+      font-size: 10px; } }
   
 .hero-btn {
   display: inline-block;
