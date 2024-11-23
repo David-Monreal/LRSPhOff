@@ -511,10 +511,11 @@ tr:hover {
                   ✔️ Huwag kalimutan na ilagay ang "RB" sa dulo ng iyong taya upang malaman ng sistema na ito ay isang Return Bet<br>
         </div>
           <p>&nbsp</p>
-		    <div style="display: none;">
+		    <div>
           <h2 style="color: red;">RB List</h2>
-          <p>Narito ang tala ng mga taong nagkamit ng RB (Return Bet). Ang mga pangalan sa listahan ay kabilang sa mga nakatanggap ng gantimpala batay sa kanilang tamang pagpili ng mga numero sa aming system. Maraming salamat sa inyong patuloy na pagtangkilik, at nawa'y patuloy kayong magtagumpay sa mga susunod na draw!</p>
-          
+          <p>Narito ang tala ng mga taong nagkamit ng RB (Return Bet). Ang mga pangalan sa listahan ay kabilang sa mga nakatanggap ng RB batay sa lumabas na resulta sa lotto draw.<br> Maraming salamat sa inyong patuloy na pagtangkilik! Huwag sumuko dahil nakuha nyo na ang dalwang numero, malay mo ikaw naman ang magtagumpay sa susunod na draw! Kaya Taya lang!</p>
+          <p>&nbsp</p>
+          <h2 id="table-title">Loading...</h2>
           <div class="table-section">
             <div id="table-container">Loading...</div></div></div>
 
@@ -554,34 +555,45 @@ window.addEventListener('scroll', function() {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
 });
     
-    async function loadCSV() {
-            try {
-                const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJhFK-b1DN2kNv621RRmwF2oP3gftWOOXUX2n_V4mtjNfNH0YoW0g8uoP/pub?gid=871886179&single=true&output=csv');
-                const data = await response.text();
-                const rows = data.split("\n").map(row => row.split(","));
+async function loadCSV() { 
+    try {
+        const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJhFK-b1DN2kNv621RRmwF2oP3gftWOOXUX2n_V4mtjNfNH0YoW0g8uoP/pub?gid=871886179&single=true&output=csv');
+        const data = await response.text();
+        const rows = data.split("\n").map(row => row.split(","));
 
-                let tableHTML = "<table>";
-                rows.forEach((row, index) => {
-                    tableHTML += "<tr>";
-                    row.forEach(cell => {
-                        if (index === 0) {
-                            tableHTML += `<th>${cell.trim()}</th>`; // Header row
-                        } else {
-                            tableHTML += `<td>${cell.trim()}</td>`; // Data rows
-                        }
-                    });
-                    tableHTML += "</tr>";
-                });
-                tableHTML += "</table>";
-
-                document.getElementById('table-container').innerHTML = tableHTML;
-            } catch (error) {
-                document.getElementById('table-container').innerText = "Failed to load data.";
-                console.error("Error fetching the CSV file:", error);
-            }
+        // Get the date from cell G1 (adjust as necessary)
+        const dateCell = rows[0][6]?.trim(); // Assuming column G is the 7th column (index 6)
+        
+        // Set the title of the table with the extracted date
+        const titleElement = document.getElementById('table-title');
+        if (titleElement && dateCell) {
+            titleElement.innerText = `Return Bets for ${dateCell}`;
         }
 
-        loadCSV();
+        // Generate the table HTML
+        let tableHTML = "<table>";
+        rows.forEach((row, index) => {
+            tableHTML += "<tr>";
+            // Only include the first 4 columns
+            row.slice(0, 4).forEach(cell => {
+                if (index === 0) {
+                    tableHTML += `<th>${cell.trim()}</th>`; // Header row
+                } else {
+                    tableHTML += `<td>${cell.trim()}</td>`; // Data rows
+                }
+            });
+            tableHTML += "</tr>";
+        });
+        tableHTML += "</table>";
+
+        document.getElementById('table-container').innerHTML = tableHTML;
+    } catch (error) {
+        document.getElementById('table-container').innerText = "Failed to load data.";
+        console.error("Error fetching the CSV file:", error);
+    }
+}
+
+loadCSV();
   </script>
 </body>
 </html>
