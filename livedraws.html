@@ -379,18 +379,18 @@ function showVideoBasedOnTime() {
       // Adjusting to show videos based on time
       if (hours >= 3 && hours < 9 || (hours === 9 && minutes <= 59)) {
         // Show all videos between 3:01 AM and 9:59 AM
-        displayVideo(rows[1][2].trim(), "9PM DRAW", iframeSection);  // C2 - 9pm
-        displayVideo(rows[2][2].trim(), "5PM DRAW", iframeSection);  // C3 - 5pm
-        displayVideo(rows[3][2].trim(), "2PM DRAW", iframeSection);  // C4 - 2pm
+        displayVideo(rows[1][2].trim(), "9PM - PICK 3, 2D & 3D DRAW", iframeSection);  // C2 - 9pm
+        displayVideo(rows[2][2].trim(), "5PM - 2D & 3D DRAW", iframeSection);  // C3 - 5pm
+        displayVideo(rows[3][2].trim(), "2PM - 2D & 3D DRAW", iframeSection);  // C4 - 2pm
       } else if (hours >= 10 && hours < 15) {
         // Show only the 2pm draw
-        displayVideo(rows[3][2].trim(), "2PM DRAW", iframeSection);  // C4 - 2pm
+        displayVideo(rows[3][2].trim(), "2PM - 2D & 3D DRAW", iframeSection);  // C4 - 2pm
       } else if (hours >= 15 && hours < 19) {
         // Show only the 5pm draw
-        displayVideo(rows[2][2].trim(), "5PM DRAW", iframeSection);  // C3 - 5pm
+        displayVideo(rows[2][2].trim(), "5PM - 2D & 3D DRAW", iframeSection);  // C3 - 5pm
       } else if (hours >= 17 && hours < 3) {
         // Show only the 9pm draw
-        displayVideo(rows[1][2].trim(), "9PM DRAW", iframeSection);  // C2 - 9pm
+        displayVideo(rows[1][2].trim(), "9PM - PICK 3, 2D & 3D DRAW", iframeSection);  // C2 - 9pm
       }
     });
 }
