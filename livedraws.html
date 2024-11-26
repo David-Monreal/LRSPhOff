@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRS Philippines Official - Live Draws</title>
+    <meta property="og:title" content="LRS Philippines Official">
+    <meta property="og:description" content="Experience the thrill of winning with our exciting lottery games!">
+    <link rel="shortcut icon" type="x-icon" href="https://lrsphilippinesofficial.com/creatives/lrs.png">
+    <meta property="og:url" content="https://lrsphilippinesofficial.com/livedraws">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/header.css">
+</head>
+<style>
+.video-container {
+  margin: 30px auto;
+  padding: 10px;
+  max-width: 800px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); }
+
+.video-container h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: black;
+  padding: 10px;
+  text-align: center; }
+  @media (max-width: 768px) {
+    .video-container h3 {
+      font-size: 13px;}}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin-bottom: 10px;}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid blue;}
+
+.comment-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;}
+
+.comment-section h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;}
+  @media (max-width: 768px) {
+    .comment-section h4 {
+      font-size: 13px;}}
+
+.comment-section form input[type="text"] {
+  width: calc(100% - 70px);
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;}
+
+.comment-section form button {
+  padding: 8px 12px;
+  margin-left: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;}
+
+.comment-section form button:hover {
+  background-color: #0056b3;}
+
+.comment-item {
+  list-style-type: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  display: block; 
+  gap: 10px; }
+
+.comment-item .comment-author {
+  font-weight: bold;
+  color: #007bff;
+  flex-shrink: 0; }
+  @media (max-width: 768px) {
+    .comment-item .comment-author {
+      font-size: 12px;}}
+
+.comment-item .comment-text {
+  font-size: 14px;
+  color: #333;
+  text-align: justify;
+  padding-right: 15px;
+  margin-top: 2px; 
+  flex-grow: 1; }
+
+.comment-item .comment-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  align-items: center;}
+
+.comment-item .nested-comments {
+  margin-left: 20px;
+  margin-top: 10px;}
+
+.comment-list {
+  max-height: 300px;
+  overflow-y: auto; }
+
+.comment-item {
+  margin-bottom: 10px;}
+
+@media (max-width: 768px) {
+  header {
+  height: 13vh !important;
+  background: white !important; }}
+
+.hero-btn {
+  display: none !important;}
+
+#a2DataContainer {
+  text-align: center;
+  color: blue;
+  margin: 30px;}
+
+#a2DataContainer span {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1; }
+  @media (max-width: 768px) {
+    #a2DataContainer span {
+      line-height: 0.5;}}
+
+#a2DataContainer .live-draw {
+  font-size: 23px;
+  color: red; }
+
+</style>
+</head>
+
+<body>
+  <header>
+  <section class="header">
+    <nav>
+            <a href="https://lrsphilippinesofficial.com"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/lrs.png" alt="LRS Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="toggleMenu()"></i>
+                <ul>
+                  <li><a href="https://lrsphilippinesofficial.com">HOME</a></li>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/games">GAMES</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/games/6-45">6/45 Mega Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-49">6/49 Super Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-55">6/55 Grand Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-58">6/58 Ultra Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/2D">2D Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/3D">3D Lotto</a></div>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/promo">PROMO</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/promo/6-45">6/45 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-49">6/49 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-55">6/55 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-58">6/58 Freebet</a></div>
+                  <li><a href="https://lrsphilippinesofficial.com/results">RESULT</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/winners">WINNERS</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/returnbet">RETURN BET</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/proof">PROOF OF PAYOUT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
+        </nav>
+    
+    <div class="text-box" style="top: 60%;">
+      <h1>Live Draws</h1>
+      <p>Ang winning numbers o ang mga resulta ay mula sa live draw ng PCSO. Ito ang ginagamit na opisyal na batayan para sa mga nanalo sa LRS. Halina't panoorin ng Live ang lotto draw!</p>
+    </div>
+  </section>
+  </header>
+  
+  <div id="a2DataContainer"></div>
+  
+ <div id="iframeSection">
+    <!-- YouTube Video Embed and Comment Section will be inserted here -->
+  </div>
+  
+<footer>
+&copy; 2024 LRS Philippines Official. All rights reserved.
+</footer>
+<script>
+var navLinks = document.getElementById("navLinks");
+var menuBtn = document.getElementById("menuBtn");
+
+function toggleMenu() {
+    if (navLinks.style.right === "0px") {
+        navLinks.style.right = "-200px";  
+        menuBtn.style.display = "block";  
+    } else {
+        navLinks.style.right = "0";  
+        menuBtn.style.display = "none";  
+    }
+}
+
+let lastScrollTop = 0; 
+const logo = document.querySelector('nav img');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        logo.style.opacity = '0'; 
+    } else {
+        logo.style.opacity = '1'; 
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+});  
+  
+  
+const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJhFK-b1DN2kNv621RRmwF2oP3gftWOOXUX2n_V4mtjNfNH0YoW0g8uoP/pub?gid=592320360&single=true&output=csv"; 
+
+// Retrieve or generate a unique identifier for the user
+const userId = localStorage.getItem("lrsUserId");
+let userName;
+
+if (!userId) {
+  const nextNumber = parseInt(localStorage.getItem("nameCounter") || "1", 10);
+  userName = `LRS Bettor ${nextNumber}`;
+  localStorage.setItem("lrsUserId", userName);
+  localStorage.setItem("nameCounter", nextNumber + 1);
+} else {
+  userName = userId;
+}
+
+// Function to create a comment section
+function createCommentSection(videoId) {
+  const section = document.createElement("div");
+  section.className = "comment-section";
+
+  const title = document.createElement("h4");
+  title.textContent = "Comments";
+
+  const form = document.createElement("form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = form.querySelector("input");
+    const commentText = input.value.trim();
+    if (commentText) {
+      const commentList = section.querySelector(".comment-list");
+      const newComment = createCommentItem(commentText, userName, false);
+      commentList.insertBefore(newComment, commentList.firstChild);
+      input.value = "";
+      updateTopCommenter();  // Update the top commenter after adding a new comment
+    }
+  });
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Write a comment...";
+
+  const button = document.createElement("button");
+  button.type = "submit";
+  button.textContent = "Post";
+
+  const commentList = document.createElement("ul");
+  commentList.className = "comment-list";
+
+  form.appendChild(input);
+  form.appendChild(button);
+  section.appendChild(title);
+  section.appendChild(form);
+  section.appendChild(commentList);
+
+  return section;
+}
+
+// Function to create individual comment items
+function createCommentItem(commentText, author, isReply) {
+  const li = document.createElement("li");
+  li.className = "comment-item";
+
+  const timestamp = new Date();
+  li.dataset.timestamp = timestamp.getTime(); // Store timestamp in milliseconds
+
+  const authorDiv = document.createElement("div");
+  authorDiv.className = "comment-author";
+  authorDiv.textContent = `${author}`;
+
+  const commentDiv = document.createElement("div");
+  commentDiv.className = "comment-text";
+  commentDiv.textContent = commentText;
+
+  li.appendChild(authorDiv);
+  li.appendChild(commentDiv);
+
+  if (!isReply) {
+    const nestedComments = document.createElement("ul");
+    nestedComments.className = "nested-comments";
+    nestedComments.style.display = "none";
+    li.appendChild(nestedComments);
+  }
+
+  return li;
+}
+
+// Function to toggle reply input
+function toggleReplyInput(parentComment) {
+  let replyForm = parentComment.querySelector(".reply-input");
+  if (replyForm) {
+    replyForm.remove();
+  } else {
+    replyForm = document.createElement("form");
+    replyForm.className = "reply-input";
+    replyForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const input = replyForm.querySelector("input");
+      const replyText = input.value.trim();
+      if (replyText) {
+        const nestedComments = parentComment.querySelector(".nested-comments");
+        nestedComments.appendChild(createCommentItem(replyText, userName, true));
+        input.value = "";
+        replyForm.remove();
+      }
+    });
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Write a reply...";
+
+    const button = document.createElement("button");
+    button.type = "submit";
+    button.textContent = "Post Reply";
+
+    replyForm.appendChild(input);
+    replyForm.appendChild(button);
+    parentComment.appendChild(replyForm);
+  }
+}
+
+// Toggle replies visibility
+function toggleReplies(parentComment) {
+  const nestedComments = parentComment.querySelector(".nested-comments");
+  nestedComments.style.display = nestedComments.style.display === "none" ? "block" : "none";
+}
+
+// Function to show only the appropriate video based on the current time
+function showVideoBasedOnTime() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  
+  // Clear all videos first
+  const iframeSection = document.getElementById("iframeSection");
+  iframeSection.innerHTML = "";
+
+  // Fetch video data
+  fetch(csvUrl)
+    .then((response) => response.text())
+    .then((csvData) => {
+      const rows = csvData.split("\n").map((row) => row.split(","));
+      const iframeSection = document.getElementById("iframeSection");
+
+      // Adjusting to show videos based on time
+      if (hours >= 3 && hours < 9 || (hours === 9 && minutes <= 59)) {
+        // Show all videos between 3:01 AM and 9:59 AM
+        displayVideo(rows[1][2].trim(), "9PM DRAW", iframeSection);  // C2 - 9pm
+        displayVideo(rows[2][2].trim(), "5PM DRAW", iframeSection);  // C3 - 5pm
+        displayVideo(rows[3][2].trim(), "2PM DRAW", iframeSection);  // C4 - 2pm
+      } else if (hours >= 10 && hours < 15) {
+        // Show only the 2pm draw
+        displayVideo(rows[3][2].trim(), "2PM DRAW", iframeSection);  // C4 - 2pm
+      } else if (hours >= 15 && hours < 19) {
+        // Show only the 5pm draw
+        displayVideo(rows[2][2].trim(), "5PM DRAW", iframeSection);  // C3 - 5pm
+      } else if (hours >= 17 && hours < 3) {
+        // Show only the 9pm draw
+        displayVideo(rows[1][2].trim(), "9PM DRAW", iframeSection);  // C2 - 9pm
+      }
+    });
+}
+
+// Helper function to display video embed
+function displayVideo(youtubeLink, title, iframeSection) {
+  const embedLink = youtubeLink.replace("watch?v=", "embed/");
+  const container = document.createElement("div");
+  container.className = "video-container";
+
+  const heading = document.createElement("h3");
+  heading.textContent = title;
+
+  const iframeContainer = document.createElement("div");
+  iframeContainer.className = "iframe-container";
+
+  const iframe = document.createElement("iframe");
+  iframe.src = embedLink;
+  iframe.allow =
+    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+  iframe.allowFullscreen = true;
+
+  iframeContainer.appendChild(iframe);
+  container.appendChild(heading);
+  container.appendChild(iframeContainer);
+
+  const commentSection = createCommentSection(embedLink);
+  container.appendChild(commentSection);
+
+  iframeSection.appendChild(container);
+}
+ 
+  
+  
+  
+ function fetchDataFromA2() {
+  fetch(csvUrl)
+    .then((response) => response.text())
+    .then((csvData) => {
+      const rows = csvData.split("\n").map((row) => row.split(","));
+      const a2Data = rows[1][0].trim(); // A2 is the second row, first column
+      displayDataA2(a2Data);
+    })
+    .catch((error) => console.error("Error fetching CSV data:", error));
+}
+
+function displayDataA2(data) {
+  const container = document.getElementById("a2DataContainer");
+
+  // Create a span for the data from A2
+  const dataSpan = document.createElement("span");
+  dataSpan.textContent = data;
+
+  // Create a separate span for "Live Draw"
+  const liveDrawSpan = document.createElement("span");
+  liveDrawSpan.textContent = "Live Draws";
+  liveDrawSpan.className = "live-draw";
+
+  // Append both spans to the container
+  container.appendChild(dataSpan);
+  container.appendChild(document.createElement("br")); // Line break
+  container.appendChild(liveDrawSpan);
+}
+  
+  
+  // Function to remove expired comments
+function removeExpiredComments() {
+  const now = Date.now();
+  const commentLists = document.querySelectorAll(".comment-list");
+
+  commentLists.forEach((list) => {
+    const comments = list.querySelectorAll(".comment-item");
+    comments.forEach((comment) => {
+      const timestamp = parseInt(comment.dataset.timestamp, 10);
+      const ageInMs = now - timestamp;
+      if (ageInMs >= 22 * 60 * 60 * 1000) { // 22 hours in milliseconds
+        comment.remove();
+      }
+    });
+  });
+}
+
+// Set an interval to check for expired comments every 30 minutes
+setInterval(removeExpiredComments, 30 * 60 * 1000);
+  
+  
+
+// Initialize video display
+showVideoBasedOnTime();
+  fetchDataFromA2();
+
+
+  
+  </script>
+
+
+</body>
+</html>
