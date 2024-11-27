@@ -10,391 +10,119 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <style>
- * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-  }
-    
-  header {
-    width: 100vw;
-    height: 50vh; 
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://lrsphilippinesofficial.com/creatives/bannerhero.jpg);
-    background-position: center; 
-    background-size: cover; 
-    position: relative;
-    z-index: 1;
-  }
-  
-  .container {
-    max-width: 1200px;  
-    margin: 0 auto;     
-    padding: 0 15px;
-  }
+    <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/header.css">
+<style>
+.table-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 1200px; 
+  margin: 2 auto; 
+  overflow-x: auto; }
 
-  nav {
-    display: flex;
-    padding: 10px 6%;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(4, 9, 30, 0.7);
-    z-index: 10;
-    transition: opacity 0.3s ease;
-  }
-  
-  nav img {
-    width: 150px;
-    transition: opacity 0.3s ease;
-  }
-  
-  .nav-links {
-    flex: 1;
-    text-align: right;
-  }
-  
-  .nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-  }
-  
-  .nav-links ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-  }
-  
-  .nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: blue;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-  }
-  
-  .nav-links ul li:hover::after {
-    width: 100%;
-  }
-  
-  .text-box {
-    width: 90%;
-    color: white;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center; 
-  }
-  
-  .text-box h1 {
-    font-size: 62px;
-  }
-  
-  .text-box p {
-    margin: 10px 0 40px;
-    font-size: 14px;
-    color: white;
-  }
-  
-  .hero-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    border: 1px solid white;
-    padding: 12px 34px;
-    font-size: 13px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .hero-btn:hover {
-    border: 1px solid blue;
-    background: blue;
-    transition: 0.5s;
-  }
-  
-  nav .fa {
-    display: none;
-  }
-  
-  @media (max-width: 900px) {
-    .container {
-      padding: 0 10px;
-    }
-      
-    nav img {
-      width: 100px;
-    }
-    
-    .text-box h1 {
-      font-size: 35px;
-    }
-    
-    .text-box p {
-      font-size: 12px;
-    }
-    
-    .nav-links ul li {
-      display: block;
-    }
-    
-    .nav-links {
-      position: absolute;
-      background: rgba(0, 0, 0, 0.9); 
-      height: 100vh;
-      width: 200px;
-      top: 0;
-      right: -200px;
-      text-align: left;
-      z-index: 999;
-      transition: 0.5s;
-    }
-    
-    nav .fa {
-      display: block;
-      color: white;
-      margin: 10px;
-      font-size: 22px;
-      cursor: pointer;
-      z-index: 1000;
-    }
-    
-    .nav-links.active {
-      right: 0;
-    }
-    
-    .nav-links ul {
-      padding: 30px;
-    }
-  }
- 
-/* Live Draws Section */
-.live-draws {
-    padding: 50px;
-    background-color: #f9f9f9;
-}
+p {
+	text-align: center;}
 
-.live-draws h2{
-    margin-bottom: 20px;
-  font-size: 36px;
-  font-weight: 600;
-    text-align: center;
-}
-.live-draws p{
-  color: black;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 22px;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;}
+
+th, td {
+  border: 1px solid #ccc;
   padding: 10px;
-  text-align: center;
-}
+  text-align: center; }
 
-.video-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+th {
+  background-color: #f4f4f4;
+  color: BLACK; }
 
-.video-box {
-    width: 30%;
-    text-align: center;
-    border: 2px solid #ccc;  
-    border-radius: 8px;      
-    padding: 10px;           
-    background-color: white; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: wrap;
-    justify-content: center; 
-    margin: 10px 0;
-}
-
-.video-box iframe {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin: 5px;
-    aspect-ratio: 16 / 9;
-}
-
-.caption {
-    font-size: 16px;
-    color: #333;
-    margin-top: 10px;
-}
-
-/* Responsive for Mobile */
-@media (max-width: 700px) {
-    .video-box {
-        width: 100%; 
-        margin-bottom: 20px; 
-    }
-}
-
-    
-/*------ Footer ------*/
-        footer {
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            background-color: rgba(4, 9, 30, 0.7);
-            color: white;
-        }
-
-        /* Table Section Styles */
-        .table-section {
-            padding: 50px;
-            background-color: #f9f9f9;
-            max-width: 1200px; 
-            margin: 0 auto; 
-            overflow-x: auto; 
-
-	h1 {
-            margin-bottom: 20px;
-  font-size: 36px;
-  font-weight: 600;
-	    text-align: center;
-	}
-	p{
-	  color: black;
-	  font-size: 14px;
-	  font-weight: 300;
-	  line-height: 22px;
-	  padding: 10px;
-	    text-align: center;
-	}
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f4f4f4;
-            color: BLACK;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2; 
-        }
-
-        tr:hover {
-            background-color: #ddd; 
-        }
+tr:hover {
+  background-color: #ddd; }
 
 @media (max-width: 768px) {
   .table-section {
-    font-size: 9px; 
-            }
+    font-size: 9px; } 
   th, td {
-    padding: 8px; 
-            }
-        }
-
-    </style>
+    padding: 8px; }} 
+</style>
 </head>
 
 <body>
 <section class="header">
     <header>
         <nav>
-            <a href="./"><img src="https://lrsphilippinesofficial.com/creatives/lrs.png" alt="LRS Logo"></a>
+            <a href="https://lrsphilippinesofficial.com"><img src="https://lrsphilippinesofficial.com/creatives/lrs.png" alt="LRS Logo"></a>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="toggleMenu()"></i>
                 <ul>
-                    <li><a href="./">HOME</a></li>
-                    <li><a href="./games">GAMES</a></li>
-		    <li><a href="./promo">PROMOS</a></li>
-                    <li><a href="./results">RESULT</a></li>
-                    <li><a href="./winners">WINNERS</a></li>
-			<li><a href="./returnbet">RETURN BET</a></li>
-			<li><a href="./proof">PROOF OF PAYOUT</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com">HOME</a></li>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/games">GAMES</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/games/6-45">6/45 Mega Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-49">6/49 Super Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-55">6/55 Grand Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-58">6/58 Ultra Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/2D">2D Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/3D">3D Lotto</a></div>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/promo">PROMO</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/promo/6-45">6/45 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-49">6/49 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-55">6/55 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-58">6/58 Freebet</a></div>
+                  <li><a href="https://lrsphilippinesofficial.com/results">RESULT</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/winners">WINNERS</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/returnbet">RETURN BET</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/proof">PROOF</a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
         </nav>
+      
       <div class="text-box">
-        <h1>RESULT</h1>
-        <p>Be updated sa pinakabagong lotto draws at mga nanalong numero!<br> Para sa <strong>2D, 3D, o Pick 3 Results</strong>, narito kami para tulungan ka. Panoorin ang mga live draws, balikan ang mga nakaraang resulta, at tingnan kung ikaw na ba ang susunod na maswerteng mananalo! </p>
+        <h1>WINNING NUMBERS</h1>
+        <p>Alamin ang mga nanalong numero sa Lotto Draw! Balikan ang mga nakaraang resulta, at tingnan kung ikaw ay isa sa maswerteng nanalo! </p>
     </div>
-    </header>
+      
+  </header>
 </section>
+  
 <div class="container">
-<section class="live-draws"  style="display: none;">
-<h2>WATCH LOTTO LIVE DRAW</h2>
-  <p> Nais naming ipabatid sa inyo na ang mga resulta mula sa live draw ng PCSO ang ginagamit na opisyal na batayan para sa mga nanalo sa LRS. Para sa mga may nais na makapanood ng Draw, pindutin lamang ito ➔ <a href="https://www.youtube.com/@ptvph/streams">PTV Live Draw</a></p>
-  <div class="video-container">
-      <div class="video-box">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/KxbI1kg1fXQ?si=xz0jOZSuRnnqHl6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
-          <p class="caption">November 3, 2024 - 9PM Live Draw</p>
-	</div>
-    </div>
-</section>
-
-<!-- New Table Section -->
-<section class="table-section">
-<h1>LOTTO RESULTS</h1>
-  <p>Narito ang mga opisyal na resulta mula sa mga nakaraang draw. Ang mga numerong ito ay batay sa live draw ng PCSO at ang mga ito ang magiging batayan ng mga nanalo sa LRS.</p>
+  <section class="table-section">
+    <p>Narito ang mga opisyal na resulta mula sa mga draw. Ang mga numerong ito ay ang mga lumabas sa live draw ng PCSO, ito ang ginagamit na batayan ng mga nananalo sa LRS Lotto Games.</p><br>
     <h2 id="latestResultsTitle">Latest Results</h2>
-    <table id="latestResultsTable">
+      <table id="latestResultsTable">
         <thead>
-            <tr>
-                <th>DATE</th>
-                <th>TIME</th>
-                <th>WINNING NUMBERS</th>
-                <th>DRAW</th>
-            </tr>
+          <tr>
+            <th>DATE</th>
+            <th>TIME</th>
+            <th>WINNING NUMBERS</th>
+            <th>DRAW</th>
+          </tr>
         </thead>
-        <tbody>
-            <!-- Latest results will be populated here -->
-        </tbody>
-    </table>
+        <tbody></tbody>
+      </table>
 
     <h2>Previous Results</h2>
-    <table id="allResultsTable">
+      <table id="allResultsTable">
         <thead>
-            <tr>
-                <th>DATE</th>
-                <th>TIME</th>
-                <th>WINNING NUMBERS</th>
-                <th>DRAW</th>
-            </tr>
+          <tr>
+            <th>DATE</th>
+            <th>TIME</th>
+            <th>WINNING NUMBERS</th>
+            <th>DRAW</th>
+          </tr>
         </thead>
-        <tbody>
-            <!-- Other results will be populated here -->
-        </tbody>
-    </table>
-
-</section>
+        <tbody></tbody>
+      </table>
+  </section>
 </div>
-<footer>
-    <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
-</footer>
+  
+<footer>&copy; 2024 LRS Philippines Official. All rights reserved.</footer>
 
 
-
-<!------JavaScript for Toggle Menu------>
 <script>
 var navLinks = document.getElementById("navLinks");
 var menuBtn = document.getElementById("menuBtn");
@@ -461,7 +189,6 @@ fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJh
         });
     })
     .catch(error => console.error('Error fetching the CSV data:', error));
-    </script>
-
+</script>
 </body>
 </html>
