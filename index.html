@@ -5,857 +5,111 @@
     <title>LRS Philippines Official</title>
     <meta property="og:title" content="LRS Philippines Official">
     <meta property="og:description" content="Experience the thrill of winning with our exciting lottery games!">
-    <link rel="shortcut icon" type="x-icon" href="https://raw.githubusercontent.com/David-Monreal/lrsphilippinesofficial/main/creatives/lrs.png">
-    <meta property="og:url" content="https://lrsphilippinesofficial.com/index">
+    <link rel="shortcut icon" type="x-icon" href="https://lrsphilippinesofficial.com/creatives/lrs.png">
+    <meta property="og:url" content="https://lrsphilippinesofficial.com">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/header.css">
+    <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/index.css">
 </head>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        font-family: "Poppins", sans-serif;
-        box-sizing: border-box;
-      }
-      
-      .header {
-        width: 100vw;
-        height: 70vh;
-        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://lrsphilippinesofficial.com/creatives/bannerhero.jpg);
-        background-position: center;
-        background-size: cover;background-repea
-        t: no-repeat;
-        position: relative;
-      }
-      
-      .container {
-        max-width: 1200px; 
-        margin: 0 auto;    
-        padding: 0 15px;
-        background-color: #f1f1f1; 
-        justify-content: center; 
-        text-align: center; 
-      }
-      
-      .container h2 {
-        text-align: center; 
-        padding-top: 40px;
-        font-size: 36px;
-      }
-      
-      .container h1 {
-        font-size: 34px;
-      }
-      
-      .container p {
-        font-size: 14px;
-      }
-      
-      nav {
-        display: flex;
-        padding: 10px 6%;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background: rgba(4, 9, 30, 0.7);
-        z-index: 10;
-        transition: opacity 0.3s ease;
-      }
-      
-      nav img {
-        width: 120px;
-        height: auto;
-        transition: opacity 0.3s ease;
-      }
-      
-      .nav-links {
-        flex: 1;
-        text-align: right;
-      }
-      
-      .nav-links ul li {
-        list-style: none;
-        display: inline-block;
-        padding: 8px 12px;
-        position: relative;
-      }
-      
-      .nav-links ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 13px;
-      }
-      
-      .nav-links ul li::after {
-        content: '';
-        width: 0%;
-        height: 2px;
-        background: blue;
-        display: block;
-        margin: auto;
-        transition: 0.5s;
-      }
-      
-      .nav-links ul li:hover::after {
-        width: 100%;
-      }
-      
-      .text-box {
-        width: 90%;
-        color: white;
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        text-align: center; 
-      }
-      
-      .text-box h1 {
-        font-size: 62px;
-      }
-      
-      .text-box p {
-        margin: 10px 0 40px;
-        font-size: 14px;
-        color: white;
-      }
-      
-      .hero-btn {
-        display: inline-block;
-        text-decoration: none;
-        cursor: pointer;
-        color: white;
-        border: 1px solid white;
-        padding: 12px 34px;
-        font-size: 13px;
-        background: transparent;
-        position: relative;
-      }
-      
-      .hero-btn:hover {
-        border: 1px solid blue;
-        background: blue;
-        transition: 0.5s;
-      }
-      
-      nav .fa {
-        display: none;
-      }
-      
-      @media(max-width: 700px) {
-        .container {
-          padding: 0 10px;  
-        }
-        
-        .container h2 {
-          font-size: 24px;
-        }
-        
-        .container h1 {
-          font-size: 20px;
-        }
-        
-        .container p {
-          font-size: 12px;
-        }
-        
-        .nav-links ul li {
-          display: block;
-        }
-        
-        .nav-links {
-          position: absolute;
-          background: rgba(0, 0, 0, 0.9); 
-          height: 100vh;
-          width: 200px;
-          top: 0;
-          right: -200px;
-          text-align: left;
-          z-index: 999;
-          transition: 0.5s;
-        }
-        
-        nav .fa {
-          display: block;
-          color: white;
-          margin: 10px;
-          font-size: 22px;
-          cursor: pointer;
-          z-index: 1000;
-        }
-        
-        .nav-links.active {
-          right: 0;
-        }
-        
-        .nav-links ul {
-          padding: 30px;
-        }
-        
-        nav img {
-          width: 100px;
-        }
-        
-        .text-box h1 {
-          font-size: 24px;
-        }
-        
-        .text-box p {
-          font-size: 12px;
-        }
-      }
-      
-/* Popup styles */
-      .popup {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: auto;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
-        width: 90%;
-        max-width: 1000px;
-      }
-      
-      .popup-content {
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-        padding: 20px;
-        border-radius: 8px;
-        text-align: center;
-        background-color: transparent;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-      
-      .popup-content img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        z-index: 1;
-      }
-      
-      .close-btn {
-        position: absolute;
-        top: 5%;
-        right: 5%;
-        background-color: red;
-        color: white;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        text-align: center;
-        line-height: 30px;
-      }
-      
-      .close-btn:hover {
-        background-color: darkred;
-      }
-      
-      @media (max-width: 700px) {
-        .popup {
-          width: 100%;
-          max-width: 100%;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-        }
-        
-        .popup-content {
-          border-radius: 8px;
-        }
-      }
-      
-/*------ Result Section ------*/
-      .lottoresult {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 10px; 
-        padding: 40px;
-        flex-wrap: nowrap;
-        text-align: center;
-        margin: 0 auto;
-        max-width: 1200px;
-        background-color: #f0f0f0;
-      }
-      
-      .lottoresult h2 {
-        margin-bottom: 20px;
-        font-size: 24px;
-        padding: 50px 20px;
-        text-align: center;
-        background-color: #f1f1f1;
-        text-align: center;
-      }
-      
-      .box-container {
-        flex: 1;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 10px;
-        background-color: #ffffff;
-        text-align: center;
-        width: 70%;
-        margin-right: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-      
-      .pick-container {
-        flex: 1;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 10px;
-        background-color: #ffffff;
-        width: 90%;
-        margin: 20px auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: left;
-      }
-      
-      .youtube-videos {
-        display: flex;
-        flex-direction: column; 
-        width: 320px; 
-      }
-      
-      .youtube-container {
-        width: 100%; 
-        max-width: 300px;
-        margin-bottom: 10px; 
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #ffffff;
-        text-align: center;
-      }
-      
-      .youtube-container iframe {
-        width: 100%;
-        height: 100%; 
-      }
-      
-      .youtube-container video {
-        width: 100%;
-        height: 100%; 
-      }
-      
-      .youtube-caption {
-        margin-top: 10px;
-        font-size: 16px;
-        color: #333;
-        font-weight: bold;
-        text-align: center;
-      }
-      
-      .table-container {
-        border: 2px solid #ddd;
-        border-radius: 10px;
-        padding: 20px;
-        background-color: #ffffff;
-        margin-top: 20px;
-      }
-      
-      .date-title {
-        font-size: 1.5em;
-        margin-bottom: 15px;
-        font-weight: bold;
-        color: #333;
-        }
-      
-        .main-image {
-          width: 100px;
-          height: auto;
-          display: none;
-        }
-      
-      .image-container {
-        flex-shrink: 2;
-        margin-right: 0;
-        display: flex;
-        }
-      
-      .image-container img {
-        width: 200px;
-        height: auto;
-        }
-      
-      .result-content {
-        flex-grow: 1;
-        text-align: center;
-      }
-      
-      .date-title {
-        font-size: 1.5em;
-        margin-bottom: 15px;
-        font-weight: bold;
-        color: #333;
-      }
-      
-        .loading {
-          font-size: 1.2em;
-          color: #555;
-        }
-      
-        .lotto-row {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-top: 10px;
-        }
-      
-        .lotto-balls {
-          display: flex;
-          margin-left: 10px; 
-          flex-wrap: wrap;
-        }
-      
-        .lotto-ball {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          border: 0.1em solid #2d2d2d;
-          margin: 0 5px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: radial-gradient(circle at 30% 30%, #fff9c4, #fbc02d, #f57f17);
-          font-weight: bold;
-          font-size: 1.5em;
-          box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-      
-      table {
-        width: 90%;
-        margin-top: 20px; 
-        border-collapse: collapse; 
-        margin-left: auto; 
-        margin-right: auto; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-        
-      td {
-        width: 30%;
-        height: auto; 
-        text-align: center; 
-        vertical-align: middle; 
-        border: 2px solid #ddd; 
-        padding: 10px; 
-        background-color: white; 
-      }
-      
-      td img {
-        width: 60px;
-        height: 5vh; 
-      }
-      
-      .image-name {
-        font-weight: bold;
-        margin-top: 5px;
-        flex-wrap: wrap;
-        }
-      
-      .button-container {
-        text-align: center; 
-        margin-top: 20px;  
-        width: 100%;
-        padding: 10px;
-      }
-      
-      .styled-button {
-        background-color: #007bff; 
-        text-decoration: none;
-        color: white; 
-        border: none; 
-        border-radius: 5px; 
-        padding: 10px 20px; 
-        font-size: 16px; 
-        width: 100%;
-        cursor: pointer; 
-        transition: background-color 0.3s; 
-      }
-      
-      .styled-button:hover {
-        background-color: #0056b3; 
-      }
-      
-      @media (max-width: 400px) {
-      .image-container img {
-        width: 50px !important;
-        }
-        
-        .image-container {
-        flex-direction: column;
-          
-        }
-        
-        .date-title {
-        font-size: 0.5em !important;
-        }
-        
-        .lotto-balls {
-          margin-left: 5px; 
-          font-size: 0.8em !important;
-        }
-      
-        .lotto-ball {
-          max-width: 20px;
-          max-height: 20px;
-          margin: 1px;
-          font-size: 0.8em !important;
-        }
-        
-        .image-container img {
-        width: 60px;
-        }
-        
-      }
-      
-      @media (max-width: 700px) {
-      .lottoresult {
-        max-width: 100%;
-        flex-direction: column;
-      }
-      
-      .box-container {
-        border-radius: 8px;
-        padding: 3px;
-        width: 100%;
-        }
-        
-        .image-container img {
-        width: 80px;
-        }
-      
-      .pick-container {
-        padding: 5px;
-        margin: 5px auto;
-      }
-      
-      .youtube-videos {
-        width: 100%; 
-        flex-wrap: wrap;
-        justify-content: center; 
-        text-align: center; 
-      }
-      
-      .youtube-container {
-        margin-bottom: 10px; 
-        padding: 8px;
-        flex-wrap: wrap;
-      }
-      
-      .youtube-caption {
-        margin-top: 5px;
-        font-size: 8px;
-        flex-wrap: wrap;
-      }
-      
-      .table-container {
-        border-radius: 8px;
-        padding: 8px;
-        margin-top: 8px;
-      }
-      
-      .date-title {
-        font-size: 1.0em;
-        margin-bottom: 10px;
-        }
-      
-        .main-image {
-          width: 80px;
-          padding: 10px;
-        }
-      
-        .loading {
-          font-size: 0.5em;
-        }
-      
-        .lotto-row {
-          margin-top: 5px;
-        }
-      
-        .lotto-balls {
-          margin-left: 5px; 
-          font-size: 1.0em;
-        }
-      
-        .lotto-ball {
-          width: 30px;
-          height: 30px;
-          margin: 1px;
-          font-size: 1.0em;
-        }
-      
-      table {
-        margin-top: 4px; 
-      }
-        
-      td {
-        padding: 2px; 
-      }
-      
-      td img {
-        width: 30px;
-        height: auto; 
-      }
-      
-      .image-name {
-        font-weight: bold;
-        font-size: 0.5em;
-        margin-top: 1px;
-        flex-wrap: wrap;
-        }
-      
-      .button-container {
-        margin-top: 6px;  
-        width: 100%;
-        padding: 10px;
-      }
-      
-      .styled-button {
-        padding: 8px 15px; 
-        font-size: 8px; 
-      }
-      }
-      
-/* Video Section */
-      .video {
-        padding: 50px 20px;
-        text-align: center;
-        background-color: #f1f1f1;
-        text-align: center;
-      }
-      
-      .video h2 {
-        margin-bottom: 20px;
-        font-size: 24px;
-      }
-      .video video {
-        width: 80%;
-        height: auto;
-        max-width: 700px;
-        margin-bottom: 20px;
-        border: 5px solid white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      
-      .video-caption {
-        font-size: 16px;
-        color: black;
-        padding: 20px;
-        max-width: 700px;
-        margin: 0 auto;
-      }
-      
-      .video-caption h1 {
-        color: red; 
-        font-size: 28px;
-        margin-bottom: 2px;
-      }
-      
-      .video-caption h2 {
-        color: blue; 
-        font-size: 22px;
-        margin-bottom: 10px;
-      }
 
-      .boxed-section {
-        background-color: white;
-        padding: 15px;
-        border: 2px solid #FFD700;
-        border-radius: 5px;
-        margin-bottom: 15px;
-      }
-      
-      .boxed-section h3 {
-        color: blue;
-        font-size: 18px;
-        margin-bottom: 10px;
-        text-align: center;
-      }
-      
-      .boxed-section p {
-        text-align: center;
-        font-size: 16px;
-        margin: 10px 0;
-      }
-      
-      .highlight {
-        color: #FF6347; 
-        font-weight: bold;
-      }
-      
-      @media (max-width: 700px) {
-        .video {
-        padding: 20px 10px;
-      }
-      
-      .video h2 {
-        margin-bottom: 20px;
-        font-size: 24px;
-      }
-      .video video {
-        width: 90%;
-      }
-      
-      .video-caption {
-        font-size: 12px;
-      }
-      
-      .video-caption h1 {
-        font-size: 20px;
-        margin-bottom: 5px;
-      }
-      
-      .video-caption h2 {
-        font-size: 18px;
-        margin-bottom: 5px;
-      }
-      
-      .boxed-section h3 {
-        font-size: 18px;
-      }
-      
-      .boxed-section p {
-        font-size: 12px;
-      }
-      }
-
-
-      
-/*------ Footer ------*/
-      footer {
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-        background-color: rgba(4, 9, 30, 0.7);
-        color: white;
-      }
-      
-      @media (max-width: 700px) {
-        footer {
-          font-size: 10px;
-        }
-      }
-      
 
   </style>
 </head>
 
 <body>
+  <header>
   <section class="header">
     <nav>
-      <a href="./"><img src="https://lrsphilippinesofficial.com/creatives/lrs.png" alt="LRS Logo"></a>
-      <div class="nav-links" id="navLinks">
-        <i class="fa fa-times" onclick="toggleMenu()"></i>
-        <ul>
-          <li><a href="./">HOME</a></li>
-          <li><a href="./games">GAMES</a></li>
-            <li><a href="./promo">PROMOS</a></li>
-          <li><a href="./results">RESULT</a></li>
-          <li><a href="./winners">WINNERS</a></li>
-            <li><a href="./returnbet">RETURN BET</a></li>
-          <li><a href="./proof">PROOF OF PAYOUT</a></li>
-       </ul>
-      </div>
-        <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
-    </nav>
+            <a href="https://lrsphilippinesofficial.com"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/lrs.png" alt="LRS Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="toggleMenu()"></i>
+                <ul>
+                  <li><a href="https://lrsphilippinesofficial.com">HOME</a></li>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/games">GAMES</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/games/6-45">6/45 Mega Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-49">6/49 Super Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-55">6/55 Grand Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-58">6/58 Ultra Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/2D">2D Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/3D">3D Lotto</a></div>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/promo">PROMO</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/promo/6-45">6/45 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-49">6/49 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-55">6/55 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-58">6/58 Freebet</a></div>
+                  <li><a href="https://lrsphilippinesofficial.com/results">RESULT</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/winners">WINNERS</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/returnbet">RETURN BET</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/proof">PROOF</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
+        </nav>
     
-    <div class="text-box">
+    <div class="text-box" style="top: 60%;">
       <h1>LRS Philippines Official</h1>
-      <p>Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto.
-        <br>Kami ay nag-aalok ng isang espesyal na paraan ng pagtaya na nagbibigay sa mga manlalaro ng higit pang pagkakataon na manalo.</p>
+      <p>Ang LRS Philippines Official ay isang kumpanya na nagbibigay ng makabago at mapagkakatiwalaang sistema para sa mga mahilig sa lotto.</p>
       <a href="https://lrsphilippinesofficial.com/games" class="hero-btn">Learn More About our Games</a>
     </div>
   </section>
+    </header>
 
 <div class="popup" id="popup">
   <div class="popup-content">
-    <button class="close-btn" onclick="closePopup()">X</button>
+    <button class="close-btn" onclick="closePopup()">✘</button>
     <img id="popup-image" src="" alt="Popup Image">
   </div>
 </div>
   
 <div class="container">
     <h2>LRS UPDATES!</h2>
-    <p>Get ready for the latest results! Check out the winning numbers for today’s draws and see if you're one of the lucky winners! 💰✨
-      <br>&nbsp
-      <br>Abangan ang iba pang updates at tandaan, bawat taya ay may tsansang manalo! Mas maraming taya, mas maraming tyansang manalo!🥳</p>
+      <p>Ito ang latest result sa LRS Lotto. Abangan ang iba pang updates at tandaan, bawat taya ay may tsansang manalo! Mas maraming taya, mas maraming tyansang manalo!🥳</p><br>
 
-<!-- Result Table -->
+
+<!-- Result -->
   <div class="lottoresult">
     <div class="box-container">
-      <div class="pick-container" aria-label="Lotto Result">
-            <!-- Image Container -->
-            <div class="image-container">
-                <img src="" alt="Lotto Image" id="lotto-image">
-            </div>
-            <!-- Result Content -->
-            <div class="result-content">
-                <div class="date-title" id="date-title">Loading...</div>
-                <div class="lotto-row">
-                    <div class="lotto-balls" aria-label="Winning Numbers">
-                        <div class="lotto-ball" id="ball1"></div>
-                        <div class="lotto-ball" id="ball2"></div>
-                        <div class="lotto-ball" id="ball3"></div>
-                        <div class="lotto-ball" id="ball4"></div>
-                        <div class="lotto-ball" id="ball5"></div>
-                        <div class="lotto-ball" id="ball6"></div>
-                    </div>
-                </div>
+    <div class="lotto-container">
+        <div class="lotto-header">
+            <img id="lotto-image" class="lotto-image" alt="Lotto Logo">
+            <div class="lotto-title" id="lotto-title">
             </div>
         </div>
-      
-      <table>
-        <tr>
-          <td></td>
-          <td><img src="https://lrsphilippinesofficial.com/creatives/2D.png" alt="2D Lotto"></td>
-          <td><img src="https://lrsphilippinesofficial.com/creatives/3D.png" alt="3D Lotto"></td>
-        </tr>
-        <tr>
-          <td id="2pmImageName"></td>
-          <td id="2pmNumbers"></td>
-          <td id="3d2pmNumbers"></td>
-        </tr>
-        <tr>
-          <td id="5pmImageName"></td>
-          <td id="5pmNumbers"></td>
-          <td id="3d5pmNumbers"></td>
-        </tr>
-        <tr>
-          <td id="9pmImageName"></td>
-          <td id="9pmNumbers"></td>
-          <td id="3d9pmNumbers"></td>
-        </tr>
-      </table>
+        <div class="lotto-row">
+            <div class="lotto-balls" aria-label="Winning Numbers" id="lotto-balls" alt="Pick 3 Lotto">
+            </div>
+        </div>
+          
+          <table id="lotto-table">
+        <thead>
+            <tr>
+                <th>DATE - TIME</th>
+                <th><img src="https://lrsphilippinesofficial.com/creatives/2D.png" class="lotto-image2" alt="2D Lotto"></th>
+                <th><img src="https://lrsphilippinesofficial.com/creatives/3D.png" class="lotto-image2" alt="3D Lotto"></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
       
       <div class="button-container">
         <a href="https://lrsphilippinesofficial.com/results" class="styled-button">VIEW ALL RESULTS</a>
       </div>
-  </div>
+      </div></div>
     
 <!-- YouTube Videos -->
 <div class="youtube-videos"> 
     <div class="youtube-container">
-        <a id="link-9PM" target="_blank"> <!-- Link overlay for the 9PM video -->
+        <a id="link-9PM" target="_blank"> 
             <video autoplay loop muted playsinline>
                 <source src="https://lrsphilippinesofficial.com/img/video/9pm.mp4" type="video/mp4">
             </video>
@@ -863,7 +117,7 @@
         <p id="caption-9PM" class="youtube-caption">Default Caption</p>
     </div>
     <div class="youtube-container">
-        <a id="link-5PM" target="_blank"> <!-- Link overlay for the 5PM video -->
+        <a id="link-5PM" target="_blank"> 
             <video autoplay loop muted playsinline>
                 <source src="https://lrsphilippinesofficial.com/img/video/5pm.mp4" type="video/mp4">
             </video>
@@ -871,7 +125,7 @@
         <p id="caption-5PM" class="youtube-caption">Default Caption</p>
     </div>
     <div class="youtube-container">
-        <a id="link-2PM" target="_blank"> <!-- Link overlay for the 2PM video -->
+        <a id="link-2PM" target="_blank"> 
             <video autoplay loop muted playsinline>
                 <source src="https://lrsphilippinesofficial.com/img/video/2pm.mp4" type="video/mp4">
             </video>
@@ -880,6 +134,15 @@
     </div>
 </div>
 </div>
+
+<div class="youcon">
+    <h2>LIVE DRAWS</h2>
+      <p>Ang winning numbers o ang mga resulta ay mula sa live draw ng PCSO. Ito ang ginagamit na opisyal na batayan para sa mga nananalo sa LRS. <br><br> Pindutin lamang ang button sa ibaba at panoorin ng Live ang lotto draw!</p>
+  <div class="draw-buttons">
+    <div><a href="https://lrsphilippinesofficial.com/2pmlivedraw" class="draw-button">2PM</a></div>
+    <div><a href="https://lrsphilippinesofficial.com/5pmlivedraw" class="draw-button">5PM</a></div>
+    <div><a href="https://lrsphilippinesofficial.com/9pmlivedraw" class="draw-button">9PM</a></div>
+  </div><br></div>
   
 <!-- Video Section -->
 <div class="video">
@@ -889,16 +152,21 @@
         Your browser does not support the video tag.
   </video>
   <div class="video-caption">
-    <h1>🌟 TRY YOUR LUCK 🌟</h1>
       <h2>PAANO TUMAYA?</h2>
-      <p>➤ Pumili ng laro sa <strong>6/45, 6/49, 6/55, 6/58, 2D,</strong> o<strong> 3D</strong> Lotto games.
+      <p>➤ Pumili ng Lotto games na gustong tayaan.
+        <br><a href="https://lrsphilippinesofficial.com/games/6-45">◾️ 6/45 ◾️</a>
+        <a href="https://lrsphilippinesofficial.com/games/6-49">&nbsp &nbsp &nbsp ◾️ 6/49 ◾️</a>
+        <a href="https://lrsphilippinesofficial.com/games/6-55">&nbsp &nbsp &nbsp ◾️ 6/55 ◾️</a>
+        <br><a href="https://lrsphilippinesofficial.com/games/6-58">◾️ 6/58 ◾️</a>
+        <a href="https://lrsphilippinesofficial.com/games/2D">&nbsp &nbsp &nbsp ◾️ 2D ◾️</a>
+        <a href="https://lrsphilippinesofficial.com/games/3D">&nbsp &nbsp &nbsp ◾️ 3D ◾️</a>
         <br>➤ I-send ang iyong napiling numero sa aming group chat.
         <br>➤ Magbayad gamit ang GCash at i-send ang screenshot ng iyong payment.
         <br>&nbsp
         <br>Abangan ang draw at alamin kung ikaw na ba ang susunod na <span class="highlight">JACKPOT WINNER!</span>
       </p>&nbsp<br>
         
-<!-- Text Inside the Box -->
+<!-- Box Section -->
     <div class="boxed-section">
       <h3>💥 BAKIT DITO? 💥</h3>
         <p>💰 <strong>MAS MALAKING TSANSANG MANALO</strong> 💰
@@ -1015,81 +283,124 @@ function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
 
-async function loadLottoNumbers() {
-    const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJhFK-b1DN2kNv621RRmwF2oP3gftWOOXUX2n_V4mtjNfNH0YoW0g8uoP/pub?gid=457722663&single=true&output=csv');
-    const csvText = await response.text();
-    const csvRows = csvText.split('\n');
+const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJhFK-b1DN2kNv621RRmwF2oP3gftWOOXUX2n_V4mtjNfNH0YoW0g8uoP/pub?gid=457722663&single=true&output=csv";
 
-    // Get the date from A1 (first row, first column)
-    const date = csvRows[0].split(',')[0];
-    document.getElementById('date-title').textContent = date;
+        async function fetchLottoData() {
+            try {
+                const response = await fetch(csvUrl);
+                const csvData = await response.text();
 
-    // Get the image URL from A2 (second row, first column)
-    const imageUrl = csvRows[1].split(',')[0];
-    document.getElementById('lotto-image').src = imageUrl;
+                const rows = csvData.split("\n").map(row => row.split(","));
 
-    // Extract winning numbers from B2 to B7 (second row, columns 1 to 6)
-    const numbers = csvRows[1].split(',').slice(1, 7);
+                const title = rows[0][0];
+                const imageUrl = rows[1][0]; 
+                const lottoNumbers = rows[1].slice(1, 7); 
 
-    // Assign numbers to the lotto balls
-    document.getElementById('ball1').textContent = numbers[0];
-    document.getElementById('ball2').textContent = numbers[1];
-    document.getElementById('ball3').textContent = numbers[2];
-    document.getElementById('ball4').textContent = numbers[3];
-    document.getElementById('ball5').textContent = numbers[4];
-    document.getElementById('ball6').textContent = numbers[5];
-}
+                document.getElementById("lotto-title").textContent = title;
 
-async function loadCSV() {
-    const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJhFK-b1DN2kNv621RRmwF2oP3gftWOOXUX2n_V4mtjNfNH0YoW0g8uoP/pub?gid=1477777476&single=true&output=csv');
-    const data = await response.text();
-    const rows = data.split('\n').slice(1); // Skip header row
+                const lottoImage = document.getElementById("lotto-image");
+                lottoImage.src = imageUrl;
 
-    rows.forEach(row => {
-        const [date, time, number1, number2, number3, number4, number5] = row.split(',');
-        const imageName = date.charAt(0).toUpperCase() + date.slice(1) + '.png'; // Generate image name based on date
-
-        if (time === '2PM') {
-            document.getElementById('2pmImageName').innerHTML = `<img src="https://lrsphilippinesofficial.com/creatives/2PM.png" alt="2PM" /><div class="image-name">${date}</div>`;
-            document.getElementById('2pmNumbers').innerHTML = `<div class="lotto-balls">
-                <div class="lotto-ball">${number1}</div>
-                <div class="lotto-ball">${number2}</div>
-            </div>`;
-            document.getElementById('3d2pmNumbers').innerHTML = `<div class="lotto-balls">
-                <div class="lotto-ball">${number3}</div>
-                <div class="lotto-ball">${number4}</div>
-                <div class="lotto-ball">${number5}</div>
-            </div>`;
-        } else if (time === '5PM') {
-            document.getElementById('5pmImageName').innerHTML = `<img src="https://lrsphilippinesofficial.com/creatives/5PM.png" alt="5PM" /><div class="image-name">${date}</div>`;
-            document.getElementById('5pmNumbers').innerHTML = `<div class="lotto-balls">
-                <div class="lotto-ball">${number1}</div>
-                <div class="lotto-ball">${number2}</div>
-            </div>`;
-            document.getElementById('3d5pmNumbers').innerHTML = `<div class="lotto-balls">
-                <div class="lotto-ball">${number3}</div>
-                <div class="lotto-ball">${number4}</div>
-                <div class="lotto-ball">${number5}</div>
-            </div>`;
-        } else if (time === '9PM') {
-            document.getElementById('9pmImageName').innerHTML = `<img src="https://lrsphilippinesofficial.com/creatives/9PM.png" alt="9PM" /><div class="image-name">${date}</div>`;
-            document.getElementById('9pmNumbers').innerHTML = `<div class="lotto-balls">
-                <div class="lotto-ball">${number1}</div>
-                <div class="lotto-ball">${number2}</div>
-            </div>`;
-            document.getElementById('3d9pmNumbers').innerHTML = `<div class="lotto-balls">
-                <div class="lotto-ball">${number3}</div>
-                <div class="lotto-ball">${number4}</div>
-                <div class="lotto-ball">${number5}</div>
-            </div>`;
+                const lottoBallsContainer = document.getElementById("lotto-balls");
+                lottoNumbers.forEach(number => {
+                    const ball = document.createElement("div");
+                    ball.className = "lotto-ball";
+                    ball.textContent = number.trim(); 
+                    lottoBallsContainer.appendChild(ball);
+                });
+            } catch (error) {
+                console.error("Error fetching or processing CSV:", error);
+            }
         }
-    });
-}
 
-document.addEventListener('DOMContentLoaded', function() {
-    loadCSV();
-    loadLottoNumbers();
-});
+        fetchLottoData();
+  
+  
+  
+        const secondCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJhFK-b1DN2kNv621RRmwF2oP3gftWOOXUX2n_V4mtjNfNH0YoW0g8uoP/pub?gid=1477777476&single=true&output=csv";
+
+        async function fetchSecondCsvData() {
+            try {
+                const response = await fetch(secondCsvUrl);
+                const csvData = await response.text();
+
+                const rows = csvData.split("\n").map(row => row.split(","));
+
+                for (let i = 1; i <= 3; i++) { 
+                    const dateTime = rows[i][0] + " - " + rows[i][1]; 
+                    const twoDLotto = [rows[i][2], rows[i][3]]; 
+                    const threeDLotto = [rows[i][4], rows[i][5], rows[i][6]]; 
+
+                    const tableRow = document.createElement("tr");
+
+                    const dateCell = document.createElement("td");
+                    dateCell.textContent = dateTime;
+                    tableRow.appendChild(dateCell);
+
+                    const twoDLottoCell = document.createElement("td");
+                    twoDLotto.forEach(num => {
+                        const ball = document.createElement("div");
+                        ball.className = "lotto-ball2";
+                        ball.textContent = num;
+                        twoDLottoCell.appendChild(ball);
+                    });
+                    tableRow.appendChild(twoDLottoCell);
+
+                    const threeDLottoCell = document.createElement("td");
+                    threeDLotto.forEach(num => {
+                        const ball = document.createElement("div");
+                        ball.className = "lotto-ball2";
+                        ball.textContent = num;
+                        threeDLottoCell.appendChild(ball);
+                    });
+                    tableRow.appendChild(threeDLottoCell);
+
+                    document.querySelector("#lotto-table tbody").appendChild(tableRow);
+                }
+            } catch (error) {
+                console.error("Error fetching or processing the second CSV:", error);
+            }
+        }
+
+        fetchSecondCsvData();  
+  
+  
+  
+
+  
+        const thirdCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJhFK-b1DN2kNv621RRmwF2oP3gftWOOXUX2n_V4mtjNfNH0YoW0g8uoP/pub?gid=592320360&single=true&output=csv";
+
+        async function fetchDrawLinks() {
+            try {
+                const response = await fetch(thirdCsvUrl);
+                const csvData = await response.text();
+
+                const rows = csvData.split("\n").map(row => row.split(","));
+
+                const drawLinks = {
+                    "9PM Draw": rows[1][2], 
+                    "5PM Draw": rows[2][2], 
+                    "2PM Draw": rows[3][2]  
+                };
+
+                const container = document.getElementById('draw-buttons-container');
+                for (const [drawTime, link] of Object.entries(drawLinks)) {
+                    const button = document.createElement('a');
+                    button.classList.add('draw-button');
+                    button.href = link;
+                    button.target = "_blank"; 
+                    button.textContent = drawTime;
+                    container.appendChild(button);
+                }
+            } catch (error) {
+                console.error("Error fetching or processing the third CSV:", error);
+            }
+        }
+
+        fetchDrawLinks();
+  
+  
+  
   // Load CSV data
 async function loadCsvData() {
     const response = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEMR0C7vFEScVMBt0fp5miJhFK-b1DN2kNv621RRmwF2oP3gftWOOXUX2n_V4mtjNfNH0YoW0g8uoP/pub?gid=592320360&single=true&output=csv");
@@ -1125,9 +436,42 @@ function updateVideos(videoData) {
         }
     }
 }
+  
+
+  
+  
+function fetchDataFromA2() {
+  fetch(csvUrl)
+    .then((response) => response.text())
+    .then((csvData) => {
+      const rows = csvData.split("\n").map((row) => row.split(","));
+      const a2Data = rows[1][0].trim(); // A2 is the second row, first column
+      displayDataA2(a2Data);
+    })
+    .catch((error) => console.error("Error fetching CSV data:", error));
+}
+
+function displayDataA2(data) {
+  const container = document.getElementById("a2DataContainer");
+
+  // Create a span for the data from A2
+  const dataSpan = document.createElement("span");
+  dataSpan.textContent = data;
+
+  // Create a separate span for "Live Draw"
+  const liveDrawSpan = document.createElement("span");
+  liveDrawSpan.textContent = "2PM Live Draw";
+  liveDrawSpan.className = "live-draw";
+
+  // Append both spans to the container
+  container.appendChild(dataSpan);
+  container.appendChild(document.createElement("br")); // Line break
+  container.appendChild(liveDrawSpan);
+}
 
 // Initialize loading of CSV data and video updates
 loadCsvData();
+fetchDataFromA2();
   
 </script>
 
