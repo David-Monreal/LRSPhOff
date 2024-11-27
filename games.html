@@ -2,420 +2,16 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LRS Philippines Official</title>
+    <title>LRS Philippines Official - LRS Games</title>
     <link rel="shortcut icon" type="x-icon" href="https://lrsphilippinesofficial.com/creatives/lrs.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</head>
-  
+    <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/header.css"> 
+    <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/lrsgames.css">   
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-  }
-    
-  header {
-    width: 100vw;
-    height: 50vh; 
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://lrsphilippinesofficial.com/creatives/bannerhero.jpg);
-    background-position: center; 
-    background-size: cover; 
-    position: relative;
-    z-index: 1;
-  }
-  
-  .container {
-    max-width: 1200px;  
-    margin: 0 auto;     
-    padding: 0 15px;
-  }
-
-  nav {
-    display: flex;
-    padding: 10px 6%;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(4, 9, 30, 0.7);
-    z-index: 10;
-    transition: opacity 0.3s ease;
-  }
-  
-  nav img {
-    width: 150px;
-    transition: opacity 0.3s ease;
-  }
-  
-  .nav-links {
-    flex: 1;
-    text-align: right;
-  }
-  
-  .nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-  }
-  
-  .nav-links ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-  }
-  
-  .nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: blue;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-  }
-  
-  .nav-links ul li:hover::after {
-    width: 100%;
-  }
-  
-  .text-box {
-    width: 90%;
-    color: white;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center; 
-  }
-  
-  .text-box h1 {
-    font-size: 62px;
-  }
-  
-  .text-box p {
-    margin: 10px 0 40px;
-    font-size: 14px;
-    color: white;
-  }
-  
-  .hero-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    border: 1px solid white;
-    padding: 12px 34px;
-    font-size: 13px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .hero-btn:hover {
-    border: 1px solid blue;
-    background: blue;
-    transition: 0.5s;
-  }
-  
-  nav .fa {
-    display: none;
-  }
-  
-  @media (max-width: 900px) {
-    .container {
-      padding: 0 10px;
-    }
-      
-    nav img {
-      width: 100px;
-    }
-    
-    .text-box h1 {
-      font-size: 62px;
-    }
-    
-    .text-box p {
-      font-size: 12px;
-    }
-    
-    .nav-links ul li {
-      display: block;
-    }
-    
-    .nav-links {
-      position: absolute;
-      background: rgba(0, 0, 0, 0.9); 
-      height: 100vh;
-      width: 200px;
-      top: 0;
-      right: -200px;
-      text-align: left;
-      z-index: 999;
-      transition: 0.5s;
-    }
-    
-    nav .fa {
-      display: block;
-      color: white;
-      margin: 10px;
-      font-size: 22px;
-      cursor: pointer;
-      z-index: 1000;
-    }
-    
-    .nav-links.active {
-      right: 0;
-    }
-    
-    .nav-links ul {
-      padding: 30px;
-    }
-  }
- 
-  
-/*------ Games ------*/
-.games {
-  width: 80%;
-  margin: auto;
-  text-align: center;
-  padding-top: 100px;
-  }
-  
-  h1{
-    font-size: 36px;
-    font-weight: 600;
-  }
-  
-  p{
-    color: black;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
-  }
-  
-  .game-container {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .game-card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 250px;
-    max-width: 250px;
-    cursor: pointer;
-    text-align: center;
-    transition: transform 0.3s;
-    position: relative;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .game-card:hover .overlay {
-    opacity: 1; 
-  }
-  
-  .learn-more {
-    color: white; 
-    font-size: 20px; 
-    text-align: center; 
-  }
-  
-  .game-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  .game-card h2 {
-    background: red;
-    color: yellow;
-    padding: 5px;
-    margin: 0;
-    border-radius: 10px;
-  }
-  
-  .game-card h3 {
-    background: black;
-    color: white;
-    padding: 10px;
-    margin: 0;
-  }
-  
-  .game-card p {
-    padding: 10px;
-    display: none; 
-  }
-  
-  .expanded {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .expanded-content {
-    display: flex;
-    flex-direction: row;
-    max-width: 800px;
-    height: 100%;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 10px;
-  }
-  
-  .description {
-    padding: 20px;
-    background-color: white;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 100%;
-    position: relative;
-    font-size: 17px;
-    border-radius: 5px;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .click {
-    display: none;
-  }
-  
-  
-  @media (max-width: 900px) {
-  .games {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 100px;
-  }
-  
-  h1{
-    font-size: 24px;
-  }
-  h3{
-    display: none;
-  }
-  
-  p{
-    font-size: 12px;
-  }
-  
-  .game-container {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .game-card {
-    width: 120px;
-    max-width: 120px;
-  }
-  
-  .learn-more {
-    color: white; 
-    font-size: 15px; 
-  }
-  
-  .expanded {
-    padding: 10px;
-  }
-  
-  .expanded-content {
-    flex-direction: column;
-    max-width: 95%;
-    height: 95%;
-  }
-  
-  .description {
-    padding: 10px;
-    font-size: 12px;
-    max-height: 100%;
-    overflow-y: auto;
-  }
-  
-  .close-btn {
-    font-size: 18px;
-    top: 40px;
-    right: 40px;
-    z-index: 10;
-  }
-    
-  .click {
-    display: block;
-    text-align: center;
-    color: red;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 22px;
-    padding: 10px;
-  }
-  }
-
-/*------ Footer ------*/
-  footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    background-color: rgba(4, 9, 30, 0.7);
-  }
-  
-  .footer p{
-    color: white;
-  }
-
 
 </style>
 </head>
@@ -424,21 +20,35 @@
 <header>
     <section class="header">
     <nav>
-        <a href="./"><img src="https://lrsphilippinesofficial.com/creatives/lrs.png" alt="LRS Logo"></a>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="toggleMenu()"></i>
-            <ul>
-                <li><a href="./">HOME</a></li>
-                <li><a href="./games">GAMES</a></li>
-		<li><a href="./promo">PROMOS</a></li>
-                <li><a href="./results">RESULT</a></li>
-                <li><a href="./winners">WINNERS</a></li>
-		<li><a href="./returnbet">RETURN BET</a></li>
-		<li><a href="./proof">PROOF OF PAYOUT</a></li>
-            </ul>
-        </div>
-        <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
-    </nav>
+            <a href="https://lrsphilippinesofficial.com"><img src="https://lrsphilippinesofficial.com/creatives/lrs.png" alt="LRS Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="toggleMenu()"></i>
+                <ul>
+                  <li><a href="https://lrsphilippinesofficial.com">HOME</a></li>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/games">GAMES</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/games/6-45">6/45 Mega Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-49">6/49 Super Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-55">6/55 Grand Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-58">6/58 Ultra Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/2D">2D Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/3D">3D Lotto</a></div>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/promo">PROMO</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/promo/6-45">6/45 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-49">6/49 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-55">6/55 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-58">6/58 Freebet</a></div>
+                  <li><a href="https://lrsphilippinesofficial.com/results">RESULT</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/winners">WINNERS</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/returnbet">RETURN BET</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/proof">PROOF</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
+        </nav>
       
       <div class="text-box">
         <h1>LRS GAMES</h1>
@@ -446,236 +56,71 @@
     </div>
       
 </header>
-    <main>
+
+<main>
 <div class="container">
-<section class="games">
-<h1>💥 Pick 3 Lotto 💥</h1>
-  <p>Mas pinasimple, mas pinabilis, at mas mataas ang tsansa mong manalo sa aming Pick 3 Games - kung saan maaari mong i-enjoy ang mga laro tulad ng 6/45, 6/49, 6/55, at 6/58! 🏆💸</p>
-  <p>Pumili lamang ang 3 numero mula sa kabuuang numero ng bawat Draw, at kapag ang tatlong napiling numero ay lumabas sa anim na bola, ikaw ay panalo na agad! 🤑💸</p>
-</section> 
-        <div class="game-container">
-            <!-- 6/45 Mega Lotto Game Card -->
-            <div class="game-card" onclick="expandDescription(this)">
-		<picture>
-		        <source media="(max-width: 780px)" srcset="https://lrsphilippinesofficial.com/creatives/45 PRIZE.jpg">
-		        <img src="https://lrsphilippinesofficial.com/creatives/45.jpg" alt="6/45 Lotto">
-    		</picture>
-		<div class="overlay">
-        		<h2 class="learn-more">Learn More</h2></div>	
-                <h3>6/45 Mega Lotto</h3>
-                <p>1. Pumili ng mga Numero
-		    <br>● Pumili ng tatlong (3) numero mula 1 hanggang 45.
-                    <br>2. Mga Panuntunan sa Pagtaya
-                    <br>● Kapag ang lahat ng tatlong numero na iyong pinili ay tumugma sa alinman sa anim na (6) bolang lumabas, ikaw ay mananalo ng premyo!
-                    <br>● Kung dalawa (2) lamang ang numero na tumugma, makakatanggap ka ng return bet.
-                    <br>3. Minimum na Pagtaya
-                    <br>● Ang minimum bet ay 25 pesos. Tiyaking nasusunod ito sa iyong taya. 
-                    <br>4. Proseso ng Pagtaya
-                    <br>● I-chat sa GC ang mga napiling kombinasyon.
-                    <br>● Pagkatapos, i-send ang bayad sa GCash.
-                    <br>● Huwag kalimutan na iscreenshot ang kumpirmasyon ng iyong pagbabayad at at i-send sa GC para sa validation.
-                    <br>5. Draw Schedule
-                    <br>● Ang 6/45 Mega Lotto ay tuwing araw ng Lunes, Miyerkules, at Biyernes sa 9:00 PM.
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>Para sa kumpletong listahan ng mga nanalo at mga resulta, mangyaring bisitahin ang aming website: LRS Philippines Official.
-                </p>
-            </div>
+  <section class="games">
+    <h1>💥 Pick 3 Lotto 💥</h1>
+      <p>Mas pinasimple, mas pinabilis, at mas mataas ang tsansa mong manalo sa aming Pick 3 Games - kung saan maaari mong i-enjoy ang mga laro tulad ng 6/45, 6/49, 6/55, at 6/58! 🏆💸</p>
+      <p>Pumili lamang ang 3 numero mula sa kabuuang numero ng bawat Draw, at kapag ang tatlong napiling numero ay lumabas sa anim na bola, ikaw ay panalo na agad! 🤑💸</p>
+  </section> 
+  
+  <div class="game-container">
+    <div class="game-card">
+		  <a href="https://lrsphilippinesofficial.com/games/6-45">
+      <img src="https://lrsphilippinesofficial.com/creatives/45.jpg" alt="6/45 Lotto">
+		    <div class="overlay">
+          <h2 class="learn-more">Learn More</h2></div></a></div>
 
-            <!-- 6/49 Mega Lotto Game Card -->
-            <div class="game-card" onclick="expandDescription(this)">
-		<picture>
-		        <source media="(max-width: 780px)" srcset="https://lrsphilippinesofficial.com/creatives/49 PRIZE.jpg">
-		        <img src="https://lrsphilippinesofficial.com/creatives/49.jpg" alt="6/49 Lotto">
-    		</picture>
-		<div class="overlay">
-        		<h2 class="learn-more">Learn More</h2></div>
-                <h3>6/49 Super Lotto</h3>
-                <p>
-                    1. Pumili ng mga Numero
-                    <br>● Pumili ng tatlong (3) numero mula sa 1 hanggang 45.
-                    <br>2. Mga Panuntunan sa Pagtaya
-                    <br>● Kapag ang lahat ng tatlong numero na iyong pinili ay tumugma sa alinman sa anim na (6) bolang lumabas, ikaw ay mananalo ng premyo!
-                    <br>● Kung dalawa (2) lamang ang numero na tumugma, makakatanggap ka ng return bet.
-                    <br>3. Minimum na Pagtaya
-                    <br>● Ang minimum bet ay 25 pesos. Tiyaking nasusunod ito sa iyong taya. 
-                    <br>4. Proseso ng Pagtaya
-                    <br>● I-chat sa GC ang mga napiling kombinasyon.
-                    <br>● Pagkatapos, i-send ang bayad sa GCash.
-                    <br>● Huwag kalimutan na iscreenshot ang kumpirmasyon ng iyong pagbabayad at at i-send sa GC para sa validation.
-                    <br>5. Draw Schedule
-                    <br>● Ang 6/45 Mega Lotto ay tuwing araw ng Lunes, Miyerkules, at Biyernes sa 9:00 PM.
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>Para sa kumpletong listahan ng mga nanalo at mga resulta, mangyaring bisitahin ang aming website: LRS Philippines Official.
-                </p>
-            </div>
+    <div class="game-card">
+      <a href="https://lrsphilippinesofficial.com/games/6-49">
+		  <img src="https://lrsphilippinesofficial.com/creatives/49.jpg" alt="6/49 Lotto">
+        <div class="overlay">
+        <h2 class="learn-more">Learn More</h2></div></a></div>
 
-            <!-- 6/55 Mega Lotto Game Card -->
-            <div class="game-card" onclick="expandDescription(this)">
-		<picture>
-		        <source media="(max-width: 780px)" srcset="https://lrsphilippinesofficial.com/creatives/55 PRIZE.jpg">
-		        <img src="https://lrsphilippinesofficial.com/creatives/55.jpg" alt="6/55 Lotto">
-    		</picture>
-		<div class="overlay">
-        		<h2 class="learn-more">Learn More</h2></div>
-                <h3>6/55 Grand Lotto</h3>
-                <p>
-                    1. Pumili ng mga Numero
-                    <br>● Pumili ng tatlong (3) numero mula sa 1 hanggang 49.
-                    <br>2. Mga Panuntunan sa Pagtaya
-                    <br>● Kapag ang lahat ng tatlong numero na iyong pinili ay tumugma sa alinman sa anim na (6) bolang lumabas, ikaw ay mananalo ng premyo!
-                    <br>● Kung dalawa (2) lamang ang numero na tumugma, makakatanggap ka ng return bet.
-                    <br>3. Minimum na Pagtaya
-                    <br>● Ang minimum bet ay 25 pesos. Tiyaking nasusunod ito sa iyong taya. 
-                    <br>4. Proseso ng Pagtaya
-                    <br>● I-chat sa GC ang mga napiling kombinasyon.
-                    <br>● Pagkatapos, i-send ang bayad sa GCash.
-                    <br>● Huwag kalimutan na iscreenshot ang kumpirmasyon ng iyong pagbabayad at at i-send sa GC para sa validation.
-                    <br>5. Draw Schedule
-                    <br>● Ang 6/49 Super Lotto ay tuwing araw ng Martes at Huwebes sa 9:00 PM.
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>Para sa kumpletong listahan ng mga nanalo at mga resulta, mangyaring bisitahin ang aming website: LRS Philippines Official.
-                </p>
-            </div>
+    <div class="game-card">
+      <a href="https://lrsphilippinesofficial.com/games/6-55">
+      <img src="https://lrsphilippinesofficial.com/creatives/55.jpg" alt="6/55 Lotto">
+    	  <div class="overlay">
+          <h2 class="learn-more">Learn More</h2></div></a></div>
 
-            <!-- 6/58 Mega Lotto Game Card -->
-            <div class="game-card" onclick="expandDescription(this)">
-		<picture>
-		        <source media="(max-width: 780px)" srcset="https://lrsphilippinesofficial.com/creatives/58 PRIZE.jpg">
-		        <img src="https://lrsphilippinesofficial.com/creatives/58.jpg" alt="6/58 Lotto">
-    		</picture>
-		<div class="overlay">
-        		<h2 class="learn-more">Learn More</h2></div>
-                <h3>6/58 Ultra Lotto</h3>
-                <p>
-                    1. Pumili ng mga Numero
-                    <br>● Pumili ng tatlong (3) numero mula sa 1 hanggang 55.
-                    <br>2. Mga Panuntunan sa Pagtaya
-                    <br>● Kapag ang lahat ng tatlong numero na iyong pinili ay tumugma sa alinman sa anim na (6) bolang lumabas, ikaw ay mananalo ng premyo!
-                    <br>● Kung dalawa (2) lamang ang numero na tumugma, makakatanggap ka ng return bet.
-                    <br>3. Minimum na Pagtaya
-                    <br>● Ang minimum bet ay 25 pesos. Tiyaking nasusunod ito sa iyong taya. 
-                    <br>4. Proseso ng Pagtaya
-                    <br>● I-chat sa GC ang mga napiling kombinasyon.
-                    <br>● Pagkatapos, i-send ang bayad sa GCash.
-                    <br>● Huwag kalimutan na iscreenshot ang kumpirmasyon ng iyong pagbabayad at at i-send sa GC para sa validation.
-                    <br>5. Draw Schedule
-                    <br>● Ang 6/55 Grand Lotto ay tuwing araw ng Sabado sa oras na 9:00 PM.
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>Para sa kumpletong listahan ng mga nanalo at mga resulta, mangyaring bisitahin ang aming website: LRS Philippines Official.
-                </p>
-            </div>
+    <div class="game-card">
+      <a href="https://lrsphilippinesofficial.com/games/6-58">
+		  <img src="https://lrsphilippinesofficial.com/creatives/58.jpg" alt="6/58 Lotto">
+    	  <div class="overlay">
+          <h2 class="learn-more">Learn More</h2></div></a></div>
+  </div>
+    
+  <div class="click"><em>Click Photo for more Info!</em></div>
+    
+  <section class="games">
+    <h1>🎉 2D at 3D Lotto 🎉</h1>
+    <p>Kung nais mo ng bagong hamon o gusto ng ibang paraan para subukan ang iyong swerte, narito ang 2D at 3D Lotto—mabilis, simple, at puno ng pagkakataon para manalo! 🏆💸</p>
+    <p>🕑 2PM, 🕔 5PM, at 🕘 9PM na draw, kaya maraming pagkakataon upang subukan ang iyong swerte! </p>
+  </section>
+  
+  <div class="game-container">
+    <div class="game-card">
+      <a href="https://lrsphilippinesofficial.com/games/2D">
+		  <img src="https://lrsphilippinesofficial.com/creatives/2lotto.jpg" alt="2D Lotto">
+    		<div class="overlay">
+          <h2 class="learn-more">Learn More</h2></div></a></div>
+
+    <div class="game-card">
+      <a href="https://lrsphilippinesofficial.com/games/3D">
+	    <img src="https://lrsphilippinesofficial.com/creatives/3dlotto.jpg" alt="3D Lotto">
+        <div class="overlay">
+          <h2 class="learn-more">Learn More</h2></div></a></div>
+  </div>
+
+  <div class="click"><em>Click Photo for more Info!</em></div>
 </div>
- <div class="click">
-   <em>Click Photo for more Info!<em>
-  </div>
-<section class="games">
-<h1>🎉 2D at 3D Lotto 🎉</h1>
-  <p>Kung nais mo ng bagong hamon o gusto ng ibang paraan para subukan ang iyong swerte, narito ang 2D at 3D Lotto—mabilis, simple, at puno ng pagkakataon para manalo! 🏆💸</p>
-  <p>🕑 2PM, 🕔 5PM, at 🕘 9PM na draw, kaya maraming pagkakataon upang subukan ang iyong swerte! </p>
-</section>
-        <div class="game-container">
-            <!-- 2D Lotto Game Card -->
-            <div class="game-card" onclick="expandDescription(this)">
-		<picture>
-		        <source media="(max-width: 700px)" srcset="https://lrsphilippinesofficial.com/creatives/2lotto.jpg">
-		        <img src="https://lrsphilippinesofficial.com/creatives/2lotto.jpg" alt="2D Lotto">
-    		</picture>
-		<div class="overlay">
-        		<h2 class="learn-more">Learn More</h2></div>
-                <h3>2D Lotto</h3>
-                <p>
-                    1. Pumili ng mga Numero
-                    <br>● Pumili ng dalwang (2) numero mula sa 1 hanggang 31.
-                    <br>2. Mga Panuntunan sa Pagtaya
-                    <br>● Ipinapayo na idagdag ang mga sumusunod na letra sa iyong mga napiling numero:
-                    <br>&nbsp&nbsp&nbsp✔ 'S' para sa straight o exact order.
-                    <br>&nbsp&nbsp&nbsp✔ 'R' para sa rumble o in any order.
-                    <br>&nbsp&nbsp&nbsp✔ 'P' para sa pompi o same number.
-                    <br>3. Minimum na Pagtaya
-                    <br>● Ang minimum bet ay 10 pesos. Pwede ka ding tumaya sa ng may mga butal na 5, tulad ng 15, 25 at iba pa. 
-                    <br>4. Proseso ng Pagtaya
-                    <br>I-chat sa GC ang mga napiling kombinasyon.
-                    <br>● Pagkatapos, i-send ang bayad sa GCash.
-                    <br>● Huwag kalimutan na iscreenshot ang kumpirmasyon ng iyong pagbabayad at at i-send sa GC para sa validation.
-                    <br>5. Draw Schedule
-                    <br>● Ang mga resulta ng 2D Lotto ay iaanunsyo tuwing 2:00 PM, 5:00 PM at 9:00 PM araw-araw.
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>Para sa kumpletong listahan ng mga nanalo at mga resulta, mangyaring bisitahin ang aming website: LRS Philippines Official.
-                </p>
-            </div>
-
-            <!-- 3D Lotto Game Card -->
-            <div class="game-card" onclick="expandDescription(this)">
-		<picture>
-		        <source media="(max-width: 700px)" srcset="https://lrsphilippinesofficial.com/creatives/3dlotto.jpg">
-		        <img src="https://lrsphilippinesofficial.com/creatives/3dlotto.jpg" alt="3D Lotto">
-    		</picture>
-		<div class="overlay">
-        		<h2 class="learn-more">Learn More</h2></div>
-                <h3>3D Lotto</h3>
-                <p>
-                    1. Pumili ng mga Numero
-                    <br>● Pumili ng tatlong (3) numero mula sa 0 hanggang 9.
-                    <br>2. Mga Panuntunan sa Pagtaya
-                    <br>●Ipinapayo na idagdag ang mga sumusunod na letra sa iyong mga napiling numero:
-                    <br>&nbsp&nbsp&nbsp✔ 'S' para sa straight o exact order.
-                    <br>&nbsp&nbsp&nbsp✔ 'R' para sa rumble o in any order.
-                    <br>&nbsp&nbsp&nbsp✔ 'T' para sa trio o same numbers.
-                    <br>3. Minimum na Pagtaya
-                    <br>● Ang minimum bet ay 10 pesos. Pwede ka ding tumaya ng may mga butal na 5, tulad ng 15, 25 at iba pa. 
-                    <br>4. Proseso ng Pagtaya
-                    <br>● I-chat sa GC ang mga napiling kombinasyon.
-                    <br>● Pagkatapos, i-send ang bayad sa GCash.
-                    <br>● Huwag kalimutan na iscreenshot ang kumpirmasyon ng iyong pagbabayad at at i-send sa GC para sa validation.
-                    <br>5. Draw Schedule
-                    <br>● Ang mga resulta ng 3D Lotto ay iaanunsyo tuwing 2:00 PM, 5:00 PM at 9:00 PM araw-araw.
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>Para sa kumpletong listahan ng mga nanalo at mga resulta, mangyaring bisitahin ang aming website: LRS Philippines Official.
-                </p>
-            </div>
-</section>
-
-            <!-- More game cards... -->
-
-	<!-- Expanded content for description -->
-	<div class="expanded" id="expandedContent" style="display:none;">
-	    <div class="expanded-content">
-                <button class="close-btn" onclick="closeDescription()">&nbsp×&nbsp</button>
-                <div class="description" id="gameDescription"></div>
-            </div>
-	</div>
-		</div>
-   <div class="click">
-   <em>Click Photo for more Info!<em>
-  </div>
-    </main>
+</main>
 
 
-    <div class="footer">
-      <footer>
-    <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
-</footer>
+<footer>&copy; 2024 LRS Philippines Official. All rights reserved.</footer>
 
     <script>
-        function expandDescription(card) {
-            var description = card.querySelector("p").innerHTML;
-            var expandedContent = document.getElementById("expandedContent");
-            var gameDescription = document.getElementById("gameDescription");
-
-            gameDescription.innerHTML = description;
-            expandedContent.style.display = "flex";
-        }
-
-        function closeDescription() {
-            document.getElementById("expandedContent").style.display = "none";
-        }
-
 var navLinks = document.getElementById("navLinks");
 var menuBtn = document.getElementById("menuBtn");
 
