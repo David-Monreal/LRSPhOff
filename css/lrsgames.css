@@ -1,0 +1,117 @@
+@media (max-width: 768px) {
+    .text-box h1 {
+      font-size: 40px !important; } }
+
+.games {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 20px; }
+  @media (max-width: 768px) {
+  .games {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    }}
+  
+h1 {
+  font-size: 36px;
+  font-weight: 600; }
+  @media (max-width: 768px) {  
+    h1{
+      font-size: 24px; }}
+  @media (max-width: 768px) {
+    h3{
+      display: none;}}
+  
+p {
+  color: black;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px; }
+  @media (max-width: 768px) {
+    p{
+      font-size: 12px;}}
+  
+.game-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; }
+  @media (max-width: 768px) {
+    .game-container {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px; }}
+  
+.game-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 250px;
+  max-width: 250px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s;
+  position: relative; }
+  @media (max-width: 768px) {
+    .game-card {
+      width: 120px;
+      max-width: 120px; }}
+  @media (max-width: 400px) {
+    .game-card {
+      width: 100px; }}
+  
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;  }
+  
+.game-card:hover .overlay {
+  opacity: 1; }
+  
+.learn-more {
+  color: white; 
+  background-color: red;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px; 
+  text-align: center;   }
+  @media (max-width: 768px) {
+    .learn-more {
+      font-size: 15px; }}
+  @media (max-width: 400px) {
+    .learn-more {
+      font-size: 12px; }}
+  
+.game-card img {
+  width: 100%;
+  height: auto;
+  display: block;  }
+  
+.click {
+  display: none; }
+  @media (max-width: 768px) {  
+    .click {
+      display: block;
+      text-align: center;
+      color: red;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 22px;
+      padding: 10px; }}
