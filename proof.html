@@ -10,143 +10,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/header.css">
-<style>
-.pictures {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding-top: 20px;
-  background-color: #f4f4f4; }
-      
-.pictures h1{
-  font-size: 36px;
-  font-weight: 600;
-  text-align: center; }
-  @media (max-width: 768px) {
-    .pictures h1{
-      font-size: 24px; }}
-      
-.pictures p {
-  color: black;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 22px;
-  padding: 10px;
-  text-align: center; }
-  @media (max-width: 768px) {
-    .pictures p{
-      font-size: 12px; }}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px; }
-
-.gallery-item {
-  flex: 1 1 calc(20% - 20px);
-  max-width: calc(20% - 20px);
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  overflow: hidden; }
-  @media (max-width: 768px) {
-    .gallery-item {
-      flex: 1 1 calc(33.33% - 20px);
-      max-width: calc(33.33% - 20px); } }
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block; }
-
-.lightbox {
-  display: none; 
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; }
-
-.lightbox img {
-  max-width: 70%;
-  max-height: 90%;
-  margin: auto; }
-
-.lightbox .close {
-  position: absolute;
-  text-decoration: none;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
-  width: 40px;
-  height: 40px;
-  color: white;
-  background: red;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 1100; }
-
-
-.lightbox .prev, .lightbox .next {
-  position: absolute;
-  top: 50%;
-  text-decoration: none;
-  transform: translateY(-50%);
-  font-size: 30px;
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer; }
-
-.lightbox .prev {
-  left: 10px; }
-
-.lightbox .next {
-  right: 10px; }
-
-</style>
+    <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/proof.css">
 </head>
   
 <body>
 <section class="header">
     <header>
-    <section class="header">
     <nav>
-        <a href="./"><img src="https://lrsphilippinesofficial.com/creatives/lrs.png" alt="LRS Logo"></a>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="toggleMenu()"></i>
-            <ul>
-                <li><a href="./">HOME</a></li>
-                <li><a href="./games">GAMES</a></li>
-                <li><a href="./promo">PROMOS</a></li>
-                <li><a href="./results">RESULT</a></li>
-                <li><a href="./winners">WINNERS</a></li>
-                <li><a href="./returnbet">RETURN BET</a></li>
-              <li><a href="./proof">PROOF OF PAYOUT</a></li>
-            </ul>
-        </div>
-        <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
-    </nav>
+            <a href="https://lrsphilippinesofficial.com"><img src="https://lrsphilippinesofficial.com/creatives/lrs.png" alt="LRS Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="toggleMenu()"></i>
+                <ul>
+                  <li><a href="https://lrsphilippinesofficial.com">HOME</a></li>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/games">GAMES</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/games/6-45">6/45 Mega Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-49">6/49 Super Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-55">6/55 Grand Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-58">6/58 Ultra Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/2D">2D Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/3D">3D Lotto</a></div>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/promo">PROMO</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/promo/6-45">6/45 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-49">6/49 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-55">6/55 Freebet</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-58">6/58 Freebet</a></div>
+                  <li><a href="https://lrsphilippinesofficial.com/results">RESULT</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/winners">WINNERS</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/returnbet">RETURN BET</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/proof">PROOF</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
+        </nav>
       
       <div class="text-box">
-        <h1>PROOF</h1>
-        <p>Silipin ang mga nagtagumpay sa LRS Games! Ipinapakita ang mga nanalo na nag-uwi ng mga premyo. Baka ikaw na ang susunod!</p>
+        <h1>PROOF OF PAID</h1>
+        <p>Silipin ang mga nagtagumpay sa LRS Games! Ipinapakita ang mga nanalo at nag-uwi ng mga premyo. Baka ikaw na ang susunod!</p>
     </div>
       
-</header>
+  </header>
 </section>
     
 <div class="container">
 <section class="pictures">
-    <h1>Paid Winners</h1>
-  <p>Tingnan ang mga maswerteng nanalo ng LRS Games! Ipinagmamalaki naming ibida ang mga mananayang nag-uwi ng premyo. Baka ikaw na ang susunod na tampok dito!</p>
+  <p>Tingnan ang mga maswerteng nanalo ng LRS Games! Ipinagmamalaki at ibinibida ang mga mananayang nag-uwi ng premyo. Baka ikaw na ang susunod na tampok dito!</p>
   <div class="gallery" id="gallery"></div>
 
 <div class="lightbox" id="lightbox">
