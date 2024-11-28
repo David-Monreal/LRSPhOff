@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/header.css">
     <link rel="stylesheet" href="https://lrsphilippinesofficial.com/css/games.css">
 
 </head>
@@ -16,20 +17,36 @@
   <header>
     <section class="header">
     <nav>
-        <a href="./"><img src="https://lrsphilippinesofficial.com/creatives/lrs.png" alt="LRS Logo"></a>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="toggleMenu()"></i>
-            <ul>
-              <li><a href="https://lrsphilippinesofficial.com">HOME</a></li>
-              <li><a href="https://lrsphilippinesofficial.com/games">GAMES</a></li>
-              <li><a href="https://lrsphilippinesofficial.com/promo">PROMOS</a></li>
-              <li><a href="https://lrsphilippinesofficial.com/results">RESULT</a></li>
-              <li><a href="https://lrsphilippinesofficial.com/winners">WINNERS</a></li>
-              <li><a href="https://lrsphilippinesofficial.com/proof">PROOF OF PAYOUT</a></li>
-            </ul>
-        </div>
-        <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
-    </nav>
+            <a href="https://lrsphilippinesofficial.com"><img src="https://raw.githubusercontent.com/David-Monreal/LRSPhOff/main/creatives/lrs.png" alt="LRS Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="toggleMenu()"></i>
+                <ul>
+                  <li><a href="https://lrsphilippinesofficial.com">HOME</a></li>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/games">GAMES</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/games/6-45">6/45 Mega Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-49">6/49 Super Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-55">6/55 Grand Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/6-58">6/58 Ultra Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/2D">2D Lotto</a>
+                      <a href="https://lrsphilippinesofficial.com/games/3D">3D Lotto</a></div>
+                  <li style="position: relative;">
+                    <span style="color:white; cursor: pointer; font-size:13px;"><a href="https://lrsphilippinesofficial.com/promo">PROMO</a></span>
+                    <div class="dropdown-content">
+                      <a href="https://lrsphilippinesofficial.com/promo/6-45">6/45 FB Mechanics</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-49">6/49 FB Mechanics</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-55">6/55 FB Mechanics</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/6-58">6/58 FB Mechanics</a>
+                      <a href="https://lrsphilippinesofficial.com/promo/returnbet">RB Mechanics</a></div>
+                  <li><a href="https://lrsphilippinesofficial.com/results">RESULT</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/winners">WINNERS</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/returnbet">RETURN BET</a></li>
+                  <li><a href="https://lrsphilippinesofficial.com/proof">PROOF</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" id="menuBtn" onclick="toggleMenu()"></i>
+        </nav>
       
       <div class="text-box">
         <h1>Pick 3 Lotto</h1>
@@ -185,9 +202,7 @@
  </div> 
     </div>
     </div>
- <footer>
-  <p>&copy; 2024 LRS Philippines Official. All rights reserved.</p>
-</footer> 
+ <footer>&copy; 2024 LRS Philippines Official. All rights reserved.</footer> 
   
   <script>
 var navLinks = document.getElementById("navLinks");
