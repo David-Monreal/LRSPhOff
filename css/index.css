@@ -52,7 +52,7 @@ header {
 .popup-content {
   position: relative;
   width: 100%;
-  max-width: 100%;
+  max-width: 700px;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
