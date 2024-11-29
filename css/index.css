@@ -63,7 +63,7 @@ header {
       border-radius: 8px; } }
       
 .popup-content img {
-  max-width: 700px;
+  max-width: 700px; 
   height: auto;
   border-radius: 8px;
   z-index: 1; }
